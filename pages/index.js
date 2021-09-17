@@ -7,7 +7,8 @@
 //         6) add blog Entries 
 //         7) design the blog posts
 //         8) connect to mongoDB
-//         9) read posts from there 
+//         9) read posts from there
+ 
 
 
 
