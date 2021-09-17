@@ -5,8 +5,9 @@ export default function Github({ user, statusCode }) {
   if (statusCode) return <Error errorCode={statusCode}></Error>;
   return (
     <Layout isHome={false}>
-      <div className="container p-2 ">
+      <div className="container">
         <div className="container justify-content-center align-content-center card w-50">
+          <div className="p-1">
           <img
             src={user.avatar_url}
             alt="imagen"
@@ -14,8 +15,10 @@ export default function Github({ user, statusCode }) {
           />
           <div className="card-body">
             <h3>{user.name}</h3>
-            <p>{user.bio}</p>
-            <a href="#!">Know More</a>
+            <p>🚀Currently in college:Science in Computer Engineering</p>
+            <p>🏢 Lecturer at IITA</p>
+            <a href="https://github.com/AlejoTorres2001">Know More</a>
+          </div>
           </div>
         </div>
       </div>

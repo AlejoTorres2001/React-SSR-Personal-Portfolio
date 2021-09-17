@@ -14,7 +14,7 @@ const Footer = ({ isHome }) => {
     >
       <div className="container p-4">
         <h1> &copy; Alejo Torres</h1>
-        <p>2000- {new Date().getFullYear()}</p>
+        <p>2019 - {new Date().getFullYear()}</p>
         <p>All reights Reserved</p>
       </div>
     </footer>

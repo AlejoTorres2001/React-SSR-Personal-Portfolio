@@ -1,14 +1,16 @@
 // TODO 
-//         1) take pictures of each proyect
-//         2) fix skill bars
-//         3) add Experiences
-//         4) fix Github Description
-//         5) rethink colors
-//         6) add blog Entries 
-//         7) design the blog posts
-//         8) connect to mongoDB
-//         9) read posts from there
- 
+//         1) take pictures of each proyect //DONE 
+//         2) Work in /porfolio add more projects
+//         3) fix skill bars //DONE
+//         4) add Experiences //DONE
+//         5) fix Github Description
+//         6) rethink colors
+//         7) fix footer in blogs
+//         8) add blog Entries 
+//         9) design the blog posts
+//         10) connect to mongoDB
+//         11) read posts from there
+
 
 
 
@@ -44,13 +46,11 @@ export default function Home() {
                 <h1>Alejo Torres</h1>
                 <h3>FullStack Developer</h3>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Molestiae atque ullam perferendis harum, nisi porro voluptate,
-                  iste consequuntur enim reprehenderit architecto consectetur
-                  cum? Totam ad molestias natus illum illo officia.
+                  Hi there! <br/>
+                  my Name is Alejo,I was born and raised in Argentina.<br/>Currently I'm 3 years into my Bachelor of Science in Computer Engineering 
                 </p>
                 <Link href="/hireme">
-                  <a className="btn btn-outline-light">Hire Me</a>
+                  <a className="btn btn-outline-light">Contact Me</a>
                 </Link>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="card card-body bg-dark">
             <div className="row">
               <div className="col-md-12">
-                <h1 className="text-center text-light">Porfolio</h1>
+                <h1 className="text-center text-light">Projects Portfolio</h1>
               </div>
               {projects.map((project, id) => (
                 <Projects project={project} key={id} />

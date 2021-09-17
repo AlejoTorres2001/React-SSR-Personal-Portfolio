@@ -28,6 +28,10 @@ const skills = [
     percentage: 85,
   },
   {
+    name: "Docker",
+    percentage: 75,
+  },
+  {
     name: "ASP.NET",
     percentage: 80,
   },
@@ -97,7 +101,7 @@ const projects = [
     bgColor:"#83DFB0"
   },
   {
-    name: "ASP + MySQL E Commerce",
+    name: "ASP.NET + MySQL E-Commerce",
     description:
       "An E-Commerce made with C# and ASP.NET framework in the backend and using a  MySQL database,this was the Final Proyect for one of my develpment college courses,you can the see full details of this project clicking the link",
     image: "project_6.jpg",
