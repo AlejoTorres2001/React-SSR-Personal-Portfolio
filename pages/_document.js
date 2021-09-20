@@ -40,6 +40,12 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
             referrerPolicy="no-referrer"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

@@ -1,19 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-// TODO 
-//         1) take pictures of each proyect //DONE 
+// TODO
+//         1) take pictures of each proyect //DONE
 //         2) Work in /porfolio add more projects
 //         3) fix skill bars //DONE
 //         4) add Experiences //DONE
 //         5) fix Github Description
 //         6) rethink colors
 //         7) fix footer in blogs
-//         8) add blog Entries 
+//         8) add blog Entries
 //         9) design the blog posts
 //         10) connect to mongoDB
 //         11) read posts from there
-
-
-
 
 {
   /* Next */
@@ -32,6 +29,7 @@ import Projects from "../components/Projects";
   /* data */
 }
 import skills, { experiences, projects } from "../profile";
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <Layout isHome={true}>
@@ -47,12 +45,21 @@ export default function Home() {
                 <h1>Alejo Torres</h1>
                 <h3>FullStack Developer</h3>
                 <p>
-                  Hi there! <br/>
-                  my Name is Alejo,I was born and raised in Argentina.<br/>{"Currently I'm 3 years into my Bachelor of Science in Computer Engineering"}
-                  <br/>{"I'm constantly perfecting my programming skills learning and researching about new technologies"}
+                  Hi there! <br />
+                  my Name is Alejo,I was born and raised in Argentina.
+                  <br />
+                  {
+                    "Currently I'm 3 years into my Bachelor of Science in Computer Engineering"
+                  }
+                  <br />
+                  {
+                    "I'm constantly perfecting my programming skills learning and researching about new technologies"
+                  }
                 </p>
                 <Link href="/hireme">
-                  <a className="btn btn-outline-light fs-5" id="contactMe">Contact Me</a>
+                  <a className="btn btn-outline-light fs-5" id="contactMe">
+                    Contact Me
+                  </a>
                 </Link>
               </div>
             </div>
@@ -64,7 +71,7 @@ export default function Home() {
       <section className="row py-2">
         {/* Skills */}
         <div className="col-md-4 py-2">
-          <div className="card bg-light animate__animated animate__fadeInLeft component-bg" >
+          <div className="card bg-light animate__animated animate__fadeInLeft component-bg">
             <div className="card-body">
               <h1>Skills</h1>
               {skills.map((skill, id) => (
