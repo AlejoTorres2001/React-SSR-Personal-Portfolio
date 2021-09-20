@@ -4,9 +4,9 @@ import PostCards from "../components/PostCards";
 import { posts } from "../profile";
 export default function Blog() {
   return (
-    <Layout isHome={false}>
+    <Layout isHome={true}>
       <h1 className="text-center">My Blog</h1>
-      <div className="row">
+      <div className="row justify-content-center min-vh-100">
         {posts.map((post, id) => (
           <PostCards post={post} key={id} />
         ))}
