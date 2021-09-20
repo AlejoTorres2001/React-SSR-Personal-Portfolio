@@ -2,7 +2,6 @@ import React from 'react'
 import emailjs from 'emailjs-com'
 const EmailForm = () => {
     const sendEmail = (e) => {
-        console.log(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID)
         emailjs.sendForm(process.env.NEXT_PUBLIC_YOUR_SERVICE_ID, process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID, e.target,process.env.NEXT_PUBLIC_YOUR_USER_ID)
           .then((result) => {
               console.log(result.text);
