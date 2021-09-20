@@ -8,6 +8,7 @@ export default function Github({ user, statusCode }) {
       <div className="min-vh-100 ">
         <div className="container justify-content-center align-content-center card w-50 component-bg">
           <div className="p-1 ">
+           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={user.avatar_url}
             alt="imagen"

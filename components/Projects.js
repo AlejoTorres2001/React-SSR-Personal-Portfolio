@@ -6,6 +6,8 @@ const Projects = ({ project }) => {
     <div className="col-md-4 p-2">
       <div className="card h-100 component-bg">
         <div className={"overflow"} style={{backgroundColor:bgColor}}>
+          
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={image} alt="imagen" className="card-img-top" />
         </div>
         <div className="card-body">
