@@ -13,10 +13,38 @@ const Footer = ({ isHome }) => {
       style={!isHome ? styles : {}}
     >
       <div className="container p-4">
-        <h1> &copy; Alejo Torres</h1>
-        <p>2019 - {new Date().getFullYear()}</p>
-        <p>All reights Reserved</p>
+       
+        <div className="social-icons">
+     <a href="" className="social-icon linkedin">
+         <span className="icon__inner">
+             <i className="fab fa-linkedin">
+
+             </i>
+         </span>
+     </a>
+     <a href="" className="social-icon twitter">
+         <span className="icon__inner">
+             <i className="fab fa-twitter">
+
+             </i>
+         </span>
+     </a>
+     <a href="" className="social-icon github">
+         <span className="icon__inner">
+             <i className="fab fa-github">
+
+             </i>
+         </span>
+     </a>
+     <a href="" className="social-icon gmail">
+         <span className="icon__inner">
+             <i className="fas fa-envelope">
+             </i>
+         </span>
+     </a>
+ </div>
       </div>
+      
     </footer>
   );
 };

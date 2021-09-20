@@ -4,8 +4,8 @@ import Error from "./_error";
 export default function Github({ user, statusCode }) {
   if (statusCode) return <Error errorCode={statusCode}></Error>;
   return (
-    <Layout isHome={false}>
-      <div className="container">
+    <Layout isHome={true}>
+      <div className="min-vh-100">
         <div className="container justify-content-center align-content-center card w-50">
           <div className="p-1">
           <img
