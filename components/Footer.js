@@ -13,7 +13,7 @@ const Footer = ({ isHome }) => {
       style={!isHome ? styles : {}}
     >
       <div className="container p-4">
-       
+        <h4 className="text-center fs-4">Follow me on my social medias</h4>
         <div className="social-icons">
      <a href="" className="social-icon linkedin">
          <span className="icon__inner">
@@ -43,8 +43,15 @@ const Footer = ({ isHome }) => {
          </span>
      </a>
  </div>
+          <ul className="list-unstyled">
+            <li className="mt-1">
+            <h1 className="text-center fs-5"> &copy; Alejo Torres</h1>
+            </li>
+            <li>
+        <h2 className="text-center fs-6 ">2020-2021</h2>
+            </li>
+          </ul>
       </div>
-      
     </footer>
   );
 };
