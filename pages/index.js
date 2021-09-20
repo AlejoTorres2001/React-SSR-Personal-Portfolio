@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 // TODO 
 //         1) take pictures of each proyect //DONE 
 //         2) Work in /porfolio add more projects
@@ -47,8 +48,8 @@ export default function Home() {
                 <h3>FullStack Developer</h3>
                 <p>
                   Hi there! <br/>
-                  my Name is Alejo,I was born and raised in Argentina.<br/>Currently I'm 3 years into my Bachelor of Science in Computer Engineering
-                  <br/>I'm constantly perfecting my programming skills learning and researching about new technologies
+                  my Name is Alejo,I was born and raised in Argentina.<br/>{"Currently I'm 3 years into my Bachelor of Science in Computer Engineering"}
+                  <br/>{"I'm constantly perfecting my programming skills learning and researching about new technologies"}
                 </p>
                 <Link href="/hireme">
                   <a className="btn btn-outline-light fs-5" id="contactMe">Contact Me</a>
