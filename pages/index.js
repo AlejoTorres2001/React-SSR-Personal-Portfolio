@@ -84,7 +84,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/hireme">
-                <a className="btn btn-light">Know More</a>
+                <a className="btn btn-secondary">Know More</a>
               </Link>
             </div>
           </div>
