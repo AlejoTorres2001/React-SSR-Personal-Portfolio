@@ -51,7 +51,7 @@ export default function Home() {
                   <br/>I'm constantly perfecting my programming skills learning and researching about new technologies
                 </p>
                 <Link href="/hireme">
-                  <a className="btn btn-outline-light">Contact Me</a>
+                  <a className="btn btn-outline-light fs-5" id="contactMe">Contact Me</a>
                 </Link>
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function Home() {
       <section className="row py-2">
         {/* Skills */}
         <div className="col-md-4 py-2">
-          <div className="card bg-light animate__animated animate__fadeInLeft">
+          <div className="card bg-light animate__animated animate__fadeInLeft component-bg" >
             <div className="card-body">
               <h1>Skills</h1>
               {skills.map((skill, id) => (
@@ -75,7 +75,7 @@ export default function Home() {
 
         <div className="col-md-8 py-2">
           {/* Experience */}
-          <div className="card bg-light animate__animated animate__fadeInRight">
+          <div className="card bg-light animate__animated animate__fadeInRight component-bg">
             <div className="card-body">
               <h1>Experience</h1>
 

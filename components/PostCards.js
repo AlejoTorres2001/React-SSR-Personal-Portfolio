@@ -3,7 +3,7 @@ import Link from "next/link";
 const PostCards = ({ post }) => {
   return (
     <div className="col-md-4">
-      <div className="card">
+      <div className="card component-bg">
         <div className="overflow">
           <img src={post.image} alt="imagen" className="card-img-top" />
         </div>

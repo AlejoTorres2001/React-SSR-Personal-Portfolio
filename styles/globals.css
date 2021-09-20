@@ -1,3 +1,17 @@
+body{
+  background-color: #f6f6f6 !important;
+  
+}
+.component-bg{
+  background-color: #e4e2de !important ;
+}
+.bg-contrast{
+  background-color: #373A3C !important;
+}
+#contactMe:hover{
+  background-color: #e4e2de !important;
+  color: #373A3C !important;
+}
 *{
   font-family: 'Roboto', sans-serif;
 }
@@ -13,9 +27,9 @@
   transform: scale(1.3) !important;
 }
 #nprogress .bar {
-  background: #ff5367 !important;
+  background: #688F98 !important;
 }
 #nprogress .spinner-icon {
-  border-top-color: #ffbb00;
-  border-left-color: #ffbb00;
+  border-top-color: #739ea8;
+  border-left-color: #739ea8;
 }

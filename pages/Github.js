@@ -5,19 +5,19 @@ export default function Github({ user, statusCode }) {
   if (statusCode) return <Error errorCode={statusCode}></Error>;
   return (
     <Layout isHome={true}>
-      <div className="min-vh-100">
-        <div className="container justify-content-center align-content-center card w-50">
-          <div className="p-1">
+      <div className="min-vh-100 ">
+        <div className="container justify-content-center align-content-center card w-50 component-bg">
+          <div className="p-1 ">
           <img
             src={user.avatar_url}
             alt="imagen"
             className="card-img-top py-1"
           />
-          <div className="card-body">
-            <h3>{user.name}</h3>
+          <div className="card-body ">
+            <h3 className="fs-2">{user.name}</h3>
             <p>🚀Currently in college:Science in Computer Engineering</p>
             <p>🏢 Lecturer at IITA</p>
-            <a href="https://github.com/AlejoTorres2001">Know More</a>
+            <a href="https://github.com/AlejoTorres2001" className="btn btn-dark">Visit Profile</a>
           </div>
           </div>
         </div>
