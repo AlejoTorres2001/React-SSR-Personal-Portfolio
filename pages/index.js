@@ -106,7 +106,7 @@ export default function Home() {
             </div>
             {/* Button */}
             <div className="text-center mt-4">
-              <Link href="/portfolio">
+              <Link href="/Portfolio">
                 <a className="btn btn-outline-light">More Projects</a>
               </Link>
             </div>
