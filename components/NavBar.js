@@ -5,7 +5,7 @@ export default function NavBar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link href="/">
-          <a className="navbar-brand">Simple Portfolio</a>
+          <a className="navbar-brand">Simple Portfolio<i className="fas fa-portrait mx-1"></i></a>
         </Link>
 
         <button

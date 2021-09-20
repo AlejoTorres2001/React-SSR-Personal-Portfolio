@@ -16,6 +16,10 @@ const skills = [
     percentage:75,
   },
   {
+    name: "NodeJS",
+    percentage:85,
+  },
+  {
     name: "Version Control",
     percentage: 85,
   },

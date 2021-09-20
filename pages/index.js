@@ -47,7 +47,8 @@ export default function Home() {
                 <h3>FullStack Developer</h3>
                 <p>
                   Hi there! <br/>
-                  my Name is Alejo,I was born and raised in Argentina.<br/>Currently I'm 3 years into my Bachelor of Science in Computer Engineering 
+                  my Name is Alejo,I was born and raised in Argentina.<br/>Currently I'm 3 years into my Bachelor of Science in Computer Engineering
+                  <br/>I'm constantly perfecting my programming skills learning and researching about new technologies
                 </p>
                 <Link href="/hireme">
                   <a className="btn btn-outline-light">Contact Me</a>
@@ -105,7 +106,7 @@ export default function Home() {
             {/* Button */}
             <div className="text-center mt-4">
               <Link href="/portfolio">
-                <a className="btn btn-outline-light">More Proyects</a>
+                <a className="btn btn-outline-light">More Projects</a>
               </Link>
             </div>
           </div>
