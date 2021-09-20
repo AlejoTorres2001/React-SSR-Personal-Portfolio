@@ -56,11 +56,19 @@ export default function Home() {
                     "I'm constantly perfecting my programming skills learning and researching about new technologies"
                   }
                 </p>
-                <Link href="/hireme">
-                  <a className="btn btn-outline-light fs-5" id="contactMe">
-                    Contact Me
+                <Link href="/ContactMe">
+                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" id="contactMe">
+                    Contact
                   </a>
                 </Link>
+               
+                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" download href="AlejoTorres.pdf" id="contactMe">
+                   CV
+                  </a>
+                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" download href="Abstract_Alejo_Torres.pdf" id="contactMe">
+                   Abstract
+                  </a>
+                
               </div>
             </div>
           </div>

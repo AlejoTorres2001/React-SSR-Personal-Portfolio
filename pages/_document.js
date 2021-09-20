@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-sync-scripts */
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -12,7 +12,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <script
-            async
             src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossOrigin="anonymous"
