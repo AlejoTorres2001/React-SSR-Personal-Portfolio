@@ -91,21 +91,24 @@ const projects = [
     description:
       "As a form of integrating this new API query language to my workflow I built a simple UI that displays information thanks to RickAndMortyGraphQL API. This proyect was based on VueJSMex crash course for Vue3,you can the see full details of this project clicking the link",
     image: "project_4.png",
-    bgColor:"#343434"
+    bgColor:"#343434",
+    knowMore:"https://github.com/AlejoTorres2001/Rick_and_Morty_Vue3_GraphQL"
   },
   {
     name: "NodeJS + MongoDB + Docker",
     description:
       "Since late 2020 containerization technologies has caught my attention thats why I´ve been experimenting with this technologie using Docker, in this case,builind a NotesApp containerizing an instance of NodeJS for the Backenda and MongoDB as the main database in a different container using DockerCompose you can the see full details of this project clicking the link",
     image: "project_5.png",
-    bgColor:"#83DFB0"
+    bgColor:"#83DFB0",
+    knowMore:"https://github.com/AlejoTorres2001/Node_Mongo_Docker_SimpleNoteApp"
   },
   {
     name: "ASP.NET + MySQL E-Commerce",
     description:
       "An E-Commerce made with C# and ASP.NET framework in the backend and using a  MySQL database,this was the Final Proyect for one of my develpment college courses,you can the see full details of this project clicking the link",
     image: "project_6.jpg",
-    bgColor:"#004C62"
+    bgColor:"#004C62",
+    knowMore:"https://github.com/AlejoTorres2001/ASP_MySQL_Web_Store"
   },
 ];
 const posts = [
