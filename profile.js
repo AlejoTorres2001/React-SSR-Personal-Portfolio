@@ -135,7 +135,35 @@ const posts = [
     image: "profile_pic.jpg",
   },
 ];
+
+const projectsExtended =[...projects,
+  {
+    name: "Server Side Rendering in React",
+    description:
+      "SSR is used to fetch data and pre-populate a page with custom content, leveraging the server's reliable internet connection,also it is better for SEO than client-side rendering.If you want to use SSR in React a pretty good option is Next.js, in fact this whoe website was built using this technologies, you can the see full details of this project clicking the link ",
+    image: "project_7.png",
+    knowMore:"https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio",
+    bgColor:"#000000"
+  },
+  {
+    name: "ElectronJS Desktop Apps ",
+    description:
+      "ElectronJS is a JavaScript framework that allows for the development of desktop GUI applications using web technologies: it combines the Chromium rendering engine and the Node. js runtime. Electron is the main GUI framework behind several open-source projects including Atom, GitHub and Desktop.It is the core technologie behind KeyWordFinder,I´ve built some simple projects using electron,you can the see full details clicking the link ",
+    image: "project_8.jpg",
+    knowMore:"https://github.com/AlejoTorres2001/Electron_Urls_App",
+    bgColor:"#313244"
+  },
+  {
+    name: "React Crypto DataTable App",
+    description:
+      "a React web App using Coingecko API and React Context API,you can the see full details clicking the link, there you will also find a link where you can test the web app, deployed in Heroku",
+    image: "project_9.png",
+    knowMore:"https://github.com/AlejoTorres2001/React-Crypto-DataTable-App",
+    bgColor:"#14191F"
+  },];
+
 export default skills;
+export {projectsExtended};
 export { experiences };
 export { projects };
 export { posts };
