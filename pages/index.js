@@ -43,6 +43,9 @@ export default function Home() {
     visible:{
       y:0,
       transition:{
+        type:"spring",
+        duratin:1,
+        bounce:0.3,
         delay: 0.5,
         when:"beforeChildren",
         staggerChildren:0.2
@@ -68,6 +71,9 @@ export default function Home() {
     visible:{
       x:0,
       transition:{
+        type:"spring",
+        duratin:1,
+        bounce:0.3,
         delay: 0.5,
         when:"beforeChildren",
         staggerChildren:0.2
@@ -81,6 +87,9 @@ export default function Home() {
     visible:{
       x:0,
       transition:{
+        type:"spring",
+        duratin:1,
+        bounce:0.3,
         delay: 0.5,
         when:"beforeChildren",
         staggerChildren:0.2
