@@ -1,16 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 // TODO
 //         1) take pictures of each proyect //DONE
-//         2) Work in /porfolio add more projects
+//         2) Work in /porfolio add more projects //DONE
 //         3) fix skill bars //DONE
 //         4) add Experiences //DONE
-//         5) fix Github Description
-//         6) rethink colors
-//         7) fix footer in blogs
-//         8) add blog Entries
+//         5) fix Github Description //DONE
+//         6) rethink colors //DONE 
+//         7) fix footer in blogs //DONE
+//         8) add blog Entries 
 //         9) design the blog posts
 //         10) connect to mongoDB
 //         11) read posts from there
+//         12) Mailing System //DONE
+//         13) Downloadable files //DONE
+//         14) use animation framework 
 
 {
   /* Next */
@@ -29,7 +32,6 @@ import Projects from "../components/Projects";
   /* data */
 }
 import skills, { experiences, projects } from "../profile";
-import { motion } from "framer-motion";
 export default function Home() {
   return (
     <Layout isHome={true}>
