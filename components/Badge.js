@@ -4,13 +4,13 @@ import React from "react";
 const Badge = ({ title, date, verify, img }) => {
   return (
     <blockquote
-      className="badgr-badge component-bg text-center  border border-secondary w-50 m-2"
+      className="badgr-badge component-bg text-center  border border-secondary w-100 m-2"
       style={{ fontFamily: "Helvetica, Roboto, Calibri, sans-serif" }}
     >
       <a href="https://api.badgr.io/public/assertions/9LCsS9AVSiaZOtCu-yNf9w">
         <img width="120px" height="120px" src={img} />
       </a>
-      <p className="badgr-badge-name badge-text fs-4">{title}</p>
+      <p className="badgr-badge-name badge-text fs-4">{title} <br /></p>
       <p className="badgr-badge-date badge-date">
         <strong className="badge-strong">Awarded:</strong>
         {date}

@@ -29,10 +29,11 @@ export default function Github({ user, statusCode }) {
           </div>
         </div>
         <div className="my-2 mt-3 ">
-          <div className="card bg-dark align-items-center">
-            <div>
-              <h1 className="text-center text-light">Badges</h1>
+        <div>
+              <h1 className="text-center  text-withe">Badges</h1>
             </div>
+          <div className="bg-secondary d-flex justify-content-center align-items-center">
+           
             <Badge
               title={"Building a TodoApp with Javascript Workshop"}
               date={"Sep 10th 2021"}
@@ -45,8 +46,8 @@ export default function Github({ user, statusCode }) {
             ></Badge>
 
             <Badge
-              title={"Introduction to GraphQL"}
               date={"20 sept. 2021"}
+              title={"Introduction to GraphQL with Javascript Workshop"}
               img={
                 "https://api.badgr.io/public/assertions/Vs-epAjIR1iqQa7xOHEB2A/image"
               }
