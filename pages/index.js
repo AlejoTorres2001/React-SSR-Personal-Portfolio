@@ -20,6 +20,9 @@
 }
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {useInView} from 'react-intersection-observer'
+import {useAnimation} from "framer-motion"
+import {useEffect} from "react";
 {
   /* Components */
 }
@@ -33,6 +36,24 @@ import Projects from "../components/Projects";
 }
 import skills, { experiences, projects } from "../profile";
 export default function Home() {
+
+  const {ref,inView} = useInView();
+  const animation = useAnimation();
+  useEffect(() =>
+  {
+    console.log("Us effect in view=",inView)},[inView])
+    if(inView){
+      animation.start({
+        x:0,
+        transition:{
+          type:"spring",duration:1,bounce:0.4
+        }
+      })
+    }
+    if(!inView){
+      animation.start({x:'-100vw'})
+    }
+
   const buttonTap={
     scale:1.1
   }
@@ -208,8 +229,10 @@ export default function Home() {
         </motion.div>
       </section>
       {/* Portfolio*/}
-      <div className="row">
-        <div className="col-md-12">
+      <div ref={ref}
+      
+       className="row">
+        <motion.div className="col-md-12" animate={animation}>
           <div className="card card-body bg-dark">
             <div className="row">
               <div className="col-md-12">
@@ -226,7 +249,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </Layout>
   );
