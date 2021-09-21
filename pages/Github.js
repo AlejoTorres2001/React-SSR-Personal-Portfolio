@@ -2,20 +2,75 @@ import React from "react";
 import Badge from "../components/Badge";
 import Layout from "../components/Layout";
 import Error from "./_error";
+import {motion} from 'framer-motion'
 export default function Github({ user, statusCode }) {
+
+
+  const cardVariants={
+    hidden:{
+      y:'-100vh'
+    },
+    visible:{
+      y:0,
+      transition:{
+        type:"spring",
+        duratin:1,
+        bounce:0.3,
+        delay: 0.5,
+        when:"beforeChildren",
+        staggerChildren:0.2
+      }
+    }
+  
+  }
+  const badgesVariant={
+    hidden:{
+      y:'100vh'
+    },
+    visible:{
+      y:0,
+      transition:{
+        type:"spring",
+        duratin:1,
+        bounce:0.3,
+        delay: 0.5,
+        when:"beforeChildren",
+        staggerChildren:0.2
+      }
+    }
+  
+  }
+  const childrenVariant={
+    hidden:{
+      x:-10,
+      opacity:0
+    },
+    visible:{
+      x:"0",
+      opacity:1,
+      
+    }
+  }
+
+  
+
   if (statusCode) return <Error errorCode={statusCode}></Error>;
   return (
     <Layout isHome={true}>
       <div className="min-vh-100">
-        <div className="container justify-content-center align-content-center card w-50 component-bg">
+        <motion.div variants={
+          cardVariants
+        } initial="hidden" animate="visible"
+        className="container justify-content-center align-content-center card w-50 component-bg">
           <div className="p-1 ">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <motion.img
+            variants={childrenVariant}
               src={user.avatar_url}
               alt="imagen"
               className="card-img-top py-1"
             />
-            <div className="card-body ">
+            <motion.div className="card-body " variants={childrenVariant}>
               <h3 className="fs-2">{user.name}</h3>
               <p>🚀Currently in college:Science in Computer Engineering</p>
               <p>🏢 Lecturer at IITA</p>
@@ -25,14 +80,14 @@ export default function Github({ user, statusCode }) {
               >
                 Visit Profile
               </a>
-            </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="my-2 mt-3 ">
-        <div>
+        </motion.div>
+        <motion.div className="my-2 mt-3 ">
+        <motion.div variants={cardVariants} initial="hidden" animate="visible">
               <h1 className="text-center  text-withe">Badges</h1>
-            </div>
-          <div className="bg-secondary d-flex justify-content-center align-items-center">
+            </motion.div>
+          <motion.div variants={badgesVariant} initial="hidden" animate="visible" className="bg-secondary d-flex justify-content-center align-items-center">
            
             <Badge
               title={"Building a TodoApp with Javascript Workshop"}
@@ -55,8 +110,8 @@ export default function Github({ user, statusCode }) {
                 "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FVs-epAjIR1iqQa7xOHEB2A%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com"
               }
             ></Badge>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </Layout>
   );

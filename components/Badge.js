@@ -1,9 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-
+import { motion} from "framer-motion"
 const Badge = ({ title, date, verify, img }) => {
+
+  const childrenVariant={
+    hidden:{
+      x:-10,
+      opacity:0
+    },
+    visible:{
+      x:"0",
+      opacity:1,
+      
+    }
+  }
+
+
   return (
-    <blockquote
+    <motion.blockquote variants={childrenVariant}
       className="badgr-badge component-bg text-center  border border-secondary w-100 m-2"
       style={{ fontFamily: "Helvetica, Roboto, Calibri, sans-serif" }}
     >
@@ -31,7 +45,7 @@ const Badge = ({ title, date, verify, img }) => {
         async="async"
         src="https://badgr.com/assets/widgets.bundle.js"
       ></script>
-    </blockquote>
+    </motion.blockquote>
   );
 };
 
