@@ -35,19 +35,31 @@ import skills, { experiences, projects } from "../profile";
 export default function Home() {
   const buttonTap={
     scale:1.1
-  };
+  }
   const cardsVariants={
-    headerCardInitial : {
-      x: "-12rem"
+    hidden:{
+      y:'-100vw'
     },
-    headerCardAnimate:{
-      x: "0rem"
+    visible:{
+      y:0,
+      transition:{
+        delay: 0.5,
+        when:"beforeChildren",
+        staggerChildren:0.2
+      }
+    }
+  
+  }
+  const cardElementsVariant={
+    hidden:{
+      x:-10,
+      opacity:0
     },
-    headerCardTransition : {
-      type: "spring",
-      stiffness: 200,
-      duration: 2.5,
-    },  
+    visible:{
+      x:"0",
+      opacity:1,
+      
+    }
   }
   const skillsVariants={
     hidden:{
@@ -62,6 +74,22 @@ export default function Home() {
       }
     }
   }
+  const experienceVariants={
+    hidden:{
+      x:'100vw'
+    },
+    visible:{
+      x:0,
+      transition:{
+        delay: 0.5,
+        when:"beforeChildren",
+        staggerChildren:0.2
+      }
+    },
+    buttonTap:{
+      scale:1.1
+    }
+  }
 
   return (
     <Layout isHome={true}>
@@ -69,15 +97,14 @@ export default function Home() {
       <header className="row">
         <motion.div
           variants={cardsVariants}
-          initial="headerCardInitial"
-          animate="headerCardAnimate"
-          transition="headerCardTransition"
+          initial="hidden"
+          animate="visible"
           className="col-md-12"
         >
           <div className="card card-body bg-secondary text-light animate__animated animate__fadeIn">
             <div className="row">
               <div className="col-md-4">
-                <img src="/profile_pic.jpg" alt="" className="img-fluid" />
+                <motion.img variants={cardElementsVariant} src="/profile_pic.jpg" alt="" className="img-fluid" />
               </div>
               <div className="col-md-8">
                 <h1>Alejo Torres</h1>
@@ -135,9 +162,9 @@ export default function Home() {
         {/* Skills */}
         <div className="col-md-4 py-2">
           <motion.div 
-          variants={skillsVariants}
-          initial="hidden" 
-          animate="visible"
+           variants={skillsVariants}
+           initial="hidden" 
+           animate="visible"
           className="card bg-light animate__animated animate__fadeInLeft component-bg">
             <div className="card-body">
               <h1>Skills</h1>
@@ -148,10 +175,15 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="col-md-8 py-2">
+        <motion.div
+        variants={experienceVariants}
+          initial="hidden"
+          animate="visible"
+        className="col-md-8 py-2">
           {/* Experience */}
           <div className="card bg-light animate__animated animate__fadeInRight component-bg">
-            <div className="card-body">
+            <div
+            className="card-body">
               <h1>Experience</h1>
 
               <ul>
@@ -160,11 +192,11 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/hireme">
-                <motion.a className="btn btn-secondary" whileTap={buttonTap}>Know More</motion.a>
+                <motion.a className="btn btn-secondary" variants={experienceVariants} whileTap="buttonTap">Know More</motion.a>
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       {/* Portfolio*/}
       <div className="row">
