@@ -1,6 +1,6 @@
 import React from "react";
 const Footer = ({ isHome }) => {
-  const styles = {
+  const homeStyles = {
     position: "fixed",
     top: "auto",
     bottom: "0",
@@ -10,7 +10,7 @@ const Footer = ({ isHome }) => {
   return (
     <footer
       className="bg-dark text-light text-center footer"
-      style={!isHome ? styles : {}}
+      style={!isHome ? homeStyles : {}}
     >
       <div className="container p-4">
         <h4 className="text-center fs-4">Follow me on my social medias</h4>

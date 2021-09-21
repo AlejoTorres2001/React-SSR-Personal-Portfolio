@@ -16,6 +16,8 @@ export default function Layout({ children, isHome }) {
       router.events.off("routeChangeStart", handleRouteChange);
     };
   }, []);
+
+
   return (
     <div>
       <NavBar></NavBar>

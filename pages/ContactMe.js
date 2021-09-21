@@ -4,8 +4,7 @@ import EmailForm from '../components/EmailForm'
 const ContactMe = () => {
 
     return (
-        <Layout isHome={true}>
-
+        <Layout isHome={false}>
             <EmailForm></EmailForm>
         </Layout>
     )
