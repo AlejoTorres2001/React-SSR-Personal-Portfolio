@@ -1,18 +1,17 @@
 import React from "react";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 const Experience = ({ job }) => {
   const { name, from, to, where, description, bps } = job;
-  const experienceVariant={
-    hidden:{
-      x:-10,
-      opacity:0
+  const experienceVariant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
     },
-    visible:{
-      x:"0",
-      opacity:1,
-      
-    }
-  }
+    visible: {
+      x: "0",
+      opacity: 1,
+    },
+  };
 
   return (
     <motion.li variants={experienceVariant}>

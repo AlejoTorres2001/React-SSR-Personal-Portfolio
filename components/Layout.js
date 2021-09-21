@@ -17,7 +17,6 @@ export default function Layout({ children, isHome }) {
     };
   }, []);
 
-
   return (
     <div>
       <NavBar></NavBar>

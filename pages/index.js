@@ -34,72 +34,70 @@ import Projects from "../components/Projects";
 }
 import skills, { experiences, projects } from "../profile";
 export default function Home() {
-  const buttonTap={
-    scale:1.1
-  }
-  const cardsVariants={
-    hidden:{
-      y:'-100vw'
+  const buttonTap = {
+    scale: 1.1,
+  };
+  const cardsVariants = {
+    hidden: {
+      y: "-100vw",
     },
-    visible:{
-      y:0,
-      transition:{
-        type:"spring",
-        duratin:1,
-        bounce:0.3,
+    visible: {
+      y: 0,
+      transition: {
+        type: "spring",
+        duratin: 1,
+        bounce: 0.3,
         delay: 0.5,
-        when:"beforeChildren",
-        staggerChildren:0.2
-      }
-    }
-  
-  }
-  const cardElementsVariant={
-    hidden:{
-      x:-10,
-      opacity:0
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
-    visible:{
-      x:"0",
-      opacity:1,
-      
-    }
-  }
-  const skillsVariants={
-    hidden:{
-      x:'-100vw'
+  };
+  const cardElementsVariant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
     },
-    visible:{
-      x:0,
-      transition:{
-        type:"spring",
-        duratin:1,
-        bounce:0.3,
+    visible: {
+      x: "0",
+      opacity: 1,
+    },
+  };
+  const skillsVariants = {
+    hidden: {
+      x: "-100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        type: "spring",
+        duratin: 1,
+        bounce: 0.3,
         delay: 0.5,
-        when:"beforeChildren",
-        staggerChildren:0.2
-      }
-    }
-  }
-  const experienceVariants={
-    hidden:{
-      x:'100vw'
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
-    visible:{
-      x:0,
-      transition:{
-        type:"spring",
-        duratin:1,
-        bounce:0.3,
+  };
+  const experienceVariants = {
+    hidden: {
+      x: "100vw",
+    },
+    visible: {
+      x: 0,
+      transition: {
+        type: "spring",
+        duratin: 1,
+        bounce: 0.3,
         delay: 0.5,
-        when:"beforeChildren",
-        staggerChildren:0.2
-      }
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
-    buttonTap:{
-      scale:1.1
-    }
-  }
+    buttonTap: {
+      scale: 1.1,
+    },
+  };
 
   return (
     <Layout isHome={true}>
@@ -114,7 +112,12 @@ export default function Home() {
           <div className="card card-body bg-secondary text-light animate__animated animate__fadeIn">
             <div className="row">
               <div className="col-md-4">
-                <motion.img variants={cardElementsVariant} src="/profile_pic.jpg" alt="" className="img-fluid" />
+                <motion.img
+                  variants={cardElementsVariant}
+                  src="/profile_pic.jpg"
+                  alt=""
+                  className="img-fluid"
+                />
               </div>
               <div className="col-md-8">
                 <h1>Alejo Torres</h1>
@@ -166,16 +169,15 @@ export default function Home() {
       </header>
 
       {/* Second Section */}
-      <section
-        
-      className="row py-2">
+      <section className="row py-2">
         {/* Skills */}
         <div className="col-md-4 py-2">
-          <motion.div 
-           variants={skillsVariants}
-           initial="hidden" 
-           animate="visible"
-          className="card bg-light animate__animated animate__fadeInLeft component-bg">
+          <motion.div
+            variants={skillsVariants}
+            initial="hidden"
+            animate="visible"
+            className="card bg-light animate__animated animate__fadeInLeft component-bg"
+          >
             <div className="card-body">
               <h1>Skills</h1>
               {skills.map((skill, id) => (
@@ -186,14 +188,14 @@ export default function Home() {
         </div>
 
         <motion.div
-        variants={experienceVariants}
+          variants={experienceVariants}
           initial="hidden"
           animate="visible"
-        className="col-md-8 py-2">
+          className="col-md-8 py-2"
+        >
           {/* Experience */}
           <div className="card bg-light animate__animated animate__fadeInRight component-bg">
-            <div
-            className="card-body">
+            <div className="card-body">
               <h1>Experience</h1>
 
               <ul>
@@ -202,17 +204,21 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/hireme">
-                <motion.a className="btn btn-secondary" variants={experienceVariants} whileTap="buttonTap">Know More</motion.a>
+                <motion.a
+                  className="btn btn-secondary"
+                  variants={experienceVariants}
+                  whileTap="buttonTap"
+                >
+                  Know More
+                </motion.a>
               </Link>
             </div>
           </div>
         </motion.div>
       </section>
       {/* Portfolio*/}
-      <div 
-      
-       className="row">
-        <div className="col-md-12" >
+      <div className="row">
+        <div className="col-md-12">
           <div className="card card-body bg-dark">
             <div className="row">
               <div className="col-md-12">
@@ -225,7 +231,12 @@ export default function Home() {
             {/* Button */}
             <div className="text-center mt-4">
               <Link href="/Portfolio">
-                <motion.a whileTap={buttonTap} className="btn btn-outline-light">More Projects</motion.a>
+                <motion.a
+                  whileTap={buttonTap}
+                  className="btn btn-outline-light"
+                >
+                  More Projects
+                </motion.a>
               </Link>
             </div>
           </div>

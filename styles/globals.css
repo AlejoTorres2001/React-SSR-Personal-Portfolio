@@ -1,23 +1,22 @@
-.brand{
-  font-family: 'Rubik', sans-serif !important;
+.brand {
+  font-family: "Rubik", sans-serif !important;
 }
 
-body{
+body {
   background-color: #f6f6f6 !important;
-  
 }
-.component-bg{
+.component-bg {
   background-color: #e4e2de !important ;
 }
-.bg-contrast{
-  background-color: #373A3C !important;
+.bg-contrast {
+  background-color: #373a3c !important;
 }
-#contactMe:hover{
+#contactMe:hover {
   background-color: #e4e2de !important;
-  color: #373A3C !important;
+  color: #373a3c !important;
 }
-*{
-  font-family: 'Roboto', sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
 }
 .overflow {
   height: 50% !important;
@@ -31,10 +30,9 @@ body{
   transform: scale(1.3) !important;
 }
 #nprogress .bar {
-  background: #688F98 !important;
+  background: #688f98 !important;
 }
 #nprogress .spinner-icon {
   border-top-color: #739ea8;
   border-left-color: #739ea8;
 }
-

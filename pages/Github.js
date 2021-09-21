@@ -2,70 +2,65 @@ import React from "react";
 import Badge from "../components/Badge";
 import Layout from "../components/Layout";
 import Error from "./_error";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 export default function Github({ user, statusCode }) {
-
-
-  const cardVariants={
-    hidden:{
-      y:'-100vh'
+  const cardVariants = {
+    hidden: {
+      y: "-100vh",
     },
-    visible:{
-      y:0,
-      transition:{
-        type:"spring",
-        duratin:1,
-        bounce:0.3,
+    visible: {
+      y: 0,
+      transition: {
+        type: "spring",
+        duratin: 1,
+        bounce: 0.3,
         delay: 0.5,
-        when:"beforeChildren",
-        staggerChildren:0.2
-      }
-    }
-  
-  }
-  const badgesVariant={
-    hidden:{
-      y:'100vh'
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
-    visible:{
-      y:0,
-      transition:{
-        type:"spring",
-        duratin:1,
-        bounce:0.3,
+  };
+  const badgesVariant = {
+    hidden: {
+      y: "100vh",
+    },
+    visible: {
+      y: 0,
+      transition: {
+        type: "spring",
+        duratin: 1,
+        bounce: 0.3,
         delay: 0.5,
-        when:"beforeChildren",
-        staggerChildren:0.2
-      }
-    }
-  
-  }
-  const childrenVariant={
-    hidden:{
-      x:-10,
-      opacity:0
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
     },
-    visible:{
-      x:"0",
-      opacity:1,
-      
-    }
-  }
-
-  
+  };
+  const childrenVariant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
+    },
+    visible: {
+      x: "0",
+      opacity: 1,
+    },
+  };
 
   if (statusCode) return <Error errorCode={statusCode}></Error>;
   return (
     <Layout isHome={true}>
       <div className="min-vh-100">
-        <motion.div variants={
-          cardVariants
-        } initial="hidden" animate="visible"
-        className="container justify-content-center align-content-center card w-50 component-bg">
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          animate="visible"
+          className="container justify-content-center align-content-center card w-50 component-bg"
+        >
           <div className="p-1 ">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <motion.img
-            variants={childrenVariant}
+              variants={childrenVariant}
               src={user.avatar_url}
               alt="imagen"
               className="card-img-top py-1"
@@ -84,11 +79,19 @@ export default function Github({ user, statusCode }) {
           </div>
         </motion.div>
         <motion.div className="my-2 mt-3 ">
-        <motion.div variants={cardVariants} initial="hidden" animate="visible">
-              <h1 className="text-center  text-withe">Badges</h1>
-            </motion.div>
-          <motion.div variants={badgesVariant} initial="hidden" animate="visible" className="bg-secondary d-flex justify-content-center align-items-center">
-           
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <h1 className="text-center  text-withe">Badges</h1>
+          </motion.div>
+          <motion.div
+            variants={badgesVariant}
+            initial="hidden"
+            animate="visible"
+            className="bg-secondary d-flex justify-content-center align-items-center"
+          >
             <Badge
               title={"Building a TodoApp with Javascript Workshop"}
               date={"Sep 10th 2021"}

@@ -1,30 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { motion} from "framer-motion"
+import { motion } from "framer-motion";
 const Badge = ({ title, date, verify, img }) => {
-
-  const childrenVariant={
-    hidden:{
-      x:-10,
-      opacity:0
+  const childrenVariant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
     },
-    visible:{
-      x:"0",
-      opacity:1,
-      
-    }
-  }
-
+    visible: {
+      x: "0",
+      opacity: 1,
+    },
+  };
 
   return (
-    <motion.blockquote variants={childrenVariant}
+    <motion.blockquote
+      variants={childrenVariant}
       className="badgr-badge component-bg text-center  border border-secondary w-100 m-2"
       style={{ fontFamily: "Helvetica, Roboto, Calibri, sans-serif" }}
     >
       <a href="https://api.badgr.io/public/assertions/9LCsS9AVSiaZOtCu-yNf9w">
         <img width="120px" height="120px" src={img} />
       </a>
-      <p className="badgr-badge-name badge-text fs-4">{title} <br /></p>
+      <p className="badgr-badge-name badge-text fs-4">
+        {title} <br />
+      </p>
       <p className="badgr-badge-date badge-date">
         <strong className="badge-strong">Awarded:</strong>
         {date}
