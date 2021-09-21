@@ -5,21 +5,21 @@
 //         3) fix skill bars //DONE
 //         4) add Experiences //DONE
 //         5) fix Github Description //DONE
-//         6) rethink colors //DONE 
+//         6) rethink colors //DONE
 //         7) fix footer in blogs //DONE
-//         8) add blog Entries 
+//         8) add blog Entries
 //         9) design the blog posts
 //         10) connect to mongoDB
 //         11) read posts from there
 //         12) Mailing System //DONE
 //         13) Downloadable files //DONE
-//         14) use animation framework 
+//         14) use animation framework
 
 {
   /* Next */
 }
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 {
   /* Components */
 }
@@ -33,11 +33,47 @@ import Projects from "../components/Projects";
 }
 import skills, { experiences, projects } from "../profile";
 export default function Home() {
+  const buttonTap={
+    scale:1.1
+  };
+  const cardsVariants={
+    headerCardInitial : {
+      x: "-12rem"
+    },
+    headerCardAnimate:{
+      x: "0rem"
+    },
+    headerCardTransition : {
+      type: "spring",
+      stiffness: 200,
+      duration: 2.5,
+    },  
+  }
+  const skillsVariants={
+    hidden:{
+      x:'-100vw'
+    },
+    visible:{
+      x:0,
+      transition:{
+        delay: 0.5,
+        when:"beforeChildren",
+        staggerChildren:0.2
+      }
+    }
+  }
+
   return (
     <Layout isHome={true}>
       {/* Header Card */}
       <header className="row">
-        <div className="col-md-12">
+        <motion.div
+          variants={cardsVariants}
+          initial="headerCardInitial"
+          animate="headerCardAnimate"
+          transition="headerCardTransition"
+          className="col-md-12"
+        >
           <div className="card card-body bg-secondary text-light animate__animated animate__fadeIn">
             <div className="row">
               <div className="col-md-4">
@@ -59,36 +95,57 @@ export default function Home() {
                   }
                 </p>
                 <Link href="/ContactMe">
-                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" id="contactMe">
+                  <motion.a
+                    whileTap={buttonTap}
+                    className="btn btn-outline-light fs-5 mx-2 my-1 w-30"
+                    id="contactMe"
+                  >
                     Contact
-                  </a>
+                  </motion.a>
                 </Link>
-               
-                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" download href="AlejoTorres.pdf" id="contactMe">
-                   CV
-                  </a>
-                  <a className="btn btn-outline-light fs-5 mx-2 my-1 w-30" download href="Abstract_Alejo_Torres.pdf" id="contactMe">
-                   Abstract
-                  </a>
-                
+
+                <motion.a
+                  className="btn btn-outline-light fs-5 mx-2 my-1 w-30"
+                  download
+                  whileTap={buttonTap}
+                  href="AlejoTorres.pdf"
+                  id="contactMe"
+                >
+                  CV
+                </motion.a>
+                <motion.a
+                  className="btn btn-outline-light fs-5 mx-2 my-1 w-30"
+                  download
+                  whileTap={buttonTap}
+                  href="Abstract_Alejo_Torres.pdf"
+                  id="contactMe"
+                >
+                  Abstract
+                </motion.a>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </header>
 
       {/* Second Section */}
-      <section className="row py-2">
+      <section
+        
+      className="row py-2">
         {/* Skills */}
         <div className="col-md-4 py-2">
-          <div className="card bg-light animate__animated animate__fadeInLeft component-bg">
+          <motion.div 
+          variants={skillsVariants}
+          initial="hidden" 
+          animate="visible"
+          className="card bg-light animate__animated animate__fadeInLeft component-bg">
             <div className="card-body">
               <h1>Skills</h1>
               {skills.map((skill, id) => (
                 <Skill skill={skill} key={id} />
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="col-md-8 py-2">
@@ -103,7 +160,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link href="/hireme">
-                <a className="btn btn-secondary">Know More</a>
+                <motion.a className="btn btn-secondary" whileTap={buttonTap}>Know More</motion.a>
               </Link>
             </div>
           </div>
@@ -124,7 +181,7 @@ export default function Home() {
             {/* Button */}
             <div className="text-center mt-4">
               <Link href="/Portfolio">
-                <a className="btn btn-outline-light">More Projects</a>
+                <motion.a whileTap={buttonTap} className="btn btn-outline-light">More Projects</motion.a>
               </Link>
             </div>
           </div>
