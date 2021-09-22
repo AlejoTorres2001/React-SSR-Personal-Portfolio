@@ -122,19 +122,19 @@ const posts = [
   {
     title: "React",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempora magni, unde recusandae sed maiores minima, rerum perspiciatis blanditiis laborum, molestias quaerat nemo rem cum? Voluptate ea et omnis quibusdam?",
+      "Coming soon...",
     image: "blog_1.png",
   },
   {
     title: "Angular",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempora magni, unde recusandae sed maiores minima, rerum perspiciatis blanditiis laborum, molestias quaerat nemo rem cum? Voluptate ea et omnis quibusdam?",
+      "Coming soon...",
     image: "blog_2.jpg",
   },
   {
     title: "Vue",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempora magni, unde recusandae sed maiores minima, rerum perspiciatis blanditiis laborum, molestias quaerat nemo rem cum? Voluptate ea et omnis quibusdam?ipsum dolor sit amet consectetur adipisicing elit. Velit tempora ipsu",
+      "Coming soon...",
     image: "blog_3.jpg",
   },
 ];
