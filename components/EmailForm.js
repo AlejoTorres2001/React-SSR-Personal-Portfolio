@@ -53,7 +53,7 @@ const EmailForm = () => {
       variants={cardsVariants}
       initial="hidden"
       animate="visible"
-      className="container-form my-5"
+      className="container-form my-2 mb-5 "
       onSubmit={sendEmail}
     >
       <div className="contact-box">

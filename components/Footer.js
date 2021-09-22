@@ -9,7 +9,7 @@ const Footer = ({ isHome }) => {
   };
   return (
     <footer
-      className="bg-dark text-light text-center footer"
+      className="bg-dark text-light text-center footer "
       style={!isHome ? homeStyles : {}}
     >
       <div className="container p-4">
