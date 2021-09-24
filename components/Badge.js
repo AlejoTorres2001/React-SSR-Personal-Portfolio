@@ -16,7 +16,7 @@ const Badge = ({ title, date, verify, img }) => {
   return (
     <motion.blockquote
       variants={childrenVariant}
-      className="badgr-badge component-bg text-center  border border-secondary w-100 m-2"
+      className="badgr-badge component-bg text-center  border border-secondary w-100 my-1 "
       style={{ fontFamily: "Helvetica, Roboto, Calibri, sans-serif" }}
     >
       <a href="https://api.badgr.io/public/assertions/9LCsS9AVSiaZOtCu-yNf9w">

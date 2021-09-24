@@ -90,7 +90,7 @@ export default function Github({ user, statusCode }) {
             variants={badgesVariant}
             initial="hidden"
             animate="visible"
-            className="bg-secondary d-flex justify-content-center align-items-center"
+            className="bg-secondary d-flex justify-content-center align-items-center "
           >
             <Badge
               title={"Building a TodoApp with Javascript Workshop"}
