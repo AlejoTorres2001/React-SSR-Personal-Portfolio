@@ -113,6 +113,7 @@ export default function Github({ user, statusCode }) {
                 "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FVs-epAjIR1iqQa7xOHEB2A%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com"
               }
             ></Badge>
+            <Badge title={"Building a Netflix Clone with GraphQL Workshop"} img={"https://api.badgr.io/public/assertions/QjjpNAZcRKevsxdvZvfaNg/image"} verify={"https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FQjjpNAZcRKevsxdvZvfaNg%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com"} date={"24 sept. 2021"}></Badge>
           </motion.div>
         </motion.div>
       </div>
