@@ -114,6 +114,9 @@ export default function Github({ user, statusCode }) {
               }
             ></Badge>
             <Badge title={"Building a Netflix Clone with GraphQL Workshop"} img={"https://api.badgr.io/public/assertions/QjjpNAZcRKevsxdvZvfaNg/image"} verify={"https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FQjjpNAZcRKevsxdvZvfaNg%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com"} date={"24 sept. 2021"}></Badge>
+
+            <Badge title={"Build an App with VueJS and Typescript"}
+            img={"https://api.badgr.io/public/assertions/3hSqyYF3QzWoL6-Dwx84dQ/image"} verify={"https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2F3hSqyYF3QzWoL6-Dwx84dQ%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com" } date={"25 Oct. 2021"}></Badge>
           </motion.div>
         </motion.div>
       </div>
