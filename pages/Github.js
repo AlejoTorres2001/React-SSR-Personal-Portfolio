@@ -120,12 +120,14 @@ export default function Github({ user, statusCode }) {
 
             <Badge title={"Astra TikTok clone Workshop"}
             img={"https://api.badgr.io/public/assertions/zFpQb577RI-VeKbGFDaOqg/image"} verify={"https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FzFpQb577RI-VeKbGFDaOqg%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com" } date={"15 Nov. 2021"}></Badge>
+            <Badge title={"Event Streaming Workshop"} img={"https://api.badgr.io/public/assertions/ardud1z8QI-s79TNBby1YA/image"} verify={"https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2Fardud1z8QI-s79TNBby1YA%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com"} date={"22 nov. 2021"}></Badge>
           </motion.div>
         </motion.div>
       </div>
     </Layout>
   );
 }
+
 export async function getServerSideProps() {
   const res = await fetch("https://api.github.com/users/AlejoTorres2001");
   const data = await res.json();
