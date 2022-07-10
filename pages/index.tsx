@@ -19,7 +19,7 @@ const Profile: NextPage = () => {
         <div className="profile-details">
           <div className="cols">
             <div className="cols-icons">
-              <Link  href="#">
+              <Link href="#">
                 <FontAwesomeIcon className='icon' icon={faFacebookSquare} />
               </Link>
               <Link href="#">
