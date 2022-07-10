@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import type { NextPage } from 'next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare,faGithub,faInstagram,faLinkedin,faTwitterSquare } from '@fortawesome/free-brands-svg-icons'
@@ -23,6 +24,18 @@ const Profile: NextPage = () => {
             <Link href="#">
               <FontAwesomeIcon icon={faTwitterSquare} />
             </Link>
+          </div>
+          <div className="profile-details-name">
+            <span className='primary-text'>
+              {""}
+              Hello, I'm <span className='highlighted-text'>Alejo</span>
+            </span>
+          </div>
+          <div className="profile-details-role">
+            <span className='primary-text'>
+              {""}
+              <h1></h1>
+            </span>
           </div>
         </div>
       </div>
