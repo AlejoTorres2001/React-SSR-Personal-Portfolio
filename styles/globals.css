@@ -55,13 +55,13 @@ body ::-webkit-scrollbar-thumb {
 }
 .primary-btn:hover {
   color: #f0f8ff;
-  border: 2px solid #ff5823;
+  border: 2px solid var(--dark-orange);
   background-color: #1f2235;
 }
 .highlighted-btn {
   color: var(--white);
   font-size: 12px;
-  background-color: #ff5823;
+  background-color: var(--dark-orange);
 }
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
@@ -101,7 +101,7 @@ body ::-webkit-scrollbar-thumb {
   color: (--white);
 }
 .highlighted-text {
-  color: #ff5823;
+  color: var(--dark-orange);
 }
 .profile-role-tagline {
   font-size: 19px;
@@ -110,12 +110,12 @@ body ::-webkit-scrollbar-thumb {
 }
 .profile-options .highlighted-btn {
   margin: 0 0 0 28px;
-  border-radius: 12px solid #fff;
+  border-radius: 12px solid #ffffff;
 }
 .profile-options .highlighted-btn:hover {
   margin: 0 0 0 28px;
   background-color: #fff8dc;
-  color: #111;
+  color: #111;  
 }
 .profile-picture {
   display: flex;
@@ -142,7 +142,7 @@ body ::-webkit-scrollbar-thumb {
   transition: 1s ease-out;
 }
 .icon {
-  color: #fff;
+  color: var(--white);
   padding: 8px 8px 8px 0;
 }
 @media only screen and (max-width: 1110px) {
