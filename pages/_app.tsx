@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import '../styles/Header.css'
 import '../styles/Footer.css'
+import '../styles/Profile.css'
 import type { AppProps } from 'next/app'
 import '@fortawesome/fontawesome-svg-core/styles.css' // import Font Awesome CSS
 import { config } from '@fortawesome/fontawesome-svg-core'
