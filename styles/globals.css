@@ -1,3 +1,24 @@
+:root {
+  --light-blue: #04c3ff;
+  --light-blue-shadow: rgb(69 211 255 / 27%);
+  --sea-green: #0abead;
+  --sea-green-dark: #0cbfae;
+  --sea-green-extra-dark: #09bead;
+  --sea-green-shadow: rgba(11, 190, 173, 0.4);
+  --header-hamburger-background: rgba(11, 190, 173, 0.8);
+  --orange: #f57f17;
+  --dark-orange: #ff5823;
+  --orange-shadow: rgba(245, 127, 23, 0.2);
+  --white: #ffffff;
+  --black: #333333;
+  --disabled-btn: #09bead7a;
+  --error-message: #e44f4ffa;
+  --toast-error: #eddfdffa;
+  --toast-shadow: #9c9c9ce3;
+  --toast-success: #0cbfae;
+  --loader-color: #0cbfae;
+}
+
 * {
   outline: none;
 }
@@ -34,13 +55,13 @@ body ::-webkit-scrollbar-thumb {
 }
 .primary-btn:hover {
   color: #f0f8ff;
-  border: 2px solid #ff5823;
+  border: 2px solid var(--dark-orange);
   background-color: #1f2235;
 }
 .highlighted-btn {
   color: var(--white);
   font-size: 12px;
-  background-color: #ff5823;
+  background-color: var(--dark-orange);
 }
 @media only screen and (max-width: 568px) {
   .highlighted-btn {
@@ -56,7 +77,7 @@ body ::-webkit-scrollbar-thumb {
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  background-image: url('../assets/home/bg.jpg');
+  background-image: url('../public/assets/home/bg.jpg');
 }
 .profile-parent {
   display: flex;
@@ -80,7 +101,7 @@ body ::-webkit-scrollbar-thumb {
   color: (--white);
 }
 .highlighted-text {
-  color: #ff5823;
+  color: var(--dark-orange);
 }
 .profile-role-tagline {
   font-size: 19px;
@@ -89,7 +110,7 @@ body ::-webkit-scrollbar-thumb {
 }
 .profile-options .highlighted-btn {
   margin: 0 0 0 28px;
-  border-radius: 12px solid #fff;
+  border-radius: 12px solid #ffffff;
 }
 .profile-options .highlighted-btn:hover {
   margin: 0 0 0 28px;
@@ -110,19 +131,22 @@ body ::-webkit-scrollbar-thumb {
   height: 92%;
   width: 92%;
   border-radius: 50%;
-  background-image: url('../assets/home/profile-picture.jpg');
+  background-image: url('../public/assets/home/profile-picture.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
 }
 .profile-picture-background:hover {
-  -webkit-transform: scale(1.07);
   transform: scale(1.07);
   transition: 1s ease-out;
 }
 .icon {
-  color: #fff;
+  color: var(--white);
   padding: 8px 8px 8px 0;
+}
+.icon :hover {
+  transition: 0.4s ease-out;
+  transform: scale(1.2);
 }
 @media only screen and (max-width: 1110px) {
   .profile-picture {
@@ -178,11 +202,19 @@ body ::-webkit-scrollbar-thumb {
   font-family: 'Poppins SemiBold';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/Poppins-SemiBold.ttf');
+  src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
 }
 @font-face {
   font-family: 'Poppins Light';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/Poppins-Light.ttf');
+  src: url('../public/assets/fonts/Poppins-Light.ttf');
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 670px;
+  background-image: url('../public/assets/home/bg.jpg');
 }
