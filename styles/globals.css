@@ -115,7 +115,7 @@ body ::-webkit-scrollbar-thumb {
 .profile-options .highlighted-btn:hover {
   margin: 0 0 0 28px;
   background-color: #fff8dc;
-  color: #111;  
+  color: #111;
 }
 .profile-picture {
   display: flex;
@@ -137,13 +137,16 @@ body ::-webkit-scrollbar-thumb {
   background-position: 50%;
 }
 .profile-picture-background:hover {
-  -webkit-transform: scale(1.07);
   transform: scale(1.07);
   transition: 1s ease-out;
 }
 .icon {
   color: var(--white);
   padding: 8px 8px 8px 0;
+}
+.icon :hover {
+  transition: 0.4s ease-out;
+  transform: scale(1.2);
 }
 @media only screen and (max-width: 1110px) {
   .profile-picture {
@@ -206,4 +209,12 @@ body ::-webkit-scrollbar-thumb {
   font-style: normal;
   font-weight: 400;
   src: url('../assets/fonts/Poppins-Light.ttf');
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 670px;
+  background-image: url('../assets/home/bg.jpg');
 }
