@@ -12,6 +12,7 @@ import {
 import Link from 'next/link'
 import HeadTag from '../components/HeadTag'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 const Profile: NextPage = () => {
   return (
     <div className="home-container">
@@ -76,6 +77,7 @@ const Profile: NextPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
