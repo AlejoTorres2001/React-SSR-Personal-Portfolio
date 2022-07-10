@@ -1,5 +1,5 @@
 import React from 'react'
-const Header = () => {
+const Header:React.FunctionComponent<object> = () => {
   return (
     <div className="header-container">
       <div className="header-parent">
