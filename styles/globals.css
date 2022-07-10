@@ -1,51 +1,16 @@
-.brand {
-  font-family: "Rubik", sans-serif !important;
-}
-
+html,
 body {
-  background-color: #f6f6f6 !important;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
-.component-bg {
-  background-color: #e4e2de !important ;
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
-.bg-contrast {
-  background-color: #373a3c !important;
-}
-#contactMe:hover {
-  background-color: #e4e2de !important;
-  color: #373a3c !important;
-}
+
 * {
-  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
-.overflow {
-  height: 50% !important;
-  overflow: hidden;
-}
-.overflow .card-img-top {
-  transform: scale(1) !important;
-  transition: all 0.2s ease-in-out;
-}
-.overflow .card-img-top:hover {
-  transform: scale(1.3) !important;
-}
-#nprogress .bar {
-  background: #688f98 !important;
-}
-#nprogress .spinner-icon {
-  border-top-color: #739ea8;
-  border-left-color: #739ea8;
-}
-.email-icon{
-  font-size: 70px
-}
-.d-flex{
- display: flex !important;
-}
-
-@media screen and (max-width: 800px) {
-  .d-flex{
-    display: block !important;
-}
-}
-
