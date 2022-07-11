@@ -96,6 +96,7 @@
   display: flex;
   width: 100%;
   box-shadow: 0 0 20px -2px #1f2235;
+  margin-bottom: 30px;
 }
 .about-me-profile {
   width: 50%;
