@@ -1,5 +1,6 @@
 import React from 'react'
 import useButtons from '../hooks/useButtons'
+import Education from './Education'
 // style="opacity: 5; transform: translateY(1px);"
 const Resume = () => {
   const [
@@ -99,49 +100,7 @@ const Resume = () => {
           </div>
           <div className="resume-bullet-details">
             <div className="resume-details-carousal">
-              {isSelectedEducation && (
-                <div className="resume-screen-container">
-                  <div className="resume-heading">
-                    <div className="resume-main-heading">
-                      <div className="heading-bullet"></div>
-                      <span>WRITE SOMETHING</span>
-                      <div className="heading-date">2014-2018</div>
-                    </div>
-                    <div className="resume-sub-heading">
-                      <span>WRITE SOMETHING</span>
-                    </div>
-                    <div className="resume-heading-description">
-                      <span>asdasd</span>
-                    </div>
-                  </div>
-                  <div className="resume-heading">
-                    <div className="resume-main-heading">
-                      <div className="heading-bullet"></div>
-                      <span>WRITE SOMETHING</span>
-                      <div className="heading-date">2019-2020</div>
-                    </div>
-                    <div className="resume-sub-heading">
-                      <span>WRITE SOMETHING</span>
-                    </div>
-                    <div className="resume-heading-description">
-                      <span>asdas</span>
-                    </div>
-                  </div>
-                  <div className="resume-heading">
-                    <div className="resume-main-heading">
-                      <div className="heading-bullet"></div>
-                      <span>asda</span>
-                      <div className="heading-date">2007-2012</div>
-                    </div>
-                    <div className="resume-sub-heading">
-                      <span>WRITE SOMETHING</span>
-                    </div>
-                    <div className="resume-heading-description">
-                      <span>asdasd</span>
-                    </div>
-                  </div>
-                </div>
-              )}
+              {isSelectedEducation && <Education />}
             </div>
           </div>
         </div>
