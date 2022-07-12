@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Profile from '../components/Profile'
 import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
+import Badges from '../components/Badges'
 const Home: NextPage = () => {
   return (
     <div className="home-container">
@@ -14,6 +15,8 @@ const Home: NextPage = () => {
       <Footer />
       <AboutMe/>
       <Resume/>
+      <Badges/>
+      <Footer />
     </div>
   )
 }
