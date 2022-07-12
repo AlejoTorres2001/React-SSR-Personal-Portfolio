@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 const Header:React.FunctionComponent<object> = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
   return (
     <div className="header-container">
       <div className="header-parent">
@@ -13,6 +14,7 @@ const Header:React.FunctionComponent<object> = () => {
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
+            onClick={() => { setShowMobileMenu(!showMobileMenu) } }
           >
             <path
               fill="currentColor"
@@ -23,21 +25,21 @@ const Header:React.FunctionComponent<object> = () => {
         <div className="header-logo">
           <span>Alejo Torres</span>
         </div>
-        <div className="header-options">
+        <div onClick={() => setShowMobileMenu(!showMobileMenu)} className={`header-options ${showMobileMenu ? 'show-hamburger-options' : ''}` }>
           <div className="header-option header-option-seperator ">
-            <span>Home</span>
+            <span onClick={() => console.log('go to home!')}>Home</span>
           </div>
           <div className="header-option header-option-seperator selected-header-option ">
-            <span>AboutMe</span>
+            <span onClick={() => console.log('go to aboutMe!')}>AboutMe</span>
           </div>
           <div className="header-option header-option-seperator ">
-            <span>Resume</span>
+            <span onClick={() => console.log('go to Resume!')}>Resume</span>
           </div>
           <div className="header-option header-option-seperator ">
-            <span>Testimonial</span>
+            <span onClick={() => console.log('go to Testimonial!')}>Testimonial</span>
           </div>
           <div className="header-option ">
-            <span>ContactMe</span>
+            <span onClick={() => console.log('go to ContactMe!')}>ContactMe</span>
           </div>
         </div>
       </div>
