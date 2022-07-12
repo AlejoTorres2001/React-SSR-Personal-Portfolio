@@ -1,8 +1,12 @@
 import React from 'react'
 import useButtons from '../hooks/useButtons'
-import Education from './Education'
+import Education from './ResumeComponents/Education'
+import Interests from './ResumeComponents/Interests'
+import Proyects from './ResumeComponents/Proyects'
+import Skills from './ResumeComponents/Skills'
+import Work from './ResumeComponents/Work'
 // style="opacity: 5; transform: translateY(1px);"
-const Resume = () => {
+const Resume:React.FunctionComponent<object> = () => {
   const [
     isSelectedEducation,
     isSelectedWork,
@@ -101,6 +105,10 @@ const Resume = () => {
           <div className="resume-bullet-details">
             <div className="resume-details-carousal">
               {isSelectedEducation && <Education />}
+              {isSelectedWork && <Work />}
+              {isSelectedSkills && <Skills/>}
+              {isSelectedProyects && <Proyects/>}
+              {isSelectedInterests && <Interests/>}
             </div>
           </div>
         </div>

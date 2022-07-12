@@ -1,49 +1,55 @@
 import React from 'react'
 
-const Education = () => {
+const Interests:React.FunctionComponent<object> = () => {
   return (
     <div className="resume-screen-container">
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-          <span>WRITE SOMETHING</span>
-          <div className="heading-date">2014-2018</div>
+          <span>Interest1</span>
+          <div></div>
         </div>
         <div className="resume-sub-heading">
-          <span>WRITE SOMETHING</span>
+          <span></span>
         </div>
         <div className="resume-heading-description">
-          <span>asdasd</span>
+          <span>
+            description
+          </span>
         </div>
       </div>
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-          <span>WRITE SOMETHING</span>
-          <div className="heading-date">2019-2020</div>
+          <span>Interest2</span>
+          <div></div>
         </div>
         <div className="resume-sub-heading">
-          <span>WRITE SOMETHING</span>
+          <span></span>
         </div>
         <div className="resume-heading-description">
-          <span>asdas</span>
+          <span>
+            description
+          </span>
         </div>
       </div>
       <div className="resume-heading">
         <div className="resume-main-heading">
           <div className="heading-bullet"></div>
-          <span>asda</span>
-          <div className="heading-date">2007-2012</div>
+          <span>Interest3</span>
+          <div></div>
         </div>
         <div className="resume-sub-heading">
-          <span>WRITE SOMETHING</span>
+          <span></span>
         </div>
         <div className="resume-heading-description">
-          <span>asdasd</span>
+          <span>
+           description
+          </span>
         </div>
       </div>
     </div>
   )
 }
 
-export default Education
+export default Interests

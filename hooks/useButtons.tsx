@@ -7,7 +7,7 @@ const useButtons = () => {
   const [isSelectedSkills, setIsSelectedSkills] = useState(false)
   const [isSelectedProyects, setIsSelectedProyects] = useState(false)
   const [isSelectedInterests, setIsSelectedInterests] = useState(false)
-  const toggleSection:toggleSectionInterface = (sectionName: String) => {
+  const toggleSection:toggleSectionInterface = (sectionName: string) => {
     switch (sectionName) {
       case 'education':
         setIsSelectedEducation(!isSelectedEducation)
