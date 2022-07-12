@@ -1,13 +1,21 @@
 import { useState } from 'react'
 
-type toggleSectionInterface = (sectionName: string) => void
-const useButtons = () => {
+type useButtonsHook = () => [
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  boolean,
+  (sectionName: string) => void
+]
+
+const useButtons: useButtonsHook = () => {
   const [isSelectedEducation, setIsSelectedEducation] = useState(true)
   const [isSelectedWork, setIsSelectedWork] = useState(false)
   const [isSelectedSkills, setIsSelectedSkills] = useState(false)
   const [isSelectedProyects, setIsSelectedProyects] = useState(false)
   const [isSelectedInterests, setIsSelectedInterests] = useState(false)
-  const toggleSection:toggleSectionInterface = (sectionName: string) => {
+  const toggleSection = (sectionName: string) => {
     switch (sectionName) {
       case 'education':
         setIsSelectedEducation(!isSelectedEducation)

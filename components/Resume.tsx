@@ -6,7 +6,7 @@ import Proyects from './ResumeComponents/Proyects'
 import Skills from './ResumeComponents/Skills'
 import Work from './ResumeComponents/Work'
 // style="opacity: 5; transform: translateY(1px);"
-const Resume: React.FunctionComponent<object> = () => {
+const Resume = () => {
   const [
     isSelectedEducation,
     isSelectedWork,
