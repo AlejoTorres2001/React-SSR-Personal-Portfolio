@@ -6,7 +6,7 @@ import Proyects from './ResumeComponents/Proyects'
 import Skills from './ResumeComponents/Skills'
 import Work from './ResumeComponents/Work'
 // style="opacity: 5; transform: translateY(1px);"
-const Resume:React.FunctionComponent<object> = () => {
+const Resume: React.FunctionComponent<object> = () => {
   const [
     isSelectedEducation,
     isSelectedWork,
@@ -103,13 +103,11 @@ const Resume:React.FunctionComponent<object> = () => {
             </div>
           </div>
           <div className="resume-bullet-details">
-            <div className="resume-details-carousal">
-              {isSelectedEducation && <Education />}
-              {isSelectedWork && <Work />}
-              {isSelectedSkills && <Skills/>}
-              {isSelectedProyects && <Proyects/>}
-              {isSelectedInterests && <Interests/>}
-            </div>
+            {isSelectedEducation && <Education />}
+            {isSelectedWork && <Work />}
+            {isSelectedSkills && <Skills />}
+            {isSelectedProyects && <Proyects />}
+            {isSelectedInterests && <Interests />}
           </div>
         </div>
       </div>
