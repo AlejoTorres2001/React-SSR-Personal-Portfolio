@@ -7,40 +7,78 @@ const Education: React.FunctionComponent<object> = () => {
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>WRITE SOMETHING</span>
-            <div className="heading-date">2014-2018</div>
+            <span>Platzi Certifications</span>
+            <div className="heading-date">2021-2022</div>
           </div>
           <div className="resume-sub-heading">
-            <span>WRITE SOMETHING</span>
+            <span>
+              Javascript School <br />
+              Web development School
+              <br />
+              Node.Js: Backend Development with Javascript
+              <br />
+              Frontend with React.js
+              <br />
+              Mobile Apps Development with React Native
+            </span>
           </div>
           <div className="resume-heading-description">
-            <span>asdasd</span>
+            <span></span>
           </div>
         </div>
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>WRITE SOMETHING</span>
-            <div className="heading-date">2019-2020</div>
+            <span>Digital Forensics course</span>
+            <div className="heading-date">2021-2021</div>
           </div>
           <div className="resume-sub-heading">
-            <span>WRITE SOMETHING</span>
+            <span>Ingeneering Faculty at UCASAL,Argentina</span>
           </div>
           <div className="resume-heading-description">
-            <span>asdas</span>
+            <span></span>
           </div>
         </div>
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>asda</span>
-            <div className="heading-date">2007-2012</div>
+            <span>Science in Computer Engineering</span>
+            <div className="heading-date">2018-Present</div>
           </div>
           <div className="resume-sub-heading">
-            <span>WRITE SOMETHING</span>
+            <span>Catholic University of Salta,Argentina</span>
           </div>
           <div className="resume-heading-description">
-            <span>asdasd</span>
+            <span>
+              Advanced Student: 4 out of 5 years done <br />
+              GPA: 8.5 / 10
+            </span>
+          </div>
+        </div>
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>Secondary School</span>
+            <div className="heading-date">2013-2018</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>Escuela Parroquial Nuestra Señora de la merced</span>
+          </div>
+          <div className="resume-heading-description">
+            <span>Bachelor of Social Sciences and Humanity</span>
+          </div>
+        </div>
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>University of Cambridge</span>
+            <div className="heading-date">2013-2018</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>FCE First Certificate in English</span>
+          </div>
+          <div className="resume-heading-description">
+            <span></span>
           </div>
         </div>
       </div>

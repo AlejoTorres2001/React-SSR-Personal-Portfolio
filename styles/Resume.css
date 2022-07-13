@@ -1,4 +1,3 @@
-
 .heading-container {
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@
   display: flex;
   height: 360px;
   width: 1000px;
-  margin-bottom:80px;
+  margin-bottom: 80px;
 }
 .resume-bullets {
   box-shadow: 15px 0 9px -15px #1f2235;
@@ -79,9 +78,13 @@
 .resume-details-carousal {
   animation: fadeInAnimation 2s;
 }
-@keyframes fadeInAnimation{
-    from { opacity: 0; }
-    to   { opacity: 1; }
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .bullet-container {
   display: flex;
@@ -129,7 +132,6 @@
 }
 .resume-screen-container {
   justify-content: space-evenly;
-  height: 360px;
   width: 100%;
 }
 .resume-heading,
@@ -146,6 +148,7 @@
   color: var(--dark-orange);
   font-size: 16px;
   font-family: 'Poppins SemiBold';
+  margin-bottom: 15px;
 }
 .experience-description {
   max-width: 100%;
@@ -160,14 +163,15 @@
   background-color: #ff5823;
 }
 .resume-sub-heading {
-  font-size: 14px;
+  font-size: 13px;
   font-family: 'Poppins SemiBold';
   color: var(--black);
-  margin: 10px 0 0;
+  margin: -5px 5px 0px;
 }
 .resume-heading-description {
   font-size: 12px;
   text-align: justify;
+  margin: -5px 15px 15px;
 }
 .heading-date {
   background-color: #ff5823;
@@ -175,6 +179,8 @@
   font-size: 14px;
   border-radius: 14px;
   color: var(--white);
+  width: 117px;
+  height: 27px;
 }
 .skill-parent {
   display: flex;
@@ -206,8 +212,8 @@
   font-size: 16px;
   color: #ff5823;
 }
-.resume-content{
-  margin-top:40px
+.resume-content {
+  margin-top: 40px;
 }
 @media only screen and (max-width: 1110px) {
   .resume-card {
