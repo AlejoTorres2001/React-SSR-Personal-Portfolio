@@ -16,11 +16,36 @@
 }
 .badges-container{
   padding: 80px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 100%;
   background-image: url('../public/assets/home/bg.jpg');
-  background-position: 80% center ;
-  background-attachment: relative;
+  background-position: 90% center ;
+  background-attachment: relative;  
+}
+
+.rec.rec-arrow:hover:enabled {
+    color: var(--dark-orange);
+    background-color: var(--white);
+}
+
+.rec.rec-arrow {
+  color: var(--white);
+  background-color: var(--dark-orange);
+}
+
+.rec.rec-dot{
+  color: var(--white);
+  
+}
+.rec.rec-dot:hover{
+  color: var(--white);
+  
+}
+.rec.rec-dot_active:hover{
+  color: var(--white);
+  
+}
+.rec.rec-dot_active{
+  color: var(--white);
+  background-color: var(--dark-orange);
+  box-shadow: 0 0 1px 3px 
 }
