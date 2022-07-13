@@ -1,0 +1,48 @@
+{
+  "badges": [
+    {
+      "title": "Building a TodoApp with Javascript Workshop",
+      "date": "Sep 10th 2021",
+      "img": "https://api.badgr.io/public/assertions/9LCsS9AVSiaZOtCu-yNf9w/image",
+
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2F9LCsS9AVSiaZOtCu-yNf9w",
+      "assertion": "https://api.badgr.io/public/assertions/9LCsS9AVSiaZOtCu-yNf9w?identity__email=torres.alejo2001%40gmail.com"
+    },
+    {
+      "date": "Sept 20th 2021",
+      "title": "Introduction to GraphQL with Javascript Workshop",
+      "img": "https://api.badgr.io/public/assertions/Vs-epAjIR1iqQa7xOHEB2A/image",
+
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FVs-epAjIR1iqQa7xOHEB2A%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com",
+      "assertion": "https://api.badgr.io/public/assertions/Vs-epAjIR1iqQa7xOHEB2A?identity__email=torres.alejo2001%40gmail.com"
+    },
+    {
+      "title": "Building a Netflix Clone with GraphQL Workshop",
+      "img": "https://api.badgr.io/public/assertions/QjjpNAZcRKevsxdvZvfaNg/image",
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FQjjpNAZcRKevsxdvZvfaNg%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com",
+      "date": "Sep 24th 2021",
+      "assertion": "https://api.badgr.io/public/assertions/QjjpNAZcRKevsxdvZvfaNg?identity__email=torres.alejo2001%40gmail.com"
+    },
+    {
+      "title": "Build an App with VueJS and Typescript",
+      "img": "https://api.badgr.io/public/assertions/3hSqyYF3QzWoL6-Dwx84dQ/image",
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2F3hSqyYF3QzWoL6-Dwx84dQ%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com",
+      "date": "Oct 25th 2021",
+      "assertion": "https://api.badgr.io/public/assertions/3hSqyYF3QzWoL6-Dwx84dQ?identity__email=torres.alejo2001%40gmail.com "
+    },
+    {
+      "title": "Astra TikTok clone Workshop",
+      "img": "https://api.badgr.io/public/assertions/zFpQb577RI-VeKbGFDaOqg/image",
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2FzFpQb577RI-VeKbGFDaOqg%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com",
+      "date": "Nov 15th 2021",
+      "assertion": "https://api.badgr.io/public/assertions/zFpQb577RI-VeKbGFDaOqg?identity__email=torres.alejo2001%40gmail.com"
+    },
+    {
+      "title": "Event Streaming Workshop",
+      "img": "https://api.badgr.io/public/assertions/ardud1z8QI-s79TNBby1YA/image",
+      "verify": "https://badgecheck.io?url=https%3A%2F%2Fapi.badgr.io%2Fpublic%2Fassertions%2Fardud1z8QI-s79TNBby1YA%3Fidentity__email%3Dtorres.alejo2001%2540gmail.com&amp;identity__email=torres.alejo2001%40gmail.com",
+      "date": "Nov 22nd 2021",
+      "assertion": "https://api.badgr.io/public/assertions/ardud1z8QI-s79TNBby1YA?identity__email=torres.alejo2001%40gmail.com"
+    }
+  ]
+}

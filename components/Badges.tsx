@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-elastic-carousel'
 import Badge from './Badge'
+import { badges } from '../badges.json'
 const Badges = () => {
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -28,7 +29,7 @@ const Badges = () => {
       <div className="badges-container">
 {/* @ts-ignore */}
 <Carousel breakPoints={breakPoints}>
-      {Array.from({ length: 7 }).map((_, index) => <Badge key={index}/>)}
+      {badges.map((badge, id) => <Badge {...badge} key={id}/>)}
         </Carousel>
       </div>
     </div>

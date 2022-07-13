@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 import HeadTag from '../components/HeadTag'
-const Profile:React.FunctionComponent<object> = () => {
+const Profile: React.FunctionComponent<object> = () => {
   return (
     <div className="profile-container">
       <HeadTag />
@@ -38,7 +38,7 @@ const Profile:React.FunctionComponent<object> = () => {
           <div className="profile-details-name">
             <span className="primary-text">
               {''}
-              Hello, I'm <span className="highlighted-text">Alejo</span>
+              {"Hello, I'm"} <span className="highlighted-text">Alejo</span>
             </span>
           </div>
           <div className="profile-details-role">
