@@ -10,9 +10,20 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 import HeadTag from '../components/HeadTag'
+
+const steps = [
+  'Cross Platform Dev 🔴',
+  1000,
+  'React/React Native 🌐',
+  1000,
+  'FullStack Developer 💻',
+  1000,
+  '#DataStaxDevelopers ⌨️',
+  1000
+]
 const Profile: React.FunctionComponent<object> = () => {
   return (
-    <div className="profile-container">
+    <div className="profile-container" id='Home'>
       <HeadTag />
       <div className="profile-parent">
         <div className="profile-details">
@@ -46,7 +57,7 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               <h1>
                 {''}
-                <Typical loop={Infinity} steps={['hola', 1000, 'chau', 1000]} />
+                <Typical loop={Infinity} steps={steps} />
               </h1>
               <span className="profile-role-tagline">
                 knack of building applications with front and back-end

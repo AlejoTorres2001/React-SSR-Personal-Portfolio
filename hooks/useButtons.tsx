@@ -18,6 +18,9 @@ const useButtons: useButtonsHook = () => {
   const toggleSection = (sectionName: string) => {
     switch (sectionName) {
       case 'education':
+        if (isSelectedEducation) {
+          break
+        }
         setIsSelectedEducation(!isSelectedEducation)
         setIsSelectedWork(false)
         setIsSelectedSkills(false)
@@ -25,6 +28,9 @@ const useButtons: useButtonsHook = () => {
         setIsSelectedInterests(false)
         break
       case 'work':
+        if (isSelectedWork) {
+          break
+        }
         setIsSelectedEducation(false)
         setIsSelectedWork(!isSelectedWork)
         setIsSelectedSkills(false)
@@ -32,6 +38,9 @@ const useButtons: useButtonsHook = () => {
         setIsSelectedInterests(false)
         break
       case 'skills':
+        if (isSelectedSkills) {
+          break
+        }
         setIsSelectedEducation(false)
         setIsSelectedWork(false)
         setIsSelectedSkills(!isSelectedSkills)
@@ -39,6 +48,9 @@ const useButtons: useButtonsHook = () => {
         setIsSelectedInterests(false)
         break
       case 'projects':
+        if (isSelectedProyects) {
+          break
+        }
         setIsSelectedEducation(false)
         setIsSelectedWork(false)
         setIsSelectedSkills(false)
@@ -46,6 +58,9 @@ const useButtons: useButtonsHook = () => {
         setIsSelectedInterests(false)
         break
       case 'interests':
+        if (isSelectedInterests) {
+          break
+        }
         setIsSelectedEducation(false)
         setIsSelectedWork(false)
         setIsSelectedSkills(false)

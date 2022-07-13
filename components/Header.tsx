@@ -1,6 +1,16 @@
+import Link from 'next/link'
 import React, { useState } from 'react'
-const Header:React.FunctionComponent<object> = () => {
+import useNavBar from '../hooks/useNavBar'
+const Header: React.FunctionComponent<object> = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [
+    isHomeSelected,
+    isAboutMeSelected,
+    isResumeSelected,
+    isContactMeSelected,
+    isBadgesSelected,
+    toggleSection
+  ] = useNavBar()
   return (
     <div className="header-container">
       <div className="header-parent">
@@ -14,7 +24,9 @@ const Header:React.FunctionComponent<object> = () => {
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            onClick={() => { setShowMobileMenu(!showMobileMenu) } }
+            onClick={() => {
+              setShowMobileMenu(!showMobileMenu)
+            }}
           >
             <path
               fill="currentColor"
@@ -25,21 +37,56 @@ const Header:React.FunctionComponent<object> = () => {
         <div className="header-logo">
           <span>Alejo Torres</span>
         </div>
-        <div onClick={() => setShowMobileMenu(!showMobileMenu)} className={`header-options ${showMobileMenu ? 'show-hamburger-options' : ''}` }>
-          <div className="header-option header-option-seperator ">
-            <span onClick={() => console.log('go to home!')}>Home</span>
+        <div
+          onClick={() => setShowMobileMenu(!showMobileMenu)}
+          className={`header-options ${
+            showMobileMenu ? 'show-hamburger-options' : ''
+          }`}
+        >
+          <div
+            className={`header-option header-option-seperator  ${
+              isHomeSelected ? 'selected-header-option' : ''
+            }`}
+          >
+            <span onClick={() => toggleSection('home')}>
+              <Link href="#Home">Home</Link>
+            </span>
           </div>
-          <div className="header-option header-option-seperator selected-header-option ">
-            <span onClick={() => console.log('go to aboutMe!')}>AboutMe</span>
+          <div
+            className={`header-option header-option-seperator  ${
+              isAboutMeSelected ? 'selected-header-option' : ''
+            }`}
+          >
+            <span onClick={() => toggleSection('about-me')}>
+              <Link href="#AboutMe">AboutMe</Link>
+            </span>
           </div>
-          <div className="header-option header-option-seperator ">
-            <span onClick={() => console.log('go to Resume!')}>Resume</span>
+          <div
+            className={`header-option header-option-seperator  ${
+              isResumeSelected ? 'selected-header-option' : ''
+            }`}
+          >
+            <span onClick={() => toggleSection('resume')}>
+              <Link href="#Resume">Resume</Link>
+            </span>
           </div>
-          <div className="header-option header-option-seperator ">
-            <span onClick={() => console.log('go to Testimonial!')}>Testimonial</span>
+          <div
+            className={`header-option header-option-seperator  ${
+              isBadgesSelected ? 'selected-header-option' : ''
+            }`}
+          >
+            <span onClick={() => toggleSection('badges')}>
+              <Link href="#Badges">Badges</Link>
+            </span>
           </div>
-          <div className="header-option ">
-            <span onClick={() => console.log('go to ContactMe!')}>ContactMe</span>
+          <div
+            className={`header-option  ${
+              isContactMeSelected ? 'selected-header-option' : ''
+            }`}
+          >
+            <span onClick={() => toggleSection('contact-me')}>
+              <Link href="#ContactMe">ContactMe</Link>
+            </span>
           </div>
         </div>
       </div>

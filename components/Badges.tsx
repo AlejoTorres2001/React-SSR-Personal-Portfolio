@@ -10,7 +10,7 @@ const Badges = () => {
     { width: 1200, itemsToShow: 4 }
   ]
   return (
-    <div className="badges-section">
+    <div className="badges-section" id="Badges">
       <div className="heading-container-badges">
         <div className="screen-heading">
           <span>Badges</span>
@@ -27,9 +27,11 @@ const Badges = () => {
       </div>
 
       <div className="badges-container">
-{/* @ts-ignore */}
-<Carousel breakPoints={breakPoints}>
-      {badges.map((badge, id) => <Badge {...badge} key={id}/>)}
+        {/* @ts-ignore */}
+        <Carousel breakPoints={breakPoints}>
+          {badges.map((badge, id) => (
+            <Badge {...badge} key={id} />
+          ))}
         </Carousel>
       </div>
     </div>

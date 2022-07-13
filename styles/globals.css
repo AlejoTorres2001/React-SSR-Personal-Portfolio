@@ -25,7 +25,17 @@
   min-height: 670px;
   background-image: url('../public/assets/home/bg.jpg');
 }
-
+html {
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+a:hover{
+  text-decoration: none;
+  color: inherit;
+}
 body {
   margin: 0;
   overflow-y: overlay;
