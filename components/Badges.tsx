@@ -1,13 +1,13 @@
 import React from 'react'
 import Carousel from 'react-elastic-carousel'
-import Badge from './Badge';
+import Badge from './Badge'
 const Badges = () => {
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
     { width: 768, itemsToShow: 3 },
     { width: 1200, itemsToShow: 4 }
-  ];
+  ]
   return (
     <div className="badges-section">
       <div className="heading-container-badges">
@@ -26,8 +26,9 @@ const Badges = () => {
       </div>
 
       <div className="badges-container">
-        <Carousel breakPoints={breakPoints}>
-          {Array.from({ length: 7 }).map((_, index) => <Badge key={index}/>)}
+{/* @ts-ignore */}
+<Carousel breakPoints={breakPoints}>
+      {Array.from({ length: 7 }).map((_, index) => <Badge key={index}/>)}
         </Carousel>
       </div>
     </div>
