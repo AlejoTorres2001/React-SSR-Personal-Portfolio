@@ -201,6 +201,8 @@
   height: 15px;
   width: 70%;
   background-color: #ff5823;
+  
+    margin-bottom: 25px;
 }
 .skill-percentage .active-percentage-bar {
   height: 15px;
@@ -232,6 +234,9 @@
   }
   .bullets {
     width: 90%;
+  }
+  .heading-bullet{
+    left:-999px
   }
   .resume-card {
     height: -webkit-fit-content;

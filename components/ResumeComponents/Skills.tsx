@@ -6,101 +6,101 @@ const Skills: React.FunctionComponent<object> = () => {
       <div className="resume-screen-container programming-skills-container">
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill1</span>
+          <span>Javascript</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '90%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill2</span>
+          <span>HTML5</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '92%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill3</span>
+          <span>CSS3</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '93%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill4</span>
+          <span>Git</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '92%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill5</span>
+          <span>ReactJs</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '89%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill6</span>
+          <span>NodeJs</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '89%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill7</span>
+          <span>DB Management</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '75%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill8</span>
+          <span>Python</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '74%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill9</span>
+          <span>Tensorflow</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '66%' }}
             ></div>
           </div>
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>Skill10</span>
+          <span>FastAPI</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
-              style={{ width: '80%' }}
+              style={{ width: '78%' }}
             ></div>
           </div>
         </div>
