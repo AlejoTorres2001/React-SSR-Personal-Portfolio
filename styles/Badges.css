@@ -1,12 +1,12 @@
-.heading-container-badges{
+.heading-container-badges {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   margin: 0 0 50px;
-  margin-top:120px
+  margin-top: 120px;
 }
-.badges-section{
+.badges-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,38 +14,42 @@
   margin: 0 0 50px;
   background-color: #fff;
 }
-.badges-container{
+.badges-container {
   padding: 80px 0px;
   width: 100%;
   background-image: url('../public/assets/home/bg.jpg');
-  background-position: 90% center ;
-  background-attachment: relative;  
-}
-
-.rec.rec-arrow:hover:enabled {
-    color: var(--dark-orange);
-    background-color: var(--white);
+  background-position: 90% center;
+  background-attachment: relative;
 }
 
 .rec.rec-arrow {
+  margin: 10px;
   color: var(--white);
   background-color: var(--dark-orange);
+}
+.rec.rec-arrow:hover:enabled,
+.rec.rec-arrow:focus:enabled {
+  color: var(--dark-orange);
+  background-color: var(--white);
 }
 
-.rec.rec-dot{
-  color: var(--white);
-  
-}
-.rec.rec-dot:hover{
-  color: var(--white);
-  
-}
-.rec.rec-dot_active:hover{
-  color: var(--white);
-  
-}
-.rec.rec-dot_active{
+.rec.rec-arrow:disabled {
+  margin: 10px;
   color: var(--white);
   background-color: var(--dark-orange);
-  box-shadow: 0 0 1px 3px 
+}
+.rec.rec-dot {
+  color: var(--white);
+}
+.rec.rec-dot:hover,
+.rec.rec-dot:focus {
+  box-shadow: 0 0 1px 3px;
+}
+.rec.rec-dot_active:hover {
+  box-shadow: 0 0 1px 3px;
+}
+.rec.rec-dot_active {
+  color: var(--white);
+  background-color: var(--dark-orange);
+  box-shadow: 0 0 1px 3px;
 }
