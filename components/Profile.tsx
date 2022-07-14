@@ -1,15 +1,7 @@
 import React from 'react'
 import Typical from 'react-typical'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faFacebookSquare,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faTwitterSquare
-} from '@fortawesome/free-brands-svg-icons'
-import Link from 'next/link'
 import HeadTag from '../components/HeadTag'
+import Icons from './Icons'
 
 const steps = [
   'Cross Platform Dev 🔴',
@@ -23,27 +15,13 @@ const steps = [
 ]
 const Profile: React.FunctionComponent<object> = () => {
   return (
-    <div className="profile-container" id='Home'>
+    <div className="profile-container" id="Home">
       <HeadTag />
       <div className="profile-parent">
         <div className="profile-details">
           <div className="cols">
             <div className="cols-icons">
-              <Link href="#">
-                <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
-              </Link>
-              <Link href="#">
-                <FontAwesomeIcon className="icon" icon={faGithub} />
-              </Link>
-              <Link href="#">
-                <FontAwesomeIcon className="icon" icon={faInstagram} />
-              </Link>
-              <Link href="#">
-                <FontAwesomeIcon className="icon" icon={faLinkedin} />
-              </Link>
-              <Link href="#">
-                <FontAwesomeIcon className="icon" icon={faTwitterSquare} />
-              </Link>
+              <Icons />
             </div>
           </div>
           <div className="profile-details-name">
@@ -70,7 +48,7 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               Hire Me
             </button>
-            <a href='/assets/home/AlejoTorres.pdf' download='AlejoTorresCV.pdf' >
+            <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
           </div>
