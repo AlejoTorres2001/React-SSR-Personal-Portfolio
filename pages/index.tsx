@@ -7,6 +7,7 @@ import Profile from '../components/Profile'
 import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Badges from '../components/Badges'
+import ContactMe from '../components/ContactMe'
 const Home: NextPage = () => {
   return (
     <div className="home-container">
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       <Resume/>
       <Badges/>
       <Footer />
+      <ContactMe/>
       <script async src="https://badgr.com/assets/widgets.bundle.js"></script>
     </div>
   )
