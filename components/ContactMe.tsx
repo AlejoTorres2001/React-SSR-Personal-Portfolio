@@ -4,7 +4,10 @@ import Typical from 'react-typical'
 import Icons from './Icons'
 import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
+import useContactForm from '../hooks/useContactForm'
 const ContactMe: React.FunctionComponent<object> = () => {
+  const [name, setName, email, setEmail, message, setMessage, handleSubmit] =
+    useContactForm()
   return (
     <div className="main-container">
       <div className="heading-container">
@@ -36,13 +39,25 @@ const ContactMe: React.FunctionComponent<object> = () => {
           <form>
             <p></p>
             <label htmlFor="name">Name</label>
-            <input typeof="text" value="" />
+            <input
+              typeof="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
             <label htmlFor="email">Email</label>
-            <input typeof="email" value="" />
+            <input
+              typeof="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
             <label htmlFor="message">Message</label>
-            <textarea typeof="text"></textarea>
+            <textarea
+              typeof="text"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
             <div className="send-btn">
-              <button typeof="submit">
+              <button typeof="submit" onClick={(e) => handleSubmit(e)}>
                 send <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
               </button>
             </div>
