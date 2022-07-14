@@ -69,7 +69,7 @@
   padding: 0 0 0 80px;
 }
 .experience-description {
-  margin: 10px 0 0;
+  margin: 10px 5px 0;
   text-align: justify;
   margin-bottom: 10px;
 }
@@ -144,6 +144,7 @@
   position: relative;
   display: flex;
   justify-content: space-between;
+  margin-left: 5px;
 }
 .resume-main-heading span {
   color: var(--dark-orange);
@@ -167,7 +168,7 @@
   font-size: 13px;
   font-family: 'Poppins SemiBold';
   color: var(--black);
-  margin: -5px 5px 0px;
+  margin: -5px 10px 0px;
 }
 .resume-heading-description {
   font-size: 12px;
@@ -225,6 +226,17 @@
   .resume-bullet-details {
     padding: 0 0 0 70px;
   }
+}
+@media only screen and (max-width: 425px) {
+  .programming-skills-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 18px;
+  }
+
 }
 @media only screen and (max-width: 1023px) {
   .resume-content {

@@ -52,7 +52,7 @@ const AboutMe = () => {
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Knowledge in AI</span>
+                <span>Part of Movers And Shakers Program in DataStax</span>
               </div>
             </div>
             <div className="about-me-options">
