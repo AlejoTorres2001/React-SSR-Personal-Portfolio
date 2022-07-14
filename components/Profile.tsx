@@ -70,7 +70,7 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               Hire Me
             </button>
-            <a href="#">
+            <a href='/assets/home/AlejoTorres.pdf' download='AlejoTorresCV.pdf' >
               <button className="btn highlighted-btn">Get Resume</button>
             </a>
           </div>

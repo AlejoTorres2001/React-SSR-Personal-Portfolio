@@ -57,7 +57,7 @@ const AboutMe = () => {
             </div>
             <div className="about-me-options">
               <button className="btn primary-btn"> Hire Me </button>
-              <a href="#">
+              <a href='/assets/home/AlejoTorres.pdf' download='AlejoTorresCV.pdf'>
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>
             </div>
