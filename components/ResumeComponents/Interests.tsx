@@ -7,40 +7,42 @@ const Interests: React.FunctionComponent<object> = () => {
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>Interest1</span>
-            <div></div>
+            <span>Teaching</span>
+            <div>
+</div>
           </div>
           <div className="resume-sub-heading">
             <span></span>
           </div>
           <div className="resume-heading-description">
-            <span>description</span>
+            <span>Apart from being a tech enthusiast, I also love to share my knowledge to other, helping them to achieve their goals and improve their skills.
+            </span>
           </div>
         </div>
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>Interest2</span>
+            <span>Collaboration</span>
             <div></div>
           </div>
           <div className="resume-sub-heading">
             <span></span>
           </div>
           <div className="resume-heading-description">
-            <span>description</span>
+            <span>{"I'm looking to collaborate with other Devs in meaningful projects that have a positive impact in the Tech World"}</span>
           </div>
         </div>
         <div className="resume-heading">
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
-            <span>Interest3</span>
+            <span>Music</span>
             <div></div>
           </div>
           <div className="resume-sub-heading">
             <span></span>
           </div>
           <div className="resume-heading-description">
-            <span>description</span>
+            <span>occasionally play the drums</span>
           </div>
         </div>
       </div>

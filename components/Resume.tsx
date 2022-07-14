@@ -84,7 +84,7 @@ const Resume = () => {
                     src="/assets/resume/icons/projects.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Projects</span>
+                  <span className="bullet-label">Highlighted Projects</span>
                 </div>
                 <div
                   onClick={() => toggleSection('interests')}
