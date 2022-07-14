@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       <Resume/>
       <Badges/>
       <Footer />
+      <script async src="https://badgr.com/assets/widgets.bundle.js"></script>
     </div>
   )
 }

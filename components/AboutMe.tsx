@@ -10,7 +10,7 @@ const AboutMe = () => {
             <span>About Me</span>
           </div>
           <div className="screen-sub-heading">
-            <span>Why Choose Me?</span>
+            <span>A Brief Description</span>
           </div>
           <div className="heading-seperator">
             <div className="seperator-line"></div>

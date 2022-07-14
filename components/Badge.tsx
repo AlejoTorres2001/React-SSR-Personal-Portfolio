@@ -35,7 +35,6 @@ const Badge: React.FunctionComponent<BadgeProps> = ({
           VERIFY
         </a>
       </p>
-      <script async src="https://badgr.com/assets/widgets.bundle.js"></script>
     </blockquote>
   )
 }
