@@ -7,7 +7,7 @@
   font-family: 'Poppins SemiBold';
 }
 .btn:active {
-  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
   transform: translateY(2px);
 }
 .primary-btn {
@@ -34,7 +34,7 @@
 }
 .fade-in {
   /* opacity: 0; */
-  -webkit-transform: translateY(80px);
+  transform: translateY(80px);
   transform: translateY(80px);
   transition: all 0.8s ease;
 }
@@ -163,7 +163,7 @@
   font-family: 'Poppins SemiBold';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-SemiBold.ttf') 
+  src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
 }
 @font-face {
   font-family: 'Poppins Bold';

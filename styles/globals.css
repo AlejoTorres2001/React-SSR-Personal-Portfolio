@@ -29,20 +29,20 @@
 html {
   scroll-behavior: smooth;
 }
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
-a:hover{
+a:hover {
   text-decoration: none;
   color: inherit;
 }
 body {
   margin: 0;
   overflow-y: overlay;
- 
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  font-smoothing: antialiased;
+  font-smoothing: grayscale;
 }
 ::-webkit-scrollbar {
   width: 6px !important;
@@ -55,4 +55,5 @@ body ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
 }
 ::-webkit-scrollbar-track {
-  background: hsla(0, 0%, 100%, 0.1);}
+  background: hsla(0, 0%, 100%, 0.1);
+}

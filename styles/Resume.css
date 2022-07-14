@@ -45,8 +45,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
+  min-height: fit-content;
+  min-height: fit-content;
   min-height: fit-content;
   margin: -50px 0;
   background-color: var(--white);
@@ -202,8 +202,8 @@
   height: 15px;
   width: 70%;
   background-color: #ff5823;
-  
-    margin-bottom: 25px;
+
+  margin-bottom: 25px;
 }
 .skill-percentage .active-percentage-bar {
   height: 15px;
@@ -236,7 +236,6 @@
     flex-wrap: wrap;
     margin-left: 18px;
   }
-
 }
 @media only screen and (max-width: 1023px) {
   .resume-content {
@@ -247,12 +246,12 @@
   .bullets {
     width: 90%;
   }
-  .heading-bullet{
-    left:-999px
+  .heading-bullet {
+    left: -999px;
   }
   .resume-card {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
+    height: fit-content;
+    height: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -263,8 +262,6 @@
   .resume-bullet-details {
     height: 360px;
     padding: 0;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: 400px;
   }
   .resume-bullets {

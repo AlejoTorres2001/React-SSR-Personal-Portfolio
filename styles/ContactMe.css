@@ -178,19 +178,12 @@ form button:hover {
     font-size: 16px;
   }
 }
-
-/*! CSS Used from: https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css */
-*,
-::after,
-::before {
-  box-sizing: border-box;
-}
 button {
   border-radius: 0;
 }
 button:focus {
   outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
+  outline: 5px auto focus-ring-color;
 }
 button {
   margin: 0;
@@ -204,21 +197,7 @@ button {
 button {
   text-transform: none;
 }
-button {
-  -webkit-appearance: button;
-}
-button::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-@media print {
-  *,
-  ::after,
-  ::before {
-    text-shadow: none !important;
-    box-shadow: none !important;
-  }
-}
+
 .scroll-container {
   position: absolute;
   text-align: center;
