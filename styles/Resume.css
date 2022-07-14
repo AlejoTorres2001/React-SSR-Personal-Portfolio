@@ -218,14 +218,6 @@
 .resume-content {
   margin-top: 40px;
 }
-@media only screen and (max-width: 460px) {
-  .resume-screen-container{
-  width: 400px;
-  justify-content: space-evenly;
-  width: 100%;
-
-}
-}
 @media only screen and (max-width: 1110px) {
   .resume-card {
     width: 880px;
