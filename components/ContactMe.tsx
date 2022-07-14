@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import Typical from 'react-typical'
 import Icons from './Icons'
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 const ContactMe: React.FunctionComponent<object> = () => {
   return (
     <div className="main-container">
@@ -47,6 +48,17 @@ const ContactMe: React.FunctionComponent<object> = () => {
             </div>
           </form>
         </div>
+      </div>
+      <div className="scroll-container">
+        <button className="btn-scroll">
+          {' '}
+          <Link href="#Home">
+            <FontAwesomeIcon
+              className="arrow"
+              icon={faArrowUp}
+            ></FontAwesomeIcon>
+          </Link>
+        </button>
       </div>
     </div>
   )
