@@ -23,7 +23,8 @@ const AboutMe = () => {
           <div className="about-me-profile"></div>
           <div className="about-me-details">
             <span className="about-me-description">
-              think in a brief description of yourself.
+              FullStack developer with a passion for learning and problem
+              solving. Almost Done with my Science in Computer Engineering degree. Looking for a job in the industry with new challenges where I can learn and grow. Won a scolarship at UPM (Madrid) to finish my career abroad.
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -31,27 +32,27 @@ const AboutMe = () => {
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights1</span>
+                <span>Full Stack web and mobile development</span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights2</span>
+                <span>background knowledge of MERN stack</span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights3</span>
+                <span>Interactive Front End as per the design</span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights3</span>
+                <span>Building REST API</span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights4</span>
+                <span>Managing databases</span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Highlights4 </span>
+                <span>Knowledge in AI</span>
               </div>
             </div>
             <div className="about-me-options">
