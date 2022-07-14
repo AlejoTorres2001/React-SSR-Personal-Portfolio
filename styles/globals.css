@@ -24,6 +24,7 @@
   justify-content: space-between;
   min-height: 670px;
   background-image: url('../public/assets/home/bg.jpg');
+  width: fit-content;
 }
 html {
   scroll-behavior: smooth;
