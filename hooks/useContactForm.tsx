@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 type useContactFormHook = () => [
   string,
   React.Dispatch<React.SetStateAction<string>>,
@@ -6,12 +6,17 @@ type useContactFormHook = () => [
   React.Dispatch<React.SetStateAction<string>>,
   string,
   React.Dispatch<React.SetStateAction<string>>,
-  (e: any) => Promise<void>
+  (e: any) => Promise<void>,
+  string
 ]
 const useContactForm: useContactFormHook = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [error, setError] = useState('')
+  useEffect(() => {
+    setError('')
+  }, [name, email, message])
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const body = {
@@ -19,20 +24,37 @@ const useContactForm: useContactFormHook = () => {
       email,
       message
     }
-    console.log(body)
-
-    const response = await fetch('/api/email', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(body)
-    })
-    const data = await response.json()
-    console.log(data)
+    try {
+      const response = await fetch('/api/email', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      const data = await response.json()
+      if (data.error) {
+        setError(data.error)
+      } else {
+        setName('')
+        setEmail('')
+        setMessage('')
+      }
+    } catch (error) {
+      setError('Something went wrong. Please try again.')
+    }
   }
-  return [name, setName, email, setEmail, message, setMessage, handleSubmit]
+  return [
+    name,
+    setName,
+    email,
+    setEmail,
+    message,
+    setMessage,
+    handleSubmit,
+    error
+  ]
 }
 
 export default useContactForm

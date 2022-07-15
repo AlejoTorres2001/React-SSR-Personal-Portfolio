@@ -6,7 +6,7 @@ import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import useContactForm from '../hooks/useContactForm'
 const ContactMe: React.FunctionComponent<object> = () => {
-  const [name, setName, email, setEmail, message, setMessage, handleSubmit] =
+  const [name, setName, email, setEmail, message, setMessage, handleSubmit, error] =
     useContactForm()
   return (
     <div className="main-container">
@@ -37,6 +37,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
             <img src="/assets/ContactMe/mail.jpeg" alt="image not found" />
           </div>
           <form>
+            {error && <p className="error">{error}</p>}
             <p></p>
             <label htmlFor="name">Name</label>
             <input
