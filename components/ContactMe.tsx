@@ -9,7 +9,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
   const [name, setName, email, setEmail, message, setMessage, handleSubmit, error] =
     useContactForm()
   return (
-    <div className="main-container">
+    <div className="main-container" id='ContactMe'>
       <div className="heading-container">
         <div className="screen-heading">
           <span>Contact Me</span>
