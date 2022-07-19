@@ -1,10 +1,9 @@
 import React from 'react'
-import Image from 'next/image'
 const Footer:React.FunctionComponent<object> = () => {
   return (
     <div className='footer-container'>
       <div className='footer-parent'>
-        <Image className='footer-image' src='/../public/assets/home/shape.png' alt="division image" unsized/>
+        <img className='footer-image' src='/assets/home/shape.png' alt="division image" />
       </div>
     </div>
   )
