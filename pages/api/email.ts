@@ -8,6 +8,7 @@ export default async function handler (
   if (!req.body.email || !req.body.message || !req.body.name) {
     return res.status(400).json({ error: 'Missing required fields' })
   }
+  console.log(req.body.email, req.body.message, req.body.name)
   const transporter = nodemailer.createTransport({
     port: 465,
     host: 'smtp.gmail.com',
@@ -24,7 +25,10 @@ export default async function handler (
     text: `USING EMAIL: ${req.body.email} \n${req.body.message}`
   }
   transporter.sendMail(mailData, function (err, info) {
-    if (err) return res.status(500).json({ error: err })
+    if (err) {
+      console.log(err)
+      return res.status(500).json({ error: err })}
   })
+  console.log('Message sent')
   res.status(200).json({ message: 'Thanks for your message!' })
 }
