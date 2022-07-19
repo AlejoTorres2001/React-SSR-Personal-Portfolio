@@ -27,7 +27,8 @@ export default async function handler (
   transporter.sendMail(mailData, function (err, info) {
     if (err) {
       console.log(err)
-      return res.status(500).json({ error: err })}
+      return res.status(500).json({ error: err })
+    }
   })
   console.log('Message sent')
   res.status(200).json({ message: 'Thanks for your message!' })
