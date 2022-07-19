@@ -1,6 +1,5 @@
 import React from 'react'
 import Typical from 'react-typical'
-import HeadTag from '../components/HeadTag'
 import Icons from './Icons'
 
 const steps = [
@@ -16,7 +15,6 @@ const steps = [
 const Profile: React.FunctionComponent<object> = () => {
   return (
     <div className="profile-container" id="Home">
-      <HeadTag />
       <div className="profile-parent">
         <div className="profile-details">
           <div className="cols">
