@@ -2,7 +2,11 @@ import React from 'react'
 import Carousel from 'react-elastic-carousel'
 import Badge from './Badge'
 import { badges } from '../badges.json'
+import { useInView } from 'react-intersection-observer'
 const Badges = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.3
+  })
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
@@ -10,8 +14,10 @@ const Badges = () => {
     { width: 1200, itemsToShow: 4 }
   ]
   return (
-    <div className="badges-section" id="Badges">
-      <div className="heading-container-badges">
+    <div ref={ref} className="badges-section" id="Badges">
+      <div
+        className={`heading-container-badges ${inView ? 'appear' : ''} fade-in`}
+      >
         <div className="screen-heading">
           <span>Badges</span>
         </div>
@@ -28,7 +34,10 @@ const Badges = () => {
 
       <div className="badges-container">
         {/* @ts-ignore */}
-        <Carousel breakPoints={breakPoints}>
+        <Carousel
+          className={`${inView ? 'appear' : ''} fade-in`}
+          breakPoints={breakPoints}
+        >
           {badges.map((badge, id) => (
             <Badge {...badge} key={id} />
           ))}
