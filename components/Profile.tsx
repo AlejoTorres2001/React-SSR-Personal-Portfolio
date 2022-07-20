@@ -42,9 +42,18 @@ const Profile: React.FunctionComponent<object> = () => {
             </span>
           </div>
           <div className="profile-options">
-            <button className="btn primary-btn">
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                window.location.href =
+                  process.env.NODE_ENV === 'production'
+                    ? 'https://react-ssr-personal-portfolio.vercel.app/#ContactMe'
+                    : 'http://localhost:3000/#ContactMe'
+              }}
+              className="btn primary-btn"
+            >
               {''}
-              Hire Me
+              Get in Touch
             </button>
             <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
               <button className="btn highlighted-btn">Get Resume</button>

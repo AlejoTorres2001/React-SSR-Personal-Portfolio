@@ -1,10 +1,15 @@
 import React from 'react'
-// use intersection observer to detect when the element is in viewport
-// style="opacity: 5; transform: translateY(1px);"
+import { useInView } from 'react-intersection-observer'
 const AboutMe = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.3
+  })
   return (
-    <div className="about-me-container screen-container fade-in" id="AboutMe">
-      <div className="about-me-parent">
+    <div className="about-me-container screen-container" id="AboutMe">
+      <div
+        ref={ref}
+        className={`about-me-parent ${inView ? 'appear' : ''} fade-in`}
+      >
         <div className="heading-container">
           <div className="screen-heading">
             <span>About Me</span>
@@ -24,7 +29,10 @@ const AboutMe = () => {
           <div className="about-me-details">
             <span className="about-me-description">
               FullStack developer with a passion for learning and problem
-              solving. Almost Done with my Science in Computer Engineering degree. Looking for a job in the industry with new challenges where I can learn and grow. Won a scolarship at UPM (Madrid) to finish my career abroad.
+              solving. Almost Done with my Science in Computer Engineering
+              degree. Looking for a job in the industry with new challenges
+              where I can learn and grow. Won a scolarship at UPM (Madrid) to
+              finish my career abroad.
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -57,7 +65,10 @@ const AboutMe = () => {
             </div>
             <div className="about-me-options">
               <button className="btn primary-btn"> Hire Me </button>
-              <a href='/assets/home/AlejoTorres.pdf' download='AlejoTorresCV.pdf'>
+              <a
+                href="/assets/home/AlejoTorres.pdf"
+                download="AlejoTorresCV.pdf"
+              >
                 <button className="btn highlighted-btn">Get Resume</button>
               </a>
             </div>

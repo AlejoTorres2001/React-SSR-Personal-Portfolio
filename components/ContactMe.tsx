@@ -5,16 +5,28 @@ import Icons from './Icons'
 import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import useContactForm from '../hooks/useContactForm'
+import { useInView } from 'react-intersection-observer'
 const ContactMe: React.FunctionComponent<object> = () => {
-  const [name, setName, email, setEmail, message, setMessage, handleSubmit, error] =
-    useContactForm()
+  const { ref, inView } = useInView({
+    threshold: 0.3
+  })
+  const [
+    name,
+    setName,
+    email,
+    setEmail,
+    message,
+    setMessage,
+    handleSubmit,
+    error
+  ] = useContactForm()
   return (
-    <div className="main-container" id='ContactMe'>
-      <div className="heading-container">
+    <div ref={ref} className="main-container" id="ContactMe">
+      <div className={`heading-container ${inView ? 'appear' : ''}fade-in`}>
         <div className="screen-heading">
           <span>Contact Me</span>
         </div>
-        <div className="screen-sub-heading">
+        <div className='screen-sub-heading'>
           <span>Lets Keep In Touch</span>
         </div>
         <div className="heading-seperator">
@@ -24,7 +36,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
           </div>
         </div>
       </div>
-      <div className="central-form">
+      <div className={`${inView ? 'appear' : ''} central-form fade-in`}>
         <div className="col">
           <h2 className="title">
             <Typical steps={['Get in Touch 📧']} />

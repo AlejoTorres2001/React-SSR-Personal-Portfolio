@@ -5,8 +5,12 @@ import Interests from './ResumeComponents/Interests'
 import Proyects from './ResumeComponents/Proyects'
 import Skills from './ResumeComponents/Skills'
 import Work from './ResumeComponents/Work'
-// style="opacity: 5; transform: translateY(1px);"
+import { useInView } from 'react-intersection-observer'
+
 const Resume = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.3
+  })
   const [
     isSelectedEducation,
     isSelectedWork,
@@ -17,8 +21,8 @@ const Resume = () => {
   ] = useButtons()
 
   return (
-    <div className="resume-container screen-container fade-in" id="Resume">
-      <div className="resume-content">
+    <div ref={ref} className="resume-container screen-container " id="Resume">
+      <div className={`resume-content ${inView ? 'appear' : ''} fade-in`}>
         <div className="heading-container">
           <div className="screen-heading">
             <span>Resume</span>
