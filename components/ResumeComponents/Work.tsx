@@ -11,7 +11,9 @@ const Work: React.FunctionComponent<object> = () => {
             <div className="heading-date">2022-Present</div>
           </div>
           <div className="resume-sub-heading">
-            <span>Instituto de Innovacion y Tecnologia Aplicada (IITA)</span>
+            <span>Instituto de Innovacion y Tecnologia Aplicada  <a className="link" href="https://iita.com.ar/">
+                (IITA)
+              </a></span>
           </div>
           <div className="resume-heading-description">
             <span>
@@ -38,7 +40,8 @@ const Work: React.FunctionComponent<object> = () => {
             <div className="heading-date">2021-2021</div>
           </div>
           <div className="resume-sub-heading">
-            <span>Digio SRL</span>
+            <span>
+              <a className='link' href="http://digio.com.ar/">Digio</a> SRL</span>
           </div>
           <div className="resume-heading-description">
             <span>
@@ -71,7 +74,9 @@ const Work: React.FunctionComponent<object> = () => {
             <div className="heading-date">2021-Present</div>
           </div>
           <div className="resume-sub-heading">
-            <span>Engineering Faculty at UCASAL</span>
+            <span>Engineering Faculty at  <a className='link' href="https://www.ucasal.edu.ar/">UCASAL</a>
+
+            </span>
           </div>
           <div className="resume-heading-description">
             <span>Digital Forensics and Research</span>
@@ -103,7 +108,11 @@ const Work: React.FunctionComponent<object> = () => {
             <div className="heading-date">2021-Present</div>
           </div>
           <div className="resume-sub-heading">
-            <span>Instituto de Innovacion y Tecnologia Aplicada (IITA)</span>
+            <span>
+              Instituto de Innovacion y Tecnologia Aplicada <a className="link" href="https://iita.com.ar/">
+                (IITA)
+              </a>
+            </span>
           </div>
           <div className="resume-heading-description">
             <span>

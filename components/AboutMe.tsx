@@ -28,10 +28,11 @@ const AboutMe = () => {
           <div className="about-me-profile"></div>
           <div className="about-me-details">
             <span className="about-me-description">
-              FullStack developer with a passion for learning and problem
-              solving. Almost Done with my Science in Computer Engineering
+              <strong>FullStack developer</strong> with a passion for learning
+              and problem solving. Almost Done with my{' '}
+              <strong>Science in Computer Engineering </strong>
               degree. Looking for a job in the industry with new challenges
-              where I can learn and grow. Won a scolarship at UPM (Madrid) to
+              where I can learn and grow. Won a scolarship at <a className='link' href='https://www.upm.es/'>UPM</a> (Madrid) to
               finish my career abroad.
             </span>
             <div className="about-me-highlights">
@@ -60,7 +61,8 @@ const AboutMe = () => {
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Part of Movers And Shakers Program in DataStax</span>
+                <span>Part of Movers And Shakers Program in <a className='link' href="https://www.datastax.com/dev">DataStax</a>
+                  </span>
               </div>
             </div>
             <div className="about-me-options">

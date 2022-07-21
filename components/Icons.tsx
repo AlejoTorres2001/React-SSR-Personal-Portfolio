@@ -11,19 +11,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Icons = () => {
   return (
     <>
-      <Link href="#">
+      <Link href="https://www.facebook.com/alejo.torres.100">
         <FontAwesomeIcon className="icon" icon={faFacebookSquare} />
       </Link>
-      <Link href="#">
+      <Link href="https://github.com/AlejoTorres2001">
         <FontAwesomeIcon className="icon" icon={faGithub} />
       </Link>
-      <Link href="#">
+      <Link href="https://www.instagram.com/alejootorres/">
         <FontAwesomeIcon className="icon" icon={faInstagram} />
       </Link>
-      <Link href="#">
+      <Link href="https://www.linkedin.com/in/alejo-torres-919b9921b/">
         <FontAwesomeIcon className="icon" icon={faLinkedin} />
       </Link>
-      <Link href="#">
+      <Link href="https://twitter.com/alejotorres2001">
         <FontAwesomeIcon className="icon" icon={faTwitterSquare} />
       </Link>
     </>
