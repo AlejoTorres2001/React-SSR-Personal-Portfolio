@@ -9,6 +9,7 @@ import Resume from '../components/Resume'
 import Badges from '../components/Badges'
 import ContactMe from '../components/ContactMe'
 import { useState } from 'react'
+import useDelayUnmount from '../hooks/useDelayedUnmount'
 const Home: NextPage = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
@@ -17,6 +18,9 @@ const Home: NextPage = () => {
     flag: '840',
     height: '14'
   })
+  const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
+  const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
+  const unmountedStyle = { animation: 'outAnimation 310ms ease-in' }
   return (
     <div className="home-container">
       {!showMobileMenu && (
@@ -34,8 +38,11 @@ const Home: NextPage = () => {
           </span>
         </div>
       )}
-      {isLanguagesSelected && !showMobileMenu && (
-        <div className="language-options">
+      {shouldRenderChild && !showMobileMenu && (
+        <div
+          style={isLanguagesSelected ? mountedStyle : unmountedStyle}
+          className="language-options"
+        >
           <span
             className="language-option"
             onClick={() => {
