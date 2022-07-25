@@ -8,17 +8,39 @@ import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Badges from '../components/Badges'
 import ContactMe from '../components/ContactMe'
+import { useState } from 'react'
 const Home: NextPage = () => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
   return (
     <div className="home-container">
-      <Header />
+      {!showMobileMenu && (
+        <div className="language-container">
+          <span
+            style={{ cursor: 'pointer' }}
+            onClick={() => setIsLanguagesSelected(!isLanguagesSelected)}
+          >
+            Language
+          </span>
+        </div>
+      )}
+      {isLanguagesSelected && !showMobileMenu && (
+        <div className="language-options">
+          <span>English</span>
+          <span>Spanish</span>
+        </div>
+      )}
+      <Header
+        showMobileMenu={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+      />
       <Profile />
       <Footer />
-      <AboutMe/>
-      <Resume/>
-      <Badges/>
+      <AboutMe />
+      <Resume />
+      <Badges />
       <Footer />
-      <ContactMe/>
+      <ContactMe />
       <script async src="https://badgr.com/assets/widgets.bundle.js"></script>
     </div>
   )

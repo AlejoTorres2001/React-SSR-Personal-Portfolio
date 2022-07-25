@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import useNavBar from '../hooks/useNavBar'
-const Header: React.FunctionComponent<object> = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+const Header: React.FunctionComponent<{
+  setShowMobileMenu: Dispatch<SetStateAction<boolean>>
+  showMobileMenu: boolean
+}> = ({ showMobileMenu, setShowMobileMenu }) => {
   const [
     isHomeSelected,
     isAboutMeSelected,
