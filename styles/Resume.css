@@ -164,6 +164,10 @@
   border-radius: 50%;
   background-color: #ff5823;
 }
+.title:hover{
+  color: var(--black);
+  cursor: pointer;
+}
 .resume-sub-heading {
   font-size: 13px;
   font-family: 'Poppins SemiBold';
