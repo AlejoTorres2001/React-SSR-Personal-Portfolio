@@ -11,8 +11,11 @@ import ContactMe from '../components/ContactMe'
 import { useContext, useState } from 'react'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import { LanguageContext } from '../context/LanguageContextProvider'
+import { ILanguageContextType } from '../@types/language.d.types'
 const Home: NextPage = () => {
-  const { language, setLanguage } = useContext(LanguageContext)
+  const { language, setLanguage } = useContext(
+    LanguageContext
+  ) as ILanguageContextType
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
