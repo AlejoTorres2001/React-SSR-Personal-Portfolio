@@ -8,19 +8,16 @@ import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Badges from '../components/Badges'
 import ContactMe from '../components/ContactMe'
-import { useState } from 'react'
-import useDelayUnmount from '../hooks/useDelayedUnmount'
+import { useContext, useState } from 'react'
+import useDelayUnmount from '../hooks/useDelayUnmount'
+import { LanguageContext } from '../context/LanguageContextProvider'
 const Home: NextPage = () => {
+  const { language, setLanguage } = useContext(LanguageContext)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
-  const [selectedLanguage, setSelectedLanguage] = useState({
-    language: 'en',
-    flag: '840',
-    height: '14'
-  })
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
   const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
-  const unmountedStyle = { animation: 'outAnimation 310ms ease-in' }
+  const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
   return (
     <div className="home-container">
       {!showMobileMenu && (
@@ -31,10 +28,7 @@ const Home: NextPage = () => {
               setIsLanguagesSelected(!isLanguagesSelected)
             }}
           >
-            <Flag
-              code={selectedLanguage.flag}
-              height={selectedLanguage.height}
-            />
+            <Flag code={language.flag} height={language.height} />
           </span>
         </div>
       )}
@@ -46,8 +40,8 @@ const Home: NextPage = () => {
           <span
             className="language-option"
             onClick={() => {
-              setSelectedLanguage({
-                language: 'sp',
+              setLanguage({
+                name: 'sp',
                 flag: '724',
                 height: '18'
               })
@@ -60,8 +54,8 @@ const Home: NextPage = () => {
           <span
             className="language-option"
             onClick={() => {
-              setSelectedLanguage({
-                language: 'en',
+              setLanguage({
+                name: 'en',
                 flag: '840',
                 height: '15'
               })
