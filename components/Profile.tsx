@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Typical from 'react-typical'
+import { ILanguageContextType } from '../@types/language.d.types'
+import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
 
 const steps = [
@@ -13,6 +15,7 @@ const steps = [
   1000
 ]
 const Profile: React.FunctionComponent<object> = () => {
+  const { language } = useContext(LanguageContext) as ILanguageContextType
   return (
     <div className="profile-container" id="Home">
       <div className="profile-parent">
@@ -25,7 +28,10 @@ const Profile: React.FunctionComponent<object> = () => {
           <div className="profile-details-name">
             <span className="primary-text">
               {''}
-              {"Hello, I'm"} <span className="highlighted-text">Alejo</span>
+              {language.name === 'en'
+                ? "Hello, I'm"
+                : 'Hola, mi nombre es'}{' '}
+              <span className="highlighted-text">Alejo</span>
             </span>
           </div>
           <div className="profile-details-role">
@@ -36,8 +42,9 @@ const Profile: React.FunctionComponent<object> = () => {
                 <Typical loop={Infinity} steps={steps} />
               </h1>
               <span className="profile-role-tagline">
-                knack of building applications with front and back-end
-                operations.
+                {language.name === 'en'
+                  ? 'Building applications with front and back-end technologies.'
+                  : 'Creando aplicaciones con tecnologías de FrontEnd y BackEnd.'}
               </span>
             </span>
           </div>
@@ -53,10 +60,12 @@ const Profile: React.FunctionComponent<object> = () => {
               className="btn primary-btn"
             >
               {''}
-              Get in Touch
+              {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
             </button>
             <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
-              <button className="btn highlighted-btn">Get Resume</button>
+              <button className="btn highlighted-btn">
+                {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
+              </button>
             </a>
           </div>
         </div>
