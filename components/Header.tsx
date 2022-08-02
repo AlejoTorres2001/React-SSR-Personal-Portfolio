@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, useContext } from 'react'
+import { ILanguageContextType } from '../@types/language.d.types'
+import { LanguageContext } from '../context/LanguageContextProvider'
 import useNavBar from '../hooks/useNavBar'
 const Header: React.FunctionComponent<{
   setShowMobileMenu: Dispatch<SetStateAction<boolean>>
@@ -13,6 +15,8 @@ const Header: React.FunctionComponent<{
     isBadgesSelected,
     toggleSection
   ] = useNavBar()
+  const { language } = useContext(LanguageContext) as ILanguageContextType
+
   return (
     <div className="header-container">
       <div className="header-parent">
@@ -51,7 +55,9 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('home')}>
-              <Link href="#Home">Home</Link>
+              <Link href="#Home">
+                {language.name === 'en' ? 'Home' : 'Inicio'}
+              </Link>
             </span>
           </div>
           <div
@@ -60,7 +66,9 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('about-me')}>
-              <Link href="#AboutMe">AboutMe</Link>
+              <Link href="#AboutMe">
+                {language.name === 'en' ? 'AboutMe' : 'SobreMi'}
+              </Link>
             </span>
           </div>
           <div
@@ -69,7 +77,9 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('resume')}>
-              <Link href="#Resume">Resume</Link>
+              <Link href="#Resume">
+                {language.name === 'en' ? 'Resume' : 'Trayectoria'}
+              </Link>
             </span>
           </div>
           <div
@@ -78,7 +88,9 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('badges')}>
-              <Link href="#Badges">Badges</Link>
+              <Link href="#Badges">
+                {language.name === 'en' ? 'Badges' : 'Premios'}
+              </Link>
             </span>
           </div>
           <div
@@ -87,7 +99,9 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('contact-me')}>
-              <Link href="#ContactMe">ContactMe</Link>
+              <Link href="#ContactMe">
+                {language.name === 'en' ? 'ContactMe' : 'Contactame'}
+              </Link>
             </span>
           </div>
         </div>
