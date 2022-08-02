@@ -12,10 +12,10 @@ import { useContext, useState } from 'react'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.d.types'
+import LanguagesContainer from '../components/LanguagesContainer'
+import LanguageOption from '../components/LanguageOption'
 const Home: NextPage = () => {
-  const { language, setLanguage } = useContext(
-    LanguageContext
-  ) as ILanguageContextType
+  const { setLanguage } = useContext(LanguageContext) as ILanguageContextType
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
@@ -24,36 +24,20 @@ const Home: NextPage = () => {
   return (
     <div className="home-container">
       {!showMobileMenu && (
-        <div className="language-container">
-          <span
-            style={{ cursor: 'pointer' }}
-            onClick={() => {
-              setIsLanguagesSelected(!isLanguagesSelected)
-            }}
-          >
-            <Flag code={language.flag} height={language.height} />
-          </span>
-        </div>
+        <LanguagesContainer
+          isLanguagesSelected={isLanguagesSelected}
+          setIsLanguagesSelected={setIsLanguagesSelected}
+        />
       )}
       {shouldRenderChild && !showMobileMenu && (
         <div
           style={isLanguagesSelected ? mountedStyle : unmountedStyle}
           className="language-options"
         >
-          <span
-            className="language-option"
-            onClick={() => {
-              setLanguage({
-                name: 'sp',
-                flag: '724',
-                height: '18'
-              })
-              setIsLanguagesSelected(!isLanguagesSelected)
-            }}
-          >
-            <Flag code="724" height="18" />
-            &nbsp; Spanish
-          </span>
+          <LanguageOption
+            isLanguagesSelected={isLanguagesSelected}
+            setIsLanguagesSelected={setIsLanguagesSelected}
+          />
           <span
             className="language-option"
             onClick={() => {
