@@ -107,10 +107,10 @@
 }
 .about-me-profile {
   width: 50%;
-  background-image: url('../public/assets/home/profile-picture.jpg');
+  background-image: url('../public/assets/home/aboutMe.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: 25%;
 }
 .about-me-details {
   width: 48%;
