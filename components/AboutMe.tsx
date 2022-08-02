@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { ILanguageContextType } from '../@types/language.d.types'
+import { LanguageContext } from '../context/LanguageContextProvider'
 const AboutMe = () => {
+  const { language } = useContext(LanguageContext) as ILanguageContextType
+
   const { ref, inView } = useInView({
     threshold: 0.3
   })
@@ -12,10 +16,14 @@ const AboutMe = () => {
       >
         <div className="heading-container">
           <div className="screen-heading">
-            <span>About Me</span>
+            <span>{language.name === 'en' ? 'About Me' : 'Sobre Mi'}</span>
           </div>
           <div className="screen-sub-heading">
-            <span>A Brief Description</span>
+            <span>
+              {language.name === 'en'
+                ? 'A Brief Description'
+                : 'Una Breve Descripcion'}
+            </span>
           </div>
           <div className="heading-seperator">
             <div className="seperator-line"></div>
@@ -28,50 +36,100 @@ const AboutMe = () => {
           <div className="about-me-profile"></div>
           <div className="about-me-details">
             <span className="about-me-description">
-              <strong>FullStack developer</strong> with a passion for learning
-              and problem solving. Almost Done with my{' '}
-              <strong>Science in Computer Engineering </strong>
-              degree. Looking for a job in the industry with new challenges
-              where I can learn and grow. Won a scolarship at <a className='link' href='https://www.upm.es/'>UPM</a> (Madrid) to
-              finish my career abroad.
+              <strong>
+                {language.name === 'en'
+                  ? 'FullStack developer '
+                  : 'Desarrollador FullStack'}
+              </strong>
+              {language.name === 'en'
+                ? 'with a passion for learning and problem solving. Almost Done with my '
+                : ' Con pasion por aprender y resolver problemas desafiantes1. Casi he terminado con mi'}
+              <strong>
+                {language.name === 'en'
+                  ? 'Science in Computer Engineering'
+                  : 'Carrera de grado en ingeniería en Informatica'}{' '}
+              </strong>
+              {language.name === 'en'
+                ? 'degree. Looking for a job in the industry with new challenges where I can learn and grow. Won a scolarship at'
+                : 'Estoy en la busqueda de un puesto en la industria, con nuevos desafios donde pueda continuar aprendiendo y creciendo. He ganado una Beca en la '}{' '}
+              <a className="link" href="https://www.upm.es/">
+                UPM
+              </a>{' '}
+              {language.name === 'en'
+                ? '(Madrid) to finish my career abroad.'
+                : '(Madrid) para completar mis estudios en el extranjero.'}
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
-                <span>Here are a Few Highlights:</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Here are a Few Highlights:'
+                    : 'Algunas cosas a destacar:'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Full Stack web and mobile development</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Full Stack web and mobile development'
+                    : 'Desarrollo Fullstack web y mobil'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>background knowledge of MERN stack</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'background knowledge of MERN stack'
+                    : 'Experiencia en el uso del stack MERN'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Interactive Front End as per the design</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Interactive Front End as per the design'
+                    : 'Diseño interactivo y responsivo en el Front End'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Building REST API</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Building REST and GrapQL APIs'
+                    : 'Construccion de APIs REST y de GrapQL'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Managing databases</span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Managing databases'
+                    : 'Administracion de Bases de Datos'}
+                </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
-                <span>Part of Movers And Shakers Program in <a className='link' href="https://www.datastax.com/dev">DataStax</a>
-                  </span>
+                <span>
+                  {language.name === 'en'
+                    ? 'Part of Movers And Shakers Program in '
+                    : 'Participo en el programa Movers And Shakers en '}
+                  <a className="link" href="https://www.datastax.com/dev">
+                    DataStax
+                  </a>
+                </span>
               </div>
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn"> Hire Me </button>
+              <button className="btn primary-btn">
+                {language.name === 'en' ? 'Contact Me' : 'Contactame'}{' '}
+              </button>
               <a
                 href="/assets/home/AlejoTorres.pdf"
                 download="AlejoTorresCV.pdf"
               >
-                <button className="btn highlighted-btn">Get Resume</button>
+                <button className="btn highlighted-btn">
+                  {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
+                </button>
               </a>
             </div>
           </div>

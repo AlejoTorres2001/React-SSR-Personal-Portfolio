@@ -67,7 +67,7 @@ const Header: React.FunctionComponent<{
           >
             <span onClick={() => toggleSection('about-me')}>
               <Link href="#AboutMe">
-                {language.name === 'en' ? 'AboutMe' : 'SobreMi'}
+                {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
               </Link>
             </span>
           </div>
