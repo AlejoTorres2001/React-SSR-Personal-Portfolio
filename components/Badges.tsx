@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Carousel from 'react-elastic-carousel'
 import Badge from './Badge'
 import { badges } from '../badges.json'
 import { useInView } from 'react-intersection-observer'
+import { LanguageContext } from '../context/LanguageContextProvider'
+import { ILanguageContextType } from '../@types/language.d.types'
 const Badges = () => {
+  const { language } = useContext(LanguageContext) as ILanguageContextType
+
   const { ref, inView } = useInView({
     threshold: 0.3
   })
@@ -19,10 +23,14 @@ const Badges = () => {
         className={`heading-container-badges ${inView ? 'appear' : ''} fade-in`}
       >
         <div className="screen-heading">
-          <span>Badges</span>
+          <span>{language.name === 'en' ? 'Badges' : 'Premios'}</span>
         </div>
         <div className="screen-sub-heading">
-          <span>Workshops Hackathons and Challenges</span>
+          <span>
+            {language.name === 'en'
+              ? 'Workshops Hackathons and Challenges'
+              : 'Workshops Hackathons y Desafios'}
+          </span>
         </div>
         <div className="heading-seperator">
           <div className="seperator-line"></div>

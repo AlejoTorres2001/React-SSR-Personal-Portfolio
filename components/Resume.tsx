@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useButtons from '../hooks/useButtons'
 import Education from './ResumeComponents/Education'
 import Interests from './ResumeComponents/Interests'
@@ -6,8 +6,12 @@ import Proyects from './ResumeComponents/Proyects'
 import Skills from './ResumeComponents/Skills'
 import Work from './ResumeComponents/Work'
 import { useInView } from 'react-intersection-observer'
+import { LanguageContext } from '../context/LanguageContextProvider'
+import { ILanguageContextType } from '../@types/language.d.types'
 
 const Resume = () => {
+  const { language } = useContext(LanguageContext) as ILanguageContextType
+
   const { ref, inView } = useInView({
     threshold: 0.3
   })
@@ -25,10 +29,14 @@ const Resume = () => {
       <div className={`resume-content ${inView ? 'appear' : ''} fade-in`}>
         <div className="heading-container">
           <div className="screen-heading">
-            <span>Resume</span>
+            <span>{language.name === 'en' ? 'Resume' : 'Trayectoria'}</span>
           </div>
           <div className="screen-sub-heading">
-            <span>My formal Bio Details</span>
+            <span>
+              {language.name === 'en'
+                ? 'My formal Bio Details'
+                : 'Detalles de mi Biografia'}
+            </span>
           </div>
           <div className="heading-seperator">
             <div className="seperator-line"></div>
@@ -53,7 +61,9 @@ const Resume = () => {
                     src="/assets/resume/icons/education.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Education</span>
+                  <span className="bullet-label">
+                    {language.name === 'en' ? 'Education' : 'Educaciòn'}
+                  </span>
                 </div>
                 <div
                   onClick={() => toggleSection('work')}
@@ -64,7 +74,11 @@ const Resume = () => {
                     src="/assets/resume/icons/work-history.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Work History</span>
+                  <span className="bullet-label">
+                    {language.name === 'en'
+                      ? 'Work History'
+                      : 'Historial de Trabajo'}
+                  </span>
                 </div>
                 <div
                   onClick={() => toggleSection('skills')}
@@ -75,7 +89,11 @@ const Resume = () => {
                     src="/assets/resume/icons/programming-skills.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Programming Skills</span>
+                  <span className="bullet-label">
+                    {language.name === 'en'
+                      ? 'Hard Skills'
+                      : 'Habilidades Duras'}
+                  </span>
                 </div>
                 <div
                   onClick={() => toggleSection('projects')}
@@ -88,7 +106,11 @@ const Resume = () => {
                     src="/assets/resume/icons/projects.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Highlighted Projects</span>
+                  <span className="bullet-label">
+                    {language.name === 'en'
+                      ? 'Highlighted Projects'
+                      : 'Proyectos Destacados'}
+                  </span>
                 </div>
                 <div
                   onClick={() => toggleSection('interests')}
@@ -101,7 +123,9 @@ const Resume = () => {
                     src="/assets/resume/icons/interests.svg"
                     alt="B"
                   />
-                  <span className="bullet-label">Interests</span>
+                  <span className="bullet-label">
+                    {language.name === 'en' ? 'Interests' : 'Intereses'}
+                  </span>
                 </div>
               </div>
             </div>
