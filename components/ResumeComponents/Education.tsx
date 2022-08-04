@@ -66,7 +66,7 @@ const Education: React.FunctionComponent<object> = () => {
                 : 'Ingenieria en Informática'}
             </span>
             <div className="heading-date">
-              2018-{language.name === 'en' ? 'Present' : 'Actualmente'}
+              2018-{language.name === 'en' ? 'Present' : 'Presente'}
             </div>
           </div>
           <div className="resume-sub-heading">

@@ -76,9 +76,8 @@ const Proyects: React.FunctionComponent<object> = () => {
           <div className="resume-sub-heading">
             <span>
               {language.name === 'en'
-                ? 'Technologies Used:'
-                : 'Tecnologías Usadas: '}
-              NodeJs,Express,MondoDB,SocketIO,Vite,React,TailwindCSS
+                ? 'Technologies Used: '
+                : 'Tecnologías Usadas: '}Express,MondoDB,SocketIO,Vite,React,TailwindCSS
             </span>
           </div>
           <div className="resume-heading-description">
@@ -115,7 +114,7 @@ const Proyects: React.FunctionComponent<object> = () => {
           <div className="resume-heading-description">
             <span>
               {language.name === 'en'
-                ? 'Part of my internship at IITA.A simplified test environment for Webots simulator,a DeepQ learning Model and a Random Map Generator for it to be trained on, registring all progress in a MLFlow Server hosted on Google Cloud Computing'
+                ? 'Part of my internship at IITA. A simplified test environment for Webots simulator,a Deep-  Q learning Model and a Random Map Generator for it to be trained on, registring all progress in a MLFlow Server hosted on Google Cloud Computing'
                 : 'Parte de mis actividades en IITA.Se trata del conjunto de un entorno de prueba simplificado para el simulador Webots, un modelo de Deep-Q Learning y un generador de mapas aleatorios para poder entrenar el modelo, registrando todo el progreso en un servidor de MLFlow alojado en Google Cloud Computing'}
             </span>
           </div>

@@ -43,21 +43,15 @@ const AboutMe = () => {
               </strong>
               {language.name === 'en'
                 ? 'with a passion for learning and problem solving. Almost Done with my '
-                : ' Con pasion por aprender y resolver problemas desafiantes1. Casi he terminado con mi'}
+                : ' Con pasion por aprender y resolver problemas desafiantes. Casi he terminado con mi '}
               <strong>
                 {language.name === 'en'
                   ? 'Science in Computer Engineering'
                   : 'Carrera de grado en ingeniería en Informatica'}{' '}
               </strong>
               {language.name === 'en'
-                ? 'degree. Looking for a job in the industry with new challenges where I can learn and grow. Won a scolarship at'
-                : 'Estoy en la busqueda de un puesto en la industria, con nuevos desafios donde pueda continuar aprendiendo y creciendo. He ganado una Beca en la '}{' '}
-              <a className="link" href="https://www.upm.es/">
-                UPM
-              </a>{' '}
-              {language.name === 'en'
-                ? '(Madrid) to finish my career abroad.'
-                : '(Madrid) para completar mis estudios en el extranjero.'}
+                ? 'degree. Looking for a job in the industry with new challenges where I can learn and grow.'
+                : 'Estoy en la busqueda de un puesto en la industria, con nuevos desafios donde pueda continuar aprendiendo y creciendo. '}{' '}
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -120,7 +114,16 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="about-me-options">
-              <button className="btn primary-btn">
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  window.location.href =
+                    process.env.NODE_ENV === 'production'
+                      ? 'https://react-ssr-personal-portfolio.vercel.app/#ContactMe'
+                      : 'http://localhost:3000/#ContactMe'
+                }}
+                className="btn primary-btn"
+              >
                 {language.name === 'en' ? 'Contact Me' : 'Contactame'}{' '}
               </button>
               <a
