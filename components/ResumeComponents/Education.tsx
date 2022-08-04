@@ -20,6 +20,8 @@ const Education: React.FunctionComponent<object> = () => {
           </div>
           <div className="resume-sub-heading">
             <span>
+              Frontend with Angular
+            <br />
               Javascript School <br />
               Web development School
               <br />
