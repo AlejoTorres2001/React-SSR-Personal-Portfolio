@@ -53,7 +53,7 @@ const Work: React.FunctionComponent<object> = () => {
             <br />-{' '}
             {language.name === 'en'
               ? 'Record the learning process and tune hyperparameters using Google Cloud Compute Engine + MLFlow'
-              : 'Registrar el proceso de aprendizaje y modificar hiper parametros usando Google Cloud Compute Engine = MLFlow'}
+              : 'Registrar el proceso de aprendizaje y modificar hiper parametros usando Google Cloud Compute Engine + MLFlow'}
             <br />
           </span>
         </div>
