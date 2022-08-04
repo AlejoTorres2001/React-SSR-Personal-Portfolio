@@ -1,9 +1,12 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React, { useContext } from 'react'
 import { ILanguageContextType } from '../../@types/language.d.types'
 import { LanguageContext } from '../../context/LanguageContextProvider'
-
+import { useRouter } from 'next/router'
 const Proyects: React.FunctionComponent<object> = () => {
+  const router = useRouter()
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
   return (
@@ -77,7 +80,8 @@ const Proyects: React.FunctionComponent<object> = () => {
             <span>
               {language.name === 'en'
                 ? 'Technologies Used: '
-                : 'Tecnologías Usadas: '}Express,MondoDB,SocketIO,Vite,React,TailwindCSS
+                : 'Tecnologías Usadas: '}
+              Express,MondoDB,SocketIO,Vite,React,TailwindCSS
             </span>
           </div>
           <div className="resume-heading-description">
@@ -118,6 +122,14 @@ const Proyects: React.FunctionComponent<object> = () => {
                 : 'Parte de mis actividades en IITA.Se trata del conjunto de un entorno de prueba simplificado para el simulador Webots, un modelo de Deep-Q Learning y un generador de mapas aleatorios para poder entrenar el modelo, registrando todo el progreso en un servidor de MLFlow alojado en Google Cloud Computing'}
             </span>
           </div>
+        </div>
+        <div className="proyects-btn-container">
+          <button
+            onClick={() => router.push('/projects')}
+            className="proyects-btn"
+          >
+            More Projects <FontAwesomeIcon icon={faGithub} />
+          </button>
         </div>
       </div>
     </div>
