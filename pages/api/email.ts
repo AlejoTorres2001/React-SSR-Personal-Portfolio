@@ -5,6 +5,11 @@ export default async function handler (
   req: NextApiRequest,
   res: NextApiResponse<object>
 ) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({
+      error: 'Method Not Allowed'
+    })
+  }
   if (!req.body.email || !req.body.message || !req.body.name) {
     return res.status(400).json({ error: 'Missing required fields' })
   }
