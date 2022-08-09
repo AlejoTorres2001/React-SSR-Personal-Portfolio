@@ -5,6 +5,7 @@ type useNavBarHook = () => [
   boolean,
   boolean,
   boolean,
+  boolean,
   (sectionName: string) => void
 ]
 const useNavBar: useNavBarHook = () => {
@@ -13,6 +14,7 @@ const useNavBar: useNavBarHook = () => {
   const [isResumeSelected, setIsResumeSelected] = useState(false)
   const [isContactMeSelected, setIsContactMeSelected] = useState(false)
   const [isBadgesSelected, setIsBadgesSelected] = useState(false)
+  const [isProjectsSelected, setIsProjectsSelected] = useState(false)
   const toggleSection = (sectionName: string) => {
     switch (sectionName) {
       case 'home':
@@ -24,6 +26,7 @@ const useNavBar: useNavBarHook = () => {
         setIsResumeSelected(false)
         setIsContactMeSelected(false)
         setIsBadgesSelected(false)
+        setIsProjectsSelected(false)
         break
       case 'about-me':
         if (isAboutMeSelected) {
@@ -34,6 +37,7 @@ const useNavBar: useNavBarHook = () => {
         setIsResumeSelected(false)
         setIsContactMeSelected(false)
         setIsBadgesSelected(false)
+        setIsProjectsSelected(false)
         break
       case 'resume':
         if (isResumeSelected) {
@@ -44,6 +48,7 @@ const useNavBar: useNavBarHook = () => {
         setIsResumeSelected(!isResumeSelected)
         setIsContactMeSelected(false)
         setIsBadgesSelected(false)
+        setIsProjectsSelected(false)
         break
       case 'contact-me':
         if (isContactMeSelected) {
@@ -52,6 +57,7 @@ const useNavBar: useNavBarHook = () => {
         setIsHomeSelected(false)
         setIsAboutMeSelected(false)
         setIsResumeSelected(false)
+        setIsProjectsSelected(false)
         setIsContactMeSelected(!isContactMeSelected)
         setIsBadgesSelected(false)
         break
@@ -63,7 +69,19 @@ const useNavBar: useNavBarHook = () => {
         setIsAboutMeSelected(false)
         setIsResumeSelected(false)
         setIsContactMeSelected(false)
+        setIsProjectsSelected(false)
         setIsBadgesSelected(!isBadgesSelected)
+        break
+      case 'projects':
+        if (isProjectsSelected) {
+          break
+        }
+        setIsHomeSelected(false)
+        setIsAboutMeSelected(false)
+        setIsResumeSelected(false)
+        setIsContactMeSelected(false)
+        setIsBadgesSelected(false)
+        setIsProjectsSelected(!isProjectsSelected)
         break
       default:
         break
@@ -75,6 +93,7 @@ const useNavBar: useNavBarHook = () => {
     isResumeSelected,
     isContactMeSelected,
     isBadgesSelected,
+    isProjectsSelected,
     toggleSection
   ]
 }
