@@ -58,7 +58,7 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('home')}>
-              <Link href="#Home">
+              <Link href={router.pathname === '/projects' ? '/' : '#Home'}>
                 {language.name === 'en' ? 'Home' : 'Inicio'}
               </Link>
             </span>

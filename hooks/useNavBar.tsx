@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 type useNavBarHook = () => [
   boolean,
   boolean,
@@ -9,12 +10,17 @@ type useNavBarHook = () => [
   (sectionName: string) => void
 ]
 const useNavBar: useNavBarHook = () => {
-  const [isHomeSelected, setIsHomeSelected] = useState(true)
+  const router = useRouter()
+  const [isHomeSelected, setIsHomeSelected] = useState(false)
   const [isAboutMeSelected, setIsAboutMeSelected] = useState(false)
   const [isResumeSelected, setIsResumeSelected] = useState(false)
   const [isContactMeSelected, setIsContactMeSelected] = useState(false)
   const [isBadgesSelected, setIsBadgesSelected] = useState(false)
   const [isProjectsSelected, setIsProjectsSelected] = useState(false)
+  useEffect(() => {
+    if (router.pathname === '/projects') setIsProjectsSelected(true)
+    else setIsHomeSelected(true)
+  }, [])
   const toggleSection = (sectionName: string) => {
     switch (sectionName) {
       case 'home':
