@@ -1,4 +1,3 @@
-@supports (display: grid) {
 
 .grid {
   display: grid;
@@ -62,7 +61,6 @@
 .grid .item:nth-child(13) { grid-area: small9; }
 .grid .item:nth-child(14) { grid-area: small10; }
 
-}
 .box {
 display: flex;
 justify-content: center;
