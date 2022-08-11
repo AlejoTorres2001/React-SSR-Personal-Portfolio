@@ -113,7 +113,13 @@
   height: 30px;
   border: 1px solid #ff5823;
   border-radius: 50%;
+  transition: 0.2s;
   background-color: #1f2235;
+}
+.learn-more-button:hover{
+  color: black;
+  border: 1px solid #1f2235;
+  background-color: #ff5823;
 }
 .date-container{
   position: absolute;
@@ -127,7 +133,7 @@
   padding-top: 10px;
   font-size: 11px;
   line-height: 20px;
-  font-weight: 400;
+  font-weight: Bold;
   margin-bottom:auto;
   color: var(--white);
 }
