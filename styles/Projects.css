@@ -107,6 +107,15 @@
   display: flex;
   margin: 10px;
 }
+.learn-more-button{
+  outline: none;
+  color: #e6e3e3;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ff5823;
+  border-radius: 50%;
+  background-color: #1f2235;
+}
 .date-container{
   position: absolute;
   bottom: 0;

@@ -1,3 +1,5 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 type props = {
   name: string
@@ -19,10 +21,10 @@ const Project = ({ name, description, image, knowMore, bgColor }: props) => {
         </div>
       </div>
       <div className="button-container">
-        <button>learn more</button>
+        <button className='learn-more-button'><FontAwesomeIcon icon={faGithub} /></button>
       </div>
       <div className="date-container">
-        <p className='date'>08/10/22 </p>
+        <p className='date'>08/10/22</p>
       </div>
     </div>
   )
