@@ -57,5 +57,19 @@
       "An easy to use, real time HTML + CSS + JS code playground.Codify is a free online code editor that allows you to write and run code right in your browser,inspired by livewave UI but with a much cleaner look.Start sharing your ideas,mokups and code snippets with the world right now!",
     "image": "/assets/projects/codify.png",
     "knowMore":"https://github.com/AlejoTorres2001/code-playground"
+  },
+  {
+    "name": "Chat.io",
+    "description":
+      "A WebSocket-based somewhat functional Whatsapp Clone. A Fullstack Proyect made with NodeJS,Express,Socket.IO and MongoDB on the backend and React on the frontend with an UI inspired by WhatsappWeb",
+    "image": "/assets/projects/chatio.jpg",
+    "knowMore":"https://github.com/AlejoTorres2001/code-playground"
+  },
+  {
+    "name": "JWT Authentication",
+    "description":
+      "A FullStack example of a JWT auth strategy.the classic authentication and authotrization strategy using server session objects has proven to be less scalable in real hight-traffic web systems,Json Web Tokens is an alternative to that strategy, in this FullStack project I've covered all the good practices asociated with JWT as well as the most common mistakes",
+    "image": "/assets/projects/jwt.jpg",
+    "knowMore":"https://github.com/AlejoTorres2001/jwt-auth-app"
   }]
 }
