@@ -44,5 +44,18 @@
       "An E-Commerce made with C# and ASP.NET framework in the backend and using a  MySQL database,this was the Final Proyect for one of my develpment college courses,you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_6.jpg",
     "knowMore":""
+  },{
+    "name": "NextJS Personal Portfolio",
+    "description":
+      "This very website is one of my web development projects,I´ve been using NextJs since early 2020, and it´s one of the best react-based frameworks Iv´ve ever used,out of the box features like routing, Server Side Rendering,typescript support and even API routes make Next a solid option for any type of project.Vercel's new feature called Edge computing looks like a promising way to achieve faster response times regarding of the user's location",
+    "image": "/assets/projects/next.jpg",
+    "knowMore":"https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio"
+  },
+  {
+    "name": "Codify",
+    "description":
+      "An easy to use, real time HTML + CSS + JS code playground.Codify is a free online code editor that allows you to write and run code right in your browser,inspired by livewave UI but with a much cleaner look.Start sharing your ideas,mokups and code snippets with the world right now!",
+    "image": "/assets/projects/codify.png",
+    "knowMore":"https://github.com/AlejoTorres2001/code-playground"
   }]
 }
