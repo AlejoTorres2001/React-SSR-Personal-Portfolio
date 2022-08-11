@@ -15,10 +15,11 @@ const projects: NextPage = () => {
           setShowMobileMenu as Dispatch<SetStateAction<boolean>>
         }
       />
-      <div className="grid">
-        {projectsData.map((project, index) => (<Project indexCss={index + 1} key={index} {...project} />)
-        )}
-      </div>
+     <main className='container'>
+      <section className="cards">
+       {projectsData.map((project, index) => <Project key={index} {...project}/>)}
+      </section>
+    </main>
       <Footer />
     </div>
   )
