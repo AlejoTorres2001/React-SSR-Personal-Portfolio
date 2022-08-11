@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import { ILanguageContextType } from '../@types/language.d.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
@@ -13,8 +14,10 @@ const Header: React.FunctionComponent<{
     isResumeSelected,
     isContactMeSelected,
     isBadgesSelected,
+    isProjectsSelected,
     toggleSection
   ] = useNavBar()
+  const router = useRouter()
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
   return (
@@ -55,55 +58,73 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('home')}>
-              <Link href="#Home">
+              <Link href={router.pathname === '/projects' ? '/' : '#Home'}>
                 {language.name === 'en' ? 'Home' : 'Inicio'}
               </Link>
             </span>
           </div>
-          <div
-            className={`header-option header-option-seperator  ${
-              isAboutMeSelected ? 'selected-header-option' : ''
-            }`}
-          >
-            <span onClick={() => toggleSection('about-me')}>
-              <Link href="#AboutMe">
-                {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
-              </Link>
-            </span>
-          </div>
-          <div
-            className={`header-option header-option-seperator  ${
-              isResumeSelected ? 'selected-header-option' : ''
-            }`}
-          >
-            <span onClick={() => toggleSection('resume')}>
-              <Link href="#Resume">
-                {language.name === 'en' ? 'Resume' : 'Trayectoria'}
-              </Link>
-            </span>
-          </div>
-          <div
-            className={`header-option header-option-seperator  ${
-              isBadgesSelected ? 'selected-header-option' : ''
-            }`}
-          >
-            <span onClick={() => toggleSection('badges')}>
-              <Link href="#Badges">
-                {language.name === 'en' ? 'Badges' : 'Premios'}
-              </Link>
-            </span>
-          </div>
-          <div
-            className={`header-option  ${
-              isContactMeSelected ? 'selected-header-option' : ''
-            }`}
-          >
-            <span onClick={() => toggleSection('contact-me')}>
-              <Link href="#ContactMe">
-                {language.name === 'en' ? 'ContactMe' : 'Contactame'}
-              </Link>
-            </span>
-          </div>
+          {router.pathname !== '/projects'
+            ? (
+            <>
+              <div
+                className={`header-option header-option-seperator  ${
+                  isAboutMeSelected ? 'selected-header-option' : ''
+                }`}
+              >
+                <span onClick={() => toggleSection('about-me')}>
+                  <Link href="#AboutMe">
+                    {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
+                  </Link>
+                </span>
+              </div>
+              <div
+                className={`header-option header-option-seperator  ${
+                  isResumeSelected ? 'selected-header-option' : ''
+                }`}
+              >
+                <span onClick={() => toggleSection('resume')}>
+                  <Link href="#Resume">
+                    {language.name === 'en' ? 'Resume' : 'Trayectoria'}
+                  </Link>
+                </span>
+              </div>
+              <div
+                className={`header-option header-option-seperator  ${
+                  isBadgesSelected ? 'selected-header-option' : ''
+                }`}
+              >
+                <span onClick={() => toggleSection('badges')}>
+                  <Link href="#Badges">
+                    {language.name === 'en' ? 'Badges' : 'Premios'}
+                  </Link>
+                </span>
+              </div>
+              <div
+                className={`header-option  ${
+                  isContactMeSelected ? 'selected-header-option' : ''
+                }`}
+              >
+                <span onClick={() => toggleSection('contact-me')}>
+                  <Link href="#ContactMe">
+                    {language.name === 'en' ? 'ContactMe' : 'Contactame'}
+                  </Link>
+                </span>
+              </div>
+            </>
+              )
+            : (
+            <div
+              className={`header-option  ${
+                isProjectsSelected ? 'selected-header-option' : ''
+              }`}
+            >
+              <span onClick={() => toggleSection('projects')}>
+                <Link href="/projects">
+                  {language.name === 'en' ? 'Projects' : 'Proyectos'}
+                </Link>
+              </span>
+            </div>
+              )}
         </div>
       </div>
     </div>

@@ -8,15 +8,16 @@ import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Badges from '../components/Badges'
 import ContactMe from '../components/ContactMe'
-import { useContext, useState } from 'react'
+import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.d.types'
 import LanguagesContainer from '../components/LanguagesContainer'
 import LanguageOption from '../components/LanguageOption'
+import useMobileMenu from '../hooks/useMobileMenu'
 const Home: NextPage = () => {
   const { setLanguage } = useContext(LanguageContext) as ILanguageContextType
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
+  const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
   const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
@@ -55,8 +56,10 @@ const Home: NextPage = () => {
         </div>
       )}
       <Header
-        showMobileMenu={showMobileMenu}
-        setShowMobileMenu={setShowMobileMenu}
+        showMobileMenu={showMobileMenu as boolean}
+        setShowMobileMenu={
+          setShowMobileMenu as Dispatch<SetStateAction<boolean>>
+        }
       />
       <Profile />
       <Footer />

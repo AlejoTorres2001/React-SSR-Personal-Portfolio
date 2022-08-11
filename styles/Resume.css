@@ -271,3 +271,19 @@
     width: 100%;
   }
 }
+.proyects-btn-container{
+display: flex;
+justify-content: end;
+}
+.proyects-btn{
+  margin-top: 15px;
+  padding: 5px;
+  outline: none;
+  color: #e6e3e3;
+  border: 2px solid #ff5823;
+  font-size: 12px;
+  border-radius: 19px;
+  background-color: #1f2235;
+  font-size: 11px;
+  width: 160px;
+}
