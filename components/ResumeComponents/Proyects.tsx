@@ -123,12 +123,13 @@ const Proyects: React.FunctionComponent<object> = () => {
             </span>
           </div>
         </div>
-        <div className="proyects-btn-container">
+        <div className="projects-btn-container">
           <button
             onClick={() => router.push('/projects')}
-            className="proyects-btn"
+            className="projects-btn"
           >
-            More Projects <FontAwesomeIcon icon={faGithub} />
+            {language.name === 'en' ? 'More Projects' : 'Mas Proyectos'}{' '}
+            <FontAwesomeIcon icon={faGithub} />
           </button>
         </div>
       </div>

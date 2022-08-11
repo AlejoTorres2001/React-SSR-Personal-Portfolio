@@ -271,11 +271,11 @@
     width: 100%;
   }
 }
-.proyects-btn-container{
+.projects-btn-container{
 display: flex;
 justify-content: end;
 }
-.proyects-btn{
+.projects-btn{
   margin-top: 15px;
   padding: 5px;
   outline: none;
@@ -285,5 +285,12 @@ justify-content: end;
   border-radius: 19px;
   background-color: #1f2235;
   font-size: 11px;
+  transition: 0.2s;
   width: 160px;
+}
+.projects-btn:hover{
+  color: black;
+  border: 2px solid #1f2235;
+  background-color: #ff5823;
+ 
 }
