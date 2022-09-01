@@ -31,7 +31,7 @@ const Work: React.FunctionComponent<object> = () => {
           <div className="resume-heading-description">
             <span>
               {language.name === 'en'
-                ? 'Developed a Deep-Q learning agent to be used for maze exploration in Robocup Competition'
+                ? 'Developed a Deep-Q learning agent used for maze exploration at Robocup Competition'
                 : 'Desarrollo de un agente de Deep-Q learning para ser usado para explorar laberintos en Robocup'}
             </span>
           </div>
@@ -78,7 +78,7 @@ const Work: React.FunctionComponent<object> = () => {
           <div className="resume-heading-description">
             <span>
               {language.name === 'en'
-                ? 'Developed Web-based systems using ASP.NET fremawork and Genexus11'
+                ? 'Developed Web-based systems using ASP.NET framework and Genexus11'
                 : 'Desarrollo de Sistemas Web basados en ASP.NET y Genexus11'}
             </span>
           </div>
@@ -146,7 +146,7 @@ const Work: React.FunctionComponent<object> = () => {
           <span className="resume-description-text">
             -{' '}
             {language.name === 'en'
-              ? 'Participation in the development of the KeyWordFinder software using the frameworks electron.js + Vue.js'
+              ? 'Participate in the development of KeyWordFinder using electron.js + Vue.js'
               : 'Participación en el desarrollo del software KeyWordFinder usando los frameworks electron.js + Vue.js'}
           </span>
           <br />

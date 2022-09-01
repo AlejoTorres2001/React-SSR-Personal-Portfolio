@@ -61,15 +61,29 @@
   {
     "name": "Chat.io",
     "description":
-      "A WebSocket-based somewhat functional Whatsapp Clone. A Fullstack Proyect made with NodeJS,Express,Socket.IO and MongoDB on the backend and React on the frontend with an UI inspired by WhatsappWeb",
+      "A WebSocket-based somewhat functional Whatsapp Clone. A Fullstack Project made with NodeJS,Express,Socket.IO and MongoDB on the backend and React on the frontend with an UI inspired by WhatsappWeb",
     "image": "/assets/projects/chatio.jpg",
     "knowMore":"https://github.com/AlejoTorres2001/code-playground"
   },
   {
     "name": "JWT Authentication",
     "description":
-      "A FullStack example of a JWT auth strategy.the classic authentication and authotrization strategy using server session objects has proven to be less scalable in real hight-traffic web systems,Json Web Tokens is an alternative to that strategy, in this FullStack project I've covered all the good practices asociated with JWT as well as the most common mistakes",
+      "A FullStack example of a JWT auth strategy.the classic authentication and authorization strategy using server session objects has proven to be less scalable in real hight-traffic web systems,Json Web Tokens is an alternative to that strategy, in this FullStack project I've covered all the good practices associated with JWT as well as the most common mistakes",
     "image": "/assets/projects/jwt.jpg",
     "knowMore":"https://github.com/AlejoTorres2001/jwt-auth-app"
+  },
+  {
+    "name": "URL-Shortener",
+    "description":
+      "An URL shortener fully packed with a containerized dev environment using VsCode DevContainers abstraction on top of Dockers Dev Environments,Built with NextJs and Prisma ORM. It can be used programmatically through its REST API or with a UI already provided",
+    "image": "/assets/projects/project_7.png",
+    "knowMore":"https://github.com/AlejoTorres2001/url-shortener"
+  },
+  {
+    "name": "RTC-videochat",
+    "description":
+      "A FullStack Zoom Clone using Peer.js Wrapper for the  WebRTC protocol.Using express and socket-IO on the BackEnd to connect each peer and React + Material UI on the FrontEnd",
+    "image": "/assets/projects/project_8.png",
+    "knowMore":"https://github.com/AlejoTorres2001/RTC-videochat"
   }]
 }
