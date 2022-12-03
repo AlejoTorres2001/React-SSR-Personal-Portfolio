@@ -88,6 +88,14 @@
     "date":"8/2/2022"
   },
   {
+    "name": "AdventOfCode",
+    "description":
+      "My annuals attempts at AdventOfCode, including the source code + an explanation for every challenge solution",
+    "image": "/assets/projects/project_9.jpg",
+    "knowMore":"https://github.com/AlejoTorres2001/AdventOfCode",
+    "date":"12/3/2022"
+  },
+  {
     "name": "RTC-videochat",
     "description":
       "A FullStack Zoom Clone using Peer.js Wrapper for the  WebRTC protocol.Using express and socket-IO on the BackEnd to connect each peer and React + Material UI on the FrontEnd",
