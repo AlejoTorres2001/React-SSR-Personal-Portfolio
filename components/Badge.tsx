@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 type BadgeProps = {
   title: string
@@ -18,7 +19,7 @@ const Badge: React.FunctionComponent<BadgeProps> = ({
   return (
     <blockquote className="badgr-badge">
       <a href={assertion}>
-        <img width="120px" height="120px" src={img} />
+        <Image width="120px" height="120px" src={img} />
       </a>
       <p className="badgr-badge-name">{title}</p>
       <p className="badgr-badge-date">
