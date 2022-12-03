@@ -1,5 +1,6 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import React from 'react'
 type props = {
@@ -7,14 +8,14 @@ type props = {
   description: string
   image: string
   knowMore: string
-  bgColor?: string
+  date: string
 }
-const Project = ({ name, description, image, knowMore, bgColor }: props) => {
+const Project = ({ name, description, image, knowMore, date }: props) => {
   const router = useRouter()
   return (
     <div className="card">
       <div className="card-image-container">
-        <img src={image} />
+        <Image src={image} width={315} height={315} layout='fill' />
       </div>
       <div className="card-content">
         <p className="card-title">{name}</p>
@@ -31,7 +32,7 @@ const Project = ({ name, description, image, knowMore, bgColor }: props) => {
         </button>
       </div>
       <div className="date-container">
-        <p className="date">08/10/22</p>
+        <p className="date">{date}</p>
       </div>
     </div>
   )

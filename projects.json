@@ -5,7 +5,8 @@
       "As part of an assigment in My programming course there is the challenge to build a custom python bot using Discord.py async API this is an example I frecuently use in my clases,this Bot nicknamed JULIO,has some pretty cool functionalities. you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_2.jpg",
     "bgColor":"#5B6DAF",
-    "knowMore":"https://github.com/AlejoTorres2001/PythonDiscordBot"
+    "knowMore":"https://github.com/AlejoTorres2001/PythonDiscordBot",
+    "date":"8/10/2022"
   },
   {
     "name": "React TODO App",
@@ -13,77 +14,85 @@
       "As a way of practicing React concepts I decided to build a TO DO tasks app,as an extra, I´ve implemented a loggin and registration functionality,thanks to using this project in DataStax´s workshop I´ve won a Badge! you can the see full details of this project clicking the link ",
     "image": "/assets/projects/project_1.png",
     "knowMore":"https://github.com/AlejoTorres2001/React_TODO_WebApp",
-    "bgColor":"#0BEFEC"
+    "date":"6/4/2021"
   },
   {
     "name": "Book Fetching Curvy Website",
     "description":
       "One day I came across haikei.app, a web site to generate unique SVG degins assets,insipired by this,I decided to revive and old NodeJs backend I built for a Web dev course.the Final Results where pretty descent you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_3.png",
-    "knowMore":"https://github.com/AlejoTorres2001/Book_fetching_App"
+    "knowMore":"https://github.com/AlejoTorres2001/Book_fetching_App",
+    "date":"5/7/2021"
   },
   {
     "name": "Vue3 + GraphQL + themed API",
     "description":
       "As a form of integrating this new API query language to my workflow I built a simple UI that displays information thanks to RickAndMortyGraphQL API. This proyect was based on VueJSMex crash course for Vue3,you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_4.png",
-    "bgColor":"#343434",
-    "knowMore":""
+    "date":"8/11/2021",
+    "knowMore":"https://github.com/AlejoTorres2001/Rick_and_Morty_Vue3_GraphQL"
   },
   {
     "name": "NodeJS + MongoDB + Docker",
     "description":
       "Since late 2020 containerization technologies has caught my attention thats why I´ve been experimenting with this technologie using Docker, in this case,builind a NotesApp containerizing an instance of NodeJS for the Backenda and MongoDB as the main database in a different container using DockerCompose you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_5.png",
-    "bgColor":"#83DFB0",
-    "knowMore":""
+    "date":"7/29/2021",
+    "knowMore":"https://github.com/AlejoTorres2001/Node_Mongo_Docker_SimpleNoteApp"
   },
   {
     "name": "ASP + MySQL E Commerce",
     "description":
       "An E-Commerce made with C# and ASP.NET framework in the backend and using a  MySQL database,this was the Final Proyect for one of my develpment college courses,you can the see full details of this project clicking the link",
     "image": "/assets/projects/project_6.jpg",
-    "knowMore":""
+    "knowMore":"https://github.com/AlejoTorres2001/ASP_MySQL_Web_Store",
+    "date":"7/27/2021"
   },{
     "name": "NextJS Personal Portfolio",
     "description":
       "This very website is one of my web development projects,I´ve been using NextJs since early 2020, and it´s one of the best react-based frameworks Iv´ve ever used,out of the box features like routing, Server Side Rendering,typescript support and even API routes make Next a solid option for any type of project.Vercel's new feature called Edge computing looks like a promising way to achieve faster response times regarding of the user's location",
     "image": "/assets/projects/next.jpg",
-    "knowMore":"https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio"
+    "knowMore":"https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio",
+    "date":"12/20/2021"
   },
   {
     "name": "Codify",
     "description":
       "An easy to use, real time HTML + CSS + JS code playground.Codify is a free online code editor that allows you to write and run code right in your browser,inspired by livewave UI but with a much cleaner look.Start sharing your ideas,mokups and code snippets with the world right now!",
     "image": "/assets/projects/codify.png",
-    "knowMore":"https://github.com/AlejoTorres2001/code-playground"
+    "knowMore":"https://github.com/AlejoTorres2001/code-playground",
+    "date":"5/14/2022"
   },
   {
     "name": "Chat.io",
     "description":
       "A WebSocket-based somewhat functional Whatsapp Clone. A Fullstack Project made with NodeJS,Express,Socket.IO and MongoDB on the backend and React on the frontend with an UI inspired by WhatsappWeb",
     "image": "/assets/projects/chatio.jpg",
-    "knowMore":"https://github.com/AlejoTorres2001/code-playground"
+    "knowMore":"https://github.com/AlejoTorres2001/code-playground",
+    "date":"6/10/2022"
   },
   {
     "name": "JWT Authentication",
     "description":
       "A FullStack example of a JWT auth strategy.the classic authentication and authorization strategy using server session objects has proven to be less scalable in real hight-traffic web systems,Json Web Tokens is an alternative to that strategy, in this FullStack project I've covered all the good practices associated with JWT as well as the most common mistakes",
     "image": "/assets/projects/jwt.jpg",
-    "knowMore":"https://github.com/AlejoTorres2001/jwt-auth-app"
+    "knowMore":"https://github.com/AlejoTorres2001/jwt-auth-app",
+    "date":"6/14/2022"
   },
   {
     "name": "URL-Shortener",
     "description":
       "An URL shortener fully packed with a containerized dev environment using VsCode DevContainers abstraction on top of Dockers Dev Environments,Built with NextJs and Prisma ORM. It can be used programmatically through its REST API or with a UI already provided",
     "image": "/assets/projects/project_7.png",
-    "knowMore":"https://github.com/AlejoTorres2001/url-shortener"
+    "knowMore":"https://github.com/AlejoTorres2001/url-shortener",
+    "date":"8/2/2022"
   },
   {
     "name": "RTC-videochat",
     "description":
       "A FullStack Zoom Clone using Peer.js Wrapper for the  WebRTC protocol.Using express and socket-IO on the BackEnd to connect each peer and React + Material UI on the FrontEnd",
     "image": "/assets/projects/project_8.png",
-    "knowMore":"https://github.com/AlejoTorres2001/RTC-videochat"
+    "knowMore":"https://github.com/AlejoTorres2001/RTC-videochat",
+    "date":"7/13/2022"
   }]
 }
