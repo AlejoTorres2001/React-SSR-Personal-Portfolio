@@ -13,6 +13,52 @@ const Work: React.FunctionComponent<object> = () => {
             <div className="heading-bullet"></div>
             <span>
               {language.name === 'en'
+                ? 'Software Developer'
+                : 'Desarrollador de Software'}
+            </span>
+            <div className="heading-date">2022-2023</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>
+              <a className="link" href="https://silentiumapps.com/es/">
+                Silentium Apps, Salta, Argentina{' '}
+              </a>
+            </span>
+          </div>
+          <div className="resume-heading-description">
+            <span>
+              {language.name === 'en'
+                ? 'Designed Data Models, defined Business Rules and implemented robust and scalable APIs'
+                : 'Diseño de Modelos de Datos, definicion de reglas de negocio e implementacion de APIs robustas y escalables'}
+            </span>
+          </div>
+        </div>
+        <div className="experience-description">
+          <span className="resume-description-text">
+            -{' '}
+            {language.name === 'en'
+              ? 'Participation as an active Backend Developer'
+              : 'Participar como miembro activo del área de Backend'}{' '}
+            <br />-{' '}
+            {language.name === 'en'
+              ? 'Object-Oriented Programming Paradigm Training'
+              : 'Entrenamiento en el Paradigma Orientado a Objetos'}{' '}
+            <br />-{' '}
+            {language.name === 'en'
+              ? 'Learning and in-depth research of Nest.Js and .NET frameworks'
+              : 'Investigar y aprender sobre desarrollo Backend en Nest.js y .NET'}
+            <br />-{' '}
+            {language.name === 'en'
+              ? 'Learning and in-depth research of Angular framework'
+              : 'Investigar y aprender sobre desarrollo Frontend en Angular'}
+            <br />
+          </span>
+        </div>
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>
+              {language.name === 'en'
                 ? 'Machine Learning Researcher'
                 : 'Investigador de Machine Learning'}
             </span>
@@ -181,7 +227,7 @@ const Work: React.FunctionComponent<object> = () => {
             {language.name === 'en'
               ? 'research and elaboration of "Protection, Security, and Privacy of data in the Metaverses" paper for the '
               : ' Presentación del trabajo de investigación "Protección, Seguridad y Privacidad de los datos en los Metaversos" en el '}
-               <strong>
+            <strong>
               {language.name === 'en'
                 ? 'XII CIDDI 2022 and III JEI 2022'
                 : 'XII CIDDI 2022 y III JEI 2022'}
