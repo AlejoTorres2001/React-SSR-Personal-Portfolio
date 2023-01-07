@@ -89,8 +89,8 @@ const AboutMe = () => {
                 <div className="highlight-blob"></div>
                 <span>
                   {language.name === 'en'
-                    ? 'Building REST and GrapQL APIs'
-                    : 'Construccion de APIs REST y de GrapQL'}
+                    ? 'Building REST and GraphQL APIs'
+                    : 'Construccion de APIs REST y de GraphQL'}
                 </span>
               </div>
               <div className="highlight">
