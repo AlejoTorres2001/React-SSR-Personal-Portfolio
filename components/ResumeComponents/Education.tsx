@@ -29,7 +29,12 @@ const Education: React.FunctionComponent<object> = () => {
               <br />
               Frontend with React.js
               <br />
-              Mobile Apps Development with React Native
+              Mobile Apps Development with React Native<br />
+              JavaScript Full stack Developer<br />
+              Programming and Software Development School <br />
+              Full stack with Next.js <br />
+              Backend with Node.js <br />
+              Backend with .NET<br />
             </span>
           </div>
           <div className="resume-heading-description">
@@ -118,7 +123,7 @@ const Education: React.FunctionComponent<object> = () => {
             <div className="heading-date">2013-2018</div>
           </div>
           <div className="resume-sub-heading">
-            <span>FCE First Certificate in English</span>
+            <span>FCE First Certificate in English B2-Score 177</span>
           </div>
           <div className="resume-heading-description">
             <span></span>

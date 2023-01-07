@@ -146,8 +146,8 @@ const Work: React.FunctionComponent<object> = () => {
           <span className="resume-description-text">
             -{' '}
             {language.name === 'en'
-              ? 'Participate in the development of KeyWordFinder using electron.js + Vue.js'
-              : 'Participación en el desarrollo del software KeyWordFinder usando los frameworks electron.js + Vue.js'}
+              ? 'Participate in the development of KeyWordFinder using electron.js & Vue.js'
+              : 'Participación en el desarrollo del software KeyWordFinder usando los frameworks electron.js & Vue.js'}
           </span>
           <br />
           <span className="resume-description-text">
@@ -162,6 +162,30 @@ const Work: React.FunctionComponent<object> = () => {
             {language.name === 'en'
               ? 'Investigate possible implementation improvements following the work plan'
               : 'Investigar posibles mejoras de implementación seguindo el plan de trabajo'}
+          </span>
+          <br />
+          <span className="resume-description-text">
+            -{' '}
+            {language.name === 'en'
+              ? 'Investigate and lecture on '
+              : 'Investigar y disertar sobre '}
+            <strong>
+              {language.name === 'en'
+                ? '"Privacy and Security in the Metaverses"'
+                : '"La privacidad y Seguridad en los Metaversos"'}
+            </strong>
+          </span>
+          <br />
+          <span className="resume-description-text">
+            -{' '}
+            {language.name === 'en'
+              ? 'research and elaboration of "Protection, Security, and Privacy of data in the Metaverses" paper for the '
+              : ' Presentación del trabajo de investigación "Protección, Seguridad y Privacidad de los datos en los Metaversos" en el '}
+               <strong>
+              {language.name === 'en'
+                ? 'XII CIDDI 2022 and III JEI 2022'
+                : 'XII CIDDI 2022 y III JEI 2022'}
+            </strong>
           </span>
           <br />
         </div>

@@ -62,7 +62,7 @@ const Resume = () => {
                     alt="B"
                   />
                   <span className="bullet-label">
-                    {language.name === 'en' ? 'Education' : 'Educaciòn'}
+                    {language.name === 'en' ? 'Education' : 'Educación'}
                   </span>
                 </div>
                 <div
@@ -92,7 +92,7 @@ const Resume = () => {
                   <span className="bullet-label">
                     {language.name === 'en'
                       ? 'Hard Skills'
-                      : 'Habilidades Duras'}
+                      : 'Habilidades Técnicas'}
                   </span>
                 </div>
                 <div
