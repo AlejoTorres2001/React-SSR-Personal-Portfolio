@@ -50,8 +50,16 @@ const AboutMe = () => {
                   : 'Carrera de grado en ingeniería en Informatica'}{' '}
               </strong>
               {language.name === 'en'
-                ? 'degree. Looking for a job in the industry with new challenges where I can learn and grow.'
-                : 'Estoy en la busqueda de un puesto en la industria, con nuevos desafios donde pueda continuar aprendiendo y creciendo. '}{' '}
+                ? 'degree. Looking for a job in the industry with new challenges where I can learn and grow. Won a scolarship at'
+                : 'Estoy en la busqueda de un puesto en la industria, con nuevos desafios donde pueda continuar aprendiendo y creciendo. He ganado una Beca en la '}{' '}
+              <a className="link" href="https://www.upm.es/">
+              {language.name === 'en'
+                ? 'UPM'
+                : 'Universidad Politecnica de Madrid'}
+              </a>{' '}
+              {language.name === 'en'
+                ? '(Madrid) to finish my career abroad.'
+                : 'para completar mis estudios en el extranjero.'}
             </span>
             <div className="about-me-highlights">
               <div className="highlight-heading">
@@ -73,8 +81,8 @@ const AboutMe = () => {
                 <div className="highlight-blob"></div>
                 <span>
                   {language.name === 'en'
-                    ? 'background knowledge of MERN stack'
-                    : 'Experiencia en el uso del stack MERN'}
+                    ? 'background knowledge of popular tech stacks'
+                    : 'Experiencia en el uso de diversos stacks tecnologicos'}
                 </span>
               </div>
               <div className="highlight">
