@@ -63,7 +63,7 @@ const Work: React.FunctionComponent<object> = () => {
                 : 'Investigador de Machine Learning'}
             </span>
             <div className="heading-date">
-              2022-{language.name === 'en' ? 'Present' : 'Presente'}
+              2022 - 2022
             </div>
           </div>
           <div className="resume-sub-heading">
@@ -111,7 +111,7 @@ const Work: React.FunctionComponent<object> = () => {
                 ? 'Developer and Technical support'
                 : 'Desarrollador y Soporte Tecnico'}
             </span>
-            <div className="heading-date">2021-2021</div>
+            <div className="heading-date">2021 - 2021</div>
           </div>
           <div className="resume-sub-heading">
             <span>
@@ -136,7 +136,7 @@ const Work: React.FunctionComponent<object> = () => {
           <span className="resume-description-text">
             -{' '}
             {language.name === 'en'
-              ? 'Developing and mantaining existing systems using ASP.NET and Genexus11'
+              ? 'Developing and maintaining existing systems using ASP.NET and Genexus11'
               : 'Desarrollando y manteniendo sistemas existentes usando ASP.NET y Genexus11'}
           </span>
           <br />
@@ -244,7 +244,7 @@ const Work: React.FunctionComponent<object> = () => {
                 : 'Profesor de Programación en Python'}
             </span>
             <div className="heading-date">
-              2021-{language.name === 'en' ? 'Present' : 'Presente'}
+              2021 - 2022
             </div>
           </div>
           <div className="resume-sub-heading">
