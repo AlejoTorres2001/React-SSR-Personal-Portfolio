@@ -3,8 +3,7 @@ import Typical from 'react-typical'
 import { ILanguageContextType } from '../@types/language.d.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
-import Flag from 'react-world-flags'
-
+import CvOption from './CvOption'
 const steps = [
   'Cross Platform Dev 🔴',
   1000,
@@ -64,25 +63,35 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
             </button>
-              <button className="btn highlighted-btn">
-                {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-                <div className="">
-            <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
-                  <button className='btn'>
-                  <Flag code="724" height="12" />
-                  &nbsp; ES
-                  </button>
-            </a>
+            <button
+              className="btn highlighted-btn"
+              onClick={() => setIsCvSelected((prevState) => !prevState)}
+            >
+              {!isCvSelected
+                ? language.name === 'en'
+                  ? 'Get Resume'
+                  : 'Descargar CV'
+                : ''}
+              <section hidden={!isCvSelected} className="">
+                <CvOption
+                  fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
+                  langOptions={{
+                    flagCode: '724',
+                    flagHeight: '12',
+                    langText: 'ES'
+                  }}
+                />
 
-                  <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
-
-                  <button className='btn'>
-                  <Flag code="840" height="10" />
-                  &nbsp; EN
-                  </button>
-            </a>
-                </div>
-              </button>
+                <CvOption
+                  fileUrl="assets/home/CV - Alejo Torres Teruel - EN.pdf"
+                  langOptions={{
+                    flagCode: '840',
+                    flagHeight: '10',
+                    langText: 'EN'
+                  }}
+                />
+              </section>
+            </button>
           </div>
         </div>
         <div className="profile-picture">
