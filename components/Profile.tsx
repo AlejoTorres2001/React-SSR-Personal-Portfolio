@@ -22,7 +22,11 @@ const Profile: React.FunctionComponent<object> = () => {
   const shouldRenderChild = useDelayUnmount(isCvSelected, 300)
   const { language } = useContext(LanguageContext) as ILanguageContextType
   return (
-    <div className="profile-container" id="Home">
+    <div
+      className="profile-container"
+      id="Home"
+      onClick={(e) => setIsCvSelected((prevState) => prevState && !prevState)}
+    >
       <div className="profile-parent">
         <div className="profile-details">
           <div className="cols">
@@ -69,7 +73,10 @@ const Profile: React.FunctionComponent<object> = () => {
             </button>
             <button
               className="btn highlighted-btn"
-              onClick={() => setIsCvSelected((prevState) => !prevState)}
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsCvSelected((prevState) => !prevState)
+              }}
             >
               {!isCvSelected
                 ? language.name === 'en'
@@ -77,9 +84,7 @@ const Profile: React.FunctionComponent<object> = () => {
                   : 'Descargar CV'
                 : ''}
               {shouldRenderChild && isCvSelected && (
-                <section style={
-                  isCvSelected ? mountedStyle : unmountedStyle
-                }>
+                <section style={isCvSelected ? mountedStyle : unmountedStyle}>
                   <CvOption
                     fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
                     langOptions={{
