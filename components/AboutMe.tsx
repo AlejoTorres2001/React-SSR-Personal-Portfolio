@@ -127,21 +127,22 @@ const AboutMe = () => {
                   e.preventDefault()
                   window.location.href =
                     process.env.NODE_ENV === 'production'
-                      ? 'https://react-ssr-personal-portfolio.vercel.app/#ContactMe'
+                      ? 'https://alejo-torres.com/#ContactMe'
                       : 'http://localhost:3000/#ContactMe'
                 }}
                 className="btn primary-btn"
               >
                 {language.name === 'en' ? 'Contact Me' : 'Contactame'}{' '}
-              </button>
-              <a
-                href="/assets/home/AlejoTorres.pdf"
-                download="AlejoTorresCV.pdf"
-              >
-                <button className="btn highlighted-btn">
+              </button >
+                <button className="btn highlighted-btn" onClick={(e) => {
+                  e.preventDefault()
+                  window.location.href =
+                    process.env.NODE_ENV === 'production'
+                      ? 'https://alejo-torres.com/#Home'
+                      : 'http://localhost:3000/#Home'
+                }}>
                   {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
                 </button>
-              </a>
             </div>
           </div>
         </div>
