@@ -1,8 +1,9 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Typical from 'react-typical'
 import { ILanguageContextType } from '../@types/language.d.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
+import Flag from 'react-world-flags'
 
 const steps = [
   'Cross Platform Dev 🔴',
@@ -15,6 +16,7 @@ const steps = [
   1000
 ]
 const Profile: React.FunctionComponent<object> = () => {
+  const [isCvSelected, setIsCvSelected] = useState(false)
   const { language } = useContext(LanguageContext) as ILanguageContextType
   return (
     <div className="profile-container" id="Home">
@@ -62,11 +64,25 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
             </button>
-            <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
               <button className="btn highlighted-btn">
                 {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-              </button>
+                <div className="">
+            <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
+                  <button className='btn'>
+                  <Flag code="724" height="12" />
+                  &nbsp; ES
+                  </button>
             </a>
+
+                  <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
+
+                  <button className='btn'>
+                  <Flag code="840" height="10" />
+                  &nbsp; EN
+                  </button>
+            </a>
+                </div>
+              </button>
           </div>
         </div>
         <div className="profile-picture">
