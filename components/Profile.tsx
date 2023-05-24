@@ -4,6 +4,7 @@ import { ILanguageContextType } from '../@types/language.d.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
 import CvOption from './CvOption'
+import useDelayUnmount from '../hooks/useDelayUnmount'
 const steps = [
   'Cross Platform Dev 🔴',
   1000,
@@ -14,8 +15,11 @@ const steps = [
   '#DataStaxDevelopers ⌨️',
   1000
 ]
+const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
+const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
 const Profile: React.FunctionComponent<object> = () => {
   const [isCvSelected, setIsCvSelected] = useState(false)
+  const shouldRenderChild = useDelayUnmount(isCvSelected, 300)
   const { language } = useContext(LanguageContext) as ILanguageContextType
   return (
     <div className="profile-container" id="Home">
@@ -72,25 +76,29 @@ const Profile: React.FunctionComponent<object> = () => {
                   ? 'Get Resume'
                   : 'Descargar CV'
                 : ''}
-              <section hidden={!isCvSelected} className="">
-                <CvOption
-                  fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
-                  langOptions={{
-                    flagCode: '724',
-                    flagHeight: '12',
-                    langText: 'ES'
-                  }}
-                />
+              {shouldRenderChild && isCvSelected && (
+                <section style={
+                  isCvSelected ? mountedStyle : unmountedStyle
+                }>
+                  <CvOption
+                    fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
+                    langOptions={{
+                      flagCode: '724',
+                      flagHeight: '12',
+                      langText: 'ES'
+                    }}
+                  />
 
-                <CvOption
-                  fileUrl="assets/home/CV - Alejo Torres Teruel - EN.pdf"
-                  langOptions={{
-                    flagCode: '840',
-                    flagHeight: '10',
-                    langText: 'EN'
-                  }}
-                />
-              </section>
+                  <CvOption
+                    fileUrl="assets/home/CV - Alejo Torres Teruel - EN.pdf"
+                    langOptions={{
+                      flagCode: '840',
+                      flagHeight: '10',
+                      langText: 'EN'
+                    }}
+                  />
+                </section>
+              )}
             </button>
           </div>
         </div>
