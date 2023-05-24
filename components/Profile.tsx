@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Typical from 'react-typical'
 import { ILanguageContextType } from '../@types/language.d.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
-
+import CvOption from './CvOption'
+import useDelayUnmount from '../hooks/useDelayUnmount'
 const steps = [
   'Cross Platform Dev 🔴',
   1000,
@@ -14,10 +15,18 @@ const steps = [
   '#DataStaxDevelopers ⌨️',
   1000
 ]
+const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
+const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
 const Profile: React.FunctionComponent<object> = () => {
+  const [isCvSelected, setIsCvSelected] = useState(false)
+  const shouldRenderChild = useDelayUnmount(isCvSelected, 300)
   const { language } = useContext(LanguageContext) as ILanguageContextType
   return (
-    <div className="profile-container" id="Home">
+    <div
+      className="profile-container"
+      id="Home"
+      onClick={(e) => setIsCvSelected((prevState) => prevState && !prevState)}
+    >
       <div className="profile-parent">
         <div className="profile-details">
           <div className="cols">
@@ -62,11 +71,40 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
             </button>
-            <a href="/assets/home/AlejoTorres.pdf" download="AlejoTorresCV.pdf">
-              <button className="btn highlighted-btn">
-                {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-              </button>
-            </a>
+            <button
+              className="btn highlighted-btn"
+              onClick={(e) => {
+                e.stopPropagation()
+                setIsCvSelected((prevState) => !prevState)
+              }}
+            >
+              {!isCvSelected
+                ? language.name === 'en'
+                  ? 'Get Resume'
+                  : 'Descargar CV'
+                : ''}
+              {shouldRenderChild && isCvSelected && (
+                <section style={isCvSelected ? mountedStyle : unmountedStyle}>
+                  <CvOption
+                    fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
+                    langOptions={{
+                      flagCode: '724',
+                      flagHeight: '12',
+                      langText: 'ES'
+                    }}
+                  />
+
+                  <CvOption
+                    fileUrl="assets/home/CV - Alejo Torres Teruel - EN.pdf"
+                    langOptions={{
+                      flagCode: '840',
+                      flagHeight: '10',
+                      langText: 'EN'
+                    }}
+                  />
+                </section>
+              )}
+            </button>
           </div>
         </div>
         <div className="profile-picture">
