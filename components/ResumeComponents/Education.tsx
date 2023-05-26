@@ -16,11 +16,17 @@ const Education: React.FunctionComponent<object> = () => {
                 ? 'Platzi Certifications'
                 : 'Certificaciones en Platzi'}
             </span>
-            <div className="heading-date">2021-2022</div>
+            <div className="heading-date">
+              2021-2022
+              </div>
           </div>
           <div className="resume-sub-heading">
             <span>
-              Frontend with Angular
+            Data & AI School
+            <br />
+            Frontend with Angular
+            <br />
+            Backend with NestJs
             <br />
               Javascript School <br />
               Web development School

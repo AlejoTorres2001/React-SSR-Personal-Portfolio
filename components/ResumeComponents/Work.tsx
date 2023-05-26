@@ -9,6 +9,46 @@ const Work: React.FunctionComponent<object> = () => {
     <div className="resume-details-carousal">
       <div className="experience-container">
         <div className="resume-heading">
+        <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>
+              {language.name === 'en'
+                ? 'FullStack Developer'
+                : 'Desarrollador FullStack'}
+            </span>
+            <div className="heading-date"> {language.name === 'en' ? 'Apr' : 'Abr'} - {language.name === 'en' ? 'Present' : 'Presente'}</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>
+              <a className="link" href="https://www.altostratus.es/">
+                Altostratus Cloud Consulting, Madrid,  {language.name === 'en' ? 'Spain' : 'España'}{' '}
+              </a>
+            </span>
+          </div>
+          <div className="resume-heading-description">
+            <span>
+              {language.name === 'en'
+                ? 'Developed end-to-end solutions leveraging the power of GCP'
+                : 'Desarrollo de soluciones end-to-end aprovechando el poder de la nube'}
+            </span>
+          </div>
+          <div className="experience-description">
+          <span className="resume-description-text">
+            -{' '}
+            {language.name === 'en'
+              ? 'Professional Cloud Developer formation'
+              : 'Capacitacíon para la certificacion Professional Cloud Developer'}{' '}
+            <br />-{' '}
+            {language.name === 'en'
+              ? 'Developing and deploying applications on Google Cloud Platform using Go and FastAPI'
+              : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando Go y FastAPI'}{' '}
+            <br />-{' '}
+            {language.name === 'en'
+              ? 'Developing and deploying applications on Google Cloud Platform using NodeJs'
+              : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando NodeJs'}
+            <br />
+          </span>
+        </div>
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
             <span>

@@ -96,7 +96,7 @@ const Skills: React.FunctionComponent<object> = () => {
         </div>
         <div className="skill-parent">
           <div className="heading-bullet"></div>
-          <span>FastAPI</span>
+          <span>Cloud Infraestructure</span>
           <div className="skill-percentage">
             <div
               className="active-percentage-bar"
