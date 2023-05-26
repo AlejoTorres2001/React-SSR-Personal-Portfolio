@@ -175,12 +175,15 @@
 }
 .heading-date {
   background-color: #ff5823;
-  padding: 4px 12px;
+  padding: 4px 14px;
   font-size: 14px;
   border-radius: 14px;
   color: var(--white);
-  width: 118px;
+  width: 120px;
   height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skill-parent {
   display: flex;
