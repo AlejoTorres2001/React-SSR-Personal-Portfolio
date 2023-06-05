@@ -74,7 +74,7 @@ const AboutMe = () => {
                 <span>
                   {language.name === 'en'
                     ? 'Full Stack web and mobile development'
-                    : 'Desarrollo Fullstack web y mobil'}
+                    : 'Desarrollo Fullstack web y móvil'}
                 </span>
               </div>
               <div className="highlight">
@@ -82,7 +82,7 @@ const AboutMe = () => {
                 <span>
                   {language.name === 'en'
                     ? 'background knowledge of popular tech stacks'
-                    : 'Experiencia en el uso de diversos stacks tecnologicos'}
+                    : 'Experiencia en el uso de stacks tecnológicos populares'}
                 </span>
               </div>
               <div className="highlight">
@@ -97,16 +97,16 @@ const AboutMe = () => {
                 <div className="highlight-blob"></div>
                 <span>
                   {language.name === 'en'
-                    ? 'Building REST and GraphQL APIs'
-                    : 'Construccion de APIs REST y de GraphQL'}
+                    ? 'Building REST-ful APIs and GraphQL as the transport layer'
+                    : 'Construcción de APIs REST-ful y uso de GraphQL como capa de transporte'}
                 </span>
               </div>
               <div className="highlight">
                 <div className="highlight-blob"></div>
                 <span>
                   {language.name === 'en'
-                    ? 'Managing databases'
-                    : 'Administracion de Bases de Datos'}
+                    ? 'Microservices Arquitectures leveraging Cloud Infraestructure'
+                    : 'Arquitecturas de Microservicios aprovechando la infraestructura en la nube'}
                 </span>
               </div>
               <div className="highlight">
@@ -132,7 +132,7 @@ const AboutMe = () => {
                 }}
                 className="btn primary-btn"
               >
-                {language.name === 'en' ? 'Contact Me' : 'Contactame'}{' '}
+                {language.name === 'en' ? 'Contact Me' : 'Contáctame'}{' '}
               </button >
                 <button className="btn highlighted-btn" onClick={(e) => {
                   e.preventDefault()
