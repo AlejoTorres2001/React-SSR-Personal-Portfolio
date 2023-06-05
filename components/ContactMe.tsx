@@ -60,11 +60,11 @@ const ContactMe: React.FunctionComponent<object> = () => {
         </div>
         <div className="back-form">
           <div className="img-back">
-            <h4>
+            <h2>
               {language.name === 'en'
                 ? 'Send Your Email Here!'
                 : 'Envia tu Email aquí!'}
-            </h4>
+            </h2>
             <img src="/assets/ContactMe/mail.jpeg" alt="image not found" />
           </div>
           <form>
@@ -76,11 +76,13 @@ const ContactMe: React.FunctionComponent<object> = () => {
             <input
               typeof="text"
               value={name}
+              name='name'
               onChange={(e) => setName(e.target.value)}
             />
             <label htmlFor="email">Email</label>
             <input
               typeof="email"
+              name='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -89,6 +91,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
             </label>
             <textarea
               typeof="text"
+              name='message'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
