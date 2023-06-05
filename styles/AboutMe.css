@@ -178,10 +178,12 @@
   font-style: normal;
   font-weight: 400;
   src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Poppins Bold';
   font-style: normal;
   font-weight: 400;
   src: url('../public/assets/fonts/Poppins-Bold.ttf');
+  font-display: swap;
 }
