@@ -23,7 +23,7 @@ const LanguageOption = ({
         setIsLanguagesSelected(!isLanguagesSelected)
       }}
     >
-      <Flag code="724" height="18" />
+      <Flag code="724" height="18" alt='language flag' />
       &nbsp; Spanish
     </span>
   )
