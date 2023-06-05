@@ -17,7 +17,7 @@ const CvOption: React.FunctionComponent<CvOptionProps> = ({
       href={fileUrl}
       download={FILE_NAME}
     >
-      <button className="btn cv-option">
+      <button name='SendEmail' className="btn cv-option">
         <Flag code={langOptions.flagCode} height={langOptions.flagHeight} />
         &nbsp; {langOptions.langText}
       </button>

@@ -93,7 +93,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <div className="send-btn">
-              <button typeof="submit" onClick={(e) => handleSubmit(e)}>
+              <button name='SendEmail' typeof="submit" onClick={(e) => handleSubmit(e)}>
                 {language.name === 'en' ? 'Send' : 'Enviar'}{' '}
                 <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
               </button>

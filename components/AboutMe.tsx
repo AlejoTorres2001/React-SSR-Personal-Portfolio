@@ -122,7 +122,7 @@ const AboutMe = () => {
               </div>
             </div>
             <div className="about-me-options">
-              <button
+              <button name='AboutMe'
                 onClick={(e) => {
                   e.preventDefault()
                   window.location.href =
@@ -134,7 +134,7 @@ const AboutMe = () => {
               >
                 {language.name === 'en' ? 'Contact Me' : 'Contáctame'}{' '}
               </button >
-                <button className="btn highlighted-btn" onClick={(e) => {
+                <button name='ContactMe' className="btn highlighted-btn" onClick={(e) => {
                   e.preventDefault()
                   window.location.href =
                     process.env.NODE_ENV === 'production'

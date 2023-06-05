@@ -24,7 +24,7 @@ const Project = ({ name, description, image, knowMore, date }: props) => {
         </div>
       </div>
       <div className="button-container">
-        <button
+        <button name='LearnMore'
           onClick={() => router.push(knowMore)}
           className="learn-more-button"
         >
