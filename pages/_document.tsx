@@ -3,10 +3,11 @@ import Script from 'next/script'
 
 export default function Document () {
   return (
-    <Html>
+    <Html lang='en'>
       {/* eslint-disable-next-line react/no-unescaped-entities */}
       <title>Alejo's Portfolio</title>
       <Head>
+      <meta name="description" content="Alejo Torres Fullstack Developer"></meta>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
