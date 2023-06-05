@@ -5,6 +5,7 @@ import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
 import CvOption from './CvOption'
 import useDelayUnmount from '../hooks/useDelayUnmount'
+import Image from 'next/image'
 const steps = [
   'Cross Platform Dev 🔴',
   1000,
@@ -108,7 +109,17 @@ const Profile: React.FunctionComponent<object> = () => {
           </div>
         </div>
         <div className="profile-picture">
-          <div className="profile-picture-background"></div>
+        <div className="profile-picture-background">
+        <Image
+              className='profile-picture-image'
+              src={'/assets/home/profile-picture.jpg'}
+              layout='responsive'
+              width={380}
+              height={380}
+              alt={'Profile Picture'}
+            />
+
+          </div>
         </div>
       </div>
     </div>
