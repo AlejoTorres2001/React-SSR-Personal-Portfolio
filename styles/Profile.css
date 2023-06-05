@@ -1,7 +1,6 @@
 .btn {
   border-radius: 50px;
   padding: 14px 0;
-  margin: 0 0 0 28px;
   width: 140px;
   cursor: pointer;
   transition: 0.2s;
@@ -176,10 +175,12 @@
   font-style: normal;
   font-weight: 400;
   src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'Poppins Light';
   font-style: normal;
   font-weight: 400;
   src: url('../public/assets/fonts/Poppins-Light.ttf');
+  font-display: swap;
 }
