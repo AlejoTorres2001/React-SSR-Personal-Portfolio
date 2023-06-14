@@ -220,6 +220,12 @@
 .resume-content {
   margin-top: 200px;
 }
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  grid-gap: 5px;
+}
 @media only screen and (max-width: 1110px) {
   .resume-card {
     width: 880px;
@@ -236,6 +242,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin-left: 18px;
+  }
+  .resume-grid {
+    display: block;
   }
 }
 @media only screen and (max-width: 1023px) {
