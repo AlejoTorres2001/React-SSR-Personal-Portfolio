@@ -13,21 +13,49 @@ const Education: React.FunctionComponent<object> = () => {
             <div className="heading-bullet"></div>
             <span>
               {language.name === 'en'
-                ? 'Platzi Certifications'
-                : 'Certificaciones en Platzi'}
+                ? 'UPM SMILE Scholarship'
+                : 'Beca SMILE en UPM'}
             </span>
-            <div className="heading-date">
-              2021-2022
-              </div>
+            <div className="heading-date">2023-2024</div>
           </div>
           <div className="resume-sub-heading">
             <span>
-            Data & AI School
-            <br />
-            Frontend with Angular
-            <br />
-            Backend with NestJs
-            <br />
+              {language.name === 'en'
+                ? 'ETSISI at Polytechnic University of Madrid,Spain'
+                : 'Facultad de Sistemas informaticos,Universidad Politecnica de Madrid,España'}
+            </span>
+          </div>
+          <div className="resume-heading-description">
+            <span>
+              {language.name === 'en'
+                ? 'Artificial Intelligence and Microservices Architecture'
+                : 'Inteligencia Artificial y Arquitecturas de Microservicios'}{' '}
+              <br />
+            </span>
+          </div>
+          <div className="resume-heading-description">
+            <span></span>
+          </div>
+        </div>
+
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet"></div>
+            <span>
+              {language.name === 'en'
+                ? 'Platzi Certifications'
+                : 'Certificaciones en Platzi'}
+            </span>
+            <div className="heading-date">2021-2022</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>
+              Data & AI School
+              <br />
+              Frontend with Angular
+              <br />
+              Backend with NestJs
+              <br />
               Javascript School <br />
               Web development School
               <br />
@@ -35,12 +63,15 @@ const Education: React.FunctionComponent<object> = () => {
               <br />
               Frontend with React.js
               <br />
-              Mobile Apps Development with React Native<br />
-              JavaScript Full stack Developer<br />
+              Mobile Apps Development with React Native
+              <br />
+              JavaScript Full stack Developer
+              <br />
               Programming and Software Development School <br />
               Full stack with Next.js <br />
               Backend with Node.js <br />
-              Backend with .NET<br />
+              Backend with .NET
+              <br />
             </span>
           </div>
           <div className="resume-heading-description">
