@@ -9,6 +9,7 @@ import useContactForm from '../hooks/useContactForm'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.d.types'
+import Image from 'next/image'
 const ContactMe: React.FunctionComponent<object> = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
@@ -67,7 +68,17 @@ const ContactMe: React.FunctionComponent<object> = () => {
                 ? 'Send Your Email Here!'
                 : 'Envia tu Email aquí!'}
             </h2>
-            <img src="/assets/ContactMe/mail.jpeg" alt="image not found" />
+            <Image
+              src="/assets/ContactMe/mail.jpeg"
+              alt="Email contact"
+              width={700}
+              height={300}
+              style={{
+                width: '100%',
+                height: 'auto',
+                opacity: 0.5
+              }}
+            />
           </div>
           <form>
             {error && <p className="error">{error}</p>}
