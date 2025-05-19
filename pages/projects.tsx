@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Project from '../components/Project'
 import useMobileMenu from '../hooks/useMobileMenu'
 import { projectsData } from '../projects.json'
-const projects: NextPage = () => {
+const Projects: NextPage = () => {
   const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
   return (
     <div className="home-container">
@@ -25,4 +25,4 @@ const projects: NextPage = () => {
   )
 }
 
-export default projects
+export default Projects

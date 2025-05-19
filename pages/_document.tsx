@@ -19,7 +19,7 @@ export default function Document () {
         <Main />
         <NextScript />
       </body>
-      <Script>
+      <Script id="my-inline-script" strategy="afterInteractive">
         {`
         
      document.addEventListener('touchstart', ()=>{}, {passive: true})
