@@ -20,7 +20,7 @@ const useNavBar: useNavBarHook = () => {
   useEffect(() => {
     if (router.pathname === '/projects') setIsProjectsSelected(true)
     else setIsHomeSelected(true)
-  }, [])
+  }, [router.pathname])
   const toggleSection = (sectionName: string) => {
     switch (sectionName) {
       case 'home':
