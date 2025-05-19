@@ -19,7 +19,7 @@ const Badge: React.FunctionComponent<BadgeProps> = ({
   return (
     <blockquote className="badgr-badge">
       <a href={assertion}>
-        <Image width="120px" height="120px" src={img} alt={`badge ${title}`}/>
+        <Image width={120} height={120} src={img} alt={`badge ${title}`}/>
       </a>
       <p className="badgr-badge-name">{title}</p>
       <p className="badgr-badge-date">

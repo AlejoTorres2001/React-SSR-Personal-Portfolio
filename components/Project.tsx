@@ -15,7 +15,7 @@ const Project = ({ name, description, image, knowMore, date }: props) => {
   return (
     <div className="card">
       <div className="card-image-container">
-        <Image src={image} width={315} height={315} layout='fill' />
+        <Image src={image} fill sizes='100%' alt='image  description' style={{ objectFit: 'cover' }}  />
       </div>
       <div className="card-content">
         <p className="card-title">{name}</p>

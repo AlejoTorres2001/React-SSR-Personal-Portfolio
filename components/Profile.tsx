@@ -109,14 +109,18 @@ const Profile: React.FunctionComponent<object> = () => {
           </div>
         </div>
         <div className="profile-picture">
-        <div className="profile-picture-background">
-        <Image
-              className='profile-picture-image'
+          <div className="profile-picture-background">
+            <Image
+              className="profile-picture-image"
               src={'/assets/home/profile-picture.jpg'}
-              layout='responsive'
               width={380}
               height={380}
               alt={'Profile Picture'}
+              style={{
+                objectFit: 'cover',
+                width: '100%',
+                height: '100%'
+              }}
             />
 
           </div>
