@@ -142,7 +142,7 @@
 }
 .link{
   text-decoration: none;
-  color:  var(#1f2235);
+  color:  #1f2235;
   font-weight: bold;
 }
 .link:hover{
