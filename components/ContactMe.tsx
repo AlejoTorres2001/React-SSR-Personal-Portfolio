@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
-import Typical from 'react-typical'
+import { TypeAnimation } from 'react-type-animation'
 import Icons from './Icons'
 import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
@@ -48,12 +48,14 @@ const ContactMe: React.FunctionComponent<object> = () => {
       <div className={`${inView ? 'appear' : ''} central-form fade-in`}>
         <div className="col">
           <h2 className="title">
-            <Typical
-              steps={
+            <TypeAnimation
+              sequence={
                 language.name === 'en'
-                  ? ['Get in Touch 📧']
-                  : ['Ponte en Contacto📧']
+                  ? ['Get in Touch 📧', 1000]
+                  : ['Ponte en Contacto📧', 1000]
               }
+              repeat={Infinity}
+              speed={50}
             />
           </h2>{' '}
           <Icons />
@@ -76,13 +78,13 @@ const ContactMe: React.FunctionComponent<object> = () => {
             <input
               typeof="text"
               value={name}
-              name='name'
+              name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <label htmlFor="email">Email</label>
             <input
               typeof="email"
-              name='email'
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -91,12 +93,16 @@ const ContactMe: React.FunctionComponent<object> = () => {
             </label>
             <textarea
               typeof="text"
-              name='message'
+              name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <div className="send-btn">
-              <button name='SendEmail' typeof="submit" onClick={(e) => handleSubmit(e)}>
+              <button
+                name="SendEmail"
+                typeof="submit"
+                onClick={(e) => handleSubmit(e)}
+              >
                 {language.name === 'en' ? 'Send' : 'Enviar'}{' '}
                 <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
               </button>

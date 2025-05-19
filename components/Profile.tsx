@@ -6,6 +6,7 @@ import Icons from './Icons'
 import CvOption from './CvOption'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import Image from 'next/image'
+import { TypeAnimation } from 'react-type-animation'
 const steps = [
   'Cross Platform Dev 🔴',
   1000,
@@ -49,7 +50,7 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               <h1>
                 {''}
-                <Typical loop={Infinity} steps={steps} />
+                <TypeAnimation sequence={steps} repeat={Infinity} speed={50} />
               </h1>
               <span className="profile-role-tagline">
                 {language.name === 'en'
@@ -122,7 +123,6 @@ const Profile: React.FunctionComponent<object> = () => {
                 height: '100%'
               }}
             />
-
           </div>
         </div>
       </div>
