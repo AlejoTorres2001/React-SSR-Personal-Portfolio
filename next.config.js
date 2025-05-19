@@ -11,6 +11,9 @@ const nextConfig = {
       },
       // Add other remote image sources if needed
     ],
+    dangerouslyAllowSVG: true,
+  contentDispositionType: 'attachment',
+  contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Optional: add transpilation for problematic packages
   transpilePackages: ['react-elastic-carousel'],
