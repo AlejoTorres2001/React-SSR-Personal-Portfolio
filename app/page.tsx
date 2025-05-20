@@ -1,6 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
-import type { NextPage } from 'next'
+'use client'
+
 import Flag from 'react-world-flags'
+import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Profile from '../components/Profile'
@@ -8,20 +9,21 @@ import AboutMe from '../components/AboutMe'
 import Resume from '../components/Resume'
 import Badges from '../components/Badges'
 import ContactMe from '../components/ContactMe'
-import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import LanguagesContainer from '../components/LanguagesContainer'
 import LanguageOption from '../components/LanguageOption'
 import useMobileMenu from '../hooks/useMobileMenu'
-const Home: NextPage = () => {
+import {Providers} from '../context/Providers'
+function HomeContent() {
   const { setLanguage } = useContext(LanguageContext) as ILanguageContextType
   const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
   const [isLanguagesSelected, setIsLanguagesSelected] = useState(false)
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
   const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
   const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
+  
   return (
     <div className="home-container">
       {!showMobileMenu && (
@@ -66,11 +68,15 @@ const Home: NextPage = () => {
       <AboutMe />
       <Resume />
       <Badges />
-      <Footer />
       <ContactMe />
-      <script async src="https://badgr.com/assets/widgets.bundle.js"></script>
     </div>
   )
 }
 
-export default Home
+export default function Home() {
+  return (
+    <Providers>
+      <HomeContent />
+    </Providers>
+  )
+}
