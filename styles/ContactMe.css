@@ -117,7 +117,7 @@ form label {
 }
 form input,
 textarea {
-  width: 100%;
+
   border: 2px solid transparent;
   outline: none;
   background-color: hsla(0, 0%, 90.2%, 0.6);

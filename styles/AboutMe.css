@@ -20,11 +20,15 @@
   color: #f0f8ff;
   border: 2px solid #ff5823;
   background-color: #1f2235;
+  
 }
 .highlighted-btn {
   color: var(--white);
   font-size: 12px;
   background-color: #ff5823;
+  outline: none;
+  box-shadow: none;
+  border: 2px solid #ff5823 !important; 
 }
 
 @media only screen and (max-width: 568px) {
