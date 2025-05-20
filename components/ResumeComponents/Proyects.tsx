@@ -1,10 +1,11 @@
+'use client'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React, { useContext } from 'react'
-import { ILanguageContextType } from '../../@types/language.d.types'
+import { ILanguageContextType } from '../../@types/language.types'
 import { LanguageContext } from '../../context/LanguageContextProvider'
-import { useRouter } from 'next/router'
+import { useRouter, usePathname } from 'next/navigation'
 const Proyects: React.FunctionComponent<object> = () => {
   const router = useRouter()
   const { language } = useContext(LanguageContext) as ILanguageContextType
