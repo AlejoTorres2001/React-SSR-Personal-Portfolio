@@ -1,3 +1,4 @@
+'use client'
 import React, { useContext } from 'react'
 import useButtons from '../hooks/useButtons'
 import Education from './ResumeComponents/Education'
@@ -7,7 +8,7 @@ import Skills from './ResumeComponents/Skills'
 import Work from './ResumeComponents/Work'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
 
 const Resume = () => {
@@ -63,7 +64,12 @@ const Resume = () => {
   width={16}
   height={16}
   alt="Education icon"
-  style={{ margin: '0 30px 0 0' }}
+  style={{
+    margin: '0 30px 0 0',
+    maxWidth: '16px',
+    maxHeight: '16px', 
+    display: 'block'   
+  }}
 />
                   <span className="bullet-label">
                     {language.name === 'en' ? 'Education' : 'Educación'}
@@ -79,7 +85,11 @@ const Resume = () => {
   width={16}
   height={16}
   alt="Work history icon"
-  style={{ margin: '0 30px 0 0' }}
+  style={{
+    margin: '0 30px 0 0',
+    maxWidth: '16px',
+    maxHeight: '16px',
+  }}
 />
                   <span className="bullet-label">
                     {language.name === 'en'
@@ -97,7 +107,12 @@ const Resume = () => {
   width={16}
   height={16}
   alt="Programming skills icon"
-  style={{ margin: '0 30px 0 0' }}
+  style={{
+    margin: '0 30px 0 0',
+    maxWidth: '16px',
+    maxHeight: '16px',
+    display: 'block'
+  }}
 />
                   <span className="bullet-label">
                     {language.name === 'en'
@@ -117,7 +132,12 @@ const Resume = () => {
   width={16}
   height={16}
   alt="Projects icon"
-  style={{ margin: '0 30px 0 0' }}
+  style={{
+    margin: '0 30px 0 0',
+    maxWidth: '16px',
+    maxHeight: '16px',
+    display: 'block'
+  }}
 />
                   <span className="bullet-label">
                     {language.name === 'en'
@@ -137,7 +157,12 @@ const Resume = () => {
   width={16}
   height={16}
   alt="Interests icon"
-  style={{ margin: '0 30px 0 0' }}
+  style={{
+    margin: '0 30px 0 0',
+    maxWidth: '16px',
+    maxHeight: '16px',
+    display: 'block'
+  }}
 />
                   <span className="bullet-label">
                     {language.name === 'en' ? 'Interests' : 'Intereses'}

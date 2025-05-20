@@ -1,6 +1,6 @@
+'use client'
 import React, { useContext, useState } from 'react'
-import Typical from 'react-typical'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
 import CvOption from './CvOption'

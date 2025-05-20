@@ -1,10 +1,11 @@
+'use client'
 import React, { useContext } from 'react'
 import Carousel from 'react-elastic-carousel'
 import Badge from './Badge'
 import { badges } from '../badges.json'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 const Badges = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
