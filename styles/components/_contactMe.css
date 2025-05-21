@@ -198,13 +198,13 @@ button {
 }
 
 .scroll-container {
+  display: flex;
   position: absolute;
   text-align: center;
-  right: 0;
-  margin-right: 9px;
+  right: 40px;
   overflow: hidden;
   flex-direction: column;
-  margin-top: -45px;
+
   z-index: 100;
   cursor: pointer;
 }
@@ -214,9 +214,9 @@ button {
   }
 }
 .btn-scroll {
-  width: 50px;
-  height: 50px;
   color: #f0f8ff;
+  width: 40px;
+  height: 40px;
   font-size: 24px;
   background-color: tomato;
   border-radius: 10px;

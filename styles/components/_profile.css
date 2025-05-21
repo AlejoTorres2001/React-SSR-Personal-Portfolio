@@ -40,7 +40,7 @@
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  background-image: url('../public/assets/home/bg.jpg');
+  background-color: #24263C;
 }
 .profile-parent {
   display: flex;
@@ -59,6 +59,13 @@
 .profile-details-role h1 {
   font-size: 40px;
   font-family: 'cursive';
+  min-width: 420px;
+  text-align: center; /* Para mantener el texto centrado */
+  margin: 0 auto; /* Centrar el bloque */
+  height: 60px; /* Altura fija para evitar cambios verticales */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .primary-text {
   color: (--white);
@@ -169,18 +176,4 @@
     width: 275px;
     margin-top: -90px;
   }
-}
-@font-face {
-  font-family: 'Poppins SemiBold';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins Light';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-Light.ttf');
-  font-display: swap;
 }

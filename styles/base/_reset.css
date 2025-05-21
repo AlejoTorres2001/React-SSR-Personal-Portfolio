@@ -1,0 +1,7 @@
+body {
+  margin: 0;
+  overflow-y: overlay;
+
+  font-smoothing: antialiased;
+  font-smoothing: grayscale;
+}

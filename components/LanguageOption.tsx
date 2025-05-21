@@ -1,31 +1,29 @@
-'use client'
+// filepath: /home/atorres/projects/React-SSR-Personal-Portfolio/components/LanguageOption.tsx
 import React, { useContext } from 'react'
-import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
-import Flag from 'react-world-flags'
+import { ILanguageContextType } from '../@types/language.types'
+
 type LanguageOptionProps = {
   isLanguagesSelected: boolean
   setIsLanguagesSelected: (isLanguagesSelected: boolean) => void
 }
-const LanguageOption = ({
-  isLanguagesSelected,
-  setIsLanguagesSelected
-}: LanguageOptionProps) => {
+
+const LanguageOption = ({ isLanguagesSelected, setIsLanguagesSelected }: LanguageOptionProps) => {
   const { setLanguage } = useContext(LanguageContext) as ILanguageContextType
+  
   return (
     <span
       className="language-option"
       onClick={() => {
         setLanguage({
-          name: 'sp',
+          name: 'es',
           flag: '724',
-          height: '18'
+          height: '15'
         })
         setIsLanguagesSelected(!isLanguagesSelected)
       }}
     >
-      <Flag code="724" height="18" alt='language flag' />
-      &nbsp; Spanish
+      ES
     </span>
   )
 }
