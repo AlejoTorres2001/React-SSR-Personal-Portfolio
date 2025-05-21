@@ -18,7 +18,6 @@ const Header: React.FunctionComponent<{
     isProjectsSelected,
     toggleSection
   ] = useNavBar()
-  const router = useRouter()
   const pathname = usePathname()
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
@@ -102,6 +101,17 @@ const Header: React.FunctionComponent<{
                 </span>
               </div>
               <div
+                className={`header-option header-option-seperator ${
+                  isProjectsSelected ? 'selected-header-option' : ''
+                }`}
+              >
+                <span onClick={() => toggleSection('projects')}>
+                  <Link href="/projects">
+                    {language.name === 'en' ? 'Projects' : 'Proyectos'}
+                  </Link>
+                </span>
+              </div>
+              <div
                 className={`header-option  ${
                   isContactMeSelected ? 'selected-header-option' : ''
                 }`}
@@ -112,6 +122,7 @@ const Header: React.FunctionComponent<{
                   </Link>
                 </span>
               </div>
+               
             </>
               )
             : (

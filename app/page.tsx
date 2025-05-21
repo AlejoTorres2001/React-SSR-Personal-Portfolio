@@ -15,7 +15,7 @@ import { ILanguageContextType } from '../@types/language.types'
 import LanguagesContainer from '../components/LanguagesContainer'
 import LanguageOption from '../components/LanguageOption'
 import useMobileMenu from '../hooks/useMobileMenu'
-import {Providers} from '../context/Providers'
+import { Providers } from '../context/Providers'
 function HomeContent() {
   const { setLanguage } = useContext(LanguageContext) as ILanguageContextType
   const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
@@ -23,7 +23,7 @@ function HomeContent() {
   const shouldRenderChild = useDelayUnmount(isLanguagesSelected, 300)
   const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
   const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
-  
+
   return (
     <div className="home-container">
       {!showMobileMenu && (
@@ -33,29 +33,28 @@ function HomeContent() {
         />
       )}
       {shouldRenderChild && !showMobileMenu && (
-        <div
-          style={isLanguagesSelected ? mountedStyle : unmountedStyle}
-          className="language-options"
-        >
-          <LanguageOption
-            isLanguagesSelected={isLanguagesSelected}
-            setIsLanguagesSelected={setIsLanguagesSelected}
-          />
-          <span
-            className="language-option"
-            onClick={() => {
-              setLanguage({
-                name: 'en',
-                flag: '840',
-                height: '15'
-              })
-              setIsLanguagesSelected(!isLanguagesSelected)
-            }}
-          >
-            <Flag code="840" height="15" />
-            &nbsp; English
-          </span>
-        </div>
+       <div
+    style={isLanguagesSelected ? mountedStyle : unmountedStyle}
+    className="language-options"
+  >
+    <LanguageOption
+      isLanguagesSelected={isLanguagesSelected}
+      setIsLanguagesSelected={setIsLanguagesSelected}
+    />
+    <span
+      className="language-option"
+      onClick={() => {
+        setLanguage({
+          name: 'en',
+          flag: '840',  // Mantenemos estas propiedades aunque no las usemos
+          height: '15'  // para evitar errores en otras partes de la app
+        })
+        setIsLanguagesSelected(!isLanguagesSelected)
+      }}
+    >
+      EN
+    </span>
+  </div>
       )}
       <Header
         showMobileMenu={showMobileMenu as boolean}

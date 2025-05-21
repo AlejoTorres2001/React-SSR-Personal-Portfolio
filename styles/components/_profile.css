@@ -59,6 +59,13 @@
 .profile-details-role h1 {
   font-size: 40px;
   font-family: 'cursive';
+  min-width: 420px;
+  text-align: center; /* Para mantener el texto centrado */
+  margin: 0 auto; /* Centrar el bloque */
+  height: 60px; /* Altura fija para evitar cambios verticales */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .primary-text {
   color: (--white);
