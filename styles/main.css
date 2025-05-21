@@ -1,5 +1,6 @@
-@import './base/_variables.css';
 @import './base/_reset.css';
+@import './base/_fonts.css';
+@import './base/_variables.css';
 @import './base/_gobal.css';
 @import './layout/_header.css';
 @import './layout/_footer.css';

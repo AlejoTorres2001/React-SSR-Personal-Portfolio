@@ -86,12 +86,7 @@
     opacity: 1;
   }
 }
-@font-face {
-  font-family: 'Poppins ExtraBold';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../../public/assets/fonts/Poppins-ExtraBold.ttf');
-}
+
 .language-container {
   display: flex;
   color: var(--white);
