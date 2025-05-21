@@ -1,6 +1,7 @@
+'use client'
 import React, { useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 const AboutMe = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType

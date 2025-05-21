@@ -1,4 +1,4 @@
-/* eslint-disable */
+'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { TypeAnimation } from 'react-type-animation'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import useContactForm from '../hooks/useContactForm'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
 const ContactMe: React.FunctionComponent<object> = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType

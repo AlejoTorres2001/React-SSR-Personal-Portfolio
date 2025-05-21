@@ -7,16 +7,17 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'api.badgr.io',
-        pathname: '**',
-      },
+        pathname: '**'
+      }
       // Add other remote image sources if needed
     ],
     dangerouslyAllowSVG: true,
-  contentDispositionType: 'attachment',
-  contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    formats: ['image/avif', 'image/webp']
   },
   // Optional: add transpilation for problematic packages
-  transpilePackages: ['react-elastic-carousel'],
+  transpilePackages: ['react-elastic-carousel']
 }
 
 module.exports = nextConfig

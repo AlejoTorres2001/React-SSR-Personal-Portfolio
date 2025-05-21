@@ -1,7 +1,8 @@
+'use client'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter, usePathname } from 'next/navigation'
 import React, { Dispatch, SetStateAction, useContext } from 'react'
-import { ILanguageContextType } from '../@types/language.d.types'
+import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import useNavBar from '../hooks/useNavBar'
 const Header: React.FunctionComponent<{
@@ -18,6 +19,7 @@ const Header: React.FunctionComponent<{
     toggleSection
   ] = useNavBar()
   const router = useRouter()
+  const pathname = usePathname()
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
   return (
@@ -58,12 +60,12 @@ const Header: React.FunctionComponent<{
             }`}
           >
             <span onClick={() => toggleSection('home')}>
-              <Link href={router.pathname === '/projects' ? '/' : '#Home'}>
+              <Link href={pathname === '/projects' ? '/' : '#Home'}>
                 {language.name === 'en' ? 'Home' : 'Inicio'}
               </Link>
             </span>
           </div>
-          {router.pathname !== '/projects'
+          {pathname !== '/projects'
             ? (
             <>
               <div
