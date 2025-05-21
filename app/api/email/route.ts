@@ -1,32 +1,31 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-type ResponseData = {
-  message?: string;
-  error?: string;
-}
+type EmailData = {
+  email: string;
+  name: string;
+  message: string;
+};
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-) {
-  // Check for valid method
-  if (req.method !== 'POST') {
-    return res.status(405).json({
-      error: 'Method Not Allowed'
-    })
-  }
-
-  if (!req.body.email || !req.body.message || !req.body.name) {
-    return res.status(400).json({ error: 'Missing required fields' })
-  }
-
-  if (!process.env.EMAIL || !process.env.PASSWORD) {
-    console.error('Missing EMAIL or PASSWORD environment variables')
-    return res.status(500).json({ error: 'Server configuration error' })
-  }
-
+export async function POST(request: Request) {
   try {
+    const body: EmailData = await request.json();
+    
+    if (!body.email || !body.message || !body.name) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+    
+    if (!process.env.EMAIL || !process.env.PASSWORD) {
+      console.error('Missing EMAIL or PASSWORD environment variables');
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+    
     const transporter = nodemailer.createTransport({
       port: 465,
       host: 'smtp.gmail.com',
@@ -35,28 +34,30 @@ export default async function handler(
         pass: process.env.PASSWORD
       },
       secure: true
-    })
-
+    });
+    
     const mailData = {
-      from: `"Portfolio Contact" <${process.env.EMAIL}>`, // Use your email as sender to avoid issues
-      replyTo: req.body.email, // Add reply-to for contact's email
+      from: `"Portfolio Contact" <${process.env.EMAIL}>`,
+      replyTo: body.email,
       to: process.env.EMAIL,
-      subject: `Message From ${req.body.name} - from Portfolio Website`,
-      text: `USING EMAIL: ${req.body.email} \n${req.body.message}`
-    }
-
-    // Verify connection
-    await transporter.verify()
+      subject: `Message From ${body.name} - from Portfolio Website`,
+      text: `USING EMAIL: ${body.email} \n${body.message}`
+    };
     
-    // Send mail
-    const info = await transporter.sendMail(mailData)
-    console.log('Message sent: ', info.messageId)
+    await transporter.verify();
     
-    return res.status(200).json({ message: 'Thanks for your message!' })
+    const info = await transporter.sendMail(mailData);
+    console.log('Message sent: ', info.messageId);
+    
+    return NextResponse.json(
+      { message: 'Thanks for your message!' },
+      { status: 200 }
+    );
   } catch (error) {
-    console.error('Email error:', error)
-    return res.status(500).json({ 
-      error: 'Failed to send email. Please try again later.' 
-    })
+    console.error('Email error:', error);
+    return NextResponse.json(
+      { error: 'Failed to send email. Please try again later.' },
+      { status: 500 }
+    );
   }
 }
