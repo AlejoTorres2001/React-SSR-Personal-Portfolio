@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
-// Import all your global styles
 import '../styles/globals.css'
 import '../styles/Header.css'
 import '../styles/Footer.css'
@@ -15,10 +14,8 @@ import '../styles/ContactMe.css'
 import '../styles/Projects.css'
 import Script from 'next/script'
 
-// Tell Font Awesome to skip adding the CSS automatically
 config.autoAddCss = false
 
-// Initialize fonts
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
