@@ -17,7 +17,7 @@
 .badges-container {
   padding: 80px 0px;
   width: 100%;
-  background-image: url('../public/assets/home/bg.jpg');
+  background-color: #24263C;
   background-position: 90% center;
   background-attachment: relative;
 }

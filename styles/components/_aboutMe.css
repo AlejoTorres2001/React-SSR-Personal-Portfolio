@@ -111,7 +111,7 @@
 }
 .about-me-profile {
   width: 50%;
-  background-image: url('../public/assets/home/aboutMe.jpeg');
+  background-image: url('../../public/assets/home/aboutMe.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 25%;
@@ -181,13 +181,13 @@
   font-family: 'Poppins SemiBold';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
+  src: url('../../public/assets/fonts/Poppins-SemiBold.ttf');
   font-display: swap;
 }
 @font-face {
   font-family: 'Poppins Bold';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-Bold.ttf');
+  src: url('../../public/assets/fonts/Poppins-Bold.ttf');
   font-display: swap;
 }

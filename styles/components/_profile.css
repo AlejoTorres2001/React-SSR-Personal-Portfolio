@@ -40,7 +40,7 @@
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
-  background-image: url('../public/assets/home/bg.jpg');
+  background-color: #24263C;
 }
 .profile-parent {
   display: flex;
@@ -174,13 +174,13 @@
   font-family: 'Poppins SemiBold';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-SemiBold.ttf');
+  src: url('../../public/assets/fonts/Poppins-SemiBold.ttf');
   font-display: swap;
 }
 @font-face {
   font-family: 'Poppins Light';
   font-style: normal;
   font-weight: 400;
-  src: url('../public/assets/fonts/Poppins-Light.ttf');
+  src: url('../../public/assets/fonts/Poppins-Light.ttf');
   font-display: swap;
 }
