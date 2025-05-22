@@ -67,6 +67,7 @@ function HomeContent() {
       <AboutMe />
       <Resume />
       <Badges />
+      <Footer />
       <ContactMe />
     </div>
   )
