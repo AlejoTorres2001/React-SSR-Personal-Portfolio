@@ -7,14 +7,19 @@ import CvOption from './CvOption'
 import useDelayUnmount from '../hooks/useDelayUnmount'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
+
 const steps = [
-  'Cross Platform Dev 🔴',
+  'Fullstack Development ⚙️',
   1000,
-  'React/React Native 🌐',
+  'Cloud & DevOps 🌐',
   1000,
-  'FullStack Developer 💻',
+  'AI Agents Orchestration 🤖',
   1000,
-  '#DataStaxDevelopers ⌨️',
+  'AI-Powered Backend APIs 🔌',
+  1000,
+  'ReactJs ⚛️',
+  1000,
+  'NestJS 🚀',
   1000
 ]
 const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
