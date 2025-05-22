@@ -185,11 +185,12 @@ const AboutMe = () => {
                 className="btn highlighted-btn"
                 onClick={(e) => {
                   e.preventDefault()
-                  // Apunta directamente al PDF de tu CV en inglés
-                  window.open(
-                    'https://towers.solutions/CV-AlejoTorres-EN.pdf',
-                    '_blank'
-                  )
+                  // Download CV based on current language
+                  const cvUrl =
+                    language.name === 'en'
+                      ? 'assets/home/CV-AlejoTorres-EN.pdf'
+                      : 'assets/home/CV-AlejoTorres-ES.pdf'
+                  window.open(cvUrl, '_blank')
                 }}
               >
                 {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}

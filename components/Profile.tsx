@@ -78,40 +78,19 @@ const Profile: React.FunctionComponent<object> = () => {
               {''}
               {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
             </button>
-            <button
-              className="btn highlighted-btn"
-              onClick={(e) => {
-                e.stopPropagation()
-                setIsCvSelected((prevState) => !prevState)
-              }}
-            >
-              {!isCvSelected
-                ? language.name === 'en'
-                  ? 'Get Resume'
-                  : 'Descargar CV'
-                : ''}
-              {shouldRenderChild && isCvSelected && (
-                <section style={isCvSelected ? mountedStyle : unmountedStyle}>
-                  <CvOption
-                    fileUrl="assets/home/CV - Alejo Torres Teruel - ES.pdf"
-                    langOptions={{
-                      flagCode: '724',
-                      flagHeight: '12',
-                      langText: 'ES'
-                    }}
-                  />
-
-                  <CvOption
-                    fileUrl="assets/home/CV - Alejo Torres Teruel - EN.pdf"
-                    langOptions={{
-                      flagCode: '840',
-                      flagHeight: '10',
-                      langText: 'EN'
-                    }}
-                  />
-                </section>
-              )}
-            </button>
+           <button
+  className="btn highlighted-btn"
+  onClick={(e) => {
+    e.stopPropagation();
+    // Download CV based on current language
+    const cvUrl = language.name === 'en' 
+      ? "assets/home/CV-AlejoTorres-EN.pdf" 
+      : "assets/home/CV-AlejoTorres-ES.pdf";
+    window.open(cvUrl, '_blank');
+  }}
+>
+  {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
+</button>
           </div>
         </div>
         <div className="profile-picture">
