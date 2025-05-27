@@ -109,4 +109,4 @@ const Skills: React.FunctionComponent<object> = () => {
   )
 }
 
-export default Skills
+export default React.memo(Skills)

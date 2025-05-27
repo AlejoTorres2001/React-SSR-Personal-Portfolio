@@ -1,15 +1,22 @@
 'use client'
-import React, { useContext } from 'react'
+import React, { lazy, Suspense, useContext } from 'react'
 import useButtons from '../hooks/useButtons'
-import Education from './ResumeComponents/Education'
-import Interests from './ResumeComponents/Interests'
-import Proyects from './ResumeComponents/Proyects'
-import Skills from './ResumeComponents/Skills'
-import Work from './ResumeComponents/Work'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
+
+// Importación dinámica de componentes
+const Education = lazy(() => import('./ResumeComponents/Education'))
+const Work = lazy(() => import('./ResumeComponents/Work'))
+const Skills = lazy(() => import('./ResumeComponents/Skills'))
+const Proyects = lazy(() => import('./ResumeComponents/Proyects'))
+const Interests = lazy(() => import('./ResumeComponents/Interests'))
+
+const LoadingComponent = () => (
+  <div className="resume-loading">Cargando...</div>
+)
+
 
 const Resume = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
@@ -172,12 +179,14 @@ const Resume = () => {
             </div>
           </div>
           <div className="resume-bullet-details">
-            {isSelectedEducation && <Education />}
-            {isSelectedWork && <Work />}
-            {isSelectedSkills && <Skills />}
-            {isSelectedProyects && <Proyects />}
-            {isSelectedInterests && <Interests />}
-          </div>
+        <Suspense fallback={<LoadingComponent />}>
+          {isSelectedEducation && <Education />}
+          {isSelectedWork && <Work />}
+          {isSelectedSkills && <Skills />}
+          {isSelectedProyects && <Proyects />}
+          {isSelectedInterests && <Interests />}
+        </Suspense>
+      </div>
         </div>
       </div>
     </div>

@@ -10,19 +10,24 @@ const Work: React.FunctionComponent<object> = () => {
     <div className="resume-details-carousal">
       <div className="experience-container">
         <div className="resume-heading">
-        <div className="resume-main-heading">
+          <div className="resume-main-heading">
             <div className="heading-bullet"></div>
             <span>
               {language.name === 'en'
                 ? 'FullStack Developer'
                 : 'Desarrollador FullStack'}
             </span>
-            <div className="heading-date"> {language.name === 'en' ? 'Apr' : 'Abr'} - {language.name === 'en' ? 'Present' : 'Presente'}</div>
+            <div className="heading-date">
+              {' '}
+              {language.name === 'en' ? 'Apr' : 'Abr'} -{' '}
+              {language.name === 'en' ? 'Present' : 'Presente'}
+            </div>
           </div>
           <div className="resume-sub-heading">
             <span>
               <a className="link" href="https://www.altostratus.es/">
-                Altostratus Cloud Consulting, Madrid,  {language.name === 'en' ? 'Spain' : 'España'}{' '}
+                Altostratus Cloud Consulting, Madrid,{' '}
+                {language.name === 'en' ? 'Spain' : 'España'}{' '}
               </a>
             </span>
           </div>
@@ -34,22 +39,22 @@ const Work: React.FunctionComponent<object> = () => {
             </span>
           </div>
           <div className="experience-description">
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Professional Cloud Developer formation'
-              : 'Capacitacíon para la certificacion Professional Cloud Developer'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Developing and deploying applications on Google Cloud Platform using Go and FastAPI'
-              : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando Go y FastAPI'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Developing and deploying applications on Google Cloud Platform using NodeJs'
-              : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando NodeJs'}
-            <br />
-          </span>
-        </div>
+            <span className="resume-description-text">
+              -{' '}
+              {language.name === 'en'
+                ? 'Professional Cloud Developer formation'
+                : 'Capacitacíon para la certificacion Professional Cloud Developer'}{' '}
+              <br />-{' '}
+              {language.name === 'en'
+                ? 'Developing and deploying applications on Google Cloud Platform using Go and FastAPI'
+                : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando Go y FastAPI'}{' '}
+              <br />-{' '}
+              {language.name === 'en'
+                ? 'Developing and deploying applications on Google Cloud Platform using NodeJs'
+                : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando NodeJs'}
+              <br />
+            </span>
+          </div>
           <div className="resume-main-heading">
             <div className="heading-bullet"></div>
             <span>
@@ -103,9 +108,7 @@ const Work: React.FunctionComponent<object> = () => {
                 ? 'Machine Learning Researcher'
                 : 'Investigador de Machine Learning'}
             </span>
-            <div className="heading-date">
-              2022 - 2022
-            </div>
+            <div className="heading-date">2022 - 2022</div>
           </div>
           <div className="resume-sub-heading">
             <span>
@@ -284,9 +287,7 @@ const Work: React.FunctionComponent<object> = () => {
                 ? 'Python Programming Tutor'
                 : 'Profesor de Programación en Python'}
             </span>
-            <div className="heading-date">
-              2021 - 2022
-            </div>
+            <div className="heading-date">2021 - 2022</div>
           </div>
           <div className="resume-sub-heading">
             <span>
@@ -335,4 +336,4 @@ const Work: React.FunctionComponent<object> = () => {
   )
 }
 
-export default Work
+export default React.memo(Work)

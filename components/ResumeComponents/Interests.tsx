@@ -71,4 +71,4 @@ const Interests: React.FunctionComponent<object> = () => {
   )
 }
 
-export default Interests
+export default React.memo(Interests)

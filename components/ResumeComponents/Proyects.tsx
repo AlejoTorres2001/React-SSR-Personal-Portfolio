@@ -137,4 +137,4 @@ const Proyects: React.FunctionComponent<object> = () => {
     </div>
   )
 }
-export default Proyects
+export default React.memo(Proyects)

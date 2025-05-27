@@ -172,4 +172,4 @@ const Education: React.FunctionComponent<object> = () => {
   )
 }
 
-export default Education
+export default React.memo(Education)
