@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
+import LoadingBar from './LoadingBar'
 
 // Importación dinámica de componentes
 const Education = lazy(() => import('./ResumeComponents/Education'))
@@ -14,7 +15,9 @@ const Proyects = lazy(() => import('./ResumeComponents/Proyects'))
 const Interests = lazy(() => import('./ResumeComponents/Interests'))
 
 const LoadingComponent = () => (
-  <div className="resume-loading">Cargando...</div>
+  <div className="resume-loading">
+    <LoadingBar />
+  </div>
 )
 
 
