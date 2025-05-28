@@ -9,13 +9,13 @@ import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
 
 const steps = [
-  'Fullstack Development ⚙️',
+  'Fullstack Dev ⚙️',
   1000,
   'Cloud & DevOps 🌐',
   1000,
-  'AI Agents Orchestration 🤖',
+  'Agents Orchestration 🤖',
   1000,
-  'AI-Powered Backend APIs 🔌',
+  'Distributed Systems 🖥️',
   1000,
   'ReactJs ⚛️',
   1000,
