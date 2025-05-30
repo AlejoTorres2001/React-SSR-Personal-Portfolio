@@ -6,331 +6,223 @@ import { LanguageContext } from '../../context/LanguageContextProvider'
 const Work: React.FunctionComponent<object> = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
 
+  const t = (en: string, es: string) => language.name === 'en' ? en : es
+
   return (
     <div className="resume-details-carousal">
       <div className="experience-container">
+
+        {/* EmpatIA */}
         <div className="resume-heading">
           <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'FullStack Developer'
-                : 'Desarrollador FullStack'}
-            </span>
-            <div className="heading-date">
-              {' '}
-              {language.name === 'en' ? 'Apr' : 'Abr'} -{' '}
-              {language.name === 'en' ? 'Present' : 'Presente'}
-            </div>
+            <div className="heading-bullet" />
+            <span>{t('FullStack Tech Leader', 'Líder Técnico FullStack')}</span>
+            <div className="heading-date">{t('Aug 2024', 'Ago 2024')}</div>
+          </div>
+          <div className="resume-sub-heading">
+            <span>EmpatIA, Madrid, {t('Spain', 'España')}</span>
+          </div>
+          <div className="resume-heading-description">
+            <span>{t('Leading cloud-native full-stack development on Azure.', 'Liderando desarrollo full-stack nativo en la nube sobre Azure.')}</span>
+          </div>
+        </div>
+        <div className="experience-description">
+          <span className="resume-description-text">
+            - {t(
+              'Built scalable applications with React.js and NestJS over Azure App Services and AKS.',
+              'Desarrollo de aplicaciones escalables con React.js y NestJS sobre Azure App Services y AKS.'
+            )}
+            <br />- {t(
+              'Maintained architecture diagrams and runbooks, reducing onboarding time by 30%.',
+              'Mantenimiento de diagramas de arquitectura y runbooks, reduciendo el tiempo de onboarding en un 30%.'
+            )}
+            <br />- {t(
+              'Implemented distributed event-scheduler with Bull queues and Redis.',
+              'Implementación de planificador distribuido con Bull queues y Redis.'
+            )}
+            <br />- {t(
+              'Automated infrastructure setup with Azure Pipelines, cutting environment setup time by 50%.',
+              'Automatización de infraestructura con Azure Pipelines, reduciendo el tiempo de configuración en un 50%.'
+            )}
+          </span>
+        </div>
+
+        {/* Altostratus */}
+        <div className="resume-heading">
+          <div className="resume-main-heading">
+            <div className="heading-bullet" />
+            <span>{t('FullStack Developer', 'Desarrollador FullStack')}</span>
+            <div className="heading-date">{t('Apr – Dec 2023', 'Abr – Dic 2023')}</div>
           </div>
           <div className="resume-sub-heading">
             <span>
               <a className="link" href="https://www.altostratus.es/">
-                Altostratus Cloud Consulting, Madrid,{' '}
-                {language.name === 'en' ? 'Spain' : 'España'}{' '}
+                Altostratus Cloud Consulting, Madrid, {t('Spain', 'España')}
               </a>
             </span>
           </div>
           <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Developed end-to-end solutions leveraging the power of GCP'
-                : 'Desarrollo de soluciones end-to-end aprovechando el poder de la nube'}
-            </span>
+            <span>{t('Cloud-native architecture on GCP and frontend systems.', 'Arquitectura cloud en GCP y desarrollo frontend.')}</span>
           </div>
-          <div className="experience-description">
-            <span className="resume-description-text">
-              -{' '}
-              {language.name === 'en'
-                ? 'Professional Cloud Developer formation'
-                : 'Capacitacíon para la certificacion Professional Cloud Developer'}{' '}
-              <br />-{' '}
-              {language.name === 'en'
-                ? 'Developing and deploying applications on Google Cloud Platform using Go and FastAPI'
-                : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando Go y FastAPI'}{' '}
-              <br />-{' '}
-              {language.name === 'en'
-                ? 'Developing and deploying applications on Google Cloud Platform using NodeJs'
-                : 'Desarrollo y despliegue de applicaciones en Google Cloud Platform usando NodeJs'}
-              <br />
-            </span>
-          </div>
+        </div>
+        <div className="experience-description">
+          <span className="resume-description-text">
+            - {t(
+              'Designed distributed data-processing pipelines in Python, improving efficiency by 15%.',
+              'Diseño de pipelines de procesamiento distribuido en Python, mejorando eficiencia en un 15%.'
+            )}
+            <br />- {t(
+              'Managed GCP resources with Terraform for secure and cost-efficient deployment.',
+              'Gestión de recursos GCP con Terraform para despliegues seguros y eficientes.'
+            )}
+            <br />- {t(
+              'Built CI/CD with Azure DevOps and GitHub Actions, cutting build cycles by 25%.',
+              'Implementación de CI/CD con Azure DevOps y GitHub Actions, reduciendo ciclos de build en un 25%.'
+            )}
+            <br />- {t(
+              'Developed UIs with React.js and Angular integrated with REST and GraphQL APIs.',
+              'Desarrollo de interfaces con React.js y Angular, integradas con APIs REST y GraphQL.'
+            )}
+          </span>
+        </div>
+
+        {/* Silentium Apps */}
+        <div className="resume-heading">
           <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'Software Developer'
-                : 'Desarrollador de Software'}
-            </span>
-            <div className="heading-date">2022-2023</div>
+            <div className="heading-bullet" />
+            <span>{t('Trainee Developer', 'Desarrollador en Formación')}</span>
+            <div className="heading-date">{t('Aug – Dec 2022', 'Ago – Dic 2022')}</div>
           </div>
           <div className="resume-sub-heading">
             <span>
               <a className="link" href="https://silentiumapps.com/es/">
-                Silentium Apps, Salta, Argentina{' '}
+                Silentium Apps, Salta, Argentina
               </a>
             </span>
           </div>
           <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Designed Data Models, defined Business Rules and implemented robust and scalable APIs'
-                : 'Diseño de Modelos de Datos, definicion de reglas de negocio e implementacion de APIs robustas y escalables'}
-            </span>
+            <span>{t('Enhanced backend performance and research in frameworks.', 'Mejora de rendimiento y exploración de frameworks.')}</span>
           </div>
         </div>
         <div className="experience-description">
           <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Participation as an active Backend Developer'
-              : 'Participar como miembro activo del área de Backend'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Object-Oriented Programming Paradigm Training'
-              : 'Entrenamiento en el Paradigma Orientado a Objetos'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Learning and in-depth research of Nest.Js and .NET frameworks'
-              : 'Investigar y aprender sobre desarrollo Backend en Nest.js y .NET'}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Learning and in-depth research of Angular framework'
-              : 'Investigar y aprender sobre desarrollo Frontend en Angular'}
-            <br />
+            - {t(
+              'Improved backend performance by 20% via refactoring in NestJS and .NET.',
+              'Mejora del backend en un 20% mediante refactorización en NestJS y .NET.'
+            )}
+            <br />- {t(
+              'Contributed modules and libraries that improved UX by 15%.',
+              'Contribución de módulos que mejoraron la UX en un 15%.'
+            )}
+            <br />- {t(
+              'Collaborated on Angular-based features to enhance usability.',
+              'Colaboración en mejoras de usabilidad con Angular.'
+            )}
           </span>
         </div>
+
+        {/* IITA */}
         <div className="resume-heading">
           <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'Machine Learning Researcher'
-                : 'Investigador de Machine Learning'}
-            </span>
-            <div className="heading-date">2022 - 2022</div>
+            <div className="heading-bullet" />
+            <span>{t('Machine Learning Researcher', 'Investigador en Machine Learning')}</span>
+            <div className="heading-date">{t('Mar – Aug 2022', 'Mar – Ago 2022')}</div>
           </div>
           <div className="resume-sub-heading">
             <span>
-              Instituto de Innovacion y Tecnologia Aplicada{' '}
-              <a className="link" href="https://iita.com.ar/">
-                (IITA)
-              </a>
+              Instituto de Innovación y Tecnología Aplicada{' '}
+              <a className="link" href="https://iita.com.ar/">(IITA)</a>
             </span>
           </div>
           <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Developed a Deep-Q learning agent used for maze exploration at Robocup Competition'
-                : 'Desarrollo de un agente de Deep-Q learning para ser usado para explorar laberintos en Robocup'}
-            </span>
+            <span>{t('Developed Deep Q-learning systems and automated ML pipelines.', 'Desarrollo de sistemas Deep Q-learning y automatización de pipelines ML.')}</span>
           </div>
         </div>
         <div className="experience-description">
           <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Research and document AI models'
-              : 'Investigar y Documentar Modelos de Inteligencia Artificial'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Develop a simplified testing environment for AI models'
-              : 'Desarrollar un entorno simplificado de pruebas'}{' '}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Develop a Deep-Q Learning Model'
-              : 'Desarrollo de un Modelo de Deep-Q Learning'}
-            <br />-{' '}
-            {language.name === 'en'
-              ? 'Record the learning process and tune hyperparameters using Google Cloud Compute Engine + MLFlow'
-              : 'Registrar el proceso de aprendizaje y modificar hiper parametros usando Google Cloud Compute Engine + MLFlow'}
-            <br />
+            - {t(
+              'Built ML test environment on GCE using MLFlow, increasing iteration speed by 25%.',
+              'Construcción de entorno ML en GCE con MLFlow, mejorando la iteración en un 25%.'
+            )}
+            <br />- {t(
+              'Developed Deep Q-learning agent for Robocup competition with 95% accuracy.',
+              'Desarrollo de agente Deep Q-learning con 95% de precisión para Robocup.'
+            )}
+            <br />- {t(
+              'Created technical guides and documentation in Jupyter Notebooks.',
+              'Creación de documentación técnica con Jupyter.'
+            )}
           </span>
         </div>
+
+        {/* UCASAL */}
         <div className="resume-heading">
           <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'Developer and Technical support'
-                : 'Desarrollador y Soporte Tecnico'}
-            </span>
-            <div className="heading-date">2021 - 2021</div>
+            <div className="heading-bullet" />
+            <span>{t('Student Researcher', 'Alumno Investigador')}</span>
+            <div className="heading-date">{t('Aug 21 – Dec 24', 'Ago 21 – Dic 24')}</div>
           </div>
           <div className="resume-sub-heading">
             <span>
-              <a className="link" href="http://digio.com.ar/">
-                Digio
-              </a>{' '}
-              SRL
+              {t('Engineering Faculty at', 'Facultad de Ingeniería en')}{' '}
+              <a className="link" href="https://www.ucasal.edu.ar/">UCASAL</a>
             </span>
           </div>
           <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Developed Web-based systems using ASP.NET framework and Genexus11'
-                : 'Desarrollo de Sistemas Web basados en ASP.NET y Genexus11'}
-            </span>
+            <span>{t('Digital forensics and metaverse research.', 'Forensia digital e investigación en metaversos.')}</span>
           </div>
         </div>
         <div className="experience-description">
-          <span className="resume-description-text"></span>
+          <span className="resume-description-text">
+            - {t(
+              'Developed KeyWordFinder with Electron and Vue.js, improving processing by 20%.',
+              'Desarrollo de KeyWordFinder con Electron y Vue.js, mejorando el rendimiento en un 20%.'
+            )}
+            <br />- {t(
+              'Published and presented research on privacy and data protection in metaverses.',
+              'Publicación y presentación de investigación sobre privacidad y protección de datos en metaversos.'
+            )}
+            <br />- {t(
+              'Presented at XII CIDDI 2022 and III JEI 2022.',
+              'Presentado en el XII CIDDI 2022 y III JEI 2022.'
+            )}
+          </span>
         </div>
-        <div className="experience-description">
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Developing and maintaining existing systems using ASP.NET and Genexus11'
-              : 'Desarrollando y manteniendo sistemas existentes usando ASP.NET y Genexus11'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Technical support over production systems'
-              : 'Soporte Tecnico sobre sistemas de produccion'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Documentation of solutions and customer service processes'
-              : 'Documentacion de soluciones y procesos de servicio al cliente'}
-          </span>
-          <br />
-        </div>
+
+        {/* IITA Tutor */}
         <div className="resume-heading">
           <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'Student Researcher'
-                : 'Alumno Investigador'}
-            </span>
-            <div className="heading-date">
-              2021-{language.name === 'en' ? 'Present' : 'Presente'}
-            </div>
+            <div className="heading-bullet" />
+            <span>{t('Python Programming Tutor', 'Tutor de Programación en Python')}</span>
+            <div className="heading-date">2021 – 2022</div>
           </div>
           <div className="resume-sub-heading">
             <span>
-              {language.name === 'en'
-                ? 'Engineering Faculty at'
-                : 'Facultad de Ingeniería en'}{' '}
-              <a className="link" href="https://www.ucasal.edu.ar/">
-                UCASAL
-              </a>
+              Instituto de Innovación y Tecnología Aplicada{' '}
+              <a className="link" href="https://iita.com.ar/">(IITA)</a>
             </span>
           </div>
           <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Digital Forensics and Research'
-                : 'Forensia digital e Ingeniería'}
-            </span>
+            <span>{t('Led weekly lectures and mentored students.', 'Clases semanales y mentoría de alumnos.')}</span>
           </div>
         </div>
         <div className="experience-description">
-          <span className="resume-description-text"></span>
+          <span className="resume-description-text">
+            - {t(
+              'Prepared and taught course content, evaluated assignments.',
+              'Preparación y dictado de clases, corrección de actividades.'
+            )}
+            <br />- {t(
+              'Fostered student engagement through 1:1 guidance.',
+              'Fomento del compromiso estudiantil mediante mentorías.'
+            )}
+            <br />- {t(
+              'Tracked student progress for reporting purposes.',
+              'Seguimiento del progreso estudiantil para informes.'
+            )}
+          </span>
         </div>
-        <div className="experience-description">
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Participate in the development of KeyWordFinder using electron.js & Vue.js'
-              : 'Participación en el desarrollo del software KeyWordFinder usando los frameworks electron.js & Vue.js'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Record progress and prepare weekly reports'
-              : 'Registro de progreso y preparación de reportes semanales'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Investigate possible implementation improvements following the work plan'
-              : 'Investigar posibles mejoras de implementación seguindo el plan de trabajo'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Investigate and lecture on '
-              : 'Investigar y disertar sobre '}
-            <strong>
-              {language.name === 'en'
-                ? '"Privacy and Security in the Metaverses"'
-                : '"La privacidad y Seguridad en los Metaversos"'}
-            </strong>
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'research and elaboration of "Protection, Security, and Privacy of data in the Metaverses" paper for the '
-              : ' Presentación del trabajo de investigación "Protección, Seguridad y Privacidad de los datos en los Metaversos" en el '}
-            <strong>
-              {language.name === 'en'
-                ? 'XII CIDDI 2022 and III JEI 2022'
-                : 'XII CIDDI 2022 y III JEI 2022'}
-            </strong>
-          </span>
-          <br />
-        </div>
-        <div className="resume-heading">
-          <div className="resume-main-heading">
-            <div className="heading-bullet"></div>
-            <span>
-              {language.name === 'en'
-                ? 'Python Programming Tutor'
-                : 'Profesor de Programación en Python'}
-            </span>
-            <div className="heading-date">2021 - 2022</div>
-          </div>
-          <div className="resume-sub-heading">
-            <span>
-              Instituto de Innovacion y Tecnologia Aplicada{' '}
-              <a className="link" href="https://iita.com.ar/">
-                (IITA)
-              </a>
-            </span>
-          </div>
-          <div className="resume-heading-description">
-            <span>
-              {language.name === 'en'
-                ? 'Prepared Lectures and Dictated several courses instances'
-                : 'Preparado de Clases y dictado de varios cursos'}
-            </span>
-          </div>
-        </div>
-        <div className="experience-description">
-          <span className="resume-description-text"></span>
-        </div>
-        <div className="experience-description">
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Prepare, teach and correct the weekly course activities'
-              : 'Preparar, dictar y corregir las actividades semanales del curso'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Assist and develop empathy with students to encourage a active participation'
-              : 'Ayudar y desarrollar la empatía con los estudiantes para favorecer una participación activa'}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            -{' '}
-            {language.name === 'en'
-              ? 'Keep track of student progress for presentation to superiors'
-              : 'Seguimiento del progreso de los estudiantes para presentación a superiores'}
-          </span>
-          <br />
-        </div>
+
       </div>
     </div>
   )
