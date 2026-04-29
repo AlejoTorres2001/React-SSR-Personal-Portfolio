@@ -7,7 +7,6 @@ type BadgeProps = {
   verify: string
   date: string
   children?: React.ReactNode
-  key: number
 }
 const Badge: React.FunctionComponent<BadgeProps> = ({
   title,
