@@ -1,5 +1,5 @@
 'use client'
-import React, { useCallback, useContext } from 'react'
+import React, { useCallback, useContext, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Badge from './Badge'
 import badgesData from '../badges.json'
@@ -9,6 +9,11 @@ import { ILanguageContextType } from '../@types/language.types'
 
 const Badges = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
+  const [canScrollPrev, setCanScrollPrev] = useState(false)
+  const [canScrollNext, setCanScrollNext] = useState(false)
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -26,6 +31,28 @@ const Badges = () => {
   const scrollNext = useCallback(() => {
     emblaApi?.scrollNext()
   }, [emblaApi])
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+    setCanScrollPrev(emblaApi.canScrollPrev())
+    setCanScrollNext(emblaApi.canScrollNext())
+  }, [emblaApi])
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    setScrollSnaps(emblaApi.scrollSnapList())
+    onSelect()
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+
+    return () => {
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
+    }
+  }, [emblaApi, onSelect])
 
   return (
     <div ref={ref} className="badges-section" id="Badges">
@@ -57,14 +84,15 @@ const Badges = () => {
             onClick={scrollPrev}
             type="button"
             aria-label="Previous badges"
+            disabled={!canScrollPrev}
           >
             ‹
           </button>
 
-          <div className="embla__viewport" ref={emblaRef}>
+          <div className="embla__viewport" ref={emblaRef} aria-label="Badges carousel">
             <div className="embla__container">
-              {badgesData.badges.map((badge, id) => (
-                <div className="embla__slide" key={id}>
+              {badgesData.badges.map((badge) => (
+                <div className="embla__slide" key={badge.assertion}>
                   <Badge {...badge} />
                 </div>
               ))}
@@ -76,9 +104,22 @@ const Badges = () => {
             onClick={scrollNext}
             type="button"
             aria-label="Next badges"
+            disabled={!canScrollNext}
           >
             ›
           </button>
+        </div>
+
+        <div className="embla__dots" aria-label="Badges pagination">
+          {scrollSnaps.map((_, index) => (
+            <button
+              key={index}
+              className={`embla__dot ${index === selectedIndex ? 'embla__dot--active' : ''}`}
+              onClick={() => emblaApi?.scrollTo(index)}
+              type="button"
+              aria-label={`Go to badges page ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>
