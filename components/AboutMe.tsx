@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link'
 import React, { useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { ILanguageContextType } from '../@types/language.types'
@@ -12,10 +13,13 @@ const AboutMe = () => {
   })
 
   return (
-    <div className="about-me-container screen-container" id="AboutMe">
+    <section
+      className="-mt-1 mb-12 flex w-full flex-col items-center justify-center bg-uiWhite"
+      id="AboutMe"
+    >
       <div
         ref={ref}
-        className={`about-me-parent ${inView ? 'appear' : ''} fade-in`}
+        className={`w-[88%] max-w-[1000px] lg:w-[70%] ${inView ? 'appear' : ''} fade-in`}
       >
         <div className="heading-container">
           <div className="screen-heading">
@@ -36,10 +40,10 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <div className="about-me-card">
-          <div className="about-me-profile"></div>
-          <div className="about-me-details">
-            <span className="about-me-description">
+        <div className="mb-8 flex w-full overflow-hidden shadow-[0_0_20px_-2px_#1f2235]">
+          <div className="hidden w-1/2 bg-[url('/assets/home/aboutMe.jpeg')] bg-cover bg-[position:25%] bg-no-repeat lg:block"></div>
+          <div className="w-full p-8 text-justify lg:w-[48%]">
+            <span className="text-[13px] font-[450]">
               {language.name === 'en' ? (
                 <>
                   I’m a <strong>Semi-Senior Software Engineer</strong>, with
@@ -56,8 +60,13 @@ const AboutMe = () => {
                   <strong>Terraform</strong> and DevOps pipelines. I’m
                   passionate about <strong>mentoring</strong> and sharing best
                   practices in Software Development, code quality, Systems
-                  Design. Currently, I’m leading full-stack development at{' '}
-                  <a className="link" href="https://www.empatia.technology">
+                  Design. Currently, I’m leading full-stack development at
+                  <a
+                    className="ml-1 font-bold text-[#1f2235] transition-colors hover:text-darkOrange"
+                    href="https://www.empatia.technology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     EmpatIA
                   </a>
                   . I’m eager to embrace new challenges and continue growing in
@@ -83,8 +92,13 @@ const AboutMe = () => {
                   <strong>Terraform</strong> y pipelines de DevOps. Me apasiona
                   el <strong>mentorado</strong> y la difusión de buenas
                   prácticas en el diseño de APIs, calidad de código y onboarding
-                  de equipos. Actualmente lidero el desarrollo FullStack en{' '}
-                  <a className="link" href="https://www.empatia.technology">
+                  de equipos. Actualmente lidero el desarrollo FullStack en
+                  <a
+                    className="ml-1 font-bold text-[#1f2235] transition-colors hover:text-darkOrange"
+                    href="https://www.empatia.technology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     EmpatIA
                   </a>
                   . Busco nuevos desafíos para seguir aprendiendo y creciendo en
@@ -93,8 +107,8 @@ const AboutMe = () => {
               )}
             </span>
 
-            <div className="about-me-highlights">
-              <div className="highlight-heading">
+            <div className="my-16">
+              <div className="mb-4">
                 <span>
                   {language.name === 'en'
                     ? 'Here are a Few Highlights:'
@@ -102,9 +116,8 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              {/* Common bullets */}
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? '4+ years building large-scale Web Systems'
@@ -112,16 +125,16 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Expertise in event-driven & microservices architectures'
                     : 'Experto en arquitecturas orientadas a eventos y microservicios'}
                 </span>
               </div>
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Implemented CI/CD pipelines with GitHub Actions'
@@ -129,8 +142,8 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Generative AI integration and agents orchestration'
@@ -138,8 +151,8 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Proficient in SQL & NoSQL database design and optimization'
@@ -147,8 +160,8 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Machine learning research experience with Deep Learning'
@@ -156,8 +169,8 @@ const AboutMe = () => {
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
                   {language.name === 'en'
                     ? 'Leading FullStack development teams'
@@ -166,26 +179,18 @@ const AboutMe = () => {
               </div>
             </div>
 
-            <div className="about-me-options">
-              <button
-                name="AboutMe"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.location.href =
-                    process.env.NODE_ENV === 'production'
-                      ? 'https://alejo-torres.com/#ContactMe'
-                      : 'http://localhost:3000/#ContactMe'
-                }}
-                className="btn primary-btn"
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="/#ContactMe"
+                className="w-full rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff] sm:w-[160px]"
               >
                 {language.name === 'en' ? 'Contact Me' : 'Contáctame'}
-              </button>
+              </Link>
               <button
                 name="ContactMe"
-                className="btn highlighted-btn"
+                className="w-full rounded-[50px] border-2 border-darkOrange bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111] sm:w-[160px]"
                 onClick={(e) => {
                   e.preventDefault()
-                  // Download CV based on current language
                   const cvUrl =
                     language.name === 'en'
                       ? 'assets/home/CV-AlejoTorres-EN.pdf'
@@ -199,7 +204,7 @@ const AboutMe = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
