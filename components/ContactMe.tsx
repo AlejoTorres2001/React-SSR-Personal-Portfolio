@@ -9,9 +9,12 @@ import useContactForm from '../hooks/useContactForm'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.types'
+import { copy, toLocale } from '../content/i18n'
 import Image from 'next/image'
+
 const ContactMe: React.FunctionComponent<object> = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
 
   const { ref, inView } = useInView({
     threshold: 0.3
@@ -48,14 +51,10 @@ const ContactMe: React.FunctionComponent<object> = () => {
     <section ref={ref} className="min-h-screen bg-uiWhite pb-8 pt-[70px]" id="ContactMe">
       <div className={`heading-container ${inView ? 'appear' : ''} fade-in`}>
         <div className="screen-heading">
-          <span>{language.name === 'en' ? 'Contact Me' : 'Contactame'}</span>
+          <span>{copy.sections.contactTitle[locale]}</span>
         </div>
         <div className="screen-sub-heading">
-          <span>
-            {language.name === 'en'
-              ? 'Lets Keep In Touch'
-              : 'Estemos en Contacto'}
-          </span>
+          <span>{copy.sections.contactSubtitle[locale]}</span>
         </div>
         <div className="heading-seperator">
           <div className="seperator-line"></div>
@@ -71,14 +70,10 @@ const ContactMe: React.FunctionComponent<object> = () => {
         <div className="min-w-0 flex-1">
           <h2 className="mb-5 font-poppins-bold text-xl tracking-[0.2rem] text-uiWhite">
             {prefersReducedMotion ? (
-              language.name === 'en' ? 'Get in Touch 📧' : 'Ponte en Contacto 📧'
+              copy.sections.contactHeading[locale]
             ) : (
               <TypeAnimation
-                sequence={
-                  language.name === 'en'
-                    ? ['Get in Touch 📧', 1000]
-                    : ['Ponte en Contacto 📧', 1000]
-                }
+                sequence={[copy.sections.contactHeading[locale], 1000]}
                 repeat={Infinity}
                 speed={50}
               />
@@ -90,9 +85,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
         <div className="mx-auto mt-8 flex w-full max-w-[1100px] flex-col justify-between gap-5 lg:flex-row">
           <div className="w-full lg:flex-1">
             <h2 className="mb-4 text-lg font-normal tracking-[0.3rem] text-uiWhite/60">
-              {language.name === 'en'
-                ? 'Send Your Email Here!'
-                : 'Envia tu Email aquí!'}
+              {copy.sections.contactFormHeading[locale]}
             </h2>
             <Image
               src="/assets/ContactMe/mail.jpeg"
@@ -123,7 +116,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
             )}
 
             <label htmlFor="name">
-              {language.name === 'en' ? 'Name' : 'Nombre'}
+              {copy.sections.contactName[locale]}
             </label>
             <input
               id="name"
@@ -150,7 +143,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
             />
 
             <label htmlFor="message">
-              {language.name === 'en' ? 'Message' : 'Mensaje'}
+              {copy.sections.contactMessage[locale]}
             </label>
             <textarea
               id="message"
@@ -172,12 +165,8 @@ const ContactMe: React.FunctionComponent<object> = () => {
                 className="mt-4 flex w-40 items-center justify-center rounded-[19px] border-2 border-darkOrange bg-[#1f2235] p-1 text-lg text-[#e6e3e3] transition hover:border-[#1f2235] disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {isSubmitting
-                  ? language.name === 'en'
-                    ? 'Sending...'
-                    : 'Enviando...'
-                  : language.name === 'en'
-                    ? 'Send'
-                    : 'Enviar'}{' '}
+                  ? copy.sections.contactSending[locale]
+                  : copy.sections.contactSend[locale]}{' '}
                 <FontAwesomeIcon icon={faPaperPlane}></FontAwesomeIcon>
               </button>
             </div>

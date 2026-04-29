@@ -6,9 +6,11 @@ import badgesData from '../badges.json'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.types'
+import { copy, toLocale } from '../content/i18n'
 
 const Badges = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
   const [canScrollPrev, setCanScrollPrev] = useState(false)
@@ -64,14 +66,10 @@ const Badges = () => {
         className={`mt-[200px] flex w-full flex-col items-center ${inView ? 'appear' : ''} fade-in`}
       >
         <div className="screen-heading">
-          <span>{language.name === 'en' ? 'Badges' : 'Premios'}</span>
+          <span>{copy.sections.badgesTitle[locale]}</span>
         </div>
         <div className="screen-sub-heading">
-          <span>
-            {language.name === 'en'
-              ? 'Workshops Hackathons and Challenges'
-              : 'Workshops Hackathons y Desafios'}
-          </span>
+          <span>{copy.sections.badgesSubtitle[locale]}</span>
         </div>
         <div className="heading-seperator">
           <div className="seperator-line"></div>
