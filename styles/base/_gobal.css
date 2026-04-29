@@ -114,6 +114,16 @@ body ::-webkit-scrollbar-thumb {
   }
 }
 
+@keyframes mover {
+  to {
+    transform: translateY(-5px);
+  }
+
+  0% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes inAnimation {
   0% {
     transform: translateX(-50%) scaleY(0);
@@ -133,5 +143,25 @@ body ::-webkit-scrollbar-thumb {
   100% {
     transform: translateX(-50%) scaleY(0);
     opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in,
+  .appear {
+    opacity: 1;
+    transform: none;
   }
 }
