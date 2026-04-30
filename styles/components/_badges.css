@@ -63,6 +63,32 @@
   outline: none;
 }
 
+.embla__button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.embla__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.embla__dot {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+}
+
+.embla__dot--active {
+  background-color: var(--dark-orange);
+  border-color: var(--dark-orange);
+}
+
 @media (min-width: 550px) {
   .embla__slide {
     flex: 0 0 50%;
