@@ -1,5 +1,4 @@
 @import './base/_reset.css';
-@import './base/_fonts.css';
 @import './base/_variables.css';
 @import './base/_gobal.css';
 @import './layout/_header.css';
@@ -12,3 +11,7 @@
 @import './components/_contactMe.css';
 @import './pages/_projects.css';
 @import './components/_loadingBar.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

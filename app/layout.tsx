@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
@@ -7,7 +7,33 @@ import Script from 'next/script'
 
 config.autoAddCss = false
 
-const inter = Inter({ subsets: ['latin'] })
+const poppinsSemiBold = localFont({
+  src: '../public/assets/fonts/Poppins-SemiBold.ttf',
+  variable: '--font-poppins-semibold',
+  weight: '600',
+  display: 'swap'
+})
+
+const poppinsBold = localFont({
+  src: '../public/assets/fonts/Poppins-Bold.ttf',
+  variable: '--font-poppins-bold',
+  weight: '700',
+  display: 'swap'
+})
+
+const poppinsExtraBold = localFont({
+  src: '../public/assets/fonts/Poppins-ExtraBold.ttf',
+  variable: '--font-poppins-extrabold',
+  weight: '800',
+  display: 'swap'
+})
+
+const poppinsLight = localFont({
+  src: '../public/assets/fonts/Poppins-Light.ttf',
+  variable: '--font-poppins-light',
+  weight: '300',
+  display: 'swap'
+})
 
 export const metadata = {
   title: "Alejo's Portfolio",
@@ -21,7 +47,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${poppinsSemiBold.variable} ${poppinsBold.variable} ${poppinsExtraBold.variable} ${poppinsLight.variable} font-poppins-semibold`}
+      >
         {children}
         <Script
           src="https://badgr.com/assets/widgets.bundle.js"

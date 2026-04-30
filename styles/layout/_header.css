@@ -14,7 +14,7 @@
 }
 .header-logo {
   font-size: 50px;
-  font-family: 'Poppins ExtraBold';
+  font-family: var(--font-poppins-extrabold), sans-serif;
   color: var(--white);
 }
 .header-options {
@@ -107,7 +107,7 @@
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-family: 'Poppins SemiBold';
+  font-family: var(--font-poppins-semibold), sans-serif;
   font-size: 16px;
   font-weight: 600;
 }
@@ -138,7 +138,7 @@
 .language-option {
   font-size: 16px;
   font-weight: 600;
-  font-family: 'Poppins SemiBold';
+  font-family: var(--font-poppins-semibold), sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;

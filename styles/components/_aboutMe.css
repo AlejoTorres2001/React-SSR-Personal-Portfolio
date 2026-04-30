@@ -4,7 +4,7 @@
   width: 160px;
   cursor: pointer;
   transition: 0.2s;
-  font-family: 'Poppins SemiBold';
+  font-family: var(--font-poppins-semibold), sans-serif;
 }
 .btn:active {
   transform: translateY(2px);
@@ -64,7 +64,7 @@
 .screen-heading {
   font-size: 32px;
   color: #1f2235;
-  font-family: 'Poppins Bold';
+  font-family: var(--font-poppins-bold), sans-serif;
 }
 .heading-seperator {
   display: flex;
