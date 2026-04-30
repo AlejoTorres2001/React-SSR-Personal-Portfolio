@@ -17,7 +17,9 @@ const config: Config = {
         orange: 'var(--orange)',
         darkOrange: 'var(--dark-orange)',
         uiBlack: 'var(--black)',
-        uiWhite: 'var(--white)'
+        uiWhite: 'var(--white)',
+        bgDeep: '#080d1a',
+        bgSurface: '#0c1423'
       },
       boxShadow: {
         seaGreen: '0 0 20px var(--sea-green-shadow)',
@@ -28,7 +30,9 @@ const config: Config = {
         'poppins-semibold': ['var(--font-poppins-semibold)', 'sans-serif'],
         'poppins-bold': ['var(--font-poppins-bold)', 'sans-serif'],
         'poppins-extrabold': ['var(--font-poppins-extrabold)', 'sans-serif'],
-        'poppins-light': ['var(--font-poppins-light)', 'sans-serif']
+        'poppins-light': ['var(--font-poppins-light)', 'sans-serif'],
+        fraunces: ['var(--font-fraunces)', 'serif'],
+        jakarta: ['var(--font-jakarta)', 'sans-serif']
       }
     }
   },

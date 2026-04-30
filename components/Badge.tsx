@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+
 type BadgeProps = {
   title: string
   img: string
@@ -8,6 +9,7 @@ type BadgeProps = {
   date: string
   children?: React.ReactNode
 }
+
 const Badge: React.FunctionComponent<BadgeProps> = ({
   title,
   date,
@@ -16,31 +18,40 @@ const Badge: React.FunctionComponent<BadgeProps> = ({
   verify
 }) => {
   return (
-    <blockquote className="mx-2.5 flex h-[350px] w-[300px] flex-col items-center justify-center rounded-[20px] bg-uiWhite p-2.5">
-      <a href={assertion} target="_blank" rel="noopener noreferrer">
-        <Image width={120} height={120} src={img} alt={`badge ${title}`} />
+    <div className="glass glass-hover flex w-[280px] flex-col items-center gap-3 rounded-2xl p-5 transition-all duration-300">
+      <a
+        href={assertion}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-transform duration-200 hover:scale-105"
+      >
+        <Image
+          width={100}
+          height={100}
+          src={img}
+          alt={`badge ${title}`}
+          className="rounded-xl"
+        />
       </a>
 
-      <p className="mx-2.5 mb-2.5 hyphens-auto text-center text-base font-semibold leading-tight text-[#05012c]">
+      <p className="text-center font-jakarta text-sm font-semibold leading-tight text-slate-100">
         {title}
       </p>
 
-      <p className="m-0 text-xs leading-[1.67] text-[#555555]">
-        <strong className="text-xs font-bold leading-[1.67] text-uiBlack">Awarded: </strong>
+      <p className="font-jakarta text-xs text-slate-500">
+        <span className="text-slate-400">Awarded: </span>
         {date}
       </p>
 
-      <p className="m-0 my-4 p-0">
-        <a
-          className="box-content flex h-4 w-12 items-center justify-center rounded border border-uiBlack px-4 py-1.5 text-sm font-bold text-uiBlack transition hover:border-darkOrange hover:bg-[#1f2235] hover:text-[#f0f8ff]"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={verify}
-        >
-          VERIFY
-        </a>
-      </p>
-    </blockquote>
+      <a
+        className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 font-jakarta text-xs font-semibold text-emerald-400 transition-all hover:bg-emerald-400/20"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={verify}
+      >
+        VERIFY
+      </a>
+    </div>
   )
 }
 

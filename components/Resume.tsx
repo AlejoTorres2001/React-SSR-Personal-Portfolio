@@ -1,12 +1,19 @@
 'use client'
 import React, { lazy, Suspense } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faGraduationCap,
+  faBriefcase,
+  faCode,
+  faFolder,
+  faHeart
+} from '@fortawesome/free-solid-svg-icons'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import useButtons from '../hooks/useButtons'
 import { useInView } from 'react-intersection-observer'
-import Image from 'next/image'
 import LoadingBar from './LoadingBar'
 import { Locale } from '../lib/i18n'
 
-// Importación dinámica de componentes
 const Education = lazy(() => import('./ResumeComponents/Education'))
 const Work = lazy(() => import('./ResumeComponents/Work'))
 const Skills = lazy(() => import('./ResumeComponents/Skills'))
@@ -14,15 +21,20 @@ const Proyects = lazy(() => import('./ResumeComponents/Proyects'))
 const Interests = lazy(() => import('./ResumeComponents/Interests'))
 
 const LoadingComponent = () => (
-  <div className="w-full">
+  <div className="w-full py-12">
     <LoadingBar />
   </div>
 )
 
+type Tab = {
+  id: string
+  label: string
+  icon: IconDefinition
+  active: boolean
+}
+
 const Resume = ({ locale }: { locale: Locale }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.3
-  })
+  const { ref, inView } = useInView({ threshold: 0.15 })
   const [
     isSelectedEducation,
     isSelectedWork,
@@ -32,145 +44,140 @@ const Resume = ({ locale }: { locale: Locale }) => {
     toggleSection
   ] = useButtons()
 
-  const bulletBaseClass =
-    'my-[15px] flex h-10 cursor-pointer items-center rounded-[20px] bg-[#1f2235] px-2 text-uiWhite transition-all duration-500'
-  const bulletSelectedClass = 'w-full'
-  const bulletCollapsedClass = 'w-4 overflow-hidden'
+  const tabs: Tab[] = [
+    {
+      id: 'education',
+      label: locale === 'en' ? 'Education' : 'Educación',
+      icon: faGraduationCap,
+      active: isSelectedEducation
+    },
+    {
+      id: 'work',
+      label: locale === 'en' ? 'Experience' : 'Experiencia',
+      icon: faBriefcase,
+      active: isSelectedWork
+    },
+    {
+      id: 'skills',
+      label: locale === 'en' ? 'Skills' : 'Habilidades',
+      icon: faCode,
+      active: isSelectedSkills
+    },
+    {
+      id: 'projects',
+      label: locale === 'en' ? 'Projects' : 'Proyectos',
+      icon: faFolder,
+      active: isSelectedProyects
+    },
+    {
+      id: 'interests',
+      label: locale === 'en' ? 'Interests' : 'Intereses',
+      icon: faHeart,
+      active: isSelectedInterests
+    }
+  ]
+
+  const activeTab = tabs.find((t) => t.active)
 
   return (
     <section
       ref={ref}
-      className="-my-12 flex min-h-fit w-full flex-col items-center justify-center bg-[#f7f8fc]"
+      className="flex w-full flex-col items-center justify-center py-24"
       id="Resume"
     >
-      <div className={`mt-[200px] w-full ${inView ? 'appear' : ''} fade-in`}>
-        <div className="heading-container">
-          <div className="screen-heading">
-            <span>{locale === 'en' ? 'Resume' : 'Trayectoria'}</span>
-          </div>
-          <div className="screen-sub-heading">
-            <span>
-              {locale === 'en'
-                ? 'My formal Bio Details'
-                : 'Detalles de mi Biografia'}
-            </span>
-          </div>
-          <div className="heading-seperator">
-            <div className="seperator-line"></div>
-            <div className="seperator-blob">
-              <div></div>
-            </div>
-          </div>
+      <div
+        className={`w-full max-w-[1100px] px-5 ${inView ? 'appear' : ''} fade-in`}
+      >
+        {/* Section heading */}
+        <div className="mb-12 flex flex-col items-center">
+          <h2 className="font-fraunces text-4xl text-slate-50">
+            {locale === 'en' ? 'Resume' : 'Trayectoria'}
+          </h2>
+          <p className="mt-2 font-jakarta text-xs uppercase tracking-widest text-slate-400">
+            {locale === 'en'
+              ? 'My formal bio details'
+              : 'Detalles de mi biografía'}
+          </p>
+          <div className="mt-4 h-px w-32 bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" />
         </div>
 
-        <div className="mx-auto mb-20 flex h-auto w-[90%] max-w-[1000px] flex-col items-center lg:h-[360px] lg:flex-row lg:items-stretch">
-          <div className="my-[30px] w-full rounded-[22px] border border-[#1f2235]/10 bg-white p-2 shadow-[0_24px_40px_-32px_#1f2235] lg:my-0 lg:w-[320px]">
-            <div className="relative flex h-full w-full items-center">
-              <div className="absolute z-[1] h-full w-[34px] rounded-l-[18px] bg-[#1f2235]"></div>
-              <div className="relative z-[2] w-[90%] lg:w-[86%]">
-                <div
-                  onClick={() => toggleSection('education')}
-                  className={`${bulletBaseClass} ${
-                    isSelectedEducation ? bulletSelectedClass : bulletCollapsedClass
+        {/* ── Mobile: horizontal pill strip ── */}
+        <div className="mb-4 flex gap-2 overflow-x-auto pb-1 md:hidden">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => toggleSection(tab.id)}
+              className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2 font-jakarta text-sm font-medium whitespace-nowrap transition-all duration-200 ${
+                tab.active
+                  ? 'bg-emerald-400/15 text-emerald-400 ring-1 ring-emerald-400/25'
+                  : 'border border-white/[0.06] bg-white/[0.03] text-slate-400'
+              }`}
+            >
+              <FontAwesomeIcon icon={tab.icon} className="text-xs" />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* ── Desktop: sidebar + scrollable panel ── */}
+        <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-5">
+          {/* Sidebar nav */}
+          <div className="hidden md:flex md:w-[196px] md:shrink-0 md:flex-col glass rounded-2xl p-2 pt-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => toggleSection(tab.id)}
+                className={`group relative flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left font-jakarta text-sm font-medium transition-all duration-200 ${
+                  tab.active
+                    ? 'bg-emerald-400/10 text-emerald-400'
+                    : 'text-slate-500 hover:bg-white/[0.04] hover:text-slate-300'
+                }`}
+              >
+                {/* Left accent pill */}
+                <span
+                  className={`absolute left-[3px] top-1/2 -translate-y-1/2 h-[22px] w-[3px] rounded-full transition-all duration-200 ${
+                    tab.active ? 'bg-emerald-400' : 'bg-transparent'
+                  }`}
+                />
+                {/* Icon circle */}
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-all duration-200 ${
+                    tab.active ? 'bg-emerald-400/15' : 'bg-white/[0.04]'
                   }`}
                 >
-                  <Image
-                    className="mr-[30px] shrink-0"
-                    src="/assets/resume/icons/education.svg"
-                    width={16}
-                    height={16}
-                    alt="Education icon"
-                  />
-                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {locale === 'en' ? 'Education' : 'Educación'}
-                  </span>
-                </div>
-                <div
-                  onClick={() => toggleSection('work')}
-                  className={`${bulletBaseClass} ${
-                    isSelectedWork ? bulletSelectedClass : bulletCollapsedClass
-                  }`}
-                >
-                  <Image
-                    className="mr-[30px] shrink-0"
-                    src="/assets/resume/icons/work-history.svg"
-                    width={16}
-                    height={16}
-                    alt="Work history icon"
-                  />
-                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {locale === 'en'
-                      ? 'Work History'
-                      : 'Historial de Trabajo'}
-                  </span>
-                </div>
-                <div
-                  onClick={() => toggleSection('skills')}
-                  className={`${bulletBaseClass} ${
-                    isSelectedSkills ? bulletSelectedClass : bulletCollapsedClass
-                  }`}
-                >
-                  <Image
-                    className="mr-[30px] shrink-0"
-                    src="/assets/resume/icons/programming-skills.svg"
-                    width={16}
-                    height={16}
-                    alt="Programming skills icon"
-                  />
-                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {locale === 'en'
-                      ? 'Hard Skills'
-                      : 'Habilidades Técnicas'}
-                  </span>
-                </div>
-                <div
-                  onClick={() => toggleSection('projects')}
-                  className={`${bulletBaseClass} ${
-                    isSelectedProyects ? bulletSelectedClass : bulletCollapsedClass
-                  }`}
-                >
-                  <Image
-                    className="mr-[30px] shrink-0"
-                    src="/assets/resume/icons/projects.svg"
-                    width={16}
-                    height={16}
-                    alt="Projects icon"
-                  />
-                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {locale === 'en'
-                      ? 'Highlighted Projects'
-                      : 'Proyectos Destacados'}
-                  </span>
-                </div>
-                <div
-                  onClick={() => toggleSection('interests')}
-                  className={`${bulletBaseClass} ${
-                    isSelectedInterests ? bulletSelectedClass : bulletCollapsedClass
-                  }`}
-                >
-                  <Image
-                    className="mr-[30px] shrink-0"
-                    src="/assets/resume/icons/interests.svg"
-                    width={16}
-                    height={16}
-                    alt="Interests icon"
-                  />
-                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {locale === 'en' ? 'Interests' : 'Intereses'}
-                  </span>
-                </div>
-              </div>
-            </div>
+                  <FontAwesomeIcon icon={tab.icon} className="text-[11px]" />
+                </span>
+                <span>{tab.label}</span>
+              </button>
+            ))}
           </div>
 
-          <div className="h-[360px] w-full overflow-y-auto pl-0 lg:w-[600px] lg:pl-20">
-            <Suspense fallback={<LoadingComponent />}>
-              {isSelectedEducation && <Education locale={locale} />}
-              {isSelectedWork && <Work locale={locale} />}
-              {isSelectedSkills && <Skills />}
-              {isSelectedProyects && <Proyects locale={locale} />}
-              {isSelectedInterests && <Interests locale={locale} />}
-            </Suspense>
+          {/* Content panel */}
+          <div className="glass flex-1 overflow-hidden rounded-3xl">
+            {/* Panel header bar */}
+            {activeTab && (
+              <div className="flex items-center gap-3 border-b border-white/[0.07] px-6 py-4">
+                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-400/10 text-emerald-400">
+                  <FontAwesomeIcon icon={activeTab.icon} className="text-xs" />
+                </span>
+                <span className="font-fraunces text-base text-slate-200">
+                  {activeTab.label}
+                </span>
+              </div>
+            )}
+
+            {/* Scrollable body */}
+            <div className="resume-scroll max-h-[520px] overflow-y-auto p-6 md:p-8">
+              <Suspense fallback={<LoadingComponent />}>
+                {isSelectedEducation && <Education locale={locale} />}
+                {isSelectedWork && <Work locale={locale} />}
+                {isSelectedSkills && <Skills />}
+                {isSelectedProyects && <Proyects locale={locale} />}
+                {isSelectedInterests && <Interests locale={locale} />}
+              </Suspense>
+            </div>
           </div>
         </div>
       </div>

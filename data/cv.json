@@ -1,0 +1,250 @@
+{
+  "work": {
+    "en": [
+      {
+        "id": "prometeo",
+        "role": "Semi Senior AI Engineer",
+        "company": "Prometeo OpenBanking",
+        "location": "Montevideo, Uruguay",
+        "startDate": "Aug 2025",
+        "endDate": "Present",
+        "summary": "Designing and building agentic infrastructure and MCP servers on top of core banking systems.",
+        "bullets": [
+          "Developed agentic tools and MCP servers built on core banking systems.",
+          "Designed and implemented banking infrastructure systems tailored for autonomous AI agents, leveraging Celery, Amazon SQS, and ECS.",
+          "Built extensible deep-agent architectures with heuristic and metaheuristic evaluation pipelines using LangChain and LangGraph.",
+          "Developed a crypto wallets validation system for custodial & self-custodial wallets."
+        ]
+      },
+      {
+        "id": "empatia",
+        "role": "Tech Leader",
+        "company": "Empatia",
+        "location": "Madrid, Spain",
+        "startDate": "Aug 2024",
+        "endDate": "Aug 2025",
+        "summary": "Led full-stack development on scalable Azure infrastructure and autonomous conversational agent systems.",
+        "bullets": [
+          "Created full-stack solutions using React.js and NestJS, built on top of Azure App Services and AKS-based scalable infrastructure.",
+          "Developed complex RAG systems with cutting edge paradigms.",
+          "Directed the development of a distributed event-scheduler with Bull queues, NestJS Workers, and Redis to provide reliable job orchestration at scale.",
+          "Automated provisioning of the infrastructure using Azure Pipelines, reducing environment setup by 50%."
+        ]
+      },
+      {
+        "id": "altostratus",
+        "role": "Full Stack Developer",
+        "company": "Altostratus Cloud Consulting",
+        "location": "Madrid, Spain",
+        "startDate": "Apr 2023",
+        "endDate": "Dec 2023",
+        "summary": "Engineered distributed data-processing architectures and cloud-native pipelines on GCP.",
+        "bullets": [
+          "Engineered distributed data-processing architectures in Python, improving pipeline deployment efficiency by 15%.",
+          "Managed GCP resources (Cloud Functions, Pub/Sub) using Terraform, providing secure, cost-optimized cloud management.",
+          "Emplaced end-to-end CI/CD on Azure DevOps and GitHub Actions, shortening build cycles by 25%.",
+          "Developed responsive web UIs using React.js and Angular and integrated RESTful and GraphQL APIs."
+        ]
+      },
+      {
+        "id": "iita",
+        "role": "Machine Learning Researcher",
+        "company": "Institute of Innovation and Applied Technology",
+        "location": "Salta, Argentina",
+        "startDate": "Mar 2022",
+        "endDate": "Dec 2022",
+        "summary": "ML research focused on Deep Q-Learning and reproducible experiment pipelines.",
+        "bullets": [
+          "Created a replicable ML testing environment with MLflow on GCE and improved model evaluation cycles by 20%.",
+          "Created and optimized Deep Q-Learning models, which attained 95% accuracy in simulation tasks.",
+          "Automated tracking of hyperparameters and experiment logging using MLflow, increasing model iteration speed by 25%.",
+          "Created technical documents and tutorials using Jupyter to facilitate team reproduction and minimize onboarding time."
+        ]
+      }
+    ],
+    "es": [
+      {
+        "id": "prometeo",
+        "role": "Ingeniero de IA Semi Senior",
+        "company": "Prometeo OpenBanking",
+        "location": "Montevideo, Uruguay",
+        "startDate": "Jul 2025",
+        "endDate": "Presente",
+        "summary": "Diseño y construcción de infraestructura agéntica y servidores MCP sobre sistemas bancarios core.",
+        "bullets": [
+          "Desarrollé herramientas agénticas y servidores MCP basados en sistemas Core bancarios.",
+          "Diseñé y construí un sistema de infraestructura bancaria orientado a las operaciones de agentes autónomos de IA usando Celery, Amazon SQS y ECS.",
+          "Desarrollé arquitecturas de deep-agents extensibles con pipelines de evaluación heurísticos y metaheurísticos usando Langchain y Langgraph.",
+          "Desarrollé un sistema de validación de billeteras crypto custodial y self-custodial para vincularlas con cuentas FIAT."
+        ]
+      },
+      {
+        "id": "empatia",
+        "role": "Líder Tech Full Stack",
+        "company": "Empatia",
+        "location": "Madrid, España",
+        "startDate": "Ago 2024",
+        "endDate": "Jul 2025",
+        "summary": "Lideré el desarrollo full-stack sobre infraestructura Azure escalable y sistemas de agentes conversacionales.",
+        "bullets": [
+          "Creé soluciones full-stack con React.js y NestJS sobre infraestructura escalable en Azure App Services y AKS.",
+          "Desarrollé workflows de Agentes conversacionales usando Modelos de Lenguaje, servicios de hiperpersonalización y sistemas de RAG con algoritmos de scoring y búsqueda semántica.",
+          "Dirigí el desarrollo de un planificador de eventos distribuido con colas Bull, NestJS Workers y Redis para orquestación fiable a gran escala.",
+          "Automaticé el aprovisionamiento de la infraestructura con Azure Pipelines, reduciendo el tiempo de puesta en marcha en un 50%."
+        ]
+      },
+      {
+        "id": "altostratus",
+        "role": "Full Stack Developer",
+        "company": "Altostratus Cloud Consulting",
+        "location": "Madrid, España",
+        "startDate": "Abr 2023",
+        "endDate": "Dic 2023",
+        "summary": "Arquitecturas distribuidas de procesamiento de datos y pipelines cloud-native sobre GCP.",
+        "bullets": [
+          "Diseñé arquitecturas distribuidas de procesamiento de datos en Python, mejorando la eficiencia de despliegue de pipelines en un 15%.",
+          "Gestioné recursos en GCP (Cloud Functions, Pub/Sub) con Terraform, garantizando operación segura y optimizada en costes.",
+          "Implementé CI/CD de extremo a extremo en Azure DevOps y GitHub Actions, acortando los ciclos de construcción en un 25%.",
+          "Desarrollé interfaces web responsivas con React.js y Angular, integrando APIs RESTful y GraphQL."
+        ]
+      },
+      {
+        "id": "iita",
+        "role": "Investigador de Machine Learning",
+        "company": "Instituto de Innovación y Tecnología Aplicada",
+        "location": "Salta, Argentina",
+        "startDate": "Mar 2022",
+        "endDate": "Dic 2022",
+        "summary": "Investigación en Deep Q-Learning y pipelines de experimentación reproducibles.",
+        "bullets": [
+          "Creé un entorno reproducible de pruebas de ML con MLflow en GCE, acelerando los ciclos de evaluación de modelos en un 20%.",
+          "Desarrollé y optimicé modelos Deep Q-Learning, alcanzando un 95% de precisión en tareas de simulación.",
+          "Automaticé el seguimiento de hiperparámetros y el registro de experimentos con MLflow, incrementando la velocidad de iteración en un 25%.",
+          "Generé documentación técnica y tutoriales en Jupyter, facilitando la reproducción del equipo y reduciendo el tiempo de incorporación."
+        ]
+      }
+    ]
+  },
+  "education": {
+    "en": [
+      {
+        "id": "ucasal",
+        "degree": "Computer Science Engineer, Cum Laude",
+        "institution": "Catholic University of Salta",
+        "location": "Salta, Argentina",
+        "startDate": null,
+        "endDate": "Dec 2024",
+        "details": [
+          "Thesis: Text Synthesis Using Language Models",
+          "Academic Excellence Award – 2023",
+          "Posco's Scholarship: Argentine Flag-bearers – 2024"
+        ]
+      },
+      {
+        "id": "upm",
+        "degree": "AI Engineering – SMILE Scholarship",
+        "institution": "Polytechnical University of Madrid (UPM)",
+        "location": "Madrid, Spain",
+        "startDate": "Jan 2023",
+        "endDate": "Dec 2023",
+        "details": [
+          "Cum laude in Microservices Architectures, Intelligent Systems, Machine Learning II"
+        ]
+      }
+    ],
+    "es": [
+      {
+        "id": "ucasal",
+        "degree": "Ingeniero en Informática, Con Honores",
+        "institution": "Universidad Católica de Salta",
+        "location": "Salta, Argentina",
+        "startDate": null,
+        "endDate": "Dic 2024",
+        "details": [
+          "TFG: Síntesis de Texto usando Modelos de Lenguaje",
+          "Reconocimiento a la Trayectoria Estudiantil – 2023",
+          "Beca Abanderados de Posco Argentina – 2024"
+        ]
+      },
+      {
+        "id": "upm",
+        "degree": "Ingeniería en Inteligencia Artificial – Beca SMILE",
+        "institution": "Universidad Politécnica de Madrid (UPM)",
+        "location": "Madrid, España",
+        "startDate": "Ene 2023",
+        "endDate": "Dic 2023",
+        "details": [
+          "Cum laude en Arquitecturas de Microservicios, Sistemas Inteligentes, Aprendizaje Automático II"
+        ]
+      }
+    ]
+  },
+  "skills": [
+    { "name": "TypeScript / Node.js", "level": 95 },
+    { "name": "NestJS / Express", "level": 93 },
+    { "name": "React.js / Next.js", "level": 92 },
+    { "name": "Python (FastAPI, Pydantic)", "level": 90 },
+    { "name": "LangChain / LangGraph / AI Agents", "level": 90 },
+    { "name": "SQL / Database Design", "level": 87 },
+    { "name": "Docker / Kubernetes", "level": 85 },
+    { "name": "Azure / AWS / GCP", "level": 83 },
+    { "name": "Terraform / IaC", "level": 82 },
+    { "name": "CI/CD (DevOps Pipelines)", "level": 90 },
+    { "name": "Pandas / TensorFlow / PyTorch", "level": 80 },
+    { "name": "Celery / Bull / Distributed Systems", "level": 87 }
+  ],
+  "interests": {
+    "en": [
+      {
+        "id": "teaching",
+        "title": "University Teaching",
+        "subtitle": "Catholic University of Salta",
+        "description": "I teach Database I and Software Engineering at the Catholic University of Salta. Sharing knowledge and mentoring the next generation of engineers is one of the most rewarding parts of my career."
+      },
+      {
+        "id": "agents",
+        "title": "Agentic AI & Research",
+        "subtitle": null,
+        "description": "I'm deeply passionate about autonomous agent architectures, MCP servers, and the frontier of agentic software. I enjoy exploring new paradigms that bring autonomous capabilities into production systems."
+      },
+      {
+        "id": "collaboration",
+        "title": "Open-Source & Collaboration",
+        "subtitle": null,
+        "description": "I look for opportunities to collaborate with other engineers on meaningful open-source projects that push the state of the art and have a positive impact on the tech community."
+      },
+      {
+        "id": "music",
+        "title": "Music",
+        "subtitle": null,
+        "description": "Outside of tech, I play the drums. Music keeps me grounded and fuels creative thinking."
+      }
+    ],
+    "es": [
+      {
+        "id": "teaching",
+        "title": "Docencia Universitaria",
+        "subtitle": "Universidad Católica de Salta",
+        "description": "Doy clases de Base de Datos I e Ingeniería de Software en la Universidad Católica de Salta. Compartir conocimiento y acompañar a la próxima generación de ingenieros es una de las partes más gratificantes de mi carrera."
+      },
+      {
+        "id": "agents",
+        "title": "IA Agéntica & Investigación",
+        "subtitle": null,
+        "description": "Me apasionan las arquitecturas de agentes autónomos, los servidores MCP y la frontera del software agéntico. Exploro nuevos paradigmas para llevar capacidades autónomas a sistemas productivos."
+      },
+      {
+        "id": "collaboration",
+        "title": "Open-Source & Colaboración",
+        "subtitle": null,
+        "description": "Busco colaborar con otros ingenieros en proyectos open-source significativos que impulsen el estado del arte y tengan un impacto positivo en la comunidad tecnológica."
+      },
+      {
+        "id": "music",
+        "title": "Música",
+        "subtitle": null,
+        "description": "Fuera de la tecnología, toco la batería. La música me mantiene con los pies en la tierra y alimenta el pensamiento creativo."
+      }
+    ]
+  }
+}

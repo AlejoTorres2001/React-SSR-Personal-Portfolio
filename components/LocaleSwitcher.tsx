@@ -1,28 +1,4 @@
-import Link from 'next/link'
-import { Locale, localePath, locales } from '../lib/i18n'
-
-const LocaleSwitcher = ({ locale }: { locale: Locale }) => {
-  return (
-    <div className="relative z-[1000] mr-8 flex h-[38px] items-center justify-end gap-2 pt-3 text-uiWhite lg:mr-20">
-      {locales.map((localeOption) => {
-        const isActive = localeOption === locale
-
-        return (
-          <Link
-            key={localeOption}
-            href={localePath(localeOption)}
-            className={`rounded px-3 py-1.5 font-poppins-semibold text-base font-semibold transition-colors ${
-              isActive
-                ? 'bg-darkOrange text-uiWhite shadow-[0_10px_20px_-12px_rgba(255,106,79,0.85)]'
-                : 'border border-white/25 bg-white/10 hover:bg-white/20'
-            }`}
-          >
-            {localeOption.toUpperCase()}
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
-
+// Locale switching is handled inside Header for the Observatory redesign.
+// This component is kept as a null render to avoid breaking the page import.
+const LocaleSwitcher = () => null
 export default LocaleSwitcher

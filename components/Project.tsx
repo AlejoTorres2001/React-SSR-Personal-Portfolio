@@ -10,45 +10,105 @@ type props = {
   image: string
   knowMore: string
   date: string
+  featured?: boolean
 }
 
-const Project = ({ name, description, image, knowMore, date }: props) => {
+const Project = ({
+  name,
+  description,
+  image,
+  knowMore,
+  date,
+  featured
+}: props) => {
+  if (featured) {
+    return (
+      <article className="glass glass-hover group col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1 md:flex-row">
+        {/* Image — left 45% on desktop */}
+        <div className="relative w-full overflow-hidden pt-[52%] md:w-[45%] md:pt-0">
+          <Image
+            src={image}
+            fill
+            sizes="(max-width: 768px) 100vw, 45vw"
+            alt={`Project ${name}`}
+            style={{ objectFit: 'cover' }}
+            className="transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bgDeep/40 md:block hidden" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bgDeep/60 to-transparent md:hidden" />
+        </div>
+
+        {/* Content — right 55% on desktop */}
+        <div className="flex flex-1 flex-col justify-between p-7 md:p-10">
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3">
+              <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 font-jakarta text-[10px] font-semibold uppercase tracking-widest text-emerald-400">
+                Featured
+              </span>
+              <span className="font-jakarta text-[11px] text-slate-600">
+                {date}
+              </span>
+            </div>
+            <h3 className="font-fraunces text-2xl text-slate-50">{name}</h3>
+            <p className="font-jakarta text-sm leading-relaxed text-slate-400">
+              {description}
+            </p>
+          </div>
+
+          <div className="mt-8 flex items-center gap-3">
+            <Link
+              href={knowMore}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${name} on GitHub`}
+              className="flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2.5 font-jakarta text-sm font-semibold text-emerald-400 transition-all hover:bg-emerald-400/20"
+            >
+              <FontAwesomeIcon icon={faGithub} className="text-sm" />
+              View on GitHub
+            </Link>
+          </div>
+        </div>
+      </article>
+    )
+  }
+
   return (
-    <article className="relative col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-[#2b304a] to-[#1f243a] transition-all duration-300 hover:-translate-y-[7px] hover:shadow-[0_24px_40px_-28px_rgba(0,0,0,0.8)] md:col-span-6 xl:col-span-4">
+    <article className="glass glass-hover group col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1.5 sm:col-span-6 xl:col-span-4">
+      {/* Image */}
       <div className="relative w-full overflow-hidden pt-[56.25%]">
         <Image
           src={image}
           fill
-          sizes="100%"
+          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
           alt={`Project ${name}`}
           style={{ objectFit: 'cover' }}
+          className="transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bgDeep/60 to-transparent" />
       </div>
 
-      <div className="p-5">
-        <p className="mb-5 text-center font-poppins-semibold text-base font-normal leading-5 text-uiWhite">
+      {/* Content */}
+      <div className="flex flex-1 flex-col gap-3 px-5 pt-4">
+        <h3 className="font-jakarta text-sm font-semibold text-slate-100">
           {name}
+        </h3>
+        <p className="line-clamp-3 font-jakarta text-xs leading-relaxed text-slate-500">
+          {description}
         </p>
-        <div className="flex items-end">
-          <p className="mt-2.5 rounded-[10px] bg-[#1f2235] px-[15px] py-[5px] text-sm font-normal text-uiWhite">
-            {description}
-          </p>
-        </div>
       </div>
 
-      <div className="absolute right-0 m-2.5 flex">
+      {/* Footer row */}
+      <div className="flex items-center justify-between px-5 pb-4 pt-3">
+        <span className="font-jakarta text-[11px] text-slate-700">{date}</span>
         <Link
           href={knowMore}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-darkOrange bg-[#1f2235] text-[#e6e3e3] transition hover:border-[#1f2235] hover:bg-darkOrange hover:text-uiBlack"
+          aria-label={`View ${name} on GitHub`}
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-500 transition-all hover:border-emerald-400/30 hover:text-emerald-400"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} className="text-sm" />
         </Link>
-      </div>
-
-      <div className="absolute bottom-0 right-0 mr-2.5 mt-2.5 flex">
-        <p className="mb-auto pt-2.5 text-[11px] font-bold leading-5 text-uiWhite">{date}</p>
       </div>
     </article>
   )

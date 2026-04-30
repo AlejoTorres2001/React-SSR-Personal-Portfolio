@@ -42,3 +42,4 @@ yarn-error.log*
 CONTEXT.md
 /docs/**
 .playwright-mcp
+/.github

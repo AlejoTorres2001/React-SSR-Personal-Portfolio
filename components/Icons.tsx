@@ -1,48 +1,31 @@
 'use client'
 import React from 'react'
 import Link from 'next/link'
-import {
-  faFacebookSquare,
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faTwitterSquare
-} from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const Icons = () => {
   return (
-    <>
-      <Link href="https://www.facebook.com/alejo.torres.100">
-        <FontAwesomeIcon
-          className="cursor-pointer px-2 pr-0 text-uiWhite transition duration-300 ease-out hover:scale-110"
-          icon={faFacebookSquare}
-        />
+    <div className="flex items-center gap-3">
+      <Link
+        href="https://github.com/AlejoTorres2001"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-400 transition-all duration-200 hover:border-emerald-400/30 hover:text-emerald-400"
+      >
+        <FontAwesomeIcon icon={faGithub} className="text-base" />
       </Link>
-      <Link href="https://github.com/AlejoTorres2001">
-        <FontAwesomeIcon
-          className="cursor-pointer px-2 pr-0 text-uiWhite transition duration-300 ease-out hover:scale-110"
-          icon={faGithub}
-        />
+      <Link
+        href="https://www.linkedin.com/in/alejo-torres-919b9921b/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-400 transition-all duration-200 hover:border-emerald-400/30 hover:text-emerald-400"
+      >
+        <FontAwesomeIcon icon={faLinkedin} className="text-base" />
       </Link>
-      <Link href="https://www.instagram.com/alejootorres/">
-        <FontAwesomeIcon
-          className="cursor-pointer px-2 pr-0 text-uiWhite transition duration-300 ease-out hover:scale-110"
-          icon={faInstagram}
-        />
-      </Link>
-      <Link href="https://www.linkedin.com/in/alejo-torres-919b9921b/">
-        <FontAwesomeIcon
-          className="cursor-pointer px-2 pr-0 text-uiWhite transition duration-300 ease-out hover:scale-110"
-          icon={faLinkedin}
-        />
-      </Link>
-      <Link href="https://twitter.com/alejotorres2001">
-        <FontAwesomeIcon
-          className="cursor-pointer px-2 pr-0 text-uiWhite transition duration-300 ease-out hover:scale-110"
-          icon={faTwitterSquare}
-        />
-      </Link>
-    </>
+    </div>
   )
 }
 
