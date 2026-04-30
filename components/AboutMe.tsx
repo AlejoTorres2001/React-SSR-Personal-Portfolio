@@ -104,7 +104,8 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                   with Terraform. Currently working as{' '}
                   <strong className="font-semibold text-slate-100">
                     Semi-Senior AI Engineer
-                  </strong>{' '}at{' '}
+                  </strong>{' '}
+                  at{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
                     href="https://prometeoapi.com"
@@ -168,7 +169,8 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                   con Terraform. Actualmente trabajo como{' '}
                   <strong className="font-semibold text-slate-100">
                     Ingeniero de IA Semi-Senior
-                  </strong>{' '}en{' '}
+                  </strong>{' '}
+                  en{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
                     href="https://prometeoapi.com"
