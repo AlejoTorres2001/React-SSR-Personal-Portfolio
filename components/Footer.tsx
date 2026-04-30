@@ -6,17 +6,12 @@ const Footer: React.FunctionComponent<object> = () => {
     <div className='flex w-full justify-center overflow-hidden'>
       <div className='flex items-end'>
         <Image
-          className='h-[130px] max-w-full'
+          className='h-auto w-full max-w-[1920px]'
           src='/assets/home/shape.png'
           width={1920}
           height={130}
           alt="division image"
           priority
-          style={{
-            height: '130px',
-            width: 'auto',
-            maxWidth: '100%'
-          }}
         />
       </div>
     </div>

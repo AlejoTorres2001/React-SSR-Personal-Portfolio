@@ -93,6 +93,7 @@ const Profile: React.FunctionComponent<object> = () => {
               width={380}
               height={380}
               alt={'Profile Picture'}
+              priority
               style={{
                 objectFit: 'cover',
                 width: '100%',
