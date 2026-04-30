@@ -1,20 +1,17 @@
 'use client'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import Icons from './Icons'
 import { faPaperPlane, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
 import useContactForm from '../hooks/useContactForm'
 import { useInView } from 'react-intersection-observer'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.types'
-import { copy, toLocale } from '../content/i18n'
+import { copy } from '../content/i18n'
 import Image from 'next/image'
+import { Locale, localePath } from '../lib/i18n'
 
-const ContactMe: React.FunctionComponent<object> = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-  const locale = toLocale(language.name)
+const ContactMe = ({ locale }: { locale: Locale }) => {
 
   const { ref, inView } = useInView({
     threshold: 0.3
@@ -176,7 +173,7 @@ const ContactMe: React.FunctionComponent<object> = () => {
 
       <div className="pointer-events-none relative mt-4 flex justify-end pr-10">
         <button className="pointer-events-auto flex h-10 w-10 items-center justify-center rounded-[10px] border-none bg-[tomato] text-2xl text-[#f0f8ff]">
-          <Link href="/#Home">
+          <Link href={localePath(locale, '#Home')}>
             <FontAwesomeIcon
               className={`text-[#f0f8ff] ${prefersReducedMotion ? '' : 'animate-[mover_0.5s_infinite_alternate] hover:rotate-[360deg]'}`}
               icon={faArrowUp}

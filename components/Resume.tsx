@@ -1,11 +1,10 @@
 'use client'
-import React, { lazy, Suspense, useContext } from 'react'
+import React, { lazy, Suspense } from 'react'
 import useButtons from '../hooks/useButtons'
 import { useInView } from 'react-intersection-observer'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
 import LoadingBar from './LoadingBar'
+import { Locale } from '../lib/i18n'
 
 // Importación dinámica de componentes
 const Education = lazy(() => import('./ResumeComponents/Education'))
@@ -20,9 +19,7 @@ const LoadingComponent = () => (
   </div>
 )
 
-const Resume = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-
+const Resume = ({ locale }: { locale: Locale }) => {
   const { ref, inView } = useInView({
     threshold: 0.3
   })
@@ -49,11 +46,11 @@ const Resume = () => {
       <div className={`mt-[200px] w-full ${inView ? 'appear' : ''} fade-in`}>
         <div className="heading-container">
           <div className="screen-heading">
-            <span>{language.name === 'en' ? 'Resume' : 'Trayectoria'}</span>
+            <span>{locale === 'en' ? 'Resume' : 'Trayectoria'}</span>
           </div>
           <div className="screen-sub-heading">
             <span>
-              {language.name === 'en'
+              {locale === 'en'
                 ? 'My formal Bio Details'
                 : 'Detalles de mi Biografia'}
             </span>
@@ -85,7 +82,7 @@ const Resume = () => {
                     alt="Education icon"
                   />
                   <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {language.name === 'en' ? 'Education' : 'Educación'}
+                    {locale === 'en' ? 'Education' : 'Educación'}
                   </span>
                 </div>
                 <div
@@ -102,7 +99,7 @@ const Resume = () => {
                     alt="Work history icon"
                   />
                   <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {language.name === 'en'
+                    {locale === 'en'
                       ? 'Work History'
                       : 'Historial de Trabajo'}
                   </span>
@@ -121,7 +118,7 @@ const Resume = () => {
                     alt="Programming skills icon"
                   />
                   <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {language.name === 'en'
+                    {locale === 'en'
                       ? 'Hard Skills'
                       : 'Habilidades Técnicas'}
                   </span>
@@ -140,7 +137,7 @@ const Resume = () => {
                     alt="Projects icon"
                   />
                   <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {language.name === 'en'
+                    {locale === 'en'
                       ? 'Highlighted Projects'
                       : 'Proyectos Destacados'}
                   </span>
@@ -159,7 +156,7 @@ const Resume = () => {
                     alt="Interests icon"
                   />
                   <span className="whitespace-nowrap font-poppins-semibold text-sm">
-                    {language.name === 'en' ? 'Interests' : 'Intereses'}
+                    {locale === 'en' ? 'Interests' : 'Intereses'}
                   </span>
                 </div>
               </div>
@@ -168,11 +165,11 @@ const Resume = () => {
 
           <div className="h-[360px] w-full overflow-y-auto pl-0 lg:w-[600px] lg:pl-20">
             <Suspense fallback={<LoadingComponent />}>
-              {isSelectedEducation && <Education />}
-              {isSelectedWork && <Work />}
+              {isSelectedEducation && <Education locale={locale} />}
+              {isSelectedWork && <Work locale={locale} />}
               {isSelectedSkills && <Skills />}
-              {isSelectedProyects && <Proyects />}
-              {isSelectedInterests && <Interests />}
+              {isSelectedProyects && <Proyects locale={locale} />}
+              {isSelectedInterests && <Interests locale={locale} />}
             </Suspense>
           </div>
         </div>

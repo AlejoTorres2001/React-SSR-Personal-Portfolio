@@ -1,12 +1,9 @@
 'use client'
-import React, { useContext } from 'react'
-import { ILanguageContextType } from '../../@types/language.types'
-import { LanguageContext } from '../../context/LanguageContextProvider'
+import React from 'react'
+import { Locale } from '../../lib/i18n'
 
-const Work: React.FunctionComponent<object> = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-
-  const t = (en: string, es: string) => language.name === 'en' ? en : es
+const Work = ({ locale }: { locale: Locale }) => {
+  const t = (en: string, es: string) => (locale === 'en' ? en : es)
 
   return (
     <div className="animate-[fadeInAnimation_2s]">

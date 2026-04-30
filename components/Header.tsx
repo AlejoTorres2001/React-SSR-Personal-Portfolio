@@ -1,16 +1,16 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { Dispatch, SetStateAction, useContext } from 'react'
-import { ILanguageContextType } from '../@types/language.types'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { copy, toLocale } from '../content/i18n'
+import React, { Dispatch, SetStateAction } from 'react'
+import { copy } from '../content/i18n'
+import { Locale, localePath } from '../lib/i18n'
 import useNavBar from '../hooks/useNavBar'
 
 const Header: React.FunctionComponent<{
+  locale: Locale
   setShowMobileMenu: Dispatch<SetStateAction<boolean>>
   showMobileMenu: boolean
-}> = ({ showMobileMenu, setShowMobileMenu }) => {
+}> = ({ locale, showMobileMenu, setShowMobileMenu }) => {
   const [
     isHomeSelected,
     isAboutMeSelected,
@@ -21,8 +21,6 @@ const Header: React.FunctionComponent<{
     toggleSection
   ] = useNavBar()
   const pathname = usePathname()
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-  const locale = toLocale(language.name)
   const baseOptionClass =
     'text-xl font-extrabold transition-colors hover:text-darkOrange lg:text-base'
   const selectedOptionClass = 'text-darkOrange'
@@ -74,19 +72,36 @@ const Header: React.FunctionComponent<{
             className={`${baseOptionClass} ${isHomeSelected ? selectedOptionClass : 'text-uiWhite'}`}
           >
             <span onClick={() => handleSectionClick('home')}>
-              <Link href={pathname === '/projects' ? '/' : '/#Home'}>
+              <Link
+                href={
+                  pathname.endsWith('/projects')
+                    ? localePath(locale)
+                    : localePath(locale, '#Home')
+                }
+              >
                 {copy.nav.home[locale]}
               </Link>
             </span>
           </div>
-          {pathname !== '/projects'
+          {pathname.endsWith('/projects')
             ? (
+              <div
+                className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
+              >
+                <span onClick={() => handleSectionClick('projects')}>
+                  <Link href={localePath(locale, '/projects')}>
+                    {copy.nav.projects[locale]}
+                  </Link>
+                </span>
+              </div>
+              )
+            : (
             <>
               <div
                 className={`${baseOptionClass} ${isAboutMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
                 <span onClick={() => handleSectionClick('about-me')}>
-                  <Link href="/#AboutMe">
+                  <Link href={localePath(locale, '#AboutMe')}>
                     {copy.nav.about[locale]}
                   </Link>
                 </span>
@@ -95,7 +110,7 @@ const Header: React.FunctionComponent<{
                 className={`${baseOptionClass} ${isResumeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
                 <span onClick={() => handleSectionClick('resume')}>
-                  <Link href="/#Resume">
+                  <Link href={localePath(locale, '#Resume')}>
                     {copy.nav.resume[locale]}
                   </Link>
                 </span>
@@ -104,7 +119,7 @@ const Header: React.FunctionComponent<{
                 className={`${baseOptionClass} ${isBadgesSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
                 <span onClick={() => handleSectionClick('badges')}>
-                  <Link href="/#Badges">
+                  <Link href={localePath(locale, '#Badges')}>
                     {copy.nav.badges[locale]}
                   </Link>
                 </span>
@@ -113,7 +128,7 @@ const Header: React.FunctionComponent<{
                 className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
                 <span onClick={() => handleSectionClick('projects')}>
-                  <Link href="/projects">
+                  <Link href={localePath(locale, '/projects')}>
                     {copy.nav.projects[locale]}
                   </Link>
                 </span>
@@ -122,23 +137,12 @@ const Header: React.FunctionComponent<{
                 className={`${baseOptionClass} ${isContactMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
                 <span onClick={() => handleSectionClick('contact-me')}>
-                  <Link href="/#ContactMe">
+                  <Link href={localePath(locale, '#ContactMe')}>
                     {copy.nav.contact[locale]}
                   </Link>
                 </span>
               </div>
             </>
-              )
-            : (
-              <div
-              className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
-            >
-              <span onClick={() => handleSectionClick('projects')}>
-                <Link href="/projects">
-                  {copy.nav.projects[locale]}
-                </Link>
-              </span>
-            </div>
               )}
         </div>
       </div>
