@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'es'
+import { Locale } from '../lib/i18n'
 
 export const copy = {
   nav: {
@@ -30,6 +30,3 @@ export const copy = {
     moreProjects: { en: 'More Projects', es: 'Más Proyectos' }
   }
 } as const
-
-export const toLocale = (languageName: string): Locale =>
-  languageName === 'es' ? 'es' : 'en'

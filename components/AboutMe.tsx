@@ -1,14 +1,11 @@
 'use client'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import { ILanguageContextType } from '../@types/language.types'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { copy, toLocale } from '../content/i18n'
+import { copy } from '../content/i18n'
+import { Locale, localePath } from '../lib/i18n'
 
-const AboutMe = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-  const locale = toLocale(language.name)
+const AboutMe = ({ locale }: { locale: Locale }) => {
 
   const { ref, inView } = useInView({
     threshold: 0.3
@@ -42,7 +39,7 @@ const AboutMe = () => {
           <div className="hidden w-1/2 bg-[url('/assets/home/aboutMe.jpeg')] bg-cover bg-[position:25%] bg-no-repeat lg:block"></div>
           <div className="w-full p-8 text-justify lg:w-[48%]">
             <span className="text-[13px] font-[450]">
-              {language.name === 'en' ? (
+              {locale === 'en' ? (
                 <>
                   I’m a <strong>Semi-Senior Software Engineer</strong>, with
                   over <strong>4 years of experience</strong> delivering
@@ -108,7 +105,7 @@ const AboutMe = () => {
             <div className="my-16">
               <div className="mb-4">
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Here are a Few Highlights:'
                     : 'Algunas cosas a destacar:'}
                 </span>
@@ -117,7 +114,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? '4+ years building large-scale Web Systems'
                     : '+4 años desarrollando Sistemas Web a gran escala'}
                 </span>
@@ -126,7 +123,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Expertise in event-driven & microservices architectures'
                     : 'Experto en arquitecturas orientadas a eventos y microservicios'}
                 </span>
@@ -134,7 +131,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Implemented CI/CD pipelines with GitHub Actions'
                     : 'Implementación de pipelines CI/CD con GitHub Actions'}
                 </span>
@@ -143,7 +140,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Generative AI integration and agents orchestration'
                     : 'Integración de IA generativa y orquestación de agentes'}
                 </span>
@@ -152,7 +149,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Proficient in SQL & NoSQL database design and optimization'
                     : 'Diseño y optimización de bases de datos SQL y NoSQL'}
                 </span>
@@ -161,7 +158,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Machine learning research experience with Deep Learning'
                     : 'Experiencia como investigador ML'}
                 </span>
@@ -170,7 +167,7 @@ const AboutMe = () => {
               <div className="mb-2.5 flex items-center text-[13px] font-[450]">
                 <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Leading FullStack development teams'
                     : 'Liderazgo en equipos de desarrollo FullStack'}
                 </span>
@@ -179,25 +176,23 @@ const AboutMe = () => {
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/#ContactMe"
+                href={localePath(locale, '#ContactMe')}
                 className="w-full rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff] sm:w-[160px]"
               >
                 {copy.sections.contactButton[locale]}
               </Link>
-              <button
-                name="ContactMe"
+              <Link
+                href={
+                  locale === 'en'
+                    ? '/assets/home/CV-AlejoTorres-EN.pdf'
+                    : '/assets/home/CV-AlejoTorres-ES.pdf'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full rounded-[50px] border-2 border-darkOrange bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111] sm:w-[160px]"
-                onClick={(e) => {
-                  e.preventDefault()
-                  const cvUrl =
-                    language.name === 'en'
-                      ? 'assets/home/CV-AlejoTorres-EN.pdf'
-                      : 'assets/home/CV-AlejoTorres-ES.pdf'
-                  window.open(cvUrl, '_blank')
-                }}
               >
                 {copy.sections.resumeButton[locale]}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

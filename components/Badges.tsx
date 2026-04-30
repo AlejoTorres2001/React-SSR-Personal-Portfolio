@@ -1,16 +1,13 @@
 'use client'
-import React, { useCallback, useContext, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Badge from './Badge'
 import badgesData from '../badges.json'
 import { useInView } from 'react-intersection-observer'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.types'
-import { copy, toLocale } from '../content/i18n'
+import { copy } from '../content/i18n'
+import { Locale } from '../lib/i18n'
 
-const Badges = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-  const locale = toLocale(language.name)
+const Badges = ({ locale }: { locale: Locale }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
   const [canScrollPrev, setCanScrollPrev] = useState(false)
