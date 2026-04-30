@@ -16,18 +16,23 @@ const Badge: React.FunctionComponent<BadgeProps> = ({
   verify
 }) => {
   return (
-    <blockquote className="badgr-badge">
-      <a href={assertion}>
-        <Image width={120} height={120} src={img} alt={`badge ${title}`}/>
+    <blockquote className="mx-2.5 flex h-[350px] w-[300px] flex-col items-center justify-center rounded-[20px] bg-uiWhite p-2.5">
+      <a href={assertion} target="_blank" rel="noopener noreferrer">
+        <Image width={120} height={120} src={img} alt={`badge ${title}`} />
       </a>
-      <p className="badgr-badge-name">{title}</p>
-      <p className="badgr-badge-date">
-        <strong className="strong-text">Awarded: </strong>
+
+      <p className="mx-2.5 mb-2.5 hyphens-auto text-center text-base font-semibold leading-tight text-[#05012c]">
+        {title}
+      </p>
+
+      <p className="m-0 text-xs leading-[1.67] text-[#555555]">
+        <strong className="text-xs font-bold leading-[1.67] text-uiBlack">Awarded: </strong>
         {date}
       </p>
-      <p style={{ margin: '16px 0', padding: '0' }}>
+
+      <p className="m-0 my-4 p-0">
         <a
-          className="badgr-badge-verify"
+          className="box-content flex h-4 w-12 items-center justify-center rounded border border-uiBlack px-4 py-1.5 text-sm font-bold text-uiBlack transition hover:border-darkOrange hover:bg-[#1f2235] hover:text-[#f0f8ff]"
           target="_blank"
           rel="noopener noreferrer"
           href={verify}
