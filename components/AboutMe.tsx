@@ -1,32 +1,21 @@
-'use client'
-import React, { useContext } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { ILanguageContextType } from '../@types/language.types'
-import { LanguageContext } from '../context/LanguageContextProvider'
+import Link from 'next/link'
+import React from 'react'
+import { copy } from '../content/i18n'
+import { Locale, localePath } from '../lib/i18n'
 
-const AboutMe = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-
-  const { ref, inView } = useInView({
-    threshold: 0.3
-  })
-
+const AboutMe = ({ locale }: { locale: Locale }) => {
   return (
-    <div className="about-me-container screen-container" id="AboutMe">
-      <div
-        ref={ref}
-        className={`about-me-parent ${inView ? 'appear' : ''} fade-in`}
-      >
+    <section
+      className="-mt-1 mb-12 flex w-full flex-col items-center justify-center bg-[#f7f8fc] pt-6"
+      id="AboutMe"
+    >
+      <div className="w-[88%] max-w-[1000px] lg:w-[70%] fade-in appear">
         <div className="heading-container">
           <div className="screen-heading">
-            <span>{language.name === 'en' ? 'About Me' : 'Sobre Mí'}</span>
+            <span>{copy.sections.aboutTitle[locale]}</span>
           </div>
           <div className="screen-sub-heading">
-            <span>
-              {language.name === 'en'
-                ? 'A Brief Overview'
-                : 'Una Breve Descripción'}
-            </span>
+            <span>{copy.sections.aboutSubtitle[locale]}</span>
           </div>
           <div className="heading-seperator">
             <div className="seperator-line"></div>
@@ -36,11 +25,11 @@ const AboutMe = () => {
           </div>
         </div>
 
-        <div className="about-me-card">
-          <div className="about-me-profile"></div>
-          <div className="about-me-details">
-            <span className="about-me-description">
-              {language.name === 'en' ? (
+        <div className="mb-8 flex w-full overflow-hidden rounded-[26px] border border-[#1f2235]/10 bg-white shadow-[0_30px_60px_-45px_#1f2235]">
+          <div className="hidden w-1/2 bg-[url('/assets/home/aboutMe.jpeg')] bg-cover bg-[position:25%] bg-no-repeat lg:block"></div>
+          <div className="w-full p-8 text-justify lg:w-[48%]">
+            <span className="text-[13px] font-[450]">
+              {locale === 'en' ? (
                 <>
                   I’m a <strong>Semi-Senior Software Engineer</strong>, with
                   over <strong>4 years of experience</strong> delivering
@@ -56,8 +45,13 @@ const AboutMe = () => {
                   <strong>Terraform</strong> and DevOps pipelines. I’m
                   passionate about <strong>mentoring</strong> and sharing best
                   practices in Software Development, code quality, Systems
-                  Design. Currently, I’m leading full-stack development at{' '}
-                  <a className="link" href="https://www.empatia.technology">
+                  Design. Currently, I’m leading full-stack development at
+                  <a
+                    className="ml-1 font-bold text-[#1f2235] transition-colors hover:text-darkOrange"
+                    href="https://www.empatia.technology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     EmpatIA
                   </a>
                   . I’m eager to embrace new challenges and continue growing in
@@ -83,8 +77,13 @@ const AboutMe = () => {
                   <strong>Terraform</strong> y pipelines de DevOps. Me apasiona
                   el <strong>mentorado</strong> y la difusión de buenas
                   prácticas en el diseño de APIs, calidad de código y onboarding
-                  de equipos. Actualmente lidero el desarrollo FullStack en{' '}
-                  <a className="link" href="https://www.empatia.technology">
+                  de equipos. Actualmente lidero el desarrollo FullStack en
+                  <a
+                    className="ml-1 font-bold text-[#1f2235] transition-colors hover:text-darkOrange"
+                    href="https://www.empatia.technology"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     EmpatIA
                   </a>
                   . Busco nuevos desafíos para seguir aprendiendo y creciendo en
@@ -93,113 +92,102 @@ const AboutMe = () => {
               )}
             </span>
 
-            <div className="about-me-highlights">
-              <div className="highlight-heading">
+            <div className="my-16">
+              <div className="mb-4">
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Here are a Few Highlights:'
                     : 'Algunas cosas a destacar:'}
                 </span>
               </div>
 
-              {/* Common bullets */}
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? '4+ years building large-scale Web Systems'
                     : '+4 años desarrollando Sistemas Web a gran escala'}
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Expertise in event-driven & microservices architectures'
                     : 'Experto en arquitecturas orientadas a eventos y microservicios'}
                 </span>
               </div>
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Implemented CI/CD pipelines with GitHub Actions'
                     : 'Implementación de pipelines CI/CD con GitHub Actions'}
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Generative AI integration and agents orchestration'
                     : 'Integración de IA generativa y orquestación de agentes'}
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Proficient in SQL & NoSQL database design and optimization'
                     : 'Diseño y optimización de bases de datos SQL y NoSQL'}
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Machine learning research experience with Deep Learning'
                     : 'Experiencia como investigador ML'}
                 </span>
               </div>
 
-              <div className="highlight">
-                <div className="highlight-blob"></div>
+              <div className="mb-2.5 flex items-center text-[13px] font-[450]">
+                <div className="mr-2.5 h-2.5 w-2.5 rounded-full bg-darkOrange"></div>
                 <span>
-                  {language.name === 'en'
+                  {locale === 'en'
                     ? 'Leading FullStack development teams'
                     : 'Liderazgo en equipos de desarrollo FullStack'}
                 </span>
               </div>
             </div>
 
-            <div className="about-me-options">
-              <button
-                name="AboutMe"
-                onClick={(e) => {
-                  e.preventDefault()
-                  window.location.href =
-                    process.env.NODE_ENV === 'production'
-                      ? 'https://alejo-torres.com/#ContactMe'
-                      : 'http://localhost:3000/#ContactMe'
-                }}
-                className="btn primary-btn"
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link
+                href={localePath(locale, '#ContactMe')}
+                className="w-full rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff] sm:w-[160px]"
               >
-                {language.name === 'en' ? 'Contact Me' : 'Contáctame'}
-              </button>
-              <button
-                name="ContactMe"
-                className="btn highlighted-btn"
-                onClick={(e) => {
-                  e.preventDefault()
-                  // Download CV based on current language
-                  const cvUrl =
-                    language.name === 'en'
-                      ? 'assets/home/CV-AlejoTorres-EN.pdf'
-                      : 'assets/home/CV-AlejoTorres-ES.pdf'
-                  window.open(cvUrl, '_blank')
-                }}
+                {copy.sections.contactButton[locale]}
+              </Link>
+              <Link
+                href={
+                  locale === 'en'
+                    ? '/assets/home/CV-AlejoTorres-EN.pdf'
+                    : '/assets/home/CV-AlejoTorres-ES.pdf'
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-[50px] border-2 border-darkOrange bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111] sm:w-[160px]"
               >
-                {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-              </button>
+                {copy.sections.resumeButton[locale]}
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

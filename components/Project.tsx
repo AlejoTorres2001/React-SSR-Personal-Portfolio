@@ -1,9 +1,9 @@
-'use client'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import React from 'react'
+
 type props = {
   name: string
   description: string
@@ -11,31 +11,46 @@ type props = {
   knowMore: string
   date: string
 }
+
 const Project = ({ name, description, image, knowMore, date }: props) => {
-  const router = useRouter()
   return (
-    <div className="card">
-      <div className="card-image-container">
-        <Image src={image} fill sizes='100%' alt='image  description' style={{ objectFit: 'cover' }}  />
+    <article className="relative col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-[#2b304a] to-[#1f243a] transition-all duration-300 hover:-translate-y-[7px] hover:shadow-[0_24px_40px_-28px_rgba(0,0,0,0.8)] md:col-span-6 xl:col-span-4">
+      <div className="relative w-full overflow-hidden pt-[56.25%]">
+        <Image
+          src={image}
+          fill
+          sizes="100%"
+          alt={`Project ${name}`}
+          style={{ objectFit: 'cover' }}
+        />
       </div>
-      <div className="card-content">
-        <p className="card-title">{name}</p>
-        <div className="card-info">
-          <p className="card-description">{description}</p>
+
+      <div className="p-5">
+        <p className="mb-5 text-center font-poppins-semibold text-base font-normal leading-5 text-uiWhite">
+          {name}
+        </p>
+        <div className="flex items-end">
+          <p className="mt-2.5 rounded-[10px] bg-[#1f2235] px-[15px] py-[5px] text-sm font-normal text-uiWhite">
+            {description}
+          </p>
         </div>
       </div>
-      <div className="button-container">
-        <button name='LearnMore'
-          onClick={() => router.push(knowMore)}
-          className="learn-more-button"
+
+      <div className="absolute right-0 m-2.5 flex">
+        <Link
+          href={knowMore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-darkOrange bg-[#1f2235] text-[#e6e3e3] transition hover:border-[#1f2235] hover:bg-darkOrange hover:text-uiBlack"
         >
           <FontAwesomeIcon icon={faGithub} />
-        </button>
+        </Link>
       </div>
-      <div className="date-container">
-        <p className="date">{date}</p>
+
+      <div className="absolute bottom-0 right-0 mr-2.5 mt-2.5 flex">
+        <p className="mb-auto pt-2.5 text-[11px] font-bold leading-5 text-uiWhite">{date}</p>
       </div>
-    </div>
+    </article>
   )
 }
 

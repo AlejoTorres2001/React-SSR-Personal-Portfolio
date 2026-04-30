@@ -1,12 +1,11 @@
 'use client'
-import React, { useContext, useState } from 'react'
-import { ILanguageContextType } from '../@types/language.types'
-import { LanguageContext } from '../context/LanguageContextProvider'
+import React from 'react'
+import { copy } from '../content/i18n'
 import Icons from './Icons'
-import CvOption from './CvOption'
-import useDelayUnmount from '../hooks/useDelayUnmount'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
+import Link from 'next/link'
+import { Locale, localePath } from '../lib/i18n'
 
 const steps = [
   'Fullstack Dev ⚙️',
@@ -22,85 +21,76 @@ const steps = [
   'NestJS 🚀',
   1000
 ]
-const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
-const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
-const Profile: React.FunctionComponent<object> = () => {
-  const [isCvSelected, setIsCvSelected] = useState(false)
-  const shouldRenderChild = useDelayUnmount(isCvSelected, 300)
-  const { language } = useContext(LanguageContext) as ILanguageContextType
+const Profile = ({ locale }: { locale: Locale }) => {
+
   return (
     <div
-      className="profile-container"
+      className="relative flex min-h-fit w-full items-center justify-center bg-transparent px-4 pb-8 text-center"
       id="Home"
-      onClick={(e) => setIsCvSelected((prevState) => prevState && !prevState)}
     >
-      <div className="profile-parent">
-        <div className="profile-details">
-          <div className="cols">
-            <div className="cols-icons">
+      <div className="mt-12 flex w-full max-w-[1120px] flex-col-reverse items-center text-[#f0f8ff] md:mt-6 md:flex-row md:justify-between">
+        <div>
+          <div>
+            <div>
               <Icons />
             </div>
           </div>
-          <div className="profile-details-name">
-            <span className="primary-text">
-              {''}
-              {language.name === 'en'
-                ? "Hello, I'm"
-                : 'Hola, mi nombre es'}{' '}
-              <span className="highlighted-text">Alejo</span>
+          <div className="font-poppins-semibold text-[26px]">
+              <span className="text-uiWhite">
+                {''}
+                {locale === 'en'
+                  ? "Hello, I'm"
+                  : 'Hola, mi nombre es'}{' '}
+                <span className="text-darkOrange">Alejo</span>
             </span>
           </div>
-          <div className="profile-details-role">
-            <span className="primary-text">
+          <div className="my-3.5 flex flex-col">
+            <span className="text-uiWhite">
               {''}
-              <h1>
+              <h1 className="mx-auto flex h-[60px] min-w-[320px] items-center justify-center text-center font-[cursive] text-[30px] md:min-w-[420px] md:text-[42px]">
                 {''}
                 <TypeAnimation sequence={steps} repeat={Infinity} speed={50} />
               </h1>
-              <span className="profile-role-tagline">
-                {language.name === 'en'
+              <span className="mt-1 font-poppins-light text-lg md:text-[19px]">
+                {locale === 'en'
                   ? 'Building applications with front and back-end technologies.'
                   : 'Creando aplicaciones con tecnologías de FrontEnd y BackEnd.'}
               </span>
             </span>
           </div>
-          <div className="profile-options">
-            <button
-              onClick={(e) => {
-                e.preventDefault()
-                window.location.href =
-                  process.env.NODE_ENV === 'production'
-                    ? 'https://react-ssr-personal-portfolio.vercel.app/#ContactMe'
-                    : 'http://localhost:3000/#ContactMe'
-              }}
-              className="btn primary-btn"
+          <div className="flex items-center justify-center gap-4 md:justify-start">
+            <Link
+              href={localePath(locale, '#ContactMe')}
+              className="w-[140px] rounded-[50px] border border-white/40 bg-[#101527]/85 py-3.5 text-center font-poppins-semibold text-xs text-uiWhite shadow-[0_16px_30px_-22px_rgba(255,255,255,0.7)] transition hover:border-darkOrange hover:bg-[#1f2235] hover:text-[#f0f8ff]"
             >
               {''}
-              {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
-            </button>
-           <button
-  className="btn highlighted-btn"
-  onClick={(e) => {
-    e.stopPropagation();
-    // Download CV based on current language
-    const cvUrl = language.name === 'en' 
-      ? "assets/home/CV-AlejoTorres-EN.pdf" 
-      : "assets/home/CV-AlejoTorres-ES.pdf";
-    window.open(cvUrl, '_blank');
-  }}
->
-  {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-</button>
+              {' '}
+              {copy.sections.contactButton[locale]}
+            </Link>
+            <Link
+              href={
+                locale === 'en'
+                  ? '/assets/home/CV-AlejoTorres-EN.pdf'
+                  : '/assets/home/CV-AlejoTorres-ES.pdf'
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[140px] rounded-[50px] bg-gradient-to-r from-[#ff764f] to-[#ff4b2f] py-3.5 font-poppins-semibold text-xs text-uiWhite shadow-[0_18px_30px_-20px_rgba(255,106,79,0.95)] transition hover:from-[#fff8dc] hover:to-[#ffd5a7] hover:text-[#111]"
+            >
+              {copy.sections.resumeButton[locale]}
+            </Link>
           </div>
         </div>
-        <div className="profile-picture">
-          <div className="profile-picture-background">
+        <div className="relative mb-10 mt-4 flex h-[275px] w-[275px] items-center justify-center rounded-full border border-white/20 bg-white/5 shadow-[0_20px_45px_-24px_rgba(0,0,0,0.8)] sm:h-[320px] sm:w-[320px] md:mb-24 md:h-[380px] md:w-[380px] md:ml-20 lg:ml-1">
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#ff6a4f33] to-[#26b0ce2f] blur-md"></div>
+          <div className="h-[93%] w-[93%] rounded-full bg-cover bg-center bg-no-repeat transition duration-1000 ease-out hover:scale-105">
             <Image
-              className="profile-picture-image"
+              className="rounded-full"
               src={'/assets/home/profile-picture.jpg'}
               width={380}
               height={380}
               alt={'Profile Picture'}
+              priority
               style={{
                 objectFit: 'cover',
                 width: '100%',

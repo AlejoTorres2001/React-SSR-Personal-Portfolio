@@ -1,14 +1,14 @@
 'use client'
+
 import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
-import React, { Dispatch, SetStateAction, useContext } from 'react'
-import { ILanguageContextType } from '../@types/language.types'
-import { LanguageContext } from '../context/LanguageContextProvider'
+import { usePathname } from 'next/navigation'
+import React, { useState } from 'react'
+import { copy } from '../content/i18n'
+import { Locale, localePath } from '../lib/i18n'
 import useNavBar from '../hooks/useNavBar'
-const Header: React.FunctionComponent<{
-  setShowMobileMenu: Dispatch<SetStateAction<boolean>>
-  showMobileMenu: boolean
-}> = ({ showMobileMenu, setShowMobileMenu }) => {
+
+const Header = ({ locale }: { locale: Locale }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [
     isHomeSelected,
     isAboutMeSelected,
@@ -19,128 +19,137 @@ const Header: React.FunctionComponent<{
     toggleSection
   ] = useNavBar()
   const pathname = usePathname()
-  const { language } = useContext(LanguageContext) as ILanguageContextType
+
+  const baseOptionClass =
+    'rounded-full px-3 py-1.5 text-xl font-extrabold transition-all hover:bg-white/10 hover:text-darkOrange lg:text-base'
+  const selectedOptionClass = 'text-darkOrange'
+
+  const handleSectionClick = (sectionName: string) => {
+    toggleSection(sectionName)
+    if (showMobileMenu) {
+      setShowMobileMenu(false)
+    }
+  }
 
   return (
-    <div className="header-container">
-      <div className="header-parent">
-        <div className="header-hamburger">
+    <header className="flex h-[110px] w-full justify-center text-uiWhite">
+      <div className="relative flex h-full w-full items-center justify-between px-5 md:px-10 lg:w-[70%] lg:justify-around lg:px-0">
+        <button
+          type="button"
+          aria-label="Toggle navigation menu"
+          className="text-uiWhite lg:hidden"
+          onClick={() => {
+            setShowMobileMenu(!showMobileMenu)
+          }}
+        >
           <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fas"
             data-icon="bars"
-            className="svg-inline--fa fa-bars fa-w-14 header-hamburger-bars"
+            className="mx-2 cursor-pointer text-4xl"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            onClick={() => {
-              setShowMobileMenu(!showMobileMenu)
-            }}
           >
             <path
               fill="currentColor"
               d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
             ></path>
           </svg>
+        </button>
+
+        <div className="font-poppins-extrabold text-4xl text-uiWhite lg:text-5xl">
+          <span className="bg-gradient-to-r from-[#fff] via-[#ffe5d9] to-[#ff6a4f] bg-clip-text text-transparent">Alejo Torres</span>
         </div>
-        <div className="header-logo">
-          <span>Alejo Torres</span>
-        </div>
+
         <div
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className={`header-options ${
-            showMobileMenu ? 'show-hamburger-options' : ''
+          className={`absolute left-0 top-[110px] z-[1000] flex h-[calc(100vh-110px)] w-full flex-col justify-around bg-[#151b2f]/95 px-10 text-base font-semibold backdrop-blur-md transition-transform duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:rounded-full lg:border lg:border-white/15 lg:bg-[#1b2139]/55 lg:px-6 lg:py-2 lg:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.8)] ${
+            showMobileMenu
+              ? 'translate-x-0 opacity-100'
+              : '-translate-x-[120%] opacity-0 lg:opacity-100'
           }`}
         >
           <div
-            className={`header-option header-option-seperator  ${
-              isHomeSelected ? 'selected-header-option' : ''
-            }`}
+            className={`${baseOptionClass} ${isHomeSelected ? selectedOptionClass : 'text-uiWhite'}`}
           >
-            <span onClick={() => toggleSection('home')}>
-              <Link href={pathname === '/projects' ? '/' : '#Home'}>
-                {language.name === 'en' ? 'Home' : 'Inicio'}
+            <span onClick={() => handleSectionClick('home')}>
+              <Link
+                href={
+                  pathname.endsWith('/projects')
+                    ? localePath(locale)
+                    : localePath(locale, '#Home')
+                }
+              >
+                {copy.nav.home[locale]}
               </Link>
             </span>
           </div>
-          {pathname !== '/projects'
+
+          {pathname.endsWith('/projects')
             ? (
-            <>
               <div
-                className={`header-option header-option-seperator  ${
-                  isAboutMeSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('about-me')}>
-                  <Link href="#AboutMe">
-                    {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
+                <span onClick={() => handleSectionClick('projects')}>
+                  <Link href={localePath(locale, '/projects')}>
+                    {copy.nav.projects[locale]}
                   </Link>
                 </span>
               </div>
-              <div
-                className={`header-option header-option-seperator  ${
-                  isResumeSelected ? 'selected-header-option' : ''
-                }`}
-              >
-                <span onClick={() => toggleSection('resume')}>
-                  <Link href="#Resume">
-                    {language.name === 'en' ? 'Resume' : 'Trayectoria'}
-                  </Link>
-                </span>
-              </div>
-              <div
-                className={`header-option header-option-seperator  ${
-                  isBadgesSelected ? 'selected-header-option' : ''
-                }`}
-              >
-                <span onClick={() => toggleSection('badges')}>
-                  <Link href="#Badges">
-                    {language.name === 'en' ? 'Badges' : 'Premios'}
-                  </Link>
-                </span>
-              </div>
-              <div
-                className={`header-option header-option-seperator ${
-                  isProjectsSelected ? 'selected-header-option' : ''
-                }`}
-              >
-                <span onClick={() => toggleSection('projects')}>
-                  <Link href="/projects">
-                    {language.name === 'en' ? 'Projects' : 'Proyectos'}
-                  </Link>
-                </span>
-              </div>
-              <div
-                className={`header-option  ${
-                  isContactMeSelected ? 'selected-header-option' : ''
-                }`}
-              >
-                <span onClick={() => toggleSection('contact-me')}>
-                  <Link href="#ContactMe">
-                    {language.name === 'en' ? 'ContactMe' : 'Contactame'}
-                  </Link>
-                </span>
-              </div>
-               
-            </>
               )
             : (
-            <div
-              className={`header-option  ${
-                isProjectsSelected ? 'selected-header-option' : ''
-              }`}
-            >
-              <span onClick={() => toggleSection('projects')}>
-                <Link href="/projects">
-                  {language.name === 'en' ? 'Projects' : 'Proyectos'}
-                </Link>
-              </span>
-            </div>
+              <>
+                <div
+                  className={`${baseOptionClass} ${isAboutMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
+                >
+                  <span onClick={() => handleSectionClick('about-me')}>
+                    <Link href={localePath(locale, '#AboutMe')}>
+                      {copy.nav.about[locale]}
+                    </Link>
+                  </span>
+                </div>
+                <div
+                  className={`${baseOptionClass} ${isResumeSelected ? selectedOptionClass : 'text-uiWhite'}`}
+                >
+                  <span onClick={() => handleSectionClick('resume')}>
+                    <Link href={localePath(locale, '#Resume')}>
+                      {copy.nav.resume[locale]}
+                    </Link>
+                  </span>
+                </div>
+                <div
+                  className={`${baseOptionClass} ${isBadgesSelected ? selectedOptionClass : 'text-uiWhite'}`}
+                >
+                  <span onClick={() => handleSectionClick('badges')}>
+                    <Link href={localePath(locale, '#Badges')}>
+                      {copy.nav.badges[locale]}
+                    </Link>
+                  </span>
+                </div>
+                <div
+                  className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
+                >
+                  <span onClick={() => handleSectionClick('projects')}>
+                    <Link href={localePath(locale, '/projects')}>
+                      {copy.nav.projects[locale]}
+                    </Link>
+                  </span>
+                </div>
+                <div
+                  className={`${baseOptionClass} ${isContactMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
+                >
+                  <span onClick={() => handleSectionClick('contact-me')}>
+                    <Link href={localePath(locale, '#ContactMe')}>
+                      {copy.nav.contact[locale]}
+                    </Link>
+                  </span>
+                </div>
+              </>
               )}
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

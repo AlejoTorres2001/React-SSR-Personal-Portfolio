@@ -1,11 +1,10 @@
 'use client'
-import React, { lazy, Suspense, useContext } from 'react'
+import React, { lazy, Suspense } from 'react'
 import useButtons from '../hooks/useButtons'
 import { useInView } from 'react-intersection-observer'
-import { LanguageContext } from '../context/LanguageContextProvider'
-import { ILanguageContextType } from '../@types/language.types'
 import Image from 'next/image'
 import LoadingBar from './LoadingBar'
+import { Locale } from '../lib/i18n'
 
 // Importación dinámica de componentes
 const Education = lazy(() => import('./ResumeComponents/Education'))
@@ -15,15 +14,12 @@ const Proyects = lazy(() => import('./ResumeComponents/Proyects'))
 const Interests = lazy(() => import('./ResumeComponents/Interests'))
 
 const LoadingComponent = () => (
-  <div className="resume-loading">
+  <div className="w-full">
     <LoadingBar />
   </div>
 )
 
-
-const Resume = () => {
-  const { language } = useContext(LanguageContext) as ILanguageContextType
-
+const Resume = ({ locale }: { locale: Locale }) => {
   const { ref, inView } = useInView({
     threshold: 0.3
   })
@@ -36,16 +32,25 @@ const Resume = () => {
     toggleSection
   ] = useButtons()
 
+  const bulletBaseClass =
+    'my-[15px] flex h-10 cursor-pointer items-center rounded-[20px] bg-[#1f2235] px-2 text-uiWhite transition-all duration-500'
+  const bulletSelectedClass = 'w-full'
+  const bulletCollapsedClass = 'w-4 overflow-hidden'
+
   return (
-    <div ref={ref} className="resume-container screen-container " id="Resume">
-      <div className={`resume-content ${inView ? 'appear' : ''} fade-in`}>
+    <section
+      ref={ref}
+      className="-my-12 flex min-h-fit w-full flex-col items-center justify-center bg-[#f7f8fc]"
+      id="Resume"
+    >
+      <div className={`mt-[200px] w-full ${inView ? 'appear' : ''} fade-in`}>
         <div className="heading-container">
           <div className="screen-heading">
-            <span>{language.name === 'en' ? 'Resume' : 'Trayectoria'}</span>
+            <span>{locale === 'en' ? 'Resume' : 'Trayectoria'}</span>
           </div>
           <div className="screen-sub-heading">
             <span>
-              {language.name === 'en'
+              {locale === 'en'
                 ? 'My formal Bio Details'
                 : 'Detalles de mi Biografia'}
             </span>
@@ -57,142 +62,119 @@ const Resume = () => {
             </div>
           </div>
         </div>
-        <div className="resume-card">
-          <div className="resume-bullets">
-            <div className="bullet-container">
-              <div className="bullet-icons"></div>
-              <div className="bullets">
+
+        <div className="mx-auto mb-20 flex h-auto w-[90%] max-w-[1000px] flex-col items-center lg:h-[360px] lg:flex-row lg:items-stretch">
+          <div className="my-[30px] w-full rounded-[22px] border border-[#1f2235]/10 bg-white p-2 shadow-[0_24px_40px_-32px_#1f2235] lg:my-0 lg:w-[320px]">
+            <div className="relative flex h-full w-full items-center">
+              <div className="absolute z-[1] h-full w-[34px] rounded-l-[18px] bg-[#1f2235]"></div>
+              <div className="relative z-[2] w-[90%] lg:w-[86%]">
                 <div
                   onClick={() => toggleSection('education')}
-                  className={`bullet ${
-                    isSelectedEducation && 'selected-bullet'
+                  className={`${bulletBaseClass} ${
+                    isSelectedEducation ? bulletSelectedClass : bulletCollapsedClass
                   }`}
                 >
                   <Image
-  className="bullet-logo"
-  src="/assets/resume/icons/education.svg"
-  width={16}
-  height={16}
-  alt="Education icon"
-  style={{
-    margin: '0 30px 0 0',
-    maxWidth: '16px',
-    maxHeight: '16px', 
-    display: 'block'   
-  }}
-/>
-                  <span className="bullet-label">
-                    {language.name === 'en' ? 'Education' : 'Educación'}
+                    className="mr-[30px] shrink-0"
+                    src="/assets/resume/icons/education.svg"
+                    width={16}
+                    height={16}
+                    alt="Education icon"
+                  />
+                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
+                    {locale === 'en' ? 'Education' : 'Educación'}
                   </span>
                 </div>
                 <div
                   onClick={() => toggleSection('work')}
-                  className={`bullet ${isSelectedWork && 'selected-bullet'}`}
+                  className={`${bulletBaseClass} ${
+                    isSelectedWork ? bulletSelectedClass : bulletCollapsedClass
+                  }`}
                 >
-                 <Image
-  className="bullet-logo"
-  src="/assets/resume/icons/work-history.svg"
-  width={16}
-  height={16}
-  alt="Work history icon"
-  style={{
-    margin: '0 30px 0 0',
-    maxWidth: '16px',
-    maxHeight: '16px',
-  }}
-/>
-                  <span className="bullet-label">
-                    {language.name === 'en'
+                  <Image
+                    className="mr-[30px] shrink-0"
+                    src="/assets/resume/icons/work-history.svg"
+                    width={16}
+                    height={16}
+                    alt="Work history icon"
+                  />
+                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
+                    {locale === 'en'
                       ? 'Work History'
                       : 'Historial de Trabajo'}
                   </span>
                 </div>
                 <div
                   onClick={() => toggleSection('skills')}
-                  className={`bullet ${isSelectedSkills && 'selected-bullet'}`}
+                  className={`${bulletBaseClass} ${
+                    isSelectedSkills ? bulletSelectedClass : bulletCollapsedClass
+                  }`}
                 >
-                 <Image
-  className="bullet-logo"
-  src="/assets/resume/icons/programming-skills.svg"
-  width={16}
-  height={16}
-  alt="Programming skills icon"
-  style={{
-    margin: '0 30px 0 0',
-    maxWidth: '16px',
-    maxHeight: '16px',
-    display: 'block'
-  }}
-/>
-                  <span className="bullet-label">
-                    {language.name === 'en'
+                  <Image
+                    className="mr-[30px] shrink-0"
+                    src="/assets/resume/icons/programming-skills.svg"
+                    width={16}
+                    height={16}
+                    alt="Programming skills icon"
+                  />
+                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
+                    {locale === 'en'
                       ? 'Hard Skills'
                       : 'Habilidades Técnicas'}
                   </span>
                 </div>
                 <div
                   onClick={() => toggleSection('projects')}
-                  className={`bullet ${
-                    isSelectedProyects && 'selected-bullet'
+                  className={`${bulletBaseClass} ${
+                    isSelectedProyects ? bulletSelectedClass : bulletCollapsedClass
                   }`}
                 >
-                 <Image
-  className="bullet-logo"
-  src="/assets/resume/icons/projects.svg"
-  width={16}
-  height={16}
-  alt="Projects icon"
-  style={{
-    margin: '0 30px 0 0',
-    maxWidth: '16px',
-    maxHeight: '16px',
-    display: 'block'
-  }}
-/>
-                  <span className="bullet-label">
-                    {language.name === 'en'
+                  <Image
+                    className="mr-[30px] shrink-0"
+                    src="/assets/resume/icons/projects.svg"
+                    width={16}
+                    height={16}
+                    alt="Projects icon"
+                  />
+                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
+                    {locale === 'en'
                       ? 'Highlighted Projects'
                       : 'Proyectos Destacados'}
                   </span>
                 </div>
                 <div
                   onClick={() => toggleSection('interests')}
-                  className={`bullet ${
-                    isSelectedInterests && 'selected-bullet'
+                  className={`${bulletBaseClass} ${
+                    isSelectedInterests ? bulletSelectedClass : bulletCollapsedClass
                   }`}
                 >
-                 <Image
-  className="bullet-logo"
-  src="/assets/resume/icons/interests.svg"
-  width={16}
-  height={16}
-  alt="Interests icon"
-  style={{
-    margin: '0 30px 0 0',
-    maxWidth: '16px',
-    maxHeight: '16px',
-    display: 'block'
-  }}
-/>
-                  <span className="bullet-label">
-                    {language.name === 'en' ? 'Interests' : 'Intereses'}
+                  <Image
+                    className="mr-[30px] shrink-0"
+                    src="/assets/resume/icons/interests.svg"
+                    width={16}
+                    height={16}
+                    alt="Interests icon"
+                  />
+                  <span className="whitespace-nowrap font-poppins-semibold text-sm">
+                    {locale === 'en' ? 'Interests' : 'Intereses'}
                   </span>
                 </div>
               </div>
             </div>
           </div>
-          <div className="resume-bullet-details">
-        <Suspense fallback={<LoadingComponent />}>
-          {isSelectedEducation && <Education />}
-          {isSelectedWork && <Work />}
-          {isSelectedSkills && <Skills />}
-          {isSelectedProyects && <Proyects />}
-          {isSelectedInterests && <Interests />}
-        </Suspense>
-      </div>
+
+          <div className="h-[360px] w-full overflow-y-auto pl-0 lg:w-[600px] lg:pl-20">
+            <Suspense fallback={<LoadingComponent />}>
+              {isSelectedEducation && <Education locale={locale} />}
+              {isSelectedWork && <Work locale={locale} />}
+              {isSelectedSkills && <Skills />}
+              {isSelectedProyects && <Proyects locale={locale} />}
+              {isSelectedInterests && <Interests locale={locale} />}
+            </Suspense>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
