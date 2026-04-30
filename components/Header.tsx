@@ -21,7 +21,7 @@ const Header = ({ locale }: { locale: Locale }) => {
   const pathname = usePathname()
 
   const baseOptionClass =
-    'text-xl font-extrabold transition-colors hover:text-darkOrange lg:text-base'
+    'rounded-full px-3 py-1.5 text-xl font-extrabold transition-all hover:bg-white/10 hover:text-darkOrange lg:text-base'
   const selectedOptionClass = 'text-darkOrange'
 
   const handleSectionClick = (sectionName: string) => {
@@ -60,11 +60,11 @@ const Header = ({ locale }: { locale: Locale }) => {
         </button>
 
         <div className="font-poppins-extrabold text-4xl text-uiWhite lg:text-5xl">
-          <span>Alejo Torres</span>
+          <span className="bg-gradient-to-r from-[#fff] via-[#ffe5d9] to-[#ff6a4f] bg-clip-text text-transparent">Alejo Torres</span>
         </div>
 
         <div
-          className={`absolute left-0 top-[110px] z-[1000] flex h-[calc(100vh-110px)] w-full flex-col justify-around bg-[#1f2235] px-10 text-base font-semibold transition-transform duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-12 lg:bg-transparent lg:px-0 ${
+          className={`absolute left-0 top-[110px] z-[1000] flex h-[calc(100vh-110px)] w-full flex-col justify-around bg-[#151b2f]/95 px-10 text-base font-semibold backdrop-blur-md transition-transform duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-8 lg:rounded-full lg:border lg:border-white/15 lg:bg-[#1b2139]/55 lg:px-6 lg:py-2 lg:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.8)] ${
             showMobileMenu
               ? 'translate-x-0 opacity-100'
               : '-translate-x-[120%] opacity-0 lg:opacity-100'

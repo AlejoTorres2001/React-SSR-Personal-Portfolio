@@ -45,7 +45,7 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
   ] = useContactForm()
 
   return (
-    <section ref={ref} className="min-h-screen bg-uiWhite pb-8 pt-[70px]" id="ContactMe">
+    <section ref={ref} className="min-h-screen bg-[#f7f8fc] pb-8 pt-[70px]" id="ContactMe">
       <div className={`heading-container ${inView ? 'appear' : ''} fade-in`}>
         <div className="screen-heading">
           <span>{copy.sections.contactTitle[locale]}</span>
@@ -62,7 +62,7 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
       </div>
 
       <div
-        className={`${inView ? 'appear' : ''} mx-auto flex max-w-[1100px] flex-col rounded-xl bg-[#1f2235] p-2.5 text-uiWhite shadow-[0_0_20px_-2px_#1f2235] fade-in`}
+        className={`${inView ? 'appear' : ''} mx-auto flex max-w-[1100px] flex-col rounded-[28px] border border-[#1f2235]/10 bg-gradient-to-br from-[#1a1f34] via-[#1f2235] to-[#252c47] p-3 text-uiWhite shadow-[0_30px_70px_-48px_#1f2235] fade-in`}
       >
         <div className="min-w-0 flex-1">
           <h2 className="mb-5 font-poppins-bold text-xl tracking-[0.2rem] text-uiWhite">

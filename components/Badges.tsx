@@ -56,7 +56,7 @@ const Badges = ({ locale }: { locale: Locale }) => {
   return (
     <section
       ref={ref}
-      className="mb-12 flex w-full flex-col justify-between bg-uiWhite"
+      className="mb-12 flex w-full flex-col justify-between bg-[#f7f8fc]"
       id="Badges"
     >
       <div
@@ -76,7 +76,7 @@ const Badges = ({ locale }: { locale: Locale }) => {
         </div>
       </div>
 
-      <div className="w-full bg-[#24263C] px-0 py-20">
+      <div className="w-full bg-gradient-to-br from-[#1a1f34] via-[#212841] to-[#1b2238] px-0 py-20">
         <div className={`flex items-center gap-2 px-3 ${inView ? 'appear' : ''} fade-in`}>
           <button
             className="h-10 w-10 rounded-full bg-darkOrange text-2xl leading-none text-uiWhite transition hover:bg-uiWhite hover:text-darkOrange disabled:cursor-not-allowed disabled:opacity-60"

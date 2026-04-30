@@ -40,7 +40,7 @@ const Resume = ({ locale }: { locale: Locale }) => {
   return (
     <section
       ref={ref}
-      className="-my-12 flex min-h-fit w-full flex-col items-center justify-center bg-uiWhite"
+      className="-my-12 flex min-h-fit w-full flex-col items-center justify-center bg-[#f7f8fc]"
       id="Resume"
     >
       <div className={`mt-[200px] w-full ${inView ? 'appear' : ''} fade-in`}>
@@ -64,9 +64,9 @@ const Resume = ({ locale }: { locale: Locale }) => {
         </div>
 
         <div className="mx-auto mb-20 flex h-auto w-[90%] max-w-[1000px] flex-col items-center lg:h-[360px] lg:flex-row lg:items-stretch">
-          <div className="my-[30px] w-full shadow-[15px_0_9px_-15px_#1f2235] lg:my-0 lg:w-[320px]">
+          <div className="my-[30px] w-full rounded-[22px] border border-[#1f2235]/10 bg-white p-2 shadow-[0_24px_40px_-32px_#1f2235] lg:my-0 lg:w-[320px]">
             <div className="relative flex h-full w-full items-center">
-              <div className="absolute z-[1] h-full w-[34px] bg-[#1f2235]"></div>
+              <div className="absolute z-[1] h-full w-[34px] rounded-l-[18px] bg-[#1f2235]"></div>
               <div className="relative z-[2] w-[90%] lg:w-[86%]">
                 <div
                   onClick={() => toggleSection('education')}

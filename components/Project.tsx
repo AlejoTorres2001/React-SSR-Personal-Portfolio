@@ -14,7 +14,7 @@ type props = {
 
 const Project = ({ name, description, image, knowMore, date }: props) => {
   return (
-    <article className="relative col-span-12 flex cursor-pointer flex-col bg-[#2c2e44] transition-all duration-300 hover:-translate-y-[7px] md:col-span-6 xl:col-span-4">
+    <article className="relative col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-[#2b304a] to-[#1f243a] transition-all duration-300 hover:-translate-y-[7px] hover:shadow-[0_24px_40px_-28px_rgba(0,0,0,0.8)] md:col-span-6 xl:col-span-4">
       <div className="relative w-full overflow-hidden pt-[56.25%]">
         <Image
           src={image}
