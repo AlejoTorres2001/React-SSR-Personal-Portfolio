@@ -1,10 +1,11 @@
 'use client'
 import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import useNavBar from '../hooks/useNavBar'
+
 const Header: React.FunctionComponent<{
   setShowMobileMenu: Dispatch<SetStateAction<boolean>>
   showMobileMenu: boolean
@@ -20,46 +21,58 @@ const Header: React.FunctionComponent<{
   ] = useNavBar()
   const pathname = usePathname()
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const baseOptionClass =
+    'text-xl font-extrabold transition-colors hover:text-darkOrange lg:text-base'
+  const selectedOptionClass = 'text-darkOrange'
+  const handleSectionClick = (sectionName: string) => {
+    toggleSection(sectionName)
+    if (showMobileMenu) {
+      setShowMobileMenu(false)
+    }
+  }
 
   return (
-    <div className="header-container">
-      <div className="header-parent">
-        <div className="header-hamburger">
+    <header className="flex h-[110px] w-full justify-center text-uiWhite">
+      <div className="relative flex h-full w-full items-center justify-between px-5 md:px-10 lg:w-[70%] lg:justify-around lg:px-0">
+        <button
+          type="button"
+          aria-label="Toggle navigation menu"
+          className="text-uiWhite lg:hidden"
+          onClick={() => {
+            setShowMobileMenu(!showMobileMenu)
+          }}
+        >
           <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fas"
             data-icon="bars"
-            className="svg-inline--fa fa-bars fa-w-14 header-hamburger-bars"
+            className="mx-2 cursor-pointer text-4xl"
             role="img"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            onClick={() => {
-              setShowMobileMenu(!showMobileMenu)
-            }}
           >
             <path
               fill="currentColor"
               d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
             ></path>
           </svg>
-        </div>
-        <div className="header-logo">
+        </button>
+
+        <div className="font-poppins-extrabold text-4xl text-uiWhite lg:text-5xl">
           <span>Alejo Torres</span>
         </div>
+
         <div
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className={`header-options ${
-            showMobileMenu ? 'show-hamburger-options' : ''
+          className={`absolute left-0 top-[110px] z-[1000] flex h-[calc(100vh-110px)] w-full flex-col justify-around bg-[#1f2235] px-10 text-base font-semibold transition-transform duration-500 lg:static lg:h-auto lg:w-auto lg:translate-x-0 lg:flex-row lg:items-center lg:gap-12 lg:bg-transparent lg:px-0 ${
+            showMobileMenu ? 'translate-x-0 opacity-100' : '-translate-x-[120%] opacity-0 lg:opacity-100'
           }`}
         >
           <div
-            className={`header-option header-option-seperator  ${
-              isHomeSelected ? 'selected-header-option' : ''
-            }`}
+            className={`${baseOptionClass} ${isHomeSelected ? selectedOptionClass : 'text-uiWhite'}`}
           >
-            <span onClick={() => toggleSection('home')}>
-              <Link href={pathname === '/projects' ? '/' : '#Home'}>
+            <span onClick={() => handleSectionClick('home')}>
+              <Link href={pathname === '/projects' ? '/' : '/#Home'}>
                 {language.name === 'en' ? 'Home' : 'Inicio'}
               </Link>
             </span>
@@ -68,70 +81,57 @@ const Header: React.FunctionComponent<{
             ? (
             <>
               <div
-                className={`header-option header-option-seperator  ${
-                  isAboutMeSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isAboutMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('about-me')}>
-                  <Link href="#AboutMe">
+                <span onClick={() => handleSectionClick('about-me')}>
+                  <Link href="/#AboutMe">
                     {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
                   </Link>
                 </span>
               </div>
               <div
-                className={`header-option header-option-seperator  ${
-                  isResumeSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isResumeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('resume')}>
-                  <Link href="#Resume">
+                <span onClick={() => handleSectionClick('resume')}>
+                  <Link href="/#Resume">
                     {language.name === 'en' ? 'Resume' : 'Trayectoria'}
                   </Link>
                 </span>
               </div>
               <div
-                className={`header-option header-option-seperator  ${
-                  isBadgesSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isBadgesSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('badges')}>
-                  <Link href="#Badges">
+                <span onClick={() => handleSectionClick('badges')}>
+                  <Link href="/#Badges">
                     {language.name === 'en' ? 'Badges' : 'Premios'}
                   </Link>
                 </span>
               </div>
               <div
-                className={`header-option header-option-seperator ${
-                  isProjectsSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('projects')}>
+                <span onClick={() => handleSectionClick('projects')}>
                   <Link href="/projects">
                     {language.name === 'en' ? 'Projects' : 'Proyectos'}
                   </Link>
                 </span>
               </div>
               <div
-                className={`header-option  ${
-                  isContactMeSelected ? 'selected-header-option' : ''
-                }`}
+                className={`${baseOptionClass} ${isContactMeSelected ? selectedOptionClass : 'text-uiWhite'}`}
               >
-                <span onClick={() => toggleSection('contact-me')}>
-                  <Link href="#ContactMe">
+                <span onClick={() => handleSectionClick('contact-me')}>
+                  <Link href="/#ContactMe">
                     {language.name === 'en' ? 'ContactMe' : 'Contactame'}
                   </Link>
                 </span>
               </div>
-               
             </>
               )
             : (
-            <div
-              className={`header-option  ${
-                isProjectsSelected ? 'selected-header-option' : ''
-              }`}
+              <div
+              className={`${baseOptionClass} ${isProjectsSelected ? selectedOptionClass : 'text-uiWhite'}`}
             >
-              <span onClick={() => toggleSection('projects')}>
+              <span onClick={() => handleSectionClick('projects')}>
                 <Link href="/projects">
                   {language.name === 'en' ? 'Projects' : 'Proyectos'}
                 </Link>
@@ -140,7 +140,7 @@ const Header: React.FunctionComponent<{
               )}
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

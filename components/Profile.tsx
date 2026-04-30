@@ -1,12 +1,11 @@
 'use client'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import Icons from './Icons'
-import CvOption from './CvOption'
-import useDelayUnmount from '../hooks/useDelayUnmount'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
+import Link from 'next/link'
 
 const steps = [
   'Fullstack Dev ⚙️',
@@ -22,81 +21,71 @@ const steps = [
   'NestJS 🚀',
   1000
 ]
-const mountedStyle = { animation: 'inAnimation 300ms ease-in' }
-const unmountedStyle = { animation: 'outAnimation 300ms ease-in' }
 const Profile: React.FunctionComponent<object> = () => {
-  const [isCvSelected, setIsCvSelected] = useState(false)
-  const shouldRenderChild = useDelayUnmount(isCvSelected, 300)
   const { language } = useContext(LanguageContext) as ILanguageContextType
+
   return (
     <div
-      className="profile-container"
+      className="flex min-h-fit w-full items-center justify-center bg-[#24263c] px-4 text-center"
       id="Home"
-      onClick={(e) => setIsCvSelected((prevState) => prevState && !prevState)}
     >
-      <div className="profile-parent">
-        <div className="profile-details">
-          <div className="cols">
-            <div className="cols-icons">
+      <div className="mt-10 flex w-full max-w-[1120px] flex-col-reverse items-center text-[#f0f8ff] md:mt-4 md:flex-row md:justify-between">
+        <div>
+          <div>
+            <div>
               <Icons />
             </div>
           </div>
-          <div className="profile-details-name">
-            <span className="primary-text">
+          <div className="font-poppins-semibold text-2xl">
+            <span className="text-uiWhite">
               {''}
               {language.name === 'en'
                 ? "Hello, I'm"
                 : 'Hola, mi nombre es'}{' '}
-              <span className="highlighted-text">Alejo</span>
+              <span className="text-darkOrange">Alejo</span>
             </span>
           </div>
-          <div className="profile-details-role">
-            <span className="primary-text">
+          <div className="my-3.5 flex flex-col">
+            <span className="text-uiWhite">
               {''}
-              <h1>
+              <h1 className="mx-auto flex h-[60px] min-w-[320px] items-center justify-center text-center font-[cursive] text-[28px] md:min-w-[420px] md:text-[40px]">
                 {''}
                 <TypeAnimation sequence={steps} repeat={Infinity} speed={50} />
               </h1>
-              <span className="profile-role-tagline">
+              <span className="mt-1 font-poppins-light text-lg md:text-[19px]">
                 {language.name === 'en'
                   ? 'Building applications with front and back-end technologies.'
                   : 'Creando aplicaciones con tecnologías de FrontEnd y BackEnd.'}
               </span>
             </span>
           </div>
-          <div className="profile-options">
-            <button
-              onClick={(e) => {
-                e.preventDefault()
-                window.location.href =
-                  process.env.NODE_ENV === 'production'
-                    ? 'https://react-ssr-personal-portfolio.vercel.app/#ContactMe'
-                    : 'http://localhost:3000/#ContactMe'
-              }}
-              className="btn primary-btn"
+          <div className="flex items-center justify-center gap-4 md:justify-start">
+            <Link
+              href="/#ContactMe"
+              className="w-[140px] rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff]"
             >
               {''}
               {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
+            </Link>
+            <button
+              className="w-[140px] rounded-[50px] bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111]"
+              onClick={(e) => {
+                e.stopPropagation()
+                const cvUrl =
+                  language.name === 'en'
+                    ? 'assets/home/CV-AlejoTorres-EN.pdf'
+                    : 'assets/home/CV-AlejoTorres-ES.pdf'
+                window.open(cvUrl, '_blank')
+              }}
+            >
+              {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
             </button>
-           <button
-  className="btn highlighted-btn"
-  onClick={(e) => {
-    e.stopPropagation();
-    // Download CV based on current language
-    const cvUrl = language.name === 'en' 
-      ? "assets/home/CV-AlejoTorres-EN.pdf" 
-      : "assets/home/CV-AlejoTorres-ES.pdf";
-    window.open(cvUrl, '_blank');
-  }}
->
-  {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
-</button>
           </div>
         </div>
-        <div className="profile-picture">
-          <div className="profile-picture-background">
+        <div className="mb-10 mt-4 flex h-[275px] w-[275px] items-center justify-center rounded-full shadow-[0_1px_0_0.5px_var(--white)] sm:h-[320px] sm:w-[320px] md:mb-24 md:h-[380px] md:w-[380px] md:ml-20 lg:ml-1">
+          <div className="h-[93%] w-[93%] rounded-full bg-cover bg-center bg-no-repeat transition duration-1000 ease-out hover:scale-105">
             <Image
-              className="profile-picture-image"
+              className="rounded-full"
               src={'/assets/home/profile-picture.jpg'}
               width={380}
               height={380}

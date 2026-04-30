@@ -13,7 +13,7 @@ const LanguageOption = ({ isLanguagesSelected, setIsLanguagesSelected }: Languag
   
   return (
     <span
-      className="language-option"
+      className="flex w-full cursor-pointer items-center justify-center rounded px-1 py-2.5 font-poppins-semibold text-base font-semibold transition-all hover:bg-highlighted-background hover:text-uiWhite"
       onClick={() => {
         setLanguage({
           name: 'es',

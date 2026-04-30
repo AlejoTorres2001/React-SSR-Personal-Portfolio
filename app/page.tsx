@@ -1,6 +1,5 @@
 'use client'
 
-import Flag from 'react-world-flags'
 import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -33,28 +32,28 @@ function HomeContent() {
         />
       )}
       {shouldRenderChild && !showMobileMenu && (
-       <div
-    style={isLanguagesSelected ? mountedStyle : unmountedStyle}
-    className="language-options"
-  >
-    <LanguageOption
-      isLanguagesSelected={isLanguagesSelected}
-      setIsLanguagesSelected={setIsLanguagesSelected}
-    />
-    <span
-      className="language-option"
-      onClick={() => {
-        setLanguage({
-          name: 'en',
-          flag: '840',  // Mantenemos estas propiedades aunque no las usemos
-          height: '15'  // para evitar errores en otras partes de la app
-        })
-        setIsLanguagesSelected(!isLanguagesSelected)
-      }}
-    >
-      EN
-    </span>
-  </div>
+        <div
+          style={isLanguagesSelected ? mountedStyle : unmountedStyle}
+          className="absolute right-8 top-10 z-[999] flex min-w-[70px] max-w-[calc(100vw-64px)] -translate-x-1/2 transform flex-col items-stretch overflow-hidden rounded bg-[#2a2d46] shadow-lg lg:right-8"
+        >
+          <LanguageOption
+            isLanguagesSelected={isLanguagesSelected}
+            setIsLanguagesSelected={setIsLanguagesSelected}
+          />
+          <span
+            className="flex w-full cursor-pointer items-center justify-center rounded px-1 py-2.5 font-poppins-semibold text-base font-semibold transition-all hover:bg-highlighted-background hover:text-uiWhite"
+            onClick={() => {
+              setLanguage({
+                name: 'en',
+                flag: '840',
+                height: '15'
+              })
+              setIsLanguagesSelected(!isLanguagesSelected)
+            }}
+          >
+            EN
+          </span>
+        </div>
       )}
       <Header
         showMobileMenu={showMobileMenu as boolean}
@@ -67,7 +66,6 @@ function HomeContent() {
       <AboutMe />
       <Resume />
       <Badges />
-      <Footer />
       <ContactMe />
     </div>
   )

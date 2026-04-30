@@ -3,10 +3,10 @@ import React from 'react'
 
 const Footer: React.FunctionComponent<object> = () => {
   return (
-    <div className='footer-container'>
-      <div className='footer-parent'>
+    <div className='flex w-full justify-center overflow-hidden'>
+      <div className='flex items-end'>
         <Image
-          className='footer-image'
+          className='h-[130px] max-w-full'
           src='/assets/home/shape.png'
           width={1920}
           height={130}
