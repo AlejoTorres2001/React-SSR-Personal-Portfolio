@@ -121,10 +121,7 @@ const Resume = ({ locale }: { locale: Locale }) => {
         {/* ── Desktop: sidebar + scrollable panel ── */}
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-5">
           {/* Sidebar nav */}
-          <div className="hidden md:flex md:w-[196px] md:shrink-0 md:flex-col glass rounded-2xl p-2">
-            <p className="px-4 pb-2 pt-2 font-jakarta text-[10px] uppercase tracking-widest text-slate-600">
-              {locale === 'en' ? 'Section' : 'Sección'}
-            </p>
+          <div className="hidden md:flex md:w-[196px] md:shrink-0 md:flex-col glass rounded-2xl p-2 pt-2">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -166,9 +163,7 @@ const Resume = ({ locale }: { locale: Locale }) => {
                 <span className="font-fraunces text-base text-slate-200">
                   {activeTab.label}
                 </span>
-                <span className="ml-auto font-jakarta text-[11px] italic text-slate-600">
-                  {locale === 'en' ? 'scroll to read ↓' : 'desplazá para leer ↓'}
-                </span>
+
               </div>
             )}
 

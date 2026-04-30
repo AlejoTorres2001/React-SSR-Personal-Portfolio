@@ -11,9 +11,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* EmpatIA */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Tech Leader', 'Líder Técnico FullStack')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Tech Leader', 'Líder Técnico FullStack')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug 2024', 'Ago 2024')}</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
@@ -46,9 +46,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* Altostratus */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Developer', 'Desarrollador FullStack')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Developer', 'Desarrollador FullStack')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Apr – Dec 2023', 'Abr – Dic 2023')}</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
@@ -85,9 +85,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* Silentium Apps */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Trainee Developer', 'Desarrollador en Formación')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('Trainee Developer', 'Desarrollador en Formación')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug – Dec 2022', 'Ago – Dic 2022')}</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
@@ -120,9 +120,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* IITA */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Machine Learning Researcher', 'Investigador en Machine Learning')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('Machine Learning Researcher', 'Investigador en Machine Learning')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Mar – Aug 2022', 'Mar – Ago 2022')}</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
@@ -154,9 +154,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* UCASAL */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Student Researcher', 'Alumno Investigador')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('Student Researcher', 'Alumno Investigador')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug 21 – Dec 24', 'Ago 21 – Dic 24')}</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
@@ -188,9 +188,9 @@ const Work = ({ locale }: { locale: Locale }) => {
 
         {/* IITA Tutor */}
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Python Programming Tutor', 'Tutor de Programación en Python')}</span>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">{t('Python Programming Tutor', 'Tutor de Programación en Python')}</span>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2021 – 2022</div>
           </div>
           <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">

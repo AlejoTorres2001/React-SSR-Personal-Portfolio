@@ -12,9 +12,9 @@ const Proyects = ({ locale }: { locale: Locale }) => {
     <div className="animate-[fadeInAnimation_2s]">
       <div className="mb-8 flex w-full flex-col">
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
+            <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
               <Link
                 href={
                   'https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio'
@@ -47,10 +47,10 @@ const Proyects = ({ locale }: { locale: Locale }) => {
         </div>
 
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
             <Link href={'https://github.com/AlejoTorres2001/code-playground'}>
-              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Codify</span>
+              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Codify</span>
             </Link>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
@@ -72,10 +72,10 @@ const Proyects = ({ locale }: { locale: Locale }) => {
         </div>
 
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
             <Link href={'https://github.com/AlejoTorres2001/chat.io'}>
-              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Chat.io</span>
+              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Chat.io</span>
             </Link>
             <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
@@ -97,8 +97,8 @@ const Proyects = ({ locale }: { locale: Locale }) => {
         </div>
 
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
             <Link
               href={
                 'https://github.com/CoolRobotsAndStuff/machine-learning-for-maze-exploration'
@@ -106,7 +106,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
+              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
                 Maze Exploration Deep-Q Learning AI Model
               </span>
             </Link>

@@ -8,9 +8,9 @@ const Education = ({ locale }: { locale: Locale }) => {
     <div className="animate-[fadeInAnimation_2s]">
       <div className="mb-8 flex w-full flex-col">
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en'
                 ? 'AI Engineer – SMILE Scholarship'
                 : 'Ingeniería en IA – Beca SMILE'}
@@ -38,9 +38,9 @@ const Education = ({ locale }: { locale: Locale }) => {
         </div>
 
         <div className="mb-[30px] flex w-full flex-col">
-          <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
-            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
+          <div className="mb-3.5 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
+            <span className="font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en'
                 ? 'Computer Science Engineer, Cum Laude'
                 : 'Ingeniero en Informática, Cum Laude'}
