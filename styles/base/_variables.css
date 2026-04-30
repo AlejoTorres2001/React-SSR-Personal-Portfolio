@@ -24,8 +24,8 @@
   --bg-deep: #080d1a;
   --bg-surface: #0c1423;
   --emerald: #34d399;
-  --emerald-glow: rgba(52, 211, 153, 0.15);
-  --glass-bg: rgba(8, 20, 50, 0.45);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.10);
+  --emerald-glow: rgba(52, 211, 153, 0.18);
+  --glass-bg: rgba(22, 42, 88, 0.52);
+  --glass-border: rgba(255, 255, 255, 0.13);
+  --glass-highlight: rgba(255, 255, 255, 0.18);
 }

@@ -31,7 +31,9 @@ const Project = ({ name, description, image, knowMore, date }: props) => {
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-3 p-5">
-        <h3 className="font-jakarta text-sm font-semibold text-slate-50">{name}</h3>
+        <h3 className="font-jakarta text-sm font-semibold text-slate-50">
+          {name}
+        </h3>
         <p className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-2 font-jakarta text-xs text-slate-400">
           {description}
         </p>

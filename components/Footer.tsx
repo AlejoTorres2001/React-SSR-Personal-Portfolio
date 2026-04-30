@@ -8,9 +8,7 @@ const Footer: React.FunctionComponent<object> = () => {
       <div className="mx-auto max-w-[1100px] px-5">
         <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
         <p className="mt-6 text-center font-jakarta text-xs text-slate-600">
-          © {year} Alejo Torres — Built with{' '}
-          <span className="text-emerald-400/70">Next.js</span> &{' '}
-          <span className="text-emerald-400/70">TypeScript</span>
+          © {year} Alejo Torres
         </p>
       </div>
     </footer>

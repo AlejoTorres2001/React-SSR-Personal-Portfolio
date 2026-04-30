@@ -38,13 +38,22 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
   const inputClass =
     'w-full rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 font-jakarta text-sm text-slate-200 placeholder:text-slate-600 outline-none transition-all duration-200 focus:border-emerald-400/40 focus:bg-white/[0.06] focus:ring-1 focus:ring-emerald-400/20'
 
-  const labelClass = 'mb-1.5 block font-jakarta text-xs font-medium uppercase tracking-wider text-slate-500'
+  const labelClass =
+    'mb-1.5 block font-jakarta text-xs font-medium uppercase tracking-wider text-slate-500'
 
   return (
-    <section ref={ref} className="flex w-full flex-col items-center py-24" id="ContactMe">
+    <section
+      ref={ref}
+      className="flex w-full flex-col items-center py-24"
+      id="ContactMe"
+    >
       {/* Section heading */}
-      <div className={`mb-12 flex w-full flex-col items-center ${inView ? 'appear' : ''} fade-in`}>
-        <h2 className="font-fraunces text-4xl text-slate-50">{copy.sections.contactTitle[locale]}</h2>
+      <div
+        className={`mb-12 flex w-full flex-col items-center ${inView ? 'appear' : ''} fade-in`}
+      >
+        <h2 className="font-fraunces text-4xl text-slate-50">
+          {copy.sections.contactTitle[locale]}
+        </h2>
         <p className="mt-2 font-jakarta text-xs uppercase tracking-widest text-slate-400">
           {copy.sections.contactSubtitle[locale]}
         </p>
@@ -112,7 +121,9 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
             </div>
 
             <div>
-              <label htmlFor="email" className={labelClass}>Email</label>
+              <label htmlFor="email" className={labelClass}>
+                Email
+              </label>
               <input
                 id="email"
                 type="email"
@@ -121,7 +132,9 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
                 autoComplete="email"
                 required
                 className={inputClass}
-                placeholder={locale === 'en' ? 'your@email.com' : 'tu@email.com'}
+                placeholder={
+                  locale === 'en' ? 'your@email.com' : 'tu@email.com'
+                }
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -139,7 +152,11 @@ const ContactMe = ({ locale }: { locale: Locale }) => {
                 maxLength={2000}
                 rows={5}
                 className={`${inputClass} resize-none`}
-                placeholder={locale === 'en' ? 'Tell me about your project or idea...' : 'Cuéntame sobre tu proyecto o idea...'}
+                placeholder={
+                  locale === 'en'
+                    ? 'Tell me about your project or idea...'
+                    : 'Cuéntame sobre tu proyecto o idea...'
+                }
                 onChange={(e) => setMessage(e.target.value)}
               />
             </div>

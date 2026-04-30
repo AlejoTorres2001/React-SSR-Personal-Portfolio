@@ -24,8 +24,12 @@ const Skills: React.FunctionComponent<object> = () => {
         {skills.map((skill) => (
           <div key={skill.name} className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
-              <span className="font-jakarta text-sm font-medium text-slate-200">{skill.name}</span>
-              <span className="font-jakarta text-xs text-slate-500">{skill.level}%</span>
+              <span className="font-jakarta text-sm font-medium text-slate-200">
+                {skill.name}
+              </span>
+              <span className="font-jakarta text-xs text-slate-500">
+                {skill.level}%
+              </span>
             </div>
             <div className="h-1.5 w-full rounded-full bg-slate-700/60">
               <div

@@ -33,8 +33,12 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
       <div className="w-full max-w-[1100px] px-5 fade-in appear">
         {/* Section heading */}
         <div className="mb-12 flex flex-col items-center">
-          <h2 className="font-fraunces text-4xl text-slate-50">{copy.sections.aboutTitle[locale]}</h2>
-          <p className="mt-2 text-xs uppercase tracking-widest text-slate-400 font-jakarta">{copy.sections.aboutSubtitle[locale]}</p>
+          <h2 className="font-fraunces text-4xl text-slate-50">
+            {copy.sections.aboutTitle[locale]}
+          </h2>
+          <p className="mt-2 text-xs uppercase tracking-widest text-slate-400 font-jakarta">
+            {copy.sections.aboutSubtitle[locale]}
+          </p>
           <div className="mt-4 h-px w-32 bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" />
         </div>
 
@@ -50,18 +54,55 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
             <p className="text-sm leading-relaxed text-slate-300">
               {locale === 'en' ? (
                 <>
-                  I&apos;m a <strong className="font-semibold text-slate-100">Semi-Senior Software Engineer</strong>, with
-                  over <strong className="font-semibold text-slate-100">4 years of experience</strong> delivering
-                  large-scale web applications. Expert in designing monolithic,
-                  event-driven, and microservice architectures using{' '}
-                  <strong className="font-semibold text-slate-100">Node.js</strong> and <strong className="font-semibold text-slate-100">Python</strong> on the
-                  backend, and <strong className="font-semibold text-slate-100">React.js</strong> &{' '}
-                  <strong className="font-semibold text-slate-100">Angular</strong> on the frontend. I&apos;ve built and
-                  scaled <strong className="font-semibold text-slate-100">distributed event-processing pipelines</strong>{' '}
-                  with <strong className="font-semibold text-slate-100">Bull</strong>, <strong className="font-semibold text-slate-100">n8n</strong>, and{' '}
-                  <strong className="font-semibold text-slate-100">NestJS</strong> and automated cloud infrastructure on{' '}
-                  <strong className="font-semibold text-slate-100">Azure</strong> and <strong className="font-semibold text-slate-100">GCP</strong> with{' '}
-                  <strong className="font-semibold text-slate-100">Terraform</strong> and DevOps pipelines. Currently leading full-stack development at{' '}
+                  I&apos;m a{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Semi-Senior Software Engineer
+                  </strong>
+                  , with over{' '}
+                  <strong className="font-semibold text-slate-100">
+                    4 years of experience
+                  </strong>{' '}
+                  delivering large-scale web applications. Expert in designing
+                  monolithic, event-driven, and microservice architectures using{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Node.js
+                  </strong>{' '}
+                  and{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Python
+                  </strong>{' '}
+                  on the backend, and{' '}
+                  <strong className="font-semibold text-slate-100">
+                    React.js
+                  </strong>{' '}
+                  &{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Angular
+                  </strong>{' '}
+                  on the frontend. I&apos;ve built and scaled{' '}
+                  <strong className="font-semibold text-slate-100">
+                    distributed event-processing pipelines
+                  </strong>{' '}
+                  with{' '}
+                  <strong className="font-semibold text-slate-100">Bull</strong>
+                  ,{' '}
+                  <strong className="font-semibold text-slate-100">n8n</strong>,
+                  and{' '}
+                  <strong className="font-semibold text-slate-100">
+                    NestJS
+                  </strong>{' '}
+                  and automated cloud infrastructure on{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Azure
+                  </strong>{' '}
+                  and{' '}
+                  <strong className="font-semibold text-slate-100">GCP</strong>{' '}
+                  with{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Terraform
+                  </strong>{' '}
+                  and DevOps pipelines. Currently leading full-stack development
+                  at{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
                     href="https://www.empatia.technology"
@@ -69,21 +110,52 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                     rel="noopener noreferrer"
                   >
                     EmpatIA
-                  </a>.
+                  </a>
+                  .
                 </>
               ) : (
                 <>
-                  Soy un <strong className="font-semibold text-slate-100">Ingeniero de Software Semi-Senior</strong>, con
-                  más de <strong className="font-semibold text-slate-100">4 años de experiencia</strong> desarrollando
-                  aplicaciones web a gran escala. Experto en arquitecturas monolíticas, orientadas a eventos y de
-                  microservicios con <strong className="font-semibold text-slate-100">Node.js</strong>,{' '}
-                  <strong className="font-semibold text-slate-100">Python</strong>,{' '}
-                  <strong className="font-semibold text-slate-100">React.js</strong> y{' '}
-                  <strong className="font-semibold text-slate-100">Angular</strong>. He construido pipelines distribuidos con{' '}
-                  <strong className="font-semibold text-slate-100">Bull</strong>, <strong className="font-semibold text-slate-100">n8n</strong> y{' '}
-                  <strong className="font-semibold text-slate-100">NestJS</strong>, y automatizado infraestructura en{' '}
-                  <strong className="font-semibold text-slate-100">Azure</strong> y{' '}
-                  <strong className="font-semibold text-slate-100">GCP</strong> con Terraform. Actualmente lidero el desarrollo FullStack en{' '}
+                  Soy un{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Ingeniero de Software Semi-Senior
+                  </strong>
+                  , con más de{' '}
+                  <strong className="font-semibold text-slate-100">
+                    4 años de experiencia
+                  </strong>{' '}
+                  desarrollando aplicaciones web a gran escala. Experto en
+                  arquitecturas monolíticas, orientadas a eventos y de
+                  microservicios con{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Node.js
+                  </strong>
+                  ,{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Python
+                  </strong>
+                  ,{' '}
+                  <strong className="font-semibold text-slate-100">
+                    React.js
+                  </strong>{' '}
+                  y{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Angular
+                  </strong>
+                  . He construido pipelines distribuidos con{' '}
+                  <strong className="font-semibold text-slate-100">Bull</strong>
+                  ,{' '}
+                  <strong className="font-semibold text-slate-100">n8n</strong>{' '}
+                  y{' '}
+                  <strong className="font-semibold text-slate-100">
+                    NestJS
+                  </strong>
+                  , y automatizado infraestructura en{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Azure
+                  </strong>{' '}
+                  y{' '}
+                  <strong className="font-semibold text-slate-100">GCP</strong>{' '}
+                  con Terraform. Actualmente lidero el desarrollo FullStack en{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
                     href="https://www.empatia.technology"
@@ -91,7 +163,8 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                     rel="noopener noreferrer"
                   >
                     EmpatIA
-                  </a>.
+                  </a>
+                  .
                 </>
               )}
             </p>
@@ -103,7 +176,10 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
               </p>
               <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                 {highlights[locale].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-slate-400">
+                  <li
+                    key={i}
+                    className="flex items-start gap-2.5 text-xs text-slate-400"
+                  >
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
                     {item}
                   </li>

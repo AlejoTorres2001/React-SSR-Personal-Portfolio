@@ -10,10 +10,21 @@ type BadgeProps = {
   children?: React.ReactNode
 }
 
-const Badge: React.FunctionComponent<BadgeProps> = ({ title, date, assertion, img, verify }) => {
+const Badge: React.FunctionComponent<BadgeProps> = ({
+  title,
+  date,
+  assertion,
+  img,
+  verify
+}) => {
   return (
     <div className="glass glass-hover flex w-[280px] flex-col items-center gap-3 rounded-2xl p-5 transition-all duration-300">
-      <a href={assertion} target="_blank" rel="noopener noreferrer" className="transition-transform duration-200 hover:scale-105">
+      <a
+        href={assertion}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-transform duration-200 hover:scale-105"
+      >
         <Image
           width={100}
           height={100}

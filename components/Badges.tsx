@@ -60,8 +60,12 @@ const Badges = ({ locale }: { locale: Locale }) => {
       id="Badges"
     >
       {/* Section heading */}
-      <div className={`mb-12 flex w-full flex-col items-center ${inView ? 'appear' : ''} fade-in`}>
-        <h2 className="font-fraunces text-4xl text-slate-50">{copy.sections.badgesTitle[locale]}</h2>
+      <div
+        className={`mb-12 flex w-full flex-col items-center ${inView ? 'appear' : ''} fade-in`}
+      >
+        <h2 className="font-fraunces text-4xl text-slate-50">
+          {copy.sections.badgesTitle[locale]}
+        </h2>
         <p className="mt-2 font-jakarta text-xs uppercase tracking-widest text-slate-400">
           {copy.sections.badgesSubtitle[locale]}
         </p>
@@ -77,13 +81,31 @@ const Badges = ({ locale }: { locale: Locale }) => {
             aria-label="Previous badges"
             disabled={!canScrollPrev}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><polyline points="15 18 9 12 15 6"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
           </button>
 
-          <div className="w-full overflow-hidden" ref={emblaRef} aria-label="Badges carousel">
+          <div
+            className="w-full overflow-hidden"
+            ref={emblaRef}
+            aria-label="Badges carousel"
+          >
             <div className="flex gap-0">
               {badgesData.badges.map((badge) => (
-                <div className="flex shrink-0 basis-full justify-center px-2 min-[550px]:basis-1/2 min-[768px]:basis-1/3 min-[1200px]:basis-1/4" key={badge.assertion}>
+                <div
+                  className="flex shrink-0 basis-full justify-center px-2 min-[550px]:basis-1/2 min-[768px]:basis-1/3 min-[1200px]:basis-1/4"
+                  key={badge.assertion}
+                >
                   <Badge {...badge} />
                 </div>
               ))}
@@ -97,11 +119,25 @@ const Badges = ({ locale }: { locale: Locale }) => {
             aria-label="Next badges"
             disabled={!canScrollNext}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4"><polyline points="9 18 15 12 9 6"/></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-4 w-4"
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </button>
         </div>
 
-        <div className="mt-5 flex justify-center gap-2" aria-label="Badges pagination">
+        <div
+          className="mt-5 flex justify-center gap-2"
+          aria-label="Badges pagination"
+        >
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
