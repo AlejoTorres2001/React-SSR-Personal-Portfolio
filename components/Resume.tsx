@@ -78,7 +78,7 @@ const Resume = () => {
                   }`}
                 >
                   <Image
-                    className="mr-[30px] h-4 w-4 shrink-0"
+                    className="mr-[30px] shrink-0"
                     src="/assets/resume/icons/education.svg"
                     width={16}
                     height={16}
@@ -95,7 +95,7 @@ const Resume = () => {
                   }`}
                 >
                   <Image
-                    className="mr-[30px] h-4 w-4 shrink-0"
+                    className="mr-[30px] shrink-0"
                     src="/assets/resume/icons/work-history.svg"
                     width={16}
                     height={16}
@@ -114,7 +114,7 @@ const Resume = () => {
                   }`}
                 >
                   <Image
-                    className="mr-[30px] h-4 w-4 shrink-0"
+                    className="mr-[30px] shrink-0"
                     src="/assets/resume/icons/programming-skills.svg"
                     width={16}
                     height={16}
@@ -133,7 +133,7 @@ const Resume = () => {
                   }`}
                 >
                   <Image
-                    className="mr-[30px] h-4 w-4 shrink-0"
+                    className="mr-[30px] shrink-0"
                     src="/assets/resume/icons/projects.svg"
                     width={16}
                     height={16}
@@ -152,7 +152,7 @@ const Resume = () => {
                   }`}
                 >
                   <Image
-                    className="mr-[30px] h-4 w-4 shrink-0"
+                    className="mr-[30px] shrink-0"
                     src="/assets/resume/icons/interests.svg"
                     width={16}
                     height={16}
