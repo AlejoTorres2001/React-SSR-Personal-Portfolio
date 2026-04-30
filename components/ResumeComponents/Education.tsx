@@ -9,26 +9,26 @@ const Education = ({ locale }: { locale: Locale }) => {
       <div className="mb-8 flex w-full flex-col">
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en'
                 ? 'AI Engineer – SMILE Scholarship'
                 : 'Ingeniería en IA – Beca SMILE'}
             </span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">
               {locale === 'en'
                 ? 'Feb – Jul 2023'
                 : 'Feb – Jul 2023'}
             </div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {locale === 'en'
                 ? 'Polytechnic University of Madrid (UPM), Madrid, Spain'
                 : 'Universidad Politécnica de Madrid (UPM), Madrid, España'}
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'Cum laude in Microservices Architectures, Intelligent Systems, Machine Learning II'
@@ -39,24 +39,24 @@ const Education = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en'
                 ? 'Computer Science Engineer, Cum Laude'
                 : 'Ingeniero en Informática, Cum Laude'}
             </span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">
               {locale === 'en' ? 'Dec 2024' : 'Dic 2024'}
             </div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {locale === 'en'
                 ? 'Catholic University of Salta, Salta, Argentina'
                 : 'Universidad Católica de Salta, Salta, Argentina'}
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'Academic Excellence Award – 2023'

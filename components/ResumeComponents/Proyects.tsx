@@ -13,8 +13,8 @@ const Proyects = ({ locale }: { locale: Locale }) => {
       <div className="mb-8 flex w-full flex-col">
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange transition-colors hover:text-uiBlack">
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-uiBlack">
               <Link
                 href={
                   'https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio'
@@ -27,9 +27,9 @@ const Proyects = ({ locale }: { locale: Locale }) => {
                   : 'Sitio Web Personal'}
               </Link>
             </span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">2022-2022</div>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {locale === 'en'
                 ? 'Technologies Used:'
@@ -37,7 +37,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               Nextjs,ReactJs,Typescript,vanilla CSS
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'A personal web portfolio to showcase all my details and projectsat one place. Using SSR for faster load time'
@@ -48,13 +48,13 @@ const Proyects = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
             <Link href={'https://github.com/AlejoTorres2001/code-playground'}>
-              <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange transition-colors hover:text-uiBlack">Codify</span>
+              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-uiBlack">Codify</span>
             </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">2022-2022</div>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {locale === 'en'
                 ? 'Technologies Used:'
@@ -62,7 +62,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               Vite,ReactJs,TailwindCSS,Redux
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? ' An easy to use, real time HTML + CSS + JS code playground,inspired by liveweave. Codify is a live editor for HTML,CSS AND JS allowing you to edit your code in real-time, and see your results instantly, without reloading the page.'
@@ -73,13 +73,13 @@ const Proyects = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
             <Link href={'https://github.com/AlejoTorres2001/chat.io'}>
-              <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange transition-colors hover:text-uiBlack">Chat.io</span>
+              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-uiBlack">Chat.io</span>
             </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">2022-2022</div>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {locale === 'en'
                 ? 'Technologies Used: '
@@ -87,7 +87,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               Express,MondoDB,SocketIO,Vite,React,TailwindCSS
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'A Fullstack webSocket-based WhatsApp clone. The Core concept here revolves around WebSocket, instead of the classic server polling architecture, using an event-based communication allows for (almost) real-time communication between the server and our clients, who will listen and react to the changes. The frontEnd client is inspired on WhatsApp web'
@@ -98,7 +98,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
             <Link
               href={
                 'https://github.com/CoolRobotsAndStuff/machine-learning-for-maze-exploration'
@@ -106,13 +106,13 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange transition-colors hover:text-uiBlack">
+              <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-uiBlack">
                 Maze Exploration Deep-Q Learning AI Model
               </span>
             </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">2022-2022</div>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {' '}
               {locale === 'en'
@@ -121,7 +121,7 @@ const Proyects = ({ locale }: { locale: Locale }) => {
               Python,Keras,MLFlow
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'Part of my internship at IITA. A simplified test environment for Webots simulator,a Deep-  Q learning Model and a Random Map Generator for it to be trained on, registring all progress in a MLFlow Server hosted on Google Cloud Computing'

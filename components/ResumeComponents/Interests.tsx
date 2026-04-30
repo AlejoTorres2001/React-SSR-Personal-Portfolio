@@ -9,18 +9,18 @@ const Interests = ({ locale }: { locale: Locale }) => {
       <div className="mb-8 flex w-full flex-col">
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en'
                 ? 'Teaching'
                 : 'Transmitir mis Conocimientos'}
             </span>
             <div></div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span></span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'Apart from being a tech enthusiast, I also love to share my knowledge to other, helping them to achieve their goals and improve their skills.'
@@ -31,16 +31,16 @@ const Interests = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">
               {locale === 'en' ? 'Collaboration' : 'Colaborar'}
             </span>
             <div></div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span></span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? "I'm looking to collaborate with other Devs in meaningful projects that have a positive impact in the Tech World"
@@ -51,14 +51,14 @@ const Interests = ({ locale }: { locale: Locale }) => {
 
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden"></div>
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{locale === 'en' ? 'Music' : 'Musica'}</span>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden"></div>
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{locale === 'en' ? 'Music' : 'Musica'}</span>
             <div></div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span></span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>
               {locale === 'en'
                 ? 'occasionally play the drums'

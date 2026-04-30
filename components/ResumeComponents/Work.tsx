@@ -12,19 +12,19 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* EmpatIA */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('FullStack Tech Leader', 'Líder Técnico FullStack')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">{t('Aug 2024', 'Ago 2024')}</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Tech Leader', 'Líder Técnico FullStack')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug 2024', 'Ago 2024')}</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>EmpatIA, Madrid, {t('Spain', 'España')}</span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Leading cloud-native full-stack development on Azure.', 'Liderando desarrollo full-stack nativo en la nube sobre Azure.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Built scalable applications with React.js and NestJS over Azure App Services and AKS.',
               'Desarrollo de aplicaciones escalables con React.js y NestJS sobre Azure App Services y AKS.'
@@ -47,23 +47,23 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* Altostratus */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('FullStack Developer', 'Desarrollador FullStack')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">{t('Apr – Dec 2023', 'Abr – Dic 2023')}</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('FullStack Developer', 'Desarrollador FullStack')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Apr – Dec 2023', 'Abr – Dic 2023')}</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
-              <a className="font-bold text-[#1f2235] transition-colors hover:text-darkOrange" href="https://www.altostratus.es/" target="_blank" rel="noopener noreferrer">
+              <a className="font-semibold text-slate-200 transition-colors hover:text-emerald-400" href="https://www.altostratus.es/" target="_blank" rel="noopener noreferrer">
                 Altostratus Cloud Consulting, Madrid, {t('Spain', 'España')}
               </a>
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Cloud-native architecture on GCP and frontend systems.', 'Arquitectura cloud en GCP y desarrollo frontend.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Designed distributed data-processing pipelines in Python, improving efficiency by 15%.',
               'Diseño de pipelines de procesamiento distribuido en Python, mejorando eficiencia en un 15%.'
@@ -86,23 +86,23 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* Silentium Apps */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('Trainee Developer', 'Desarrollador en Formación')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">{t('Aug – Dec 2022', 'Ago – Dic 2022')}</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Trainee Developer', 'Desarrollador en Formación')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug – Dec 2022', 'Ago – Dic 2022')}</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
-              <a className="font-bold text-[#1f2235] transition-colors hover:text-darkOrange" href="https://silentiumapps.com/es/" target="_blank" rel="noopener noreferrer">
+              <a className="font-semibold text-slate-200 transition-colors hover:text-emerald-400" href="https://silentiumapps.com/es/" target="_blank" rel="noopener noreferrer">
                 Silentium Apps, Salta, Argentina
               </a>
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Enhanced backend performance and research in frameworks.', 'Mejora de rendimiento y exploración de frameworks.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Improved backend performance by 20% via refactoring in NestJS and .NET.',
               'Mejora del backend en un 20% mediante refactorización en NestJS y .NET.'
@@ -121,22 +121,22 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* IITA */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('Machine Learning Researcher', 'Investigador en Machine Learning')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">{t('Mar – Aug 2022', 'Mar – Ago 2022')}</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Machine Learning Researcher', 'Investigador en Machine Learning')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Mar – Aug 2022', 'Mar – Ago 2022')}</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               Instituto de Innovación y Tecnología Aplicada{' '}
-              <a className="font-bold text-[#1f2235] transition-colors hover:text-darkOrange" href="https://iita.com.ar/" target="_blank" rel="noopener noreferrer">(IITA)</a>
+              <a className="font-semibold text-slate-200 transition-colors hover:text-emerald-400" href="https://iita.com.ar/" target="_blank" rel="noopener noreferrer">(IITA)</a>
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Developed Deep Q-learning systems and automated ML pipelines.', 'Desarrollo de sistemas Deep Q-learning y automatización de pipelines ML.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Built ML test environment on GCE using MLFlow, increasing iteration speed by 25%.',
               'Construcción de entorno ML en GCE con MLFlow, mejorando la iteración en un 25%.'
@@ -155,22 +155,22 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* UCASAL */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('Student Researcher', 'Alumno Investigador')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">{t('Aug 21 – Dec 24', 'Ago 21 – Dic 24')}</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Student Researcher', 'Alumno Investigador')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">{t('Aug 21 – Dec 24', 'Ago 21 – Dic 24')}</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               {t('Engineering Faculty at', 'Facultad de Ingeniería en')}{' '}
-              <a className="font-bold text-[#1f2235] transition-colors hover:text-darkOrange" href="https://www.ucasal.edu.ar/" target="_blank" rel="noopener noreferrer">UCASAL</a>
+              <a className="font-semibold text-slate-200 transition-colors hover:text-emerald-400" href="https://www.ucasal.edu.ar/" target="_blank" rel="noopener noreferrer">UCASAL</a>
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Digital forensics and metaverse research.', 'Forensia digital e investigación en metaversos.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Developed KeyWordFinder with Electron and Vue.js, improving processing by 20%.',
               'Desarrollo de KeyWordFinder con Electron y Vue.js, mejorando el rendimiento en un 20%.'
@@ -189,22 +189,22 @@ const Work = ({ locale }: { locale: Locale }) => {
         {/* IITA Tutor */}
         <div className="mb-[30px] flex w-full flex-col">
           <div className="relative mb-3.5 flex justify-between">
-            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-darkOrange max-lg:hidden" />
-            <span className="mb-[15px] font-poppins-semibold text-xl text-darkOrange">{t('Python Programming Tutor', 'Tutor de Programación en Python')}</span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-[14px] bg-darkOrange px-[14px] py-1 text-sm text-uiWhite">2021 – 2022</div>
+            <div className="absolute -left-[30px] top-[5px] h-[15px] w-[15px] rounded-full bg-emerald-400 max-lg:hidden" />
+            <span className="mb-[15px] font-jakarta text-lg font-semibold text-emerald-400">{t('Python Programming Tutor', 'Tutor de Programación en Python')}</span>
+            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2021 – 2022</div>
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-[15px] text-uiBlack">
+          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
             <span>
               Instituto de Innovación y Tecnología Aplicada{' '}
-              <a className="font-bold text-[#1f2235] transition-colors hover:text-darkOrange" href="https://iita.com.ar/" target="_blank" rel="noopener noreferrer">(IITA)</a>
+              <a className="font-semibold text-slate-200 transition-colors hover:text-emerald-400" href="https://iita.com.ar/" target="_blank" rel="noopener noreferrer">(IITA)</a>
             </span>
           </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-[13px] leading-normal">
+          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
             <span>{t('Led weekly lectures and mentored students.', 'Clases semanales y mentoría de alumnos.')}</span>
           </div>
         </div>
         <div className="mb-2.5 mt-2.5 max-w-full text-justify">
-          <span className="text-xs">
+          <span className="text-xs text-slate-400">
             - {t(
               'Prepared and taught course content, evaluated assignments.',
               'Preparación y dictado de clases, corrección de actividades.'
