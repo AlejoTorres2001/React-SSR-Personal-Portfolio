@@ -5,22 +5,24 @@ import { Locale, localePath } from '../lib/i18n'
 
 const highlights = {
   en: [
-    '4+ years building large-scale Web Systems',
-    'Expertise in event-driven & microservices architectures',
-    'Implemented CI/CD pipelines with GitHub Actions',
-    'Generative AI integration and agents orchestration',
-    'Proficient in SQL & NoSQL database design and optimization',
-    'Machine learning research experience with Deep Learning',
-    'Leading FullStack development teams'
+    '5+ years building large-scale Web Systems',
+    'Deep Agents & MCP server architecture',
+    'Expert in event-driven & microservices design',
+    'Agentic AI with LangChain & LangGraph',
+    'Cloud infrastructure on Azure, AWS & GCP',
+    'Machine Learning research with Deep Q-Learning',
+    'University professor — Databases & Software Engineering',
+    'Tech Leadership & team mentoring'
   ],
   es: [
-    '+4 años desarrollando Sistemas Web a gran escala',
-    'Experto en arquitecturas orientadas a eventos y microservicios',
-    'Implementación de pipelines CI/CD con GitHub Actions',
-    'Integración de IA generativa y orquestación de agentes',
-    'Diseño y optimización de bases de datos SQL y NoSQL',
-    'Experiencia como investigador ML',
-    'Liderazgo en equipos de desarrollo FullStack'
+    '+5 años desarrollando Sistemas Web a gran escala',
+    'Arquitectura de Deep Agents y servidores MCP',
+    'Experto en sistemas event-driven y microservicios',
+    'IA Agéntica con LangChain & LangGraph',
+    'Infraestructura Cloud en Azure, AWS y GCP',
+    'Investigación en Machine Learning con Deep Q-Learning',
+    'Docente universitario — Bases de Datos e Ing. de Software',
+    'Liderazgo técnico y mentoría de equipos'
   ]
 }
 
@@ -94,24 +96,32 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                   and automated cloud infrastructure on{' '}
                   <strong className="font-semibold text-slate-100">
                     Azure
-                  </strong>{' '}
+                  </strong>
+                  ,{' '}
+                  <strong className="font-semibold text-slate-100">AWS</strong>{' '}
                   and{' '}
                   <strong className="font-semibold text-slate-100">GCP</strong>{' '}
-                  with{' '}
+                  with Terraform. Currently working as{' '}
                   <strong className="font-semibold text-slate-100">
-                    Terraform
-                  </strong>{' '}
-                  and DevOps pipelines. Currently leading full-stack development
-                  at{' '}
+                    Semi-Senior AI Engineer
+                  </strong>{' '}at{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
-                    href="https://www.empatia.technology"
+                    href="https://prometeoapi.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    EmpatIA
+                    Prometeo OpenBanking
                   </a>
-                  .
+                  , building{' '}
+                  <strong className="font-semibold text-slate-100">
+                    deep-agent architectures
+                  </strong>{' '}
+                  and MCP servers. Also teaching{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Database I & Software Engineering
+                  </strong>{' '}
+                  at the Catholic University of Salta.
                 </>
               ) : (
                 <>
@@ -155,16 +165,27 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
                   </strong>{' '}
                   y{' '}
                   <strong className="font-semibold text-slate-100">GCP</strong>{' '}
-                  con Terraform. Actualmente lidero el desarrollo FullStack en{' '}
+                  con Terraform. Actualmente trabajo como{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Ingeniero de IA Semi-Senior
+                  </strong>{' '}en{' '}
                   <a
                     className="font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
-                    href="https://www.empatia.technology"
+                    href="https://prometeoapi.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    EmpatIA
+                    Prometeo OpenBanking
                   </a>
-                  .
+                  , construyendo{' '}
+                  <strong className="font-semibold text-slate-100">
+                    arquitecturas de deep-agents
+                  </strong>{' '}
+                  y servidores MCP. Además doy clases de{' '}
+                  <strong className="font-semibold text-slate-100">
+                    Base de Datos e Ing. de Software
+                  </strong>{' '}
+                  en la Universidad Católica de Salta.
                 </>
               )}
             </p>

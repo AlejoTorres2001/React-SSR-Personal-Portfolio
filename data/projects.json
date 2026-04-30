@@ -1,0 +1,125 @@
+{
+  "projectsData": [
+    {
+      "id": "portfolio",
+      "name": "Next.js Personal Portfolio",
+      "description": "This very website — a performant SSR portfolio built with Next.js 15, React 19 and TypeScript. Features an Observatory dark-glass design system, i18n routing (en/es), API-driven content, and animated sections. Deployed on Vercel.",
+      "image": "/assets/projects/next.jpg",
+      "bgColor": "#0c1a38",
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+      "knowMore": "https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio",
+      "date": "2024-12-20",
+      "featured": true
+    },
+    {
+      "id": "chatio",
+      "name": "Chat.io — Real-time Messenger",
+      "description": "A WebSocket-based fullstack messaging app inspired by WhatsApp Web. Built with Node.js, Express, Socket.IO and MongoDB on the backend, and React on the frontend. Supports real-time bi-directional communication between multiple clients.",
+      "image": "/assets/projects/chatio.jpg",
+      "bgColor": "#0a2218",
+      "stack": ["Node.js", "Socket.IO", "Express", "MongoDB", "React"],
+      "knowMore": "https://github.com/AlejoTorres2001/chat.io",
+      "date": "2022-06-10"
+    },
+    {
+      "id": "url-shortener",
+      "name": "URL Shortener",
+      "description": "Full-featured URL shortener with a containerized dev environment using VS Code DevContainers. Built with Next.js and Prisma ORM. Exposes a REST API and includes a ready-to-use UI. Supports custom slugs and click analytics.",
+      "image": "/assets/projects/project_7.png",
+      "bgColor": "#1a0f2e",
+      "stack": ["Next.js", "Prisma", "Docker", "DevContainers", "TypeScript"],
+      "knowMore": "https://github.com/AlejoTorres2001/url-shortener",
+      "date": "2022-08-02"
+    },
+    {
+      "id": "jwt-auth",
+      "name": "JWT Authentication FullStack",
+      "description": "A complete fullstack example of a secure JWT authentication strategy. Covers all good practices — refresh tokens, httpOnly cookies, token rotation, and access revocation — as well as the most common pitfalls to avoid.",
+      "image": "/assets/projects/jwt.jpg",
+      "bgColor": "#1a1000",
+      "stack": ["Node.js", "NestJS", "React", "JWT", "TypeScript"],
+      "knowMore": "https://github.com/AlejoTorres2001/jwt-auth-app",
+      "date": "2022-06-14"
+    },
+    {
+      "id": "codify",
+      "name": "Codify — Live Code Playground",
+      "description": "An easy-to-use real-time HTML + CSS + JS code playground. Write and run code right in your browser with instant preview. Inspired by CodePen but with a much cleaner, distraction-free UI. Great for sharing snippets and mockups.",
+      "image": "/assets/projects/codify.png",
+      "bgColor": "#0d1f0d",
+      "stack": ["React", "TypeScript", "CSS Modules", "Monaco Editor"],
+      "knowMore": "https://github.com/AlejoTorres2001/code-playground",
+      "date": "2022-05-14"
+    },
+    {
+      "id": "rtc-videochat",
+      "name": "RTC VideoChat — Zoom Clone",
+      "description": "A fullstack Zoom-like video conferencing app using Peer.js (WebRTC) for P2P video, Socket.IO for signaling, and React + Material UI on the frontend. Supports multi-user rooms with real-time peer discovery.",
+      "image": "/assets/projects/project_8.png",
+      "bgColor": "#1a0a00",
+      "stack": ["WebRTC", "Peer.js", "Socket.IO", "React", "Node.js"],
+      "knowMore": "https://github.com/AlejoTorres2001/RTC-videochat",
+      "date": "2022-07-13"
+    },
+    {
+      "id": "discord-bot",
+      "name": "Python Discord Bot — JULIO",
+      "description": "A custom Discord bot built with the Discord.py async API, originally created for a programming course and later adopted as a teaching tool. JULIO features command handling, fun utilities, and demonstrates async patterns in Python.",
+      "image": "/assets/projects/project_2.jpg",
+      "bgColor": "#5B6DAF",
+      "stack": ["Python", "Discord.py", "asyncio", "REST APIs"],
+      "knowMore": "https://github.com/AlejoTorres2001/PythonDiscordBot",
+      "date": "2022-10-08"
+    },
+    {
+      "id": "node-mongo-docker",
+      "name": "NodeJS + MongoDB + Docker Notes App",
+      "description": "A containerized notes application exploring Docker and docker-compose. Runs a Node.js backend and a MongoDB instance in separate containers orchestrated with Docker Compose. A hands-on reference for container-based local development.",
+      "image": "/assets/projects/project_5.png",
+      "bgColor": "#002211",
+      "stack": ["Node.js", "MongoDB", "Docker", "Docker Compose"],
+      "knowMore": "https://github.com/AlejoTorres2001/Node_Mongo_Docker_SimpleNoteApp",
+      "date": "2021-07-29"
+    },
+    {
+      "id": "vue3-graphql",
+      "name": "Vue3 + GraphQL — Rick & Morty UI",
+      "description": "A Vue 3 Composition API app that consumes the Rick and Morty GraphQL API. Built to practice integrating GraphQL into a modern frontend workflow. Features search, filtering and character detail views.",
+      "image": "/assets/projects/project_4.png",
+      "bgColor": "#003300",
+      "stack": ["Vue 3", "GraphQL", "Apollo Client", "TypeScript"],
+      "knowMore": "https://github.com/AlejoTorres2001/Rick_and_Morty_Vue3_GraphQL",
+      "date": "2021-11-08"
+    },
+    {
+      "id": "book-fetching",
+      "name": "Book Fetching Curvy Website",
+      "description": "A revamped Node.js book-search backend paired with a visually distinctive frontend using SVG wave shapes generated with haikei.app. Demonstrates creative use of SVG assets to build immersive, scroll-based UIs.",
+      "image": "/assets/projects/project_3.png",
+      "bgColor": "#1a0f00",
+      "stack": ["Node.js", "HTML5", "CSS3", "SVG", "Fetch API"],
+      "knowMore": "https://github.com/AlejoTorres2001/Book_fetching_App",
+      "date": "2021-07-05"
+    },
+    {
+      "id": "advent-of-code",
+      "name": "Advent of Code — Annual Challenges",
+      "description": "Annual attempts at Advent of Code, including the full source code and a written explanation for every challenge solution. Languages vary by year — TypeScript, Python, and Go editions available.",
+      "image": "/assets/projects/project_9.jpg",
+      "bgColor": "#0a0a1a",
+      "stack": ["TypeScript", "Python", "Go", "Algorithms"],
+      "knowMore": "https://github.com/AlejoTorres2001/AdventOfCode",
+      "date": "2022-12-03"
+    },
+    {
+      "id": "asp-ecommerce",
+      "name": "ASP.NET + MySQL E-Commerce",
+      "description": "A full e-commerce platform built with C# and ASP.NET on the backend backed by a relational MySQL database. Built as the final project for a university development course. Includes product catalog, cart, orders and basic admin panel.",
+      "image": "/assets/projects/project_6.jpg",
+      "bgColor": "#1a0000",
+      "stack": ["C#", "ASP.NET", "MySQL", ".NET Framework"],
+      "knowMore": "https://github.com/AlejoTorres2001/ASP_MySQL_Web_Store",
+      "date": "2021-07-27"
+    }
+  ]
+}

@@ -3,144 +3,95 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React from 'react'
-import { copy } from '../../content/i18n'
-import { Locale, localePath } from '../../lib/i18n'
+import { localePath, Locale } from '../../lib/i18n'
+import { useProjects } from '../../hooks/useProjects'
+
+const SkeletonEntry = () => (
+  <div className="mb-7 animate-pulse">
+    <div className="mb-2 h-4 w-2/3 rounded bg-slate-700/60" />
+    <div className="mb-1 h-3 w-1/2 rounded bg-slate-700/40" />
+    <div className="mt-2 h-2.5 w-full rounded bg-slate-700/30" />
+  </div>
+)
+
+const PREVIEW_COUNT = 4
 
 const Proyects = ({ locale }: { locale: Locale }) => {
+  const { data, loading, error } = useProjects()
+
+  if (loading) {
+    return (
+      <div className="animate-[fadeInAnimation_0.4s_ease]">
+        {Array.from({ length: PREVIEW_COUNT }).map((_, i) => (
+          <SkeletonEntry key={i} />
+        ))}
+      </div>
+    )
+  }
+
+  if (error || !data) {
+    return (
+      <p className="py-4 text-center font-jakarta text-xs text-slate-500">
+        {locale === 'en' ? 'Could not load projects.' : 'No se pudieron cargar los proyectos.'}
+      </p>
+    )
+  }
+
+  const preview = data.slice(0, PREVIEW_COUNT)
 
   return (
-    <div className="animate-[fadeInAnimation_2s]">
-      <div className="mb-8 flex w-full flex-col">
-        <div className="mb-[30px] flex w-full flex-col">
-          <div className="mb-3.5 flex items-start gap-2 justify-between">
-            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
-            <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
-              <Link
-                href={
-                  'https://github.com/AlejoTorres2001/React-SSR-Personal-Portfolio'
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {locale === 'en'
-                  ? ' Personal Portfolio Website'
-                  : 'Sitio Web Personal'}
-              </Link>
-            </span>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
-          </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
-            <span>
-              {locale === 'en'
-                ? 'Technologies Used:'
-                : 'Tecnologías Usadas: '}
-              Nextjs,ReactJs,Typescript,vanilla CSS
-            </span>
-          </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
-            <span>
-              {locale === 'en'
-                ? 'A personal web portfolio to showcase all my details and projectsat one place. Using SSR for faster load time'
-                : 'Un sitio web personal para mostrar todos mis detalles y proyectos en un solo lugar. Usando SSR para un tiempo de carga mas rápido'}
-            </span>
-          </div>
-        </div>
-
-        <div className="mb-[30px] flex w-full flex-col">
-          <div className="mb-3.5 flex items-start gap-2 justify-between">
-            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
-            <Link href={'https://github.com/AlejoTorres2001/code-playground'}>
-              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Codify</span>
-            </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
-          </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
-            <span>
-              {locale === 'en'
-                ? 'Technologies Used:'
-                : 'Tecnologías Usadas: '}
-              Vite,ReactJs,TailwindCSS,Redux
-            </span>
-          </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
-            <span>
-              {locale === 'en'
-                ? ' An easy to use, real time HTML + CSS + JS code playground,inspired by liveweave. Codify is a live editor for HTML,CSS AND JS allowing you to edit your code in real-time, and see your results instantly, without reloading the page.'
-                : 'Un playground de codigo en la nube facil de usar, inspirado en liveweave. Codify es un editor de codigo HTML,CSS Y JS que te permite editar tu codigo en tiempo real, y ver tus resultados instantaneamente, sin recargar la pagina.'}
-            </span>
-          </div>
-        </div>
-
-        <div className="mb-[30px] flex w-full flex-col">
-          <div className="mb-3.5 flex items-start gap-2 justify-between">
-            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
-            <Link href={'https://github.com/AlejoTorres2001/chat.io'}>
-              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">Chat.io</span>
-            </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
-          </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
-            <span>
-              {locale === 'en'
-                ? 'Technologies Used: '
-                : 'Tecnologías Usadas: '}
-              Express,MondoDB,SocketIO,Vite,React,TailwindCSS
-            </span>
-          </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
-            <span>
-              {locale === 'en'
-                ? 'A Fullstack webSocket-based WhatsApp clone. The Core concept here revolves around WebSocket, instead of the classic server polling architecture, using an event-based communication allows for (almost) real-time communication between the server and our clients, who will listen and react to the changes. The frontEnd client is inspired on WhatsApp web'
-                : 'Un clon de WhatsApp en la nube basado en WebSocket. El concepto central aqui esta en la implementacion del protocolo WebSocket, en lugar de la arquitectura clasica de polling del cliente-servidor, usando una comunicacion basada en eventos permite la comunicacion en tiempo real entre el servidor y nuestros clientes, que escuchan y reaccionan a los cambios. El frontEnd esta inspirado en WhatsApp web'}
-            </span>
-          </div>
-        </div>
-
-        <div className="mb-[30px] flex w-full flex-col">
-          <div className="mb-3.5 flex items-start gap-2 justify-between">
-            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400"></div>
-            <Link
-              href={
-                'https://github.com/CoolRobotsAndStuff/machine-learning-for-maze-exploration'
-              }
+    <div className="animate-[fadeInAnimation_0.4s_ease]">
+      {preview.map((project) => (
+        <div key={project.id} className="mb-7 flex w-full flex-col">
+          <div className="mb-2 flex items-start gap-2 justify-between">
+            <div className="mt-[5px] h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
+            <a
+              href={project.knowMore}
               target="_blank"
               rel="noopener noreferrer"
+              className="font-jakarta text-base font-semibold text-emerald-400 transition-colors hover:text-emerald-300"
             >
-              <span className="font-jakarta text-lg font-semibold text-emerald-400 transition-colors hover:text-emerald-300">
-                Maze Exploration Deep-Q Learning AI Model
+              {project.name}
+            </a>
+            <a
+              href={project.knowMore}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
+              aria-label="GitHub"
+            >
+              <FontAwesomeIcon icon={faGithub} className="text-[11px]" />
+            </a>
+          </div>
+          <div className="mb-1.5 ml-[10px] flex flex-wrap gap-1.5">
+            {project.stack.slice(0, 3).map((tech) => (
+              <span
+                key={tech}
+                className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-0.5 font-jakarta text-[10px] text-slate-500"
+              >
+                {tech}
               </span>
-            </Link>
-            <div className="flex h-[27px] w-[120px] items-center justify-center rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 font-jakarta text-xs text-emerald-400">2022-2022</div>
+            ))}
           </div>
-          <div className="mb-[15px] mt-[-5px] ml-[10px] text-sm text-slate-300">
-            <span>
-              {' '}
-              {locale === 'en'
-                ? 'Technologies Used:'
-                : 'Tecnologías Usadas: '}{' '}
-              Python,Keras,MLFlow
-            </span>
-          </div>
-          <div className="mb-[15px] ml-[15px] mt-[10px] text-justify text-xs leading-relaxed text-slate-400">
-            <span>
-              {locale === 'en'
-                ? 'Part of my internship at IITA. A simplified test environment for Webots simulator,a Deep-  Q learning Model and a Random Map Generator for it to be trained on, registring all progress in a MLFlow Server hosted on Google Cloud Computing'
-                : 'Parte de mis actividades en IITA.Se trata del conjunto de un entorno de prueba simplificado para el simulador Webots, un modelo de Deep-Q Learning y un generador de mapas aleatorios para poder entrenar el modelo, registrando todo el progreso en un servidor de MLFlow alojado en Google Cloud Computing'}
-            </span>
+          <div className="ml-[10px] font-jakarta text-xs leading-relaxed text-slate-400">
+            {project.description.length > 120
+              ? project.description.slice(0, 120) + '…'
+              : project.description}
           </div>
         </div>
+      ))}
 
-        <div className="flex justify-end">
-          <Link
-            href={localePath(locale, '/projects')}
-            className="mt-4 flex items-center justify-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 font-jakarta text-xs font-semibold text-emerald-400 transition-all hover:bg-emerald-400/20"
-          >
-            {copy.sections.moreProjects[locale]}{' '}
-            <FontAwesomeIcon icon={faGithub} />
-          </Link>
-        </div>
+      {/* More projects link */}
+      <div className="mt-4 flex justify-center">
+        <Link
+          href={localePath(locale, '/projects')}
+          className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 font-jakarta text-xs font-semibold text-emerald-400 transition-colors hover:bg-emerald-400/15 hover:text-emerald-300"
+        >
+          {locale === 'en' ? `See all ${data.length} projects →` : `Ver todos los ${data.length} proyectos →`}
+        </Link>
       </div>
     </div>
   )
 }
+
 export default React.memo(Proyects)

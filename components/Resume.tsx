@@ -94,7 +94,9 @@ const Resume = ({ locale }: { locale: Locale }) => {
             {locale === 'en' ? 'Resume' : 'Trayectoria'}
           </h2>
           <p className="mt-2 font-jakarta text-xs uppercase tracking-widest text-slate-400">
-            {locale === 'en' ? 'My formal bio details' : 'Detalles de mi biografía'}
+            {locale === 'en'
+              ? 'My formal bio details'
+              : 'Detalles de mi biografía'}
           </p>
           <div className="mt-4 h-px w-32 bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" />
         </div>
@@ -163,7 +165,6 @@ const Resume = ({ locale }: { locale: Locale }) => {
                 <span className="font-fraunces text-base text-slate-200">
                   {activeTab.label}
                 </span>
-
               </div>
             )}
 

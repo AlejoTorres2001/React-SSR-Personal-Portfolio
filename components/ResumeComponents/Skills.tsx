@@ -1,27 +1,35 @@
+'use client'
 import React from 'react'
+import { useCV } from '../../hooks/useCV'
 
-type Skill = { name: string; level: number }
+const Skills = () => {
+  const { data, loading, error } = useCV('skills', 'en')
 
-const skills: Skill[] = [
-  { name: 'Node.js / TypeScript', level: 95 },
-  { name: 'NestJS / Express', level: 92 },
-  { name: 'React.js / Next.js', level: 90 },
-  { name: 'Python (Pandas, TensorFlow, PyTorch)', level: 85 },
-  { name: 'SQL / Database Design', level: 85 },
-  { name: 'Git / CI-CD / DevOps Pipelines', level: 90 },
-  { name: 'HTML5 / CSS3', level: 92 },
-  { name: 'Azure / GCP', level: 78 },
-  { name: 'Terraform / IaC', level: 80 },
-  { name: 'Distributed Systems (Bull, n8n)', level: 85 },
-  { name: 'Angular', level: 80 },
-  { name: 'Docker / Kubernetes', level: 78 }
-]
+  if (loading) {
+    return (
+      <div className="animate-[fadeInAnimation_0.4s_ease] grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div key={i} className="flex animate-pulse flex-col gap-1.5">
+            <div className="h-3 w-3/4 rounded bg-slate-700/60" />
+            <div className="h-1.5 w-full rounded-full bg-slate-700/40" />
+          </div>
+        ))}
+      </div>
+    )
+  }
 
-const Skills: React.FunctionComponent<object> = () => {
+  if (error || !data) {
+    return (
+      <p className="py-4 text-center font-jakarta text-xs text-slate-500">
+        Could not load skills.
+      </p>
+    )
+  }
+
   return (
     <div className="animate-[fadeInAnimation_0.4s_ease]">
       <div className="grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
-        {skills.map((skill) => (
+        {data.map((skill) => (
           <div key={skill.name} className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between">
               <span className="font-jakarta text-sm font-medium text-slate-200">

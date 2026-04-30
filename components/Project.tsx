@@ -13,7 +13,14 @@ type props = {
   featured?: boolean
 }
 
-const Project = ({ name, description, image, knowMore, date, featured }: props) => {
+const Project = ({
+  name,
+  description,
+  image,
+  knowMore,
+  date,
+  featured
+}: props) => {
   if (featured) {
     return (
       <article className="glass glass-hover group col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1 md:flex-row">
@@ -38,10 +45,14 @@ const Project = ({ name, description, image, knowMore, date, featured }: props) 
               <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 font-jakarta text-[10px] font-semibold uppercase tracking-widest text-emerald-400">
                 Featured
               </span>
-              <span className="font-jakarta text-[11px] text-slate-600">{date}</span>
+              <span className="font-jakarta text-[11px] text-slate-600">
+                {date}
+              </span>
             </div>
             <h3 className="font-fraunces text-2xl text-slate-50">{name}</h3>
-            <p className="font-jakarta text-sm leading-relaxed text-slate-400">{description}</p>
+            <p className="font-jakarta text-sm leading-relaxed text-slate-400">
+              {description}
+            </p>
           </div>
 
           <div className="mt-8 flex items-center gap-3">
@@ -78,8 +89,12 @@ const Project = ({ name, description, image, knowMore, date, featured }: props) 
 
       {/* Content */}
       <div className="flex flex-1 flex-col gap-3 px-5 pt-4">
-        <h3 className="font-jakarta text-sm font-semibold text-slate-100">{name}</h3>
-        <p className="line-clamp-3 font-jakarta text-xs leading-relaxed text-slate-500">{description}</p>
+        <h3 className="font-jakarta text-sm font-semibold text-slate-100">
+          {name}
+        </h3>
+        <p className="line-clamp-3 font-jakarta text-xs leading-relaxed text-slate-500">
+          {description}
+        </p>
       </div>
 
       {/* Footer row */}

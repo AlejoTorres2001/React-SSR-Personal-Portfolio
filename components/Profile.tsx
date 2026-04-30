@@ -8,18 +8,20 @@ import Link from 'next/link'
 import { Locale, localePath } from '../lib/i18n'
 
 const steps = [
-  'Fullstack Dev ⚙️',
-  1200,
-  'Cloud & DevOps 🌐',
-  1200,
-  'Agents Orchestration 🤖',
-  1200,
-  'Distributed Systems 🖥️',
-  1200,
-  'ReactJs ⚛️',
-  1200,
-  'NestJS 🚀',
-  1200
+  'Semi-Senior Software Engineer 🚀',
+  1400,
+  'AI Engineer @ Prometeo 🤖',
+  1400,
+  'Deep Agents & MCP Servers 🧠',
+  1400,
+  'Fullstack Developer ⚙️',
+  1400,
+  'Cloud & DevOps Engineer 🌐',
+  1400,
+  'Distributed Systems Architect 🖥️',
+  1400,
+  'University Professor 🎓',
+  1400
 ]
 
 const Profile = ({ locale }: { locale: Locale }) => {
@@ -56,8 +58,8 @@ const Profile = ({ locale }: { locale: Locale }) => {
           {/* Tagline */}
           <p className="max-w-[420px] text-center font-jakarta text-base text-slate-400 md:text-left">
             {locale === 'en'
-              ? 'Building scalable applications with modern front and back-end technologies.'
-              : 'Creando aplicaciones escalables con tecnologías modernas de frontend y backend.'}
+              ? 'Building agentic systems, distributed architectures, and scalable full-stack applications.'
+              : 'Construyendo sistemas agénticos, arquitecturas distribuidas y aplicaciones full-stack escalables.'}
           </p>
 
           {/* CTAs */}
