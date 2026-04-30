@@ -3,7 +3,7 @@ import { Locale, localePath, locales } from '../lib/i18n'
 
 const LocaleSwitcher = ({ locale }: { locale: Locale }) => {
   return (
-    <div className="relative z-[1000] mr-8 flex h-[30px] items-center justify-end gap-2 text-uiWhite lg:mr-20">
+    <div className="relative z-[1000] mr-8 flex h-[38px] items-center justify-end gap-2 pt-3 text-uiWhite lg:mr-20">
       {locales.map((localeOption) => {
         const isActive = localeOption === locale
 
@@ -13,8 +13,8 @@ const LocaleSwitcher = ({ locale }: { locale: Locale }) => {
             href={localePath(localeOption)}
             className={`rounded px-3 py-1.5 font-poppins-semibold text-base font-semibold transition-colors ${
               isActive
-                ? 'bg-darkOrange text-uiWhite'
-                : 'bg-white/10 hover:bg-white/20'
+                ? 'bg-darkOrange text-uiWhite shadow-[0_10px_20px_-12px_rgba(255,106,79,0.85)]'
+                : 'border border-white/25 bg-white/10 hover:bg-white/20'
             }`}
           >
             {localeOption.toUpperCase()}

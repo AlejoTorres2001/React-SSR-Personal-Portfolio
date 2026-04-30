@@ -6,7 +6,7 @@ import { Locale, localePath } from '../lib/i18n'
 const AboutMe = ({ locale }: { locale: Locale }) => {
   return (
     <section
-      className="-mt-1 mb-12 flex w-full flex-col items-center justify-center bg-uiWhite"
+      className="-mt-1 mb-12 flex w-full flex-col items-center justify-center bg-[#f7f8fc] pt-6"
       id="AboutMe"
     >
       <div className="w-[88%] max-w-[1000px] lg:w-[70%] fade-in appear">
@@ -25,7 +25,7 @@ const AboutMe = ({ locale }: { locale: Locale }) => {
           </div>
         </div>
 
-        <div className="mb-8 flex w-full overflow-hidden shadow-[0_0_20px_-2px_#1f2235]">
+        <div className="mb-8 flex w-full overflow-hidden rounded-[26px] border border-[#1f2235]/10 bg-white shadow-[0_30px_60px_-45px_#1f2235]">
           <div className="hidden w-1/2 bg-[url('/assets/home/aboutMe.jpeg')] bg-cover bg-[position:25%] bg-no-repeat lg:block"></div>
           <div className="w-full p-8 text-justify lg:w-[48%]">
             <span className="text-[13px] font-[450]">

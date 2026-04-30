@@ -25,17 +25,17 @@ const Profile = ({ locale }: { locale: Locale }) => {
 
   return (
     <div
-      className="flex min-h-fit w-full items-center justify-center bg-[#24263c] px-4 text-center"
+      className="relative flex min-h-fit w-full items-center justify-center bg-transparent px-4 pb-8 text-center"
       id="Home"
     >
-      <div className="mt-10 flex w-full max-w-[1120px] flex-col-reverse items-center text-[#f0f8ff] md:mt-4 md:flex-row md:justify-between">
+      <div className="mt-12 flex w-full max-w-[1120px] flex-col-reverse items-center text-[#f0f8ff] md:mt-6 md:flex-row md:justify-between">
         <div>
           <div>
             <div>
               <Icons />
             </div>
           </div>
-          <div className="font-poppins-semibold text-2xl">
+          <div className="font-poppins-semibold text-[26px]">
               <span className="text-uiWhite">
                 {''}
                 {locale === 'en'
@@ -47,7 +47,7 @@ const Profile = ({ locale }: { locale: Locale }) => {
           <div className="my-3.5 flex flex-col">
             <span className="text-uiWhite">
               {''}
-              <h1 className="mx-auto flex h-[60px] min-w-[320px] items-center justify-center text-center font-[cursive] text-[28px] md:min-w-[420px] md:text-[40px]">
+              <h1 className="mx-auto flex h-[60px] min-w-[320px] items-center justify-center text-center font-[cursive] text-[30px] md:min-w-[420px] md:text-[42px]">
                 {''}
                 <TypeAnimation sequence={steps} repeat={Infinity} speed={50} />
               </h1>
@@ -61,7 +61,7 @@ const Profile = ({ locale }: { locale: Locale }) => {
           <div className="flex items-center justify-center gap-4 md:justify-start">
             <Link
               href={localePath(locale, '#ContactMe')}
-              className="w-[140px] rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff]"
+              className="w-[140px] rounded-[50px] border border-white/40 bg-[#101527]/85 py-3.5 text-center font-poppins-semibold text-xs text-uiWhite shadow-[0_16px_30px_-22px_rgba(255,255,255,0.7)] transition hover:border-darkOrange hover:bg-[#1f2235] hover:text-[#f0f8ff]"
             >
               {''}
               {' '}
@@ -75,13 +75,14 @@ const Profile = ({ locale }: { locale: Locale }) => {
               }
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[140px] rounded-[50px] bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111]"
+              className="w-[140px] rounded-[50px] bg-gradient-to-r from-[#ff764f] to-[#ff4b2f] py-3.5 font-poppins-semibold text-xs text-uiWhite shadow-[0_18px_30px_-20px_rgba(255,106,79,0.95)] transition hover:from-[#fff8dc] hover:to-[#ffd5a7] hover:text-[#111]"
             >
               {copy.sections.resumeButton[locale]}
             </Link>
           </div>
         </div>
-        <div className="mb-10 mt-4 flex h-[275px] w-[275px] items-center justify-center rounded-full shadow-[0_1px_0_0.5px_var(--white)] sm:h-[320px] sm:w-[320px] md:mb-24 md:h-[380px] md:w-[380px] md:ml-20 lg:ml-1">
+        <div className="relative mb-10 mt-4 flex h-[275px] w-[275px] items-center justify-center rounded-full border border-white/20 bg-white/5 shadow-[0_20px_45px_-24px_rgba(0,0,0,0.8)] sm:h-[320px] sm:w-[320px] md:mb-24 md:h-[380px] md:w-[380px] md:ml-20 lg:ml-1">
+          <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#ff6a4f33] to-[#26b0ce2f] blur-md"></div>
           <div className="h-[93%] w-[93%] rounded-full bg-cover bg-center bg-no-repeat transition duration-1000 ease-out hover:scale-105">
             <Image
               className="rounded-full"
