@@ -6,10 +6,11 @@ import Header from '../../components/Header'
 import Project from '../../components/Project'
 import useMobileMenu from '../../hooks/useMobileMenu'
 import projects from '../../projects.json'
-import {Providers} from '../../context/Providers'
- function ProjectsContent() {
+import { Providers } from '../../context/Providers'
+
+function ProjectsContent() {
   const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
-  
+
   return (
     <div className="home-container">
       <Header
@@ -18,15 +19,20 @@ import {Providers} from '../../context/Providers'
           setShowMobileMenu as Dispatch<SetStateAction<boolean>>
         }
       />
-      <main className='container'>
-        <section className="cards">
-          {projects.projectsData.map((project, index) => <Project key={index} {...project}/>)}
+
+      <main className="mx-auto mt-5 grid w-full max-w-[1400px] grid-cols-1 gap-10 px-5 sm:px-8">
+        <section className="grid grid-cols-12 gap-5 sm:gap-10">
+          {projects.projectsData.map((project, index) => (
+            <Project key={index} {...project} />
+          ))}
         </section>
       </main>
+
       <Footer />
     </div>
   )
 }
+
 export default function Projects() {
   return (
     <Providers>
