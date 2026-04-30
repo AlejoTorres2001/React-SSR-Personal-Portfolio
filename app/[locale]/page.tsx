@@ -4,7 +4,6 @@ import Badges from '../../components/Badges'
 import ContactMe from '../../components/ContactMe'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
-import LocaleSwitcher from '../../components/LocaleSwitcher'
 import Profile from '../../components/Profile'
 import Resume from '../../components/Resume'
 import { isLocale, locales } from '../../lib/i18n'
@@ -26,14 +25,15 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
 
   return (
     <div className="home-container">
-      <LocaleSwitcher locale={locale} />
       <Header locale={locale} />
-      <Profile locale={locale} />
+      <main>
+        <Profile locale={locale} />
+        <AboutMe locale={locale} />
+        <Resume locale={locale} />
+        <Badges locale={locale} />
+        <ContactMe locale={locale} />
+      </main>
       <Footer />
-      <AboutMe locale={locale} />
-      <Resume locale={locale} />
-      <Badges locale={locale} />
-      <ContactMe locale={locale} />
     </div>
   )
 }
