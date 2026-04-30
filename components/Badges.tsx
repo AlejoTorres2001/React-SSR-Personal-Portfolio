@@ -1,23 +1,32 @@
 'use client'
-import React, { useContext } from 'react'
-import Carousel from 'react-elastic-carousel'
+import React, { useCallback, useContext } from 'react'
+import useEmblaCarousel from 'embla-carousel-react'
 import Badge from './Badge'
-import { badges } from '../badges.json'
+import badgesData from '../badges.json'
 import { useInView } from 'react-intersection-observer'
 import { LanguageContext } from '../context/LanguageContextProvider'
 import { ILanguageContextType } from '../@types/language.types'
+
 const Badges = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    containScroll: 'trimSnaps',
+    loop: false
+  })
 
   const { ref, inView } = useInView({
     threshold: 0.3
   })
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 }
-  ]
+
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext()
+  }, [emblaApi])
+
   return (
     <div ref={ref} className="badges-section" id="Badges">
       <div
@@ -42,15 +51,35 @@ const Badges = () => {
       </div>
 
       <div className="badges-container">
-        {/* @ts-ignore */}
-        <Carousel
-          className={`${inView ? 'appear' : ''} fade-in`}
-          breakPoints={breakPoints}
-        >
-          {badges.map((badge, id) => (
-            <Badge {...badge} key={id} />
-          ))}
-        </Carousel>
+        <div className={`embla ${inView ? 'appear' : ''} fade-in`}>
+          <button
+            className="embla__button"
+            onClick={scrollPrev}
+            type="button"
+            aria-label="Previous badges"
+          >
+            ‹
+          </button>
+
+          <div className="embla__viewport" ref={emblaRef}>
+            <div className="embla__container">
+              {badgesData.badges.map((badge, id) => (
+                <div className="embla__slide" key={id}>
+                  <Badge {...badge} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button
+            className="embla__button"
+            onClick={scrollNext}
+            type="button"
+            aria-label="Next badges"
+          >
+            ›
+          </button>
+        </div>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Project from '../../components/Project'
 import useMobileMenu from '../../hooks/useMobileMenu'
-import { projectsData } from '../../projects.json'
+import projects from '../../projects.json'
 import {Providers} from '../../context/Providers'
  function ProjectsContent() {
   const [showMobileMenu, setShowMobileMenu] = useMobileMenu()
@@ -20,7 +20,7 @@ import {Providers} from '../../context/Providers'
       />
       <main className='container'>
         <section className="cards">
-          {projectsData.map((project, index) => <Project key={index} {...project}/>)}
+          {projects.projectsData.map((project, index) => <Project key={index} {...project}/>)}
         </section>
       </main>
       <Footer />
