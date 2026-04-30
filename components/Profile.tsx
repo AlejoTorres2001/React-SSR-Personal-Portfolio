@@ -2,6 +2,7 @@
 import React, { useContext } from 'react'
 import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
+import { copy, toLocale } from '../content/i18n'
 import Icons from './Icons'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation'
@@ -23,6 +24,7 @@ const steps = [
 ]
 const Profile: React.FunctionComponent<object> = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
 
   return (
     <div
@@ -65,7 +67,8 @@ const Profile: React.FunctionComponent<object> = () => {
               className="w-[140px] rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff]"
             >
               {''}
-              {language.name === 'en' ? ' Get in Touch' : 'Contactar'}
+              {' '}
+              {copy.sections.contactButton[locale]}
             </Link>
             <button
               className="w-[140px] rounded-[50px] bg-darkOrange py-3.5 font-poppins-semibold text-xs text-uiWhite transition hover:bg-[#fff8dc] hover:text-[#111]"
@@ -78,7 +81,7 @@ const Profile: React.FunctionComponent<object> = () => {
                 window.open(cvUrl, '_blank')
               }}
             >
-              {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
+              {copy.sections.resumeButton[locale]}
             </button>
           </div>
         </div>

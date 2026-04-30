@@ -5,11 +5,13 @@ import Link from 'next/link'
 import React, { useContext } from 'react'
 import { ILanguageContextType } from '../../@types/language.types'
 import { LanguageContext } from '../../context/LanguageContextProvider'
+import { copy, toLocale } from '../../content/i18n'
 import { useRouter } from 'next/navigation'
 
 const Proyects: React.FunctionComponent<object> = () => {
   const router = useRouter()
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
 
   return (
     <div className="animate-[fadeInAnimation_2s]">
@@ -138,7 +140,7 @@ const Proyects: React.FunctionComponent<object> = () => {
             onClick={() => router.push('/projects')}
             className="mt-4 w-40 rounded-[19px] border-2 border-darkOrange bg-[#1f2235] p-1 text-[11px] text-[#e6e3e3] transition hover:border-[#1f2235] hover:bg-darkOrange hover:text-uiBlack"
           >
-            {language.name === 'en' ? 'More Projects' : 'Mas Proyectos'}{' '}
+            {copy.sections.moreProjects[locale]}{' '}
             <FontAwesomeIcon icon={faGithub} />
           </button>
         </div>

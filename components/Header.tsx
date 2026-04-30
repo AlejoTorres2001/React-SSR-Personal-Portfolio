@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import React, { Dispatch, SetStateAction, useContext } from 'react'
 import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
+import { copy, toLocale } from '../content/i18n'
 import useNavBar from '../hooks/useNavBar'
 
 const Header: React.FunctionComponent<{
@@ -21,6 +22,7 @@ const Header: React.FunctionComponent<{
   ] = useNavBar()
   const pathname = usePathname()
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
   const baseOptionClass =
     'text-xl font-extrabold transition-colors hover:text-darkOrange lg:text-base'
   const selectedOptionClass = 'text-darkOrange'
@@ -73,7 +75,7 @@ const Header: React.FunctionComponent<{
           >
             <span onClick={() => handleSectionClick('home')}>
               <Link href={pathname === '/projects' ? '/' : '/#Home'}>
-                {language.name === 'en' ? 'Home' : 'Inicio'}
+                {copy.nav.home[locale]}
               </Link>
             </span>
           </div>
@@ -85,7 +87,7 @@ const Header: React.FunctionComponent<{
               >
                 <span onClick={() => handleSectionClick('about-me')}>
                   <Link href="/#AboutMe">
-                    {language.name === 'en' ? 'AboutMe' : 'Sobre mi'}
+                    {copy.nav.about[locale]}
                   </Link>
                 </span>
               </div>
@@ -94,7 +96,7 @@ const Header: React.FunctionComponent<{
               >
                 <span onClick={() => handleSectionClick('resume')}>
                   <Link href="/#Resume">
-                    {language.name === 'en' ? 'Resume' : 'Trayectoria'}
+                    {copy.nav.resume[locale]}
                   </Link>
                 </span>
               </div>
@@ -103,7 +105,7 @@ const Header: React.FunctionComponent<{
               >
                 <span onClick={() => handleSectionClick('badges')}>
                   <Link href="/#Badges">
-                    {language.name === 'en' ? 'Badges' : 'Premios'}
+                    {copy.nav.badges[locale]}
                   </Link>
                 </span>
               </div>
@@ -112,7 +114,7 @@ const Header: React.FunctionComponent<{
               >
                 <span onClick={() => handleSectionClick('projects')}>
                   <Link href="/projects">
-                    {language.name === 'en' ? 'Projects' : 'Proyectos'}
+                    {copy.nav.projects[locale]}
                   </Link>
                 </span>
               </div>
@@ -121,7 +123,7 @@ const Header: React.FunctionComponent<{
               >
                 <span onClick={() => handleSectionClick('contact-me')}>
                   <Link href="/#ContactMe">
-                    {language.name === 'en' ? 'ContactMe' : 'Contactame'}
+                    {copy.nav.contact[locale]}
                   </Link>
                 </span>
               </div>
@@ -133,7 +135,7 @@ const Header: React.FunctionComponent<{
             >
               <span onClick={() => handleSectionClick('projects')}>
                 <Link href="/projects">
-                  {language.name === 'en' ? 'Projects' : 'Proyectos'}
+                  {copy.nav.projects[locale]}
                 </Link>
               </span>
             </div>

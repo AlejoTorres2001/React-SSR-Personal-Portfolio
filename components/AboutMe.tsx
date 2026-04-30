@@ -4,9 +4,11 @@ import React, { useContext } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { ILanguageContextType } from '../@types/language.types'
 import { LanguageContext } from '../context/LanguageContextProvider'
+import { copy, toLocale } from '../content/i18n'
 
 const AboutMe = () => {
   const { language } = useContext(LanguageContext) as ILanguageContextType
+  const locale = toLocale(language.name)
 
   const { ref, inView } = useInView({
     threshold: 0.3
@@ -23,14 +25,10 @@ const AboutMe = () => {
       >
         <div className="heading-container">
           <div className="screen-heading">
-            <span>{language.name === 'en' ? 'About Me' : 'Sobre Mí'}</span>
+            <span>{copy.sections.aboutTitle[locale]}</span>
           </div>
           <div className="screen-sub-heading">
-            <span>
-              {language.name === 'en'
-                ? 'A Brief Overview'
-                : 'Una Breve Descripción'}
-            </span>
+            <span>{copy.sections.aboutSubtitle[locale]}</span>
           </div>
           <div className="heading-seperator">
             <div className="seperator-line"></div>
@@ -184,7 +182,7 @@ const AboutMe = () => {
                 href="/#ContactMe"
                 className="w-full rounded-[50px] border-2 border-[linen] bg-[#1f2235] py-3.5 text-center font-poppins-semibold text-xs text-uiWhite transition hover:border-darkOrange hover:text-[#f0f8ff] sm:w-[160px]"
               >
-                {language.name === 'en' ? 'Contact Me' : 'Contáctame'}
+                {copy.sections.contactButton[locale]}
               </Link>
               <button
                 name="ContactMe"
@@ -198,7 +196,7 @@ const AboutMe = () => {
                   window.open(cvUrl, '_blank')
                 }}
               >
-                {language.name === 'en' ? 'Get Resume' : 'Descargar CV'}
+                {copy.sections.resumeButton[locale]}
               </button>
             </div>
           </div>
