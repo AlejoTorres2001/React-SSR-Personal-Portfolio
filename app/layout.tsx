@@ -1,4 +1,5 @@
 import localFont from 'next/font/local'
+import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 
@@ -35,6 +36,20 @@ const poppinsLight = localFont({
   display: 'swap'
 })
 
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['opsz']
+})
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+  display: 'swap',
+  weight: ['300', '400', '500', '600', '700', '800']
+})
+
 export const metadata = {
   title: "Alejo's Portfolio",
   description: 'Alejo Torres Fullstack Developer'
@@ -48,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppinsSemiBold.variable} ${poppinsBold.variable} ${poppinsExtraBold.variable} ${poppinsLight.variable} font-poppins-semibold`}
+        className={`${poppinsSemiBold.variable} ${poppinsBold.variable} ${poppinsExtraBold.variable} ${poppinsLight.variable} ${fraunces.variable} ${jakarta.variable} font-jakarta`}
       >
         {children}
         <Script

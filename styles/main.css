@@ -6,3 +6,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow:
+      inset 0 1px 0 0 var(--glass-highlight),
+      0 24px 48px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  .glass-hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    border-color: rgba(52, 211, 153, 0.25);
+    box-shadow:
+      inset 0 1px 0 0 var(--glass-highlight),
+      0 24px 48px -12px rgba(0, 0, 0, 0.55),
+      0 0 32px -8px rgba(52, 211, 153, 0.18);
+  }
+}
