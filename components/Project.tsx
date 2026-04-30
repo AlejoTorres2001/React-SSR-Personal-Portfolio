@@ -14,41 +14,41 @@ type props = {
 
 const Project = ({ name, description, image, knowMore, date }: props) => {
   return (
-    <article className="relative col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-[22px] border border-white/10 bg-gradient-to-b from-[#2b304a] to-[#1f243a] transition-all duration-300 hover:-translate-y-[7px] hover:shadow-[0_24px_40px_-28px_rgba(0,0,0,0.8)] md:col-span-6 xl:col-span-4">
+    <article className="glass glass-hover group relative col-span-12 flex cursor-pointer flex-col overflow-hidden rounded-3xl transition-all duration-300 hover:-translate-y-1.5 md:col-span-6 xl:col-span-4">
+      {/* Image */}
       <div className="relative w-full overflow-hidden pt-[56.25%]">
         <Image
           src={image}
           fill
-          sizes="100%"
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           alt={`Project ${name}`}
           style={{ objectFit: 'cover' }}
+          className="transition-transform duration-500 group-hover:scale-105"
         />
+        {/* Bottom gradient overlay */}
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-bgDeep/60 to-transparent" />
       </div>
 
-      <div className="p-5">
-        <p className="mb-5 text-center font-poppins-semibold text-base font-normal leading-5 text-uiWhite">
-          {name}
+      {/* Content */}
+      <div className="flex flex-1 flex-col gap-3 p-5">
+        <h3 className="font-jakarta text-sm font-semibold text-slate-50">{name}</h3>
+        <p className="rounded-lg border border-white/[0.06] bg-white/[0.03] px-3 py-2 font-jakarta text-xs text-slate-400">
+          {description}
         </p>
-        <div className="flex items-end">
-          <p className="mt-2.5 rounded-[10px] bg-[#1f2235] px-[15px] py-[5px] text-sm font-normal text-uiWhite">
-            {description}
-          </p>
-        </div>
       </div>
 
-      <div className="absolute right-0 m-2.5 flex">
+      {/* Footer row */}
+      <div className="flex items-center justify-between px-5 pb-5">
+        <span className="font-jakarta text-[11px] text-slate-600">{date}</span>
         <Link
           href={knowMore}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-darkOrange bg-[#1f2235] text-[#e6e3e3] transition hover:border-[#1f2235] hover:bg-darkOrange hover:text-uiBlack"
+          aria-label={`View ${name} on GitHub`}
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-slate-400 transition-all hover:border-emerald-400/30 hover:text-emerald-400"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} className="text-sm" />
         </Link>
-      </div>
-
-      <div className="absolute bottom-0 right-0 mr-2.5 mt-2.5 flex">
-        <p className="mb-auto pt-2.5 text-[11px] font-bold leading-5 text-uiWhite">{date}</p>
       </div>
     </article>
   )

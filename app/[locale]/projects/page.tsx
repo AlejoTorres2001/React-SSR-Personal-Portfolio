@@ -23,10 +23,10 @@ export default async function LocaleProjectsPage({
   }
 
   return (
-    <div className="home-container">
+    <div className="home-container min-h-screen">
       <Header locale={locale} />
-      <main className="mx-auto mt-5 grid w-full max-w-[1400px] grid-cols-1 gap-10 px-5 sm:px-8">
-        <section className="grid grid-cols-12 gap-5 sm:gap-10">
+      <main className="mx-auto mt-5 grid w-full max-w-[1400px] grid-cols-1 gap-10 px-5 pb-16 pt-24 sm:px-8">
+        <section className="grid grid-cols-12 gap-5 sm:gap-6">
           {projects.projectsData.map((project, index) => (
             <Project key={index} {...project} />
           ))}

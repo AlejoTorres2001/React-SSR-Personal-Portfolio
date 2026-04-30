@@ -1,20 +1,19 @@
-import Image from 'next/image'
 import React from 'react'
 
 const Footer: React.FunctionComponent<object> = () => {
+  const year = new Date().getFullYear()
+
   return (
-    <div className='flex w-full justify-center overflow-hidden'>
-      <div className='flex items-end'>
-        <Image
-          className='h-auto w-full max-w-[1920px]'
-          src='/assets/home/shape.png'
-          width={1920}
-          height={130}
-          alt="division image"
-          priority
-        />
+    <footer className="w-full pb-8 pt-4">
+      <div className="mx-auto max-w-[1100px] px-5">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent" />
+        <p className="mt-6 text-center font-jakarta text-xs text-slate-600">
+          © {year} Alejo Torres — Built with{' '}
+          <span className="text-emerald-400/70">Next.js</span> &{' '}
+          <span className="text-emerald-400/70">TypeScript</span>
+        </p>
       </div>
-    </div>
+    </footer>
   )
 }
 
