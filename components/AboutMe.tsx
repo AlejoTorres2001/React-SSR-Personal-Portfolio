@@ -1,25 +1,15 @@
-'use client'
 import Link from 'next/link'
 import React from 'react'
-import { useInView } from 'react-intersection-observer'
 import { copy } from '../content/i18n'
 import { Locale, localePath } from '../lib/i18n'
 
 const AboutMe = ({ locale }: { locale: Locale }) => {
-
-  const { ref, inView } = useInView({
-    threshold: 0.3
-  })
-
   return (
     <section
       className="-mt-1 mb-12 flex w-full flex-col items-center justify-center bg-uiWhite"
       id="AboutMe"
     >
-      <div
-        ref={ref}
-        className={`w-[88%] max-w-[1000px] lg:w-[70%] ${inView ? 'appear' : ''} fade-in`}
-      >
+      <div className="w-[88%] max-w-[1000px] lg:w-[70%] fade-in appear">
         <div className="heading-container">
           <div className="screen-heading">
             <span>{copy.sections.aboutTitle[locale]}</span>

@@ -1,5 +1,12 @@
 import { notFound } from 'next/navigation'
-import HomePageClient from '../../components/pages/HomePageClient'
+import AboutMe from '../../components/AboutMe'
+import Badges from '../../components/Badges'
+import ContactMe from '../../components/ContactMe'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
+import LocaleSwitcher from '../../components/LocaleSwitcher'
+import Profile from '../../components/Profile'
+import Resume from '../../components/Resume'
 import { isLocale, locales } from '../../lib/i18n'
 
 type LocalePageProps = {
@@ -17,5 +24,16 @@ export default async function LocaleHomePage({ params }: LocalePageProps) {
     notFound()
   }
 
-  return <HomePageClient locale={locale} />
+  return (
+    <div className="home-container">
+      <LocaleSwitcher locale={locale} />
+      <Header locale={locale} />
+      <Profile locale={locale} />
+      <Footer />
+      <AboutMe locale={locale} />
+      <Resume locale={locale} />
+      <Badges locale={locale} />
+      <ContactMe locale={locale} />
+    </div>
+  )
 }
